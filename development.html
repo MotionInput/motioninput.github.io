@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guidelines &mdash; Motion Input v3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Setting Up" href="getting-started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Motion Input
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Setting Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#compile-documentation">Compile Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-docs">Understanding docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compiling-documentation">Compiling Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Motion Input</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Guidelines</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/development.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="guidelines">
+<h1>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline"></a></h1>
+</section>
+<section id="compile-documentation">
+<h1>Compile Documentation<a class="headerlink" href="#compile-documentation" title="Permalink to this headline"></a></h1>
+<p>What you are seeing now is a sphinx documentation.</p>
+<p>It references the actual source code and docstrings in there
+and compiles all of it to html.</p>
+<p>The docs website is updated <strong>on push to the dev branch</strong></p>
+<p>It might take a while until you see the update so its useful to know how get
+the documentation build locally.</p>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline"></a></h2>
+<p>So first of all you will need to install needed packages to compile the docs.
+Navigate to <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>if you have some path issues with your python it is also worth to try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="understanding-docs">
+<h2>Understanding docs<a class="headerlink" href="#understanding-docs" title="Permalink to this headline"></a></h2>
+<p>Now let’s understand how our documentation works. Here is what you will find in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── make.bat
+├── Makefile
+├── requirements.txt
+└── source
+	├── conf.py
+	├── development.md
+	├── getting-started.md
+	├── index.rst
+	├── _static
+	└── _templates
+	
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make.bat</span></code> and <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> are there to compile our documentation to html</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> is what you just used to install our requirements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source/</span></code> directory where the source files for our documentation are located. You will find a bunch
+of <code class="docutils literal notranslate"><span class="pre">.md</span></code> and <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files there. These are pages with the actual text and tutorials that you see just now
+(this webpage is made from <code class="docutils literal notranslate"><span class="pre">development.md</span></code>, and the landing page is <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>)</p></li>
+</ul>
+<p>all <code class="docutils literal notranslate"><span class="pre">.md</span></code> files must be referenced in <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> files. You can do it like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">:</span><span class="n">caption</span><span class="p">:</span> <span class="n">Development</span>
+
+   <span class="n">development</span>
+</pre></div>
+</div>
+<p>This creates a table of content entry at the side bar on the landing page
+with a caption <strong>Development</strong> and references the file <code class="docutils literal notranslate"><span class="pre">development.md</span></code>
+(no need to add file extension in rst files as it doesn’t care)</p>
+</section>
+<section id="compiling-documentation">
+<h2>Compiling Documentation<a class="headerlink" href="#compiling-documentation" title="Permalink to this headline"></a></h2>
+<p>So now that you have made changes to the actual documentation,
+in order to compile it, navigate to the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span><span class="p">;</span> <span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>This will create a build folder where you can find all html files.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting-started.html" class="btn btn-neutral float-left" title="Setting Up" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Carmen Meinson, Jason Ho, Radu Priboi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
