@@ -1,7 +1,7 @@
 # Guidelines
 
 
-# Compile Documentation
+# Documentation
 
 What you are seeing now is a sphinx documentation.
 
@@ -60,7 +60,7 @@ This creates a table of content entry at the side bar on the landing page
 with a caption **Development** and references the file `development.md`
 (no need to add file extension in rst files as it doesn't care)
 
-## Compiling Documentation
+## Compilation
 
 So now that you have made changes to the actual documentation,
 in order to compile it, navigate to the `docs` directory and run:
