@@ -61,7 +61,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">scripts.tools</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="scripts.html#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scripts.html#module-scripts">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -137,6 +137,48 @@
 
 </dd></dl>
 
+<span class="target" id="module-scripts.tools.event_mapper"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.event_mapper.EventMapper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EventMapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.model.Model" title="scripts.core.model.Model"><span class="pre">scripts.core.model.Model</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.event_mapper.EventMapper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.event_mapper.EventMapper.add_events_to_model">
+<span class="sig-name descname"><span class="pre">add_events_to_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.model.Model" title="scripts.core.model.Model"><span class="pre">scripts.core.model.Model</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.event_mapper.EventMapper.add_events_to_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.event_mapper.EventMapper.change_event_triggers">
+<span class="sig-name descname"><span class="pre">change_event_triggers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triggers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.event_mapper.EventMapper.change_event_triggers" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.event_mapper.EventMapper.change_event_args">
+<span class="sig-name descname"><span class="pre">change_event_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.event_mapper.EventMapper.change_event_args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.event_mapper.EventMapper.change_event_bodyparts">
+<span class="sig-name descname"><span class="pre">change_event_bodyparts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bodyparts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.event_mapper.EventMapper.change_event_bodyparts" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.tools.extremity_circles"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.extremity_circles.ExtremityCircles">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityCircles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.extremity_circles.ExtremityCircles" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.extremity_circles.ExtremityCircles.reset_extremity_circle_colours">
+<span class="sig-name descname"><span class="pre">reset_extremity_circle_colours</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.extremity_circles.ExtremityCircles.reset_extremity_circle_colours" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.extremity_circles.ExtremityCircles.update_extremity_circle">
+<span class="sig-name descname"><span class="pre">update_extremity_circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colour</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'red'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.extremity_circles.ExtremityCircles.update_extremity_circle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <span class="target" id="module-scripts.tools.gesture_loader"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.gesture_loader.GestureLoader">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GestureLoader</span></span><a class="headerlink" href="#scripts.tools.gesture_loader.GestureLoader" title="Permalink to this definition"></a></dt>
@@ -206,8 +248,8 @@
 </dd></dl>
 
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="module-scripts.tools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.tools" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 
