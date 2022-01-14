@@ -94,10 +94,210 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="scripts-gesture-events">
-<h1>scripts.gesture_events<a class="headerlink" href="#scripts-gesture-events" title="Permalink to this headline"></a></h1>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+  <section id="module-scripts.gesture_events.directX_actions">
+<span id="scripts-gesture-events"></span><h1>scripts.gesture_events<a class="headerlink" href="#module-scripts.gesture_events.directX_actions" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.directX_actions.DirectXAction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DirectXAction</span></span><a class="headerlink" href="#scripts.gesture_events.directX_actions.DirectXAction" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.gesture_event.GestureEvent" title="scripts.core.gesture_event.GestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.gesture_event.GestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.directX_actions.DirectXAction.notify_gesture_activated">
+<span class="sig-name descname"><span class="pre">notify_gesture_activated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.directX_actions.DirectXAction.notify_gesture_activated" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.directX_actions.DirectXAction.notify_gesture_deactivated">
+<span class="sig-name descname"><span class="pre">notify_gesture_deactivated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.directX_actions.DirectXAction.notify_gesture_deactivated" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.extremity_trigger_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityTriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.UpExtremityEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UpExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.UpExtremityEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ArmLeftExtremityEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmLeftExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ArmLeftExtremityEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.PunchLeftExtremityEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PunchLeftExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.PunchLeftExtremityEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.KickLeftExtremityEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KickLeftExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.KickLeftExtremityEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ArmRightExtremityEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmRightExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ArmRightExtremityEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.PunchRightExtremityEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PunchRightExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.PunchRightExtremityEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.KickRightExtremityEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KickRightExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.KickRightExtremityEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.finger_pinch_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.finger_pinch_event.FingerPinchEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FingerPinchEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.finger_pinch_event.FingerPinchEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.finger_pinch_event.FingerPinchEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.finger_pinch_event.FingerPinchEvent.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.finger_pinch_event.IndexPinchEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IndexPinchEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.finger_pinch_event.IndexPinchEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.finger_pinch_event.FingerPinchEvent" title="scripts.gesture_events.finger_pinch_event.FingerPinchEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.finger_pinch_event.FingerPinchEvent</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.finger_pinch_event.MiddlePinchEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MiddlePinchEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.finger_pinch_event.MiddlePinchEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.finger_pinch_event.FingerPinchEvent" title="scripts.gesture_events.finger_pinch_event.FingerPinchEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.finger_pinch_event.FingerPinchEvent</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.finger_pinch_event.DoublePinchEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoublePinchEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.finger_pinch_event.DoublePinchEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.finger_pinch_event.FingerPinchEvent" title="scripts.gesture_events.finger_pinch_event.FingerPinchEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.finger_pinch_event.FingerPinchEvent</span></code></a></p>
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.hand_active_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.hand_active_event.HandActiveEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandActiveEvent</span></span><a class="headerlink" href="#scripts.gesture_events.hand_active_event.HandActiveEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.hand_active_event.HandActiveEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.hand_active_event.HandActiveEvent.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.idle_state_change_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.idle_state_change_event.IdleStateChangeEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IdleStateChangeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currently_idle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_frames_for_switch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.idle_state_change_event.IdleStateChangeEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.idle_state_change_event.IdleStateChangeEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.idle_state_change_event.IdleStateChangeEvent.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.palm_height_change_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PalmHeightChangeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">palm_height_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_frames_for_switch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.scroll_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.scroll_event.ScrollEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ScrollEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_frames_for_switch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_middle_distance_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.scroll_event.ScrollEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.scroll_event.ScrollEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.scroll_event.ScrollEvent.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.simple_gesture_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SimpleGestureEvent</span></span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.gesture_event.GestureEvent" title="scripts.core.gesture_event.GestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.gesture_event.GestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_trigger_functions">
+<span class="sig-name descname"><span class="pre">set_trigger_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funcs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_trigger_functions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_bodypart_names">
+<span class="sig-name descname"><span class="pre">set_bodypart_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_to_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_bodypart_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.get_state">
+<span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.get_state" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.notify_gesture_activated">
+<span class="sig-name descname"><span class="pre">notify_gesture_activated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.notify_gesture_activated" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.notify_gesture_deactivated">
+<span class="sig-name descname"><span class="pre">notify_gesture_deactivated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.notify_gesture_deactivated" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.zoom_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.zoom_event.ZoomEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZoomEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_frames_for_switch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.zoom_event.ZoomEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.zoom_event.ZoomEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.zoom_event.ZoomEvent.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<section id="module-scripts.gesture_events">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.gesture_events" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.GestureEvents">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GestureEvents</span></span><a class="headerlink" href="#scripts.gesture_events.GestureEvents" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.GestureEvents.get_event">
+<span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.GestureEvents.get_event" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 

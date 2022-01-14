@@ -94,10 +94,109 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="scripts-hand-module">
-<h1>scripts.hand_module<a class="headerlink" href="#scripts-hand-module" title="Permalink to this headline"></a></h1>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+  <section id="module-scripts.hand_module.hand_gesture">
+<span id="scripts-hand-module"></span><h1>scripts.hand_module<a class="headerlink" href="#module-scripts.hand_module.hand_gesture" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandGesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_checker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><span class="pre">scripts.core.position_tracker.PositionTracker</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.hand_module.hand_gesture.HandGesture" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.gesture.Gesture</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_gesture.HandGesture.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_gesture.HandGesture.get_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture.get_bodypart_name">
+<span class="sig-name descname"><span class="pre">get_bodypart_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_gesture.HandGesture.get_bodypart_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture.get_frames_held">
+<span class="sig-name descname"><span class="pre">get_frames_held</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_gesture.HandGesture.get_frames_held" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture.get_last_position">
+<span class="sig-name descname"><span class="pre">get_last_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a></span></span><a class="headerlink" href="#scripts.hand_module.hand_gesture.HandGesture.get_last_position" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture.get_last_n_positions">
+<span class="sig-name descname"><span class="pre">get_last_n_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_gesture.HandGesture.get_last_n_positions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.hand_module.hand_landmark_detector"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_landmark_detector.HandLandmarkDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandLandmarkDetector</span></span><a class="headerlink" href="#scripts.hand_module.hand_landmark_detector.HandLandmarkDetector" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_landmark_detector.HandLandmarkDetector.getRawData">
+<span class="sig-name descname"><span class="pre">getRawData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_landmark_detector.HandLandmarkDetector.getRawData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.hand_module.hand_position"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_primitive">
+<span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_primitive" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_landmark">
+<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_landmark" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_palm_height">
+<span class="sig-name descname"><span class="pre">get_palm_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_palm_height" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_finger_tilted_left">
+<span class="sig-name descname"><span class="pre">get_finger_tilted_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_finger_tilted_left" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_finger_tilted_right">
+<span class="sig-name descname"><span class="pre">get_finger_tilted_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_finger_tilted_right" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_finger_front_back_tilt">
+<span class="sig-name descname"><span class="pre">get_finger_front_back_tilt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_finger_front_back_tilt" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.hand_module.idle_hand_position"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.hand_module.idle_hand_position.IdleHandPosition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IdleHandPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.hand_module.idle_hand_position.IdleHandPosition" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.idle_hand_position.IdleHandPosition.get_primitive">
+<span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.hand_module.idle_hand_position.IdleHandPosition.get_primitive" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.idle_hand_position.IdleHandPosition.get_landmark">
+<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></span><a class="headerlink" href="#scripts.hand_module.idle_hand_position.IdleHandPosition.get_landmark" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<section id="module-scripts.hand_module">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.hand_module" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 
