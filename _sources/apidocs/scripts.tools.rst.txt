@@ -1,0 +1,61 @@
+scripts.tools
+=============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   scripts.tools.config
+
+
+
+.. automodule:: scripts.tools.area_of_interest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.tools.camera
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.tools.event_mapper
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.tools.extremity_circles
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.tools.gesture_loader
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.tools.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.tools.view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: scripts.tools
+   :members:
+   :undoc-members:
+   :show-inheritance:
