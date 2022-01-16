@@ -12,7 +12,6 @@ Welcome to Motion Input's documentation!
    is pushed to ``MI_Windows`` development branch. Make sure to check it out frequently.
 
 
-
    
 .. toctree::
    :maxdepth: 1
@@ -39,5 +38,14 @@ Welcome to Motion Input's documentation!
    apidocs/scripts.tools
    apidocs/scripts.gesture_loader
    apidocs/scripts.event_mapper
+
+
+.. image:: cat-bop.gif
+   :width: 200
+   :alt: No cat sadd ;(
+
+.. image:: cat-bop.gif
+   :width: 200
+   :alt: No cat sadd ;(
 
    
