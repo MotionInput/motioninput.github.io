@@ -40,12 +40,21 @@
               <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Setting Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#examples">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Guidelines</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guidelines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#branches">Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pull-requests">Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pr-messages">PR messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#code-quality">Code quality</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#documentation">Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#understanding-docs">Understanding docs</a></li>
@@ -84,6 +93,74 @@
              
   <section id="guidelines">
 <h1>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline"></a></h1>
+<section id="branches">
+<h2>Branches<a class="headerlink" href="#branches" title="Permalink to this headline"></a></h2>
+<p><strong>We have 2 important branches:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code> - Main branch with a stable version of the code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dev</span></code> - Development branch where all of our branches are merged first.</p></li>
+</ul>
+<p><strong>When you are working on a specific task or a feature:</strong></p>
+<ul class="simple">
+<li><p>Create a branch using one of those naming schemes:</p>
+<ul>
+<li><p>Team branch: <code class="docutils literal notranslate"><span class="pre">groupnumber-task-name</span></code> (i.e. 14-hand-gestures)</p></li>
+<li><p>Personal branch: <code class="docutils literal notranslate"><span class="pre">firstname-task-name</span></code> (i.e. adi-hand-gestures)</p></li>
+</ul>
+</li>
+<li><p>Commit your changes to your branch.</p></li>
+<li><p>Make a pull request to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch</p></li>
+</ul>
+</section>
+<section id="pull-requests">
+<h2>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this headline"></a></h2>
+<p>When making a pull request follow the <a class="reference external" href="#pr-messages">PR-messages</a> structure</p>
+<p>Once you’ve made a pull request, you are not allowed to merge it by yourself.</p>
+<p>Ask one of the reviewers to check your PR.</p>
+<ul class="simple">
+<li><p>If your PR is good, the reviewer will merge it.</p></li>
+<li><p>If not, then you will be asked to make changes. In that case do everything that’s required and contact the reviewer again once changes has been made.</p></li>
+</ul>
+<section id="pr-messages">
+<h3>PR messages<a class="headerlink" href="#pr-messages" title="Permalink to this headline"></a></h3>
+<p>Things that you <strong>MUST</strong> include in your pull request message:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#What</span></code> - a list of features and fixes that were made</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#How</span></code> - a concise description of how these changes were implemented</p></li>
+</ul>
+<p>Things that you <strong>SHOULD</strong> include in your pull request message:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#Why</span></code> - reasons for implementing these changes, (this will make reviewers’ lifes easier)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#Testing</span></code> - description of how testing was conducted.</p></li>
+</ul>
+<p><strong>Sample PR</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># What</span>
+ <span class="o">-</span> <span class="mi">5</span> <span class="n">new</span> <span class="n">hand</span> <span class="n">gestures</span>
+ <span class="o">-</span> <span class="n">Fixed</span> <span class="n">an</span> <span class="n">issue</span> <span class="k">with</span> <span class="n">the</span> <span class="n">mouse</span> <span class="n">moving</span> <span class="n">around</span> <span class="n">when</span> <span class="n">the</span> <span class="n">hand</span> <span class="ow">is</span> <span class="n">stationary</span>
+ 
+<span class="c1"># How</span>
+ <span class="o">-</span> <span class="n">Hand</span> <span class="n">gestures</span><span class="p">:</span> 
+<span class="n">Trained</span> <span class="n">a</span> <span class="n">few</span> <span class="n">models</span> <span class="n">using</span> <span class="n">video</span> <span class="n">samples</span> <span class="kn">from</span> <span class="nn">here</span><span class="p">:</span> <span class="p">(</span><span class="n">pretend</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">link</span> <span class="n">here</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Updated</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">view</span> <span class="n">to</span> <span class="n">include</span> <span class="n">new</span> <span class="n">gestures</span><span class="o">.</span>
+ <span class="o">-</span> <span class="n">Mouse</span> <span class="n">jiggling</span> <span class="n">fix</span><span class="p">:</span>
+<span class="n">Added</span> <span class="n">a</span> <span class="n">small</span> <span class="n">motion</span> <span class="n">radius</span> <span class="n">around</span> <span class="n">each</span> <span class="n">hand</span> <span class="n">joint</span> 
+<span class="n">which</span> <span class="n">diables</span> <span class="n">mouse</span> <span class="n">movement</span> <span class="n">unless</span> <span class="n">the</span> <span class="n">joint</span> <span class="n">goes</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">radius</span><span class="o">.</span>
+<span class="c1"># Why</span>
+ <span class="o">-</span> <span class="n">Hand</span> <span class="n">gestures</span><span class="p">:</span> <span class="n">Dean</span> <span class="n">asked</span> <span class="n">me</span>
+ <span class="o">-</span> <span class="n">Mouse</span> <span class="n">jiggling</span> <span class="n">fix</span><span class="p">:</span> 
+<span class="n">It</span> <span class="n">prevented</span> <span class="n">featureX</span> <span class="n">to</span> <span class="n">work</span> <span class="ow">and</span> <span class="n">it</span> <span class="n">generally</span> <span class="n">just</span> <span class="n">annoyed</span> <span class="n">the</span> <span class="n">hell</span> <span class="n">out</span> <span class="n">of</span> <span class="n">me</span><span class="o">.</span>
+<span class="c1"># Testing</span>
+<span class="n">Used</span> <span class="n">X</span> <span class="n">framework</span> <span class="k">for</span> <span class="n">unit</span> <span class="n">tests</span>
+<span class="n">Compiled</span> <span class="n">the</span> <span class="n">project</span> <span class="ow">and</span> <span class="n">attempted</span> <span class="n">evey</span> <span class="n">gesture</span> <span class="n">by</span> <span class="n">myself</span> <span class="ow">and</span> <span class="n">forced</span> <span class="nb">all</span> <span class="n">fo</span> <span class="n">my</span> <span class="n">friends</span> <span class="n">to</span> <span class="n">do</span> <span class="n">the</span> <span class="n">same</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="code-quality">
+<h2>Code quality<a class="headerlink" href="#code-quality" title="Permalink to this headline"></a></h2>
+<p><strong>PLEASE</strong> document your code. Reviewers will <strong>NOT</strong> merge your branch until its properly documented.</p>
+<p><strong>PLEASE</strong> Compile and test your code. Reviewers will <strong>NOT</strong> merge your branch until your code is compilable.</p>
+</section>
 </section>
 <section id="documentation">
 <h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h1>

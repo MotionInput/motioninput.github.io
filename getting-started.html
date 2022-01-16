@@ -40,8 +40,17 @@
               <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Setting Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#notes">Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adding-features">Adding Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-events">Adding events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-gestures">Adding Gestures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-primitives">Adding primitives</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -79,12 +88,67 @@
              
   <section id="setting-up">
 <h1>Setting Up<a class="headerlink" href="#setting-up" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Expected to be run on Python 3.9 + Windows</p></li>
+<li><p>Make sure you have installed all the libraries in the requirements.txt</p></li>
+<li><p>As we don’t yet have the App layer and the app-specific main.py, we are using the <a class="reference external" href="https://motioninput.github.io/getting-started.html#examples">test files</a> to run the system, so either use one of them or create your own as needed.</p></li>
+</ul>
+</section>
+<section id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h1>
+<p><img alt="Diagram" src="_images/architecture_diagram.png" /></p>
+<p>So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.
+##setup</p>
+<ul class="simple">
+<li><p>Firstly, information for gestures and events are loaded from the database (eventually)</p></li>
+<li><p>The event mapper class is used to initialise the required event classes and add them to the model
+##frame by frame</p></li>
+<li><p>The opencv image is retrieved from the camera class, and using whichever imaging processing library required depending on the module, we detect all ‘landmarks’ from the image, retrieve their coordinates, and pass this information to the raw data class.</p></li>
+<li><p>Process the frame in the Model in following steps:</p>
+<ul>
+<li><p>Updates all position trackers with the RawData provided, which results in a set of primitives that had changed since the last frame.</p></li>
+<li><p>Update all the gesture factories that use the changed primitives, which may create new active Gestures, and consequently (de)activation of some gesture events</p></li>
+<li><p>Update all the active gestures, which may result in deactivation of some of them, and consequently (de)activation of some gesture events</p></li>
+<li><p>Run all active gesture events, which may result in the trigger functions in the events being called.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h1>
+<p>Currently, the repo contains 2 files that are being used to test the system:</p>
+<ol class="simple">
+<li><p>hand_test.py for testing the hand module</p></li>
+<li><p>extremity_trigger_test.py
+Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the LoadConfig file. In particular, the coordinates of the extremity triggers are set manually.</p></li>
+</ol>
 </section>
 <section id="notes">
 <h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Please do keep in mind that this architecture was done on a tight schedule by a smol 2nd year, so I am sure there are some parts of it that were not implemented in the most efficient manner. So if you have an idea of how to improve something let me know.</p></li>
+<li><p>If there is some functionality missing from the core that you need, feel free to let me know. If it makes sense I will add it or make the needed changes.</p></li>
+<li><p>If there are any primitives/gestures/events/event_handlers that you are missing feel free to add them in yourself (as in please do we really could use some help here:))</p></li>
+</ul>
+<p>-xoxo Carmen</p>
+<section id="adding-features">
+<h2>Adding Features<a class="headerlink" href="#adding-features" title="Permalink to this headline"></a></h2>
+<section id="adding-events">
+<h3>Adding events<a class="headerlink" href="#adding-events" title="Permalink to this headline"></a></h3>
+<p>Create a new class extending the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent">GestureEvent</a> class from the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#">core</a> module. (many examples are available in the gesture_events folder)
+You can check the currently available gestures in the GestureLoader class (script.gesture_loader.py) and in case the gestures you need are not available feel free to add a new gesture.</p>
+</section>
+<section id="adding-gestures">
+<h3>Adding Gestures<a class="headerlink" href="#adding-gestures" title="Permalink to this headline"></a></h3>
+<p>Adding new <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture.Gesture">Gestures</a> is as easy as adding one line to the script.gesture_loader.py file, with just the name of the gesture and a set of all the primitives it uses. (again plenty of examples already available)
+In case the primitives you need are not available feel free to add a new primitive.</p>
+</section>
+<section id="adding-primitives">
+<h3>Adding primitives<a class="headerlink" href="#adding-primitives" title="Permalink to this headline"></a></h3>
+<p>Now adding primitives is a bit trickier and definitely should not be done too often, as unlike Gestures and GestureEvents the primitives affect the efficiency of processing each frame, as for every frame we calculate the states of all the primitives.
+Adding primitives is done in the specific modules <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.position.Position">Position</a> classes (so currently in the HandPosition and the BodyPosition classes)</p>
+</section>
+</section>
 </section>
 
 
