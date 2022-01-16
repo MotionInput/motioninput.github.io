@@ -103,7 +103,17 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_gesture.HandGesture.update" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Records the current Position of the bodypart this Gesture was created from. With that Position checks if the Gesture still remains active (if all the states of the primitives of interest are in the required states)
+(This function is inteded to be called each frame until the Gesture deactivates)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current state of the Gesture</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_gesture.HandGesture.get_name">
@@ -138,8 +148,17 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_landmark_detector.HandLandmarkDetector.getRawData">
-<span class="sig-name descname"><span class="pre">getRawData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_landmark_detector.HandLandmarkDetector.getRawData" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">getRawData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_landmark_detector.HandLandmarkDetector.getRawData" title="Permalink to this definition"></a></dt>
+<dd><p>Adds the xyz coordinates of all the hand landmarks detected on the image into the RawData instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_data</strong> (<a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><em>RawData</em></a>) – RawData instance to add the landmarks to</p></li>
+<li><p><strong>image</strong> (<em>ndarray</em>) – Image to proccess with mediapipe and read the landmarks locations from</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -150,48 +169,58 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_primitive">
 <span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_primitive" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the state of the given primitive in the Position if it has been calcualated.
+Returns None If the primitive has not been calculated, hendce if it either is not defined for current module or the land marks needed to calcualte it were not provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the primitive (e.g. “palm_facing_camera” or “index_pinched”)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>state of the primitive</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[bool]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_landmark">
 <span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_landmark" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the coordinates of the landmark.
+Returns None if the landmarks was not provided to the Position on initialization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the landmark (e.g. “index_tip” or “wrist”)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinates of the landmark</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_palm_height">
 <span class="sig-name descname"><span class="pre">get_palm_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_palm_height" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the distance between the wrist and the base of the middle finger</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_finger_tilted_left">
 <span class="sig-name descname"><span class="pre">get_finger_tilted_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_finger_tilted_left" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns weather the given finger is tilted to the left from the users perspective.
+Tilted left is defined as the tip of the finger being further left than the wrist.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_finger_tilted_right">
 <span class="sig-name descname"><span class="pre">get_finger_tilted_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_finger_tilted_right" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_finger_front_back_tilt">
-<span class="sig-name descname"><span class="pre">get_finger_front_back_tilt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_finger_front_back_tilt" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
+<dd><p>Returns weather the given finger is tilted to the right from the users perspective.
+Tilted right is defined as the tip of the finger being further right than the wrist.</p>
 </dd></dl>
-
-<span class="target" id="module-scripts.hand_module.idle_hand_position"></span><dl class="py class">
-<dt class="sig sig-object py" id="scripts.hand_module.idle_hand_position.IdleHandPosition">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IdleHandPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.hand_module.idle_hand_position.IdleHandPosition" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.hand_module.idle_hand_position.IdleHandPosition.get_primitive">
-<span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.hand_module.idle_hand_position.IdleHandPosition.get_primitive" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.hand_module.idle_hand_position.IdleHandPosition.get_landmark">
-<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></span><a class="headerlink" href="#scripts.hand_module.idle_hand_position.IdleHandPosition.get_landmark" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 

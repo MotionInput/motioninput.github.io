@@ -113,7 +113,17 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture.Gesture.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.core.gesture.Gesture.update" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Records the current Position of the bodypart this Gesture was created from. With that Position checks if the Gesture still remains active (if all the states of the primitives of interest are in the required states)
+(This function is inteded to be called each frame until the Gesture deactivates)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current state of the Gesture</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -128,13 +138,15 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.set_bodypart_names">
-<span class="sig-name descname"><span class="pre">set_bodypart_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valid_bodyparts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.set_bodypart_names" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_bodypart_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.set_bodypart_names" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.update" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Checks the event firing conditionas and then may call according trigger functions.
+(the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_state">
@@ -144,12 +156,26 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.notify_gesture_activated">
 <span class="sig-name descname"><span class="pre">notify_gesture_activated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.notify_gesture_activated" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Notifies that a new gesture of the same type that is used by the GestureEvent has activated.
+If the activated gesture has the correct bodypart name and gesture type combination, it is stored in the GestureEvent instance. The state of the GestureEvent is then checked in case the activation of the gesture changed it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gesture</strong> (<a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><em>Gesture</em></a>) – the gesture that activated</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.notify_gesture_deactivated">
 <span class="sig-name descname"><span class="pre">notify_gesture_deactivated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.notify_gesture_deactivated" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Notifies that a new gesture of the same type that is used by the GestureEvent has deactivated.
+If the deactivated gesture was previously stored in the GestureEvent instance it is now removed (although there may be cases where it is kept to perform calculations later). The state of the GestureEvent is then checked in case the deactivation of the gesture changed it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gesture</strong> (<a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><em>Gesture</em></a>) – the gesture that deactivated</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_all_used_gestures">
@@ -159,6 +185,11 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_event_trigger_types">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_event_trigger_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.get_event_trigger_types" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_bodypart_types">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_bodypart_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.get_bodypart_types" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -188,7 +219,19 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_factory.GestureFactory.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><span class="pre">scripts.core.position_tracker.PositionTracker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.gesture_factory.GestureFactory.update" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Creates an instance of the gesture it represents if the current position in the provided tracker matches the gesture criteria (if all the primitives of interest are in needed states)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tracker</strong> (<a class="reference internal" href="#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><em>PositionTracker</em></a>) – tracker containing the current position to be checked</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new gesture instance if such is created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture">Gesture</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -222,24 +265,44 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.model.Model.proccess_frame">
-<span class="sig-name descname"><span class="pre">proccess_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.proccess_frame" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="scripts.core.model.Model.process_frame">
+<span class="sig-name descname"><span class="pre">process_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.process_frame" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Process the frame in following steps:</dt><dd><p>Updates all position trackers with the RawData provided, which results in a set of primitives that had changed since the last frame.
+Update all the gesture factories that use the changed primitives, which may create new active Gestures, and consequently (de)activation of some gesture events
+Update all the active gestures, which may result in deactivation of some of them, and consequently (de)activation of some gesture events
+Run all active gesture events, which may result in the trigger functions in the events being called.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raw_data</strong> (<a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><em>RawData</em></a>) – RawData instanbce containing all landmarks detected in the frame</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.model.Model.reset">
 <span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.model.Model.reset" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Resets all the position trackers and deactivates all gestures</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.model.Model.set_idle">
 <span class="sig-name descname"><span class="pre">set_idle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.set_idle" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Sets the state of the model to idle, meaning that all the frames will be processed by the idle model that was provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – raises the error if no idle model has been provided</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.model.Model.set_active">
 <span class="sig-name descname"><span class="pre">set_active</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.set_active" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Sets the state of the model to active, meaning that all the frames will be processed ny the model itself again.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.model.Model.get_module_names">
@@ -255,17 +318,51 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position.Position.get_primitive">
 <span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position.Position.get_primitive" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the state of the given primitive in the Position if it has been calcualated.
+Returns None If the primitive has not been calculated, hendce if it either is not defined for current module or the land marks needed to calcualte it were not provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the primitive (e.g. “palm_facing_camera”, “index_pinched” or “punchleft”)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>state of the primitive</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[bool]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position.Position.get_landmark">
 <span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position.Position.get_landmark" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the coordinates of the landmark.
+Returns None if the landmarks was not provided to the Position on initialization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the landmark</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinates of the landmark</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position.Position.get_primitives_names">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_primitives_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position.Position.get_primitives_names" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Names of all primitives that are calcualted by the specific modules Position class on initialization</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -276,22 +373,56 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker.update" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Creates a Position instance out of the provided RawData and compares the state of all the primitives to the previous Position. Returns the list of all the changed primitives.
+If there was no previous position (so if it is the first update() call or if the tracker has been reset) all primitives are considered to have changed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raw_data</strong> (<a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><em>RawData</em></a>) – RawData instance containing all the landmarks coordinates detected in the frame</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>set of changed primitives since the last update() call</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Set[str]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker.get_name">
 <span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker.get_name" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>returns the name of the tracker thus also reflecting the name of the bodypart</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker.get_current_position">
 <span class="sig-name descname"><span class="pre">get_current_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker.get_current_position" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the Position instance generated by the last update() call.
+If there has been no such call or if the tracker has been reset returns None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>last Position instance</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Optional[<a class="reference internal" href="#scripts.core.position.Position" title="scripts.core.position.Position">Position</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker.reset">
 <span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker.reset" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Resets the Tracker instance to the initial state and returns all the changed primitives in doing so.
+Thus the current position is again None and by default all primitives are considered to have changed (unless the tracker was already in the reset state, in which case none of the primitives are considered to have changed)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>set of changed primitives</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Set[str]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -307,12 +438,39 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.raw_data.RawData.get_data">
 <span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.raw_data.RawData.get_data" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the data of the bodypart, if it has been added (aka if it has been detected in the frame)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bodypart_name</strong> (<em>str</em>) – bodypart, the data of which should be returned. e.g. “body” or “Left”</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of all the landmarks added to the specific body part with the name of the landmark as key and the coordinates as value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[Dict[str, <a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.raw_data.RawData.get_landmark">
 <span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmark_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.raw_data.RawData.get_landmark" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the coordinates of the landmark, if it has been added to the specified bodypart (aka if it has been detected in the frame)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bodypart_name</strong> (<em>str</em>) – bodypart that the spacified landmark should belong to e.g. “body” or “Left”</p></li>
+<li><p><strong>landmark_name</strong> (<em>str</em>) – landmark, the coordinate of which should be returned. e.g. “index_tip” or “wrist”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinate of the landmark</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -333,7 +491,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.xyz.xyz.normal">
 <span class="sig-name descname"><span class="pre">normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></span><a class="headerlink" href="#scripts.core.xyz.xyz.normal" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>find the normal of the plane defined by the 3 points (self, other1, other2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the resulting normal originating from self</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

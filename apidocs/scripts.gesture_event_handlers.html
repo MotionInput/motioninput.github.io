@@ -102,8 +102,9 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor">
-<span class="sig-name descname"><span class="pre">move_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">palm_center:</span> <span class="pre">&lt;module</span> <span class="pre">'scripts.core.xyz'</span> <span class="pre">from</span> <span class="pre">'D:\\a\\MI_Windows\\MI_Windows\\scripts\\core\\xyz.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">move_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor" title="Permalink to this definition"></a></dt>
+<dd><p>Translate the camera coordinates into the AOI coordinates. Smooth the movement of the mouse by averaging out the coordinates of the last few frames (as configured). Move the mouse accordingly.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.left_click">
@@ -142,34 +143,78 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.scroll">
-<span class="sig-name descname"><span class="pre">scroll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.scroll" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">scroll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.scroll" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>speed</strong> (<em>float</em>) – speed of scrolling, where positive speed means scrolling down and negative speed scrolling up</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.zoom">
-<span class="sig-name descname"><span class="pre">zoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.zoom" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">zoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.zoom" title="Permalink to this definition"></a></dt>
+<dd><p>Zoom simulating the Ctrl key press with mouse scroller.
+Smooth the zooming by averaging out the coordinates of the last few frames (as configured).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>speed</strong> (<em>float</em>) – speed of the zooming, where positive speed means zooming in and negative speed zooming out</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
 <span class="target" id="module-scripts.gesture_event_handlers.extremity_actions"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mouse</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse" title="scripts.gesture_event_handlers.desktop_mouse.DesktopMouse"><span class="pre">scripts.gesture_event_handlers.desktop_mouse.DesktopMouse</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.keyboard.Keyboard" title="scripts.gesture_event_handlers.keyboard.Keyboard"><span class="pre">scripts.gesture_event_handlers.keyboard.Keyboard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extremity_circles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.extremity_circles.ExtremityCircles" title="scripts.tools.extremity_circles.ExtremityCircles"><span class="pre">scripts.tools.extremity_circles.ExtremityCircles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_circles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.extremity_circles.ExtremityCircles" title="scripts.tools.extremity_circles.ExtremityCircles"><span class="pre">scripts.tools.extremity_circles.ExtremityCircles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.trigger_action">
-<span class="sig-name descname"><span class="pre">trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.trigger_action" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.trigger_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is triggered, if its action type is keydown.
+If the action type is key press, this does not perform a key press because it is done when the extremity is released</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extremity</strong> (<em>str</em>) – name of extremity triggered</p></li>
+<li><p><strong>action_type</strong> (<em>str</em>) – name of action type (key_press, key_down, left_click or right_click)</p></li>
+<li><p><strong>repeats</strong> (<em>int</em>) – number of times the extremity has been repeated</p></li>
+<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – name of the key associated with the action, if any</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.held_action">
-<span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.held_action" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.held_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is held. This is only when the action type is keydown</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action_type</strong> (<em>str</em>) – name of action type (key_press, key_down, left_click or right_click)</p></li>
+<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – name of the key associated with the action, if any</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action">
-<span class="sig-name descname"><span class="pre">release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is released.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extremity</strong> (<em>str</em>) – name of extremity triggered</p></li>
+<li><p><strong>action_type</strong> (<em>str</em>) – name of action type (key_press, key_down, left_click or right_click)</p></li>
+<li><p><strong>repeats</strong> (<em>int</em>) – number of times the extremity has been repeated</p></li>
+<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – name of the key associated with the action, if any</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -210,11 +255,6 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.key_up">
 <span class="sig-name descname"><span class="pre">key_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.key_up" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.run_thread">
-<span class="sig-name descname"><span class="pre">run_thread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.run_thread" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
