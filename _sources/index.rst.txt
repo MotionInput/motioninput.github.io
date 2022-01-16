@@ -15,6 +15,7 @@ Welcome to Motion Input's documentation!
 
    
 .. toctree::
+   :maxdepth: 1
    :caption: Getting Started
 
    getting-started
@@ -28,8 +29,15 @@ Welcome to Motion Input's documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: API reference
+   :caption: API refernece
 
-   apidocs/modules
+   apidocs/scripts.core
+   apidocs/scripts.hand_module
+   apidocs/scripts.body_module
+   apidocs/scripts.gesture_events
+   apidocs/scripts.gesture_event_handlers
+   apidocs/scripts.tools
+   apidocs/scripts.gesture_loader
+   apidocs/scripts.event_mapper
 
    

@@ -23,23 +23,10 @@ Subpackages
    :show-inheritance:
 
 
-.. automodule:: scripts.tools.event_mapper
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
 .. automodule:: scripts.tools.extremity_circles
    :members:
    :undoc-members:
    :show-inheritance:
-
-
-.. automodule:: scripts.tools.gesture_loader
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 
 .. automodule:: scripts.tools.settings
    :members:

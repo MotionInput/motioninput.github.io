@@ -46,9 +46,16 @@
 <li class="toctree-l1"><a class="reference internal" href="development.html">Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="development.html#documentation">Documentation</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">API reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">API refernece</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/modules.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.core.html">scripts.core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.hand_module.html">scripts.hand_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.body_module.html">scripts.body_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_events.html">scripts.gesture_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.tools.html">scripts.tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_loader.html">scripts.gesture_loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.event_mapper.html">scripts.event_mapper</a></li>
 </ul>
 
         </div>
@@ -106,7 +113,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_event">add_event() (Model method)</a>
 </li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.add_events_to_model">add_events_to_model() (EventMapper method)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_gesture">add_gesture() (Model method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_loader.html#scripts.gesture_loader.GestureLoader.add_gestures_to_model">add_gestures_to_model() (GestureLoader method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_idle_model">add_idle_model() (Model method)</a>
 </li>
@@ -115,6 +126,10 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_module">add_module() (Model method)</a>
+</li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.add_new_event">add_new_event() (EventMapper method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_loader.html#scripts.gesture_loader.GestureLoader.add_new_gesture">add_new_gesture() (GestureLoader method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_position_tracker">add_position_tracker() (Model method)</a>
 </li>
@@ -146,14 +161,20 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera">Camera (class in scripts.tools.camera)</a>
 </li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.change_event_args">change_event_args() (EventMapper method)</a>
+</li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.change_event_bodyparts">change_event_bodyparts() (EventMapper method)</a>
+</li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.change_event_triggers">change_event_triggers() (EventMapper method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera.close">close() (Camera method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.close">(View method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.area_of_interest.AreaOfInterest.convert_xy">convert_xy() (AreaOfInterest method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_trigger_event.CustomExtremityEvent">CustomExtremityEvent (class in scripts.gesture_events.extremity_trigger_event)</a>
@@ -184,12 +205,14 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_position.extractChannel">extractChannel() (in module scripts.body_module.body_position)</a>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper">EventMapper (class in scripts.event_mapper)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions">ExtremityActions (class in scripts.gesture_event_handlers.extremity_actions)</a>
+      <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_position.extractChannel">extractChannel() (in module scripts.body_module.body_position)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions">ExtremityActions (class in scripts.gesture_event_handlers.extremity_actions)</a>
+</li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.extremity_circles.ExtremityCircles">ExtremityCircles (class in scripts.tools.extremity_circles)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent">ExtremityTriggerEvent (class in scripts.gesture_events.extremity_trigger_event)</a>
@@ -217,6 +240,8 @@
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.GestureEvents">GestureEvents (class in scripts.gesture_events)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.GestureFactory">GestureFactory (class in scripts.core.gesture_factory)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_loader.html#scripts.gesture_loader.GestureLoader">GestureLoader (class in scripts.gesture_loader)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.get_all_used_gestures">get_all_used_gestures() (GestureEvent class method)</a>
 </li>
@@ -398,8 +423,6 @@
     module
 
       <ul>
-        <li><a href="apidocs/scripts.html#module-scripts">scripts</a>
-</li>
         <li><a href="apidocs/scripts.body_module.html#module-scripts.body_module">scripts.body_module</a>
 </li>
         <li><a href="apidocs/scripts.body_module.html#module-scripts.body_module.body_gesture">scripts.body_module.body_gesture</a>
@@ -428,6 +451,8 @@
 </li>
         <li><a href="apidocs/scripts.core.html#module-scripts.core.xyz">scripts.core.xyz</a>
 </li>
+        <li><a href="apidocs/scripts.event_mapper.html#module-scripts.event_mapper">scripts.event_mapper</a>
+</li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers">scripts.gesture_event_handlers</a>
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_mouse">scripts.gesture_event_handlers.desktop_mouse</a>
@@ -455,6 +480,8 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.simple_gesture_event">scripts.gesture_events.simple_gesture_event</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.zoom_event">scripts.gesture_events.zoom_event</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_loader.html#module-scripts.gesture_loader">scripts.gesture_loader</a>
 </li>
         <li><a href="apidocs/scripts.hand_module.html#module-scripts.hand_module">scripts.hand_module</a>
 </li>
@@ -547,14 +574,18 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action">release_action() (ExtremityActions method)</a>
 </li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.remove_event">remove_event() (EventMapper method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_loader.html#scripts.gesture_loader.GestureLoader.remove_gesture">remove_gesture() (GestureLoader method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.reset">reset() (Model method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.core.html#scripts.core.position_tracker.PositionTracker.reset">(PositionTracker method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.right_arrow_press">right_arrow_press() (Keyboard method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.right_click">right_click() (DesktopMouse method)</a>
@@ -569,13 +600,6 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    scripts
-
-      <ul>
-        <li><a href="apidocs/scripts.html#module-scripts">module</a>
-</li>
-      </ul></li>
       <li>
     scripts.body_module
 
@@ -675,6 +699,13 @@
 </li>
       </ul></li>
       <li>
+    scripts.event_mapper
+
+      <ul>
+        <li><a href="apidocs/scripts.event_mapper.html#module-scripts.event_mapper">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_event_handlers
 
       <ul>
@@ -737,8 +768,6 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.hand_active_event">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.idle_state_change_event
 
@@ -746,6 +775,8 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.idle_state_change_event">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.palm_height_change_event
 
@@ -772,6 +803,13 @@
 
       <ul>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.zoom_event">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_loader
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_loader.html#module-scripts.gesture_loader">module</a>
 </li>
       </ul></li>
       <li>

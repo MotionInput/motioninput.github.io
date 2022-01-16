@@ -40,7 +40,11 @@
               <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Setting Up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#architecture">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#architecture">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frame-by-frame">frame by frame</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#examples">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#notes">Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#adding-features">Adding Features</a><ul>
@@ -57,9 +61,16 @@
 <li class="toctree-l1"><a class="reference internal" href="development.html">Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="development.html#documentation">Documentation</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">API reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">API refernece</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/modules.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.core.html">scripts.core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.hand_module.html">scripts.hand_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.body_module.html">scripts.body_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_events.html">scripts.gesture_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.tools.html">scripts.tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_loader.html">scripts.gesture_loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.event_mapper.html">scripts.event_mapper</a></li>
 </ul>
 
         </div>
@@ -97,12 +108,17 @@
 <section id="architecture">
 <h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h1>
 <p><img alt="Diagram" src="_images/architecture_diagram.png" /></p>
-<p>So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.
-##setup</p>
+<p>So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.</p>
+<section id="setup">
+<h2>setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Firstly, information for gestures and events are loaded from the database (eventually)</p></li>
-<li><p>The event mapper class is used to initialise the required event classes and add them to the model
-##frame by frame</p></li>
+<li><p>The event mapper class is used to initialise the required event classes and add them to the model</p></li>
+</ul>
+</section>
+<section id="frame-by-frame">
+<h2>frame by frame<a class="headerlink" href="#frame-by-frame" title="Permalink to this headline"></a></h2>
+<ul class="simple">
 <li><p>The opencv image is retrieved from the camera class, and using whichever imaging processing library required depending on the module, we detect all ‘landmarks’ from the image, retrieve their coordinates, and pass this information to the raw data class.</p></li>
 <li><p>Process the frame in the Model in following steps:</p>
 <ul>
@@ -113,6 +129,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </section>
 <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h1>
@@ -135,7 +152,7 @@ Note: Currently, for the extremity triggers in the body module, hardcoded calibr
 <h2>Adding Features<a class="headerlink" href="#adding-features" title="Permalink to this headline"></a></h2>
 <section id="adding-events">
 <h3>Adding events<a class="headerlink" href="#adding-events" title="Permalink to this headline"></a></h3>
-<p>Create a new class extending the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent">GestureEvent</a> class from the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#">core</a> module. (many examples are available in the gesture_events folder)
+<p>Create a new class extending the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.gesture_events.html">GestureEvent</a> class from the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#">core</a> module. (many examples are available in the gesture_events folder)
 You can check the currently available gestures in the GestureLoader class (script.gesture_loader.py) and in case the gestures you need are not available feel free to add a new gesture.</p>
 </section>
 <section id="adding-gestures">

@@ -7,10 +7,12 @@
 ![Diagram](./architecture_diagram.png)
 
 So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.
-##setup
+
+## setup
 - Firstly, information for gestures and events are loaded from the database (eventually)
 - The event mapper class is used to initialise the required event classes and add them to the model
-##frame by frame
+
+## frame by frame
 - The opencv image is retrieved from the camera class, and using whichever imaging processing library required depending on the module, we detect all ‘landmarks’ from the image, retrieve their coordinates, and pass this information to the raw data class.
 - Process the frame in the Model in following steps:
     - Updates all position trackers with the RawData provided, which results in a set of primitives that had changed since the last frame.
@@ -34,13 +36,13 @@ Note: Currently, for the extremity triggers in the body module, hardcoded calibr
 
 ## Adding Features
 ### Adding events
-Create a new class extending the [GestureEvent](https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent) class from the [core](https://motioninput.github.io/apidocs/scripts.core.html#) module. (many examples are available in the gesture_events folder)
+Create a new class extending the [GestureEvent](https://motioninput.github.io/apidocs/scripts.gesture_events.html) class from the [core](https://motioninput.github.io/apidocs/scripts.core.html#) module. (many examples are available in the gesture_events folder)
 You can check the currently available gestures in the GestureLoader class (script.gesture_loader.py) and in case the gestures you need are not available feel free to add a new gesture.
-	
+
 ### Adding Gestures
 Adding new [Gestures](https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture.Gesture) is as easy as adding one line to the script.gesture_loader.py file, with just the name of the gesture and a set of all the primitives it uses. (again plenty of examples already available)
 In case the primitives you need are not available feel free to add a new primitive.
-	
+
 ### Adding primitives
 Now adding primitives is a bit trickier and definitely should not be done too often, as unlike Gestures and GestureEvents the primitives affect the efficiency of processing each frame, as for every frame we calculate the states of all the primitives.
 Adding primitives is done in the specific modules [Position](https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.position.Position) classes (so currently in the HandPosition and the BodyPosition classes)

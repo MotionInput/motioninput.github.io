@@ -20,12 +20,6 @@ scripts.hand\_module
    :undoc-members:
    :show-inheritance:
 
-
-.. automodule:: scripts.hand_module.idle_hand_position
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 
