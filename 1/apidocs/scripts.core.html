@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scripts.core &mdash; Motion Input v3 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="scripts.hand_module" href="scripts.hand_module.html" />
+    <link rel="prev" title="Guidelines" href="../development.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Motion Input
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html#documentation">Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API refernece</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">scripts.core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-scripts.core">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.hand_module.html">scripts.hand_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.body_module.html">scripts.body_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.gesture_events.html">scripts.gesture_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.tools.html">scripts.tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.gesture_loader.html">scripts.gesture_loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.event_mapper.html">scripts.event_mapper</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Motion Input</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>scripts.core</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/scripts.core.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-scripts.core.gesture">
+<span id="scripts-core"></span><h1>scripts.core<a class="headerlink" href="#module-scripts.core.gesture" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.gesture.Gesture">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Gesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_checker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><span class="pre">scripts.core.position_tracker.PositionTracker</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture.Gesture" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture.Gesture.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.core.gesture.Gesture.get_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture.Gesture.get_bodypart_name">
+<span class="sig-name descname"><span class="pre">get_bodypart_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.core.gesture.Gesture.get_bodypart_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture.Gesture.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.core.gesture.Gesture.update" title="Permalink to this definition"></a></dt>
+<dd><p>Records the current Position of the bodypart this Gesture was created from. With that Position checks if the Gesture still remains active (if all the states of the primitives of interest are in the required states)
+(This function is inteded to be called each frame until the Gesture deactivates)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current state of the Gesture</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.core.gesture_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GestureEvent</span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.set_trigger_functions">
+<span class="sig-name descname"><span class="pre">set_trigger_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funcs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.set_trigger_functions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.set_bodypart_names">
+<span class="sig-name descname"><span class="pre">set_bodypart_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.set_bodypart_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.update" title="Permalink to this definition"></a></dt>
+<dd><p>Checks the event firing conditionas and then may call according trigger functions.
+(the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_state">
+<span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.get_state" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.notify_gesture_activated">
+<span class="sig-name descname"><span class="pre">notify_gesture_activated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.notify_gesture_activated" title="Permalink to this definition"></a></dt>
+<dd><p>Notifies that a new gesture of the same type that is used by the GestureEvent has activated.
+If the activated gesture has the correct bodypart name and gesture type combination, it is stored in the GestureEvent instance. The state of the GestureEvent is then checked in case the activation of the gesture changed it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gesture</strong> (<a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><em>Gesture</em></a>) – the gesture that activated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.notify_gesture_deactivated">
+<span class="sig-name descname"><span class="pre">notify_gesture_deactivated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.notify_gesture_deactivated" title="Permalink to this definition"></a></dt>
+<dd><p>Notifies that a new gesture of the same type that is used by the GestureEvent has deactivated.
+If the deactivated gesture was previously stored in the GestureEvent instance it is now removed (although there may be cases where it is kept to perform calculations later). The state of the GestureEvent is then checked in case the deactivation of the gesture changed it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gesture</strong> (<a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><em>Gesture</em></a>) – the gesture that deactivated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_all_used_gestures">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_all_used_gestures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.get_all_used_gestures" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_event_trigger_types">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_event_trigger_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.get_event_trigger_types" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_bodypart_types">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_bodypart_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.get_bodypart_types" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.core.gesture_factory"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.gesture_factory.Primitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_factory.Primitive" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.core.gesture_factory.Primitive.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#scripts.core.gesture_factory.Primitive.name" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.core.gesture_factory.Primitive.state">
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#scripts.core.gesture_factory.Primitive.state" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.gesture_factory.GestureFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GestureFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.gesture_factory.Primitive" title="scripts.core.gesture_factory.Primitive"><span class="pre">scripts.core.gesture_factory.Primitive</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.gesture_factory.GestureFactory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_factory.GestureFactory.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><span class="pre">scripts.core.position_tracker.PositionTracker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.gesture_factory.GestureFactory.update" title="Permalink to this definition"></a></dt>
+<dd><p>Creates an instance of the gesture it represents if the current position in the provided tracker matches the gesture criteria (if all the primitives of interest are in needed states)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tracker</strong> (<a class="reference internal" href="#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><em>PositionTracker</em></a>) – tracker containing the current position to be checked</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new gesture instance if such is created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture">Gesture</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.core.model"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.model.Model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Model</span></span><a class="headerlink" href="#scripts.core.model.Model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.add_idle_model">
+<span class="sig-name descname"><span class="pre">add_idle_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idle_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.model.Model" title="scripts.core.model.Model"><span class="pre">scripts.core.model.Model</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.add_idle_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.add_module">
+<span class="sig-name descname"><span class="pre">add_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><span class="pre">scripts.core.gesture.Gesture</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.add_module" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.add_event">
+<span class="sig-name descname"><span class="pre">add_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.gesture_event.GestureEvent" title="scripts.core.gesture_event.GestureEvent"><span class="pre">scripts.core.gesture_event.GestureEvent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.add_event" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.add_gesture">
+<span class="sig-name descname"><span class="pre">add_gesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.gesture_factory.Primitive" title="scripts.core.gesture_factory.Primitive"><span class="pre">scripts.core.gesture_factory.Primitive</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.add_gesture" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.add_position_tracker">
+<span class="sig-name descname"><span class="pre">add_position_tracker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.add_position_tracker" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.process_frame">
+<span class="sig-name descname"><span class="pre">process_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.process_frame" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Process the frame in following steps:</dt><dd><p>Updates all position trackers with the RawData provided, which results in a set of primitives that had changed since the last frame.
+Update all the gesture factories that use the changed primitives, which may create new active Gestures, and consequently (de)activation of some gesture events
+Update all the active gestures, which may result in deactivation of some of them, and consequently (de)activation of some gesture events
+Run all active gesture events, which may result in the trigger functions in the events being called.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raw_data</strong> (<a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><em>RawData</em></a>) – RawData instanbce containing all landmarks detected in the frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.model.Model.reset" title="Permalink to this definition"></a></dt>
+<dd><p>Resets all the position trackers and deactivates all gestures</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.set_idle">
+<span class="sig-name descname"><span class="pre">set_idle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.set_idle" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the state of the model to idle, meaning that all the frames will be processed by the idle model that was provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – raises the error if no idle model has been provided</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.set_active">
+<span class="sig-name descname"><span class="pre">set_active</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.set_active" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the state of the model to active, meaning that all the frames will be processed ny the model itself again.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.model.Model.get_module_names">
+<span class="sig-name descname"><span class="pre">get_module_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span></span></span><a class="headerlink" href="#scripts.core.model.Model.get_module_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.core.position"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.position.Position">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.position.Position" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.position.Position.get_primitive">
+<span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position.Position.get_primitive" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the state of the given primitive in the Position if it has been calcualated.
+Returns None If the primitive has not been calculated, hendce if it either is not defined for current module or the land marks needed to calcualte it were not provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the primitive (e.g. “palm_facing_camera”, “index_pinched” or “punchleft”)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>state of the primitive</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[bool]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.position.Position.get_landmark">
+<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position.Position.get_landmark" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the coordinates of the landmark.
+Returns None if the landmarks was not provided to the Position on initialization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the landmark</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinates of the landmark</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.position.Position.get_primitives_names">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_primitives_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position.Position.get_primitives_names" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Names of all primitives that are calcualted by the specific modules Position class on initialization</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.core.position_tracker"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositionTracker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker.update" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a Position instance out of the provided RawData and compares the state of all the primitives to the previous Position. Returns the list of all the changed primitives.
+If there was no previous position (so if it is the first update() call or if the tracker has been reset) all primitives are considered to have changed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raw_data</strong> (<a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><em>RawData</em></a>) – RawData instance containing all the landmarks coordinates detected in the frame</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>set of changed primitives since the last update() call</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Set[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker.get_name" title="Permalink to this definition"></a></dt>
+<dd><p>returns the name of the tracker thus also reflecting the name of the bodypart</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker.get_current_position">
+<span class="sig-name descname"><span class="pre">get_current_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker.get_current_position" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Position instance generated by the last update() call.
+If there has been no such call or if the tracker has been reset returns None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>last Position instance</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Optional[<a class="reference internal" href="#scripts.core.position.Position" title="scripts.core.position.Position">Position</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.position_tracker.PositionTracker.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position_tracker.PositionTracker.reset" title="Permalink to this definition"></a></dt>
+<dd><p>Resets the Tracker instance to the initial state and returns all the changed primitives in doing so.
+Thus the current position is again None and by default all primitives are considered to have changed (unless the tracker was already in the reset state, in which case none of the primitives are considered to have changed)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>set of changed primitives</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Set[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.core.raw_data"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.raw_data.RawData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RawData</span></span><a class="headerlink" href="#scripts.core.raw_data.RawData" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.raw_data.RawData.add_landmark">
+<span class="sig-name descname"><span class="pre">add_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmark_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.raw_data.RawData.add_landmark" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.raw_data.RawData.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.raw_data.RawData.get_data" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the data of the bodypart, if it has been added (aka if it has been detected in the frame)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bodypart_name</strong> (<em>str</em>) – bodypart, the data of which should be returned. e.g. “body” or “Left”</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of all the landmarks added to the specific body part with the name of the landmark as key and the coordinates as value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[Dict[str, <a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.raw_data.RawData.get_landmark">
+<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmark_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.raw_data.RawData.get_landmark" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the coordinates of the landmark, if it has been added to the specified bodypart (aka if it has been detected in the frame)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bodypart_name</strong> (<em>str</em>) – bodypart that the spacified landmark should belong to e.g. “body” or “Left”</p></li>
+<li><p><strong>landmark_name</strong> (<em>str</em>) – landmark, the coordinate of which should be returned. e.g. “index_tip” or “wrist”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinate of the landmark</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.core.xyz"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.core.xyz.xyz">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.xyz.xyz" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.xyz.xyz.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#scripts.core.xyz.xyz.distance" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.xyz.xyz.middle_point">
+<span class="sig-name descname"><span class="pre">middle_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></span><a class="headerlink" href="#scripts.core.xyz.xyz.middle_point" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.xyz.xyz.normal">
+<span class="sig-name descname"><span class="pre">normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></span><a class="headerlink" href="#scripts.core.xyz.xyz.normal" title="Permalink to this definition"></a></dt>
+<dd><p>find the normal of the plane defined by the 3 points (self, other1, other2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the resulting normal originating from self</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="module-scripts.core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.core" title="Permalink to this headline"></a></h2>
+<p>stuff text</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../development.html" class="btn btn-neutral float-left" title="Guidelines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scripts.hand_module.html" class="btn btn-neutral float-right" title="scripts.hand_module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Carmen Meinson, Jason Ho, Radu Priboi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

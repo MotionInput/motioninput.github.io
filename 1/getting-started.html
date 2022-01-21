@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting Up &mdash; Motion Input v3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Guidelines" href="development.html" />
+    <link rel="prev" title="Welcome to Motion Input’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Motion Input
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setting Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#architecture">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frame-by-frame">frame by frame</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#notes">Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adding-features">Adding Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-gestureevents">Adding GestureEvents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-gestures">Adding Gestures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-primitives">Adding Primitives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-event-handlers">Adding event handlers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html#documentation">Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API refernece</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.core.html">scripts.core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.hand_module.html">scripts.hand_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.body_module.html">scripts.body_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_events.html">scripts.gesture_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.tools.html">scripts.tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_loader.html">scripts.gesture_loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.event_mapper.html">scripts.event_mapper</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Motion Input</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Setting Up</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/getting-started.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="setting-up">
+<h1>Setting Up<a class="headerlink" href="#setting-up" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Expected to be run on Python 3.9 + Windows</p></li>
+<li><p>Make sure you have installed all the libraries in the requirements.txt</p></li>
+<li><p>As we don’t yet have the App layer and the app-specific main.py, we are using the <a class="reference external" href="https://motioninput.github.io/getting-started.html#examples">test files</a> to run the system, so either use one of them or create your own as needed.</p></li>
+</ul>
+</section>
+<section id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h1>
+<p><img alt="Diagram" src="_images/architecture_diagram.png" /></p>
+<p>So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.</p>
+<section id="setup">
+<h2>setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Firstly, information for gestures and events are loaded from the database (eventually)</p></li>
+<li><p>The event mapper class is used to initialise the required event classes and add them to the model</p></li>
+</ul>
+</section>
+<section id="frame-by-frame">
+<h2>frame by frame<a class="headerlink" href="#frame-by-frame" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>The opencv image is retrieved from the camera class, and using whichever imaging processing library required depending on the module, we detect all ‘landmarks’ from the image, retrieve their coordinates, and pass this information to the raw data class.</p></li>
+<li><p>Process the frame in the Model in following steps:</p>
+<ul>
+<li><p>Updates all position trackers with the RawData provided, which results in a set of primitives that had changed since the last frame.</p></li>
+<li><p>Update all the gesture factories that use the changed primitives, which may create new active Gestures, and consequently (de)activation of some gesture events</p></li>
+<li><p>Update all the active gestures, which may result in deactivation of some of them, and consequently (de)activation of some gesture events</p></li>
+<li><p>Run all active gesture events, which may result in the trigger functions in the events being called.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h1>
+<p>We are aiming to soon have just a main.py file and some config files for testing/using the system with easily configurable functionality.</p>
+<p>However, as we are not quite there yet currently, the repo contains 4 files that are being used to test the system:</p>
+<ol class="simple">
+<li><p>hand_test.py for testing the hand module (configured for a lefthanded user)</p></li>
+<li><p>touchpoint_test.py to test the touchpoin feature (currently only recognizes a single tap)</p></li>
+<li><p>exercise_test.py</p></li>
+<li><p>extremity_trigger_test.py
+Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the LoadConfig file. In particular, the coordinates of the extremity triggers are set manually.</p></li>
+</ol>
+</section>
+<section id="notes">
+<h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Please do keep in mind that this architecture was done on a tight schedule by a smol 2nd year, so I am sure there are some parts of it that were not implemented in the most efficient manner. So if you have an idea of how to improve something let me know.</p></li>
+<li><p>If there is some functionality missing from the core that you need, feel free to let me know. If it makes sense I will add it or make the needed changes.</p></li>
+<li><p>If there are any primitives/gestures/events/event_handlers that you are missing feel free to add them in yourself (as in please do we really could use some help here:))</p></li>
+</ul>
+<p>-xoxo Carmen</p>
+<section id="adding-features">
+<h2>Adding Features<a class="headerlink" href="#adding-features" title="Permalink to this headline"></a></h2>
+<section id="adding-gestureevents">
+<h3>Adding GestureEvents<a class="headerlink" href="#adding-gestureevents" title="Permalink to this headline"></a></h3>
+<p>Create a new class extending the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.gesture_events.html">GestureEvent</a> class from the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#">core</a> module (many examples are available in the gesture_events folder).
+You can check the currently available gestures in the GestureLoader class (script.gesture_loader.py) and in case the gestures you need are not available feel free to add a new <a class="reference external" href="https://motioninput.github.io/getting-started.html#adding-gestures">Gesture</a>.
+Once you have added the event class into the gesture_events folder, you need to add it to the folders __init__.py file in the same way the previous events were added, in order for the EventMapper to have access to it. Now if you want to actually add the event into your Model and use it first you need to add it into the event_mapper.py as the other events have been added (this is where you map the events triggers to actual functions from the gesture event handlers and if the handlers you require are not available to you feel free to <a class="reference external" href="https://motioninput.github.io/getting-started.html#adding-event-handlers">add a new event handler</a>).
+Now you are all set and should be able to use the gesture event after adding it to the Model in your test file.</p>
+</section>
+<section id="adding-gestures">
+<h3>Adding Gestures<a class="headerlink" href="#adding-gestures" title="Permalink to this headline"></a></h3>
+<p>Adding new <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture.Gesture">Gestures</a> is as easy as adding one line to the script.gesture_loader.py file, with just the name of the gesture and a set of all the primitives it uses. (again plenty of examples already available)
+In case the primitives you need are not available feel free to add a new <a class="reference external" href="https://motioninput.github.io/getting-started.html#adding-primitives">primitive</a>.</p>
+</section>
+<section id="adding-primitives">
+<h3>Adding Primitives<a class="headerlink" href="#adding-primitives" title="Permalink to this headline"></a></h3>
+<p>Now adding primitives is a bit trickier and definitely should not be done too often, as unlike Gestures and GestureEvents the primitives affect the efficiency of processing each frame, as for every frame we calculate the states of all the primitives.
+Adding primitives is done in the specific modules <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.position.Position">Position</a> classes (so currently in the HandPositio, BodyPosition and ExercisePosition classes)</p>
+</section>
+<section id="adding-event-handlers">
+<h3>Adding event handlers<a class="headerlink" href="#adding-event-handlers" title="Permalink to this headline"></a></h3>
+<p>Event handlers (classes that contain all the functions that are called by GestureEvents and are responsible for actually controlling the users computer e.g. moving the mouse or pressing keys) are stored in the gesture_event_handlers folder. If you have added any new classes or new functions to already exicsting handler classes, please first add them to the __init__.py file in the gesture_event_handlers folder in the same manner as the previous examples, in order for the EventMapper class to be able to use the new functionality. After this you can now use your handler by mapping GestureEvents to it in the EventMapper class.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Motion Input’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="development.html" class="btn btn-neutral float-right" title="Guidelines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Carmen Meinson, Jason Ho, Radu Priboi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

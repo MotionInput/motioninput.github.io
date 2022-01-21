@@ -1,0 +1,65 @@
+scripts.gesture\_events
+=======================
+
+
+
+.. automodule:: scripts.gesture_events.directX_actions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.extremity_trigger_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.finger_pinch_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.hand_active_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.idle_state_change_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.palm_height_change_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.scroll_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.simple_gesture_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.zoom_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: scripts.gesture_events
+   :members:
+   :undoc-members:
+   :show-inheritance:

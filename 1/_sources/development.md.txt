@@ -1,0 +1,137 @@
+# Guidelines
+## Branches
+
+**We have 2 important branches:**
+ - `main` - Main branch with a stable version of the code
+ - `dev` - Development branch where all of our branches are merged first.
+
+**When you are working on a specific task or a feature:**
+ - Create a branch using one of those naming schemes:
+   - Team branch: `groupnumber-task-name` (i.e. 14-hand-gestures)
+   - Personal branch: `firstname-task-name` (i.e. adi-hand-gestures)
+ - Commit your changes to your branch.
+ - Make a pull request to the `dev` branch
+
+## Pull Requests
+
+When making a pull request follow the [PR-messages](#pr-messages) structure
+
+Once you've made a pull request, you are not allowed to merge it by yourself.
+
+Ask one of the reviewers to check your PR.
+
+ - If your PR is good, the reviewer will merge it.
+
+ - If not, then you will be asked to make changes. In that case do everything that's required and contact the reviewer again once changes has been made.
+
+
+
+### PR messages
+
+Things that you **MUST** include in your pull request message:
+ - `#What` - a list of features and fixes that were made
+ - `#How` - a concise description of how these changes were implemented
+
+Things that you **SHOULD** include in your pull request message:
+- `#Why` - reasons for implementing these changes, (this will make reviewers' lifes easier)
+- `#Testing` - description of how testing was conducted.
+
+**Sample PR**
+
+```
+# What
+ - 5 new hand gestures
+ - Fixed an issue with the mouse moving around when the hand is stationary
+ 
+# How
+ - Hand gestures: 
+Trained a few models using video samples from here: (pretend there is a link here).
+Updated the configuration view to include new gestures.
+ - Mouse jiggling fix:
+Added a small motion radius around each hand joint 
+which diables mouse movement unless the joint goes outside the radius.
+# Why
+ - Hand gestures: Dean asked me
+ - Mouse jiggling fix: 
+It prevented featureX to work and it generally just annoyed the hell out of me.
+# Testing
+Used X framework for unit tests
+Compiled the project and attempted evey gesture by myself and forced all fo my friends to do the same
+```
+
+## Code quality
+
+**PLEASE** document your code. Reviewers will **NOT** merge your branch until its properly documented.
+
+**PLEASE** Compile and test your code. Reviewers will **NOT** merge your branch until your code is compilable.
+
+
+
+# Documentation
+
+What you are seeing now is a sphinx documentation.
+
+It references the actual source code and docstrings in there
+and compiles all of it to html.
+
+The docs website is updated **on push to the dev branch**
+
+It might take a while until you see the update so its useful to know how get
+the documentation build locally.
+
+## Dependencies
+
+So first of all you will need to install needed packages to compile the docs.
+Navigate to `docs` directory and run:
+
+	pip install -r requirements.txt
+	
+if you have some path issues with your python it is also worth to try:
+	
+	python3 -m pip install -r requirements.txt
+	
+## Understanding docs
+
+Now let's understand how our documentation works. Here is what you will find in the `docs` directory.
+
+	.
+	├── make.bat
+	├── Makefile
+	├── requirements.txt
+	└── source
+		├── conf.py
+		├── development.md
+		├── getting-started.md
+		├── index.rst
+		├── _static
+		└── _templates
+		
+- `make.bat` and `Makefile` are there to compile our documentation to html
+
+- `requirements.txt` is what you just used to install our requirements.
+
+- `source/` directory where the source files for our documentation are located. You will find a bunch
+  of `.md` and `.rst` files there. These are pages with the actual text and tutorials that you see just now
+  (this webpage is made from `development.md`, and the landing page is `index.rst`)
+  
+all `.md` files must be referenced in `index.rst` files. You can do it like so:
+
+	.. toctree::
+	   :maxdepth: 1
+	   :caption: Development
+
+	   development
+
+This creates a table of content entry at the side bar on the landing page
+with a caption **Development** and references the file `development.md`
+(no need to add file extension in rst files as it doesn't care)
+
+## Compilation
+
+So now that you have made changes to the actual documentation,
+in order to compile it, navigate to the `docs` directory and run:
+
+	make clean; make html
+	
+This will create a build folder where you can find all html files.
+
