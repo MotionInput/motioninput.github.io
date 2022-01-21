@@ -21,9 +21,13 @@ So a quick overview of how the the system works. It can be oberved in 2 parts: t
     - Run all active gesture events, which may result in the trigger functions in the events being called.
 
 # Examples
-Currently, the repo contains 2 files that are being used to test the system:
-1. hand_test.py for testing the hand module
-2. extremity_trigger_test.py
+We are aiming to soon have just a main.py file and some config files for testing/using the system with easily configurable functionality.
+
+However, as we are not quite there yet currently, the repo contains 4 files that are being used to test the system:
+1. hand_test.py for testing the hand module (configured for a lefthanded user)
+2. touchpoint_test.py to test the touchpoin feature (currently only recognizes a single tap)
+3. exercise_test.py
+4. extremity_trigger_test.py
 Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the LoadConfig file. In particular, the coordinates of the extremity triggers are set manually.
 
 
@@ -35,14 +39,19 @@ Note: Currently, for the extremity triggers in the body module, hardcoded calibr
 -xoxo Carmen
 
 ## Adding Features
-### Adding events
-Create a new class extending the [GestureEvent](https://motioninput.github.io/apidocs/scripts.gesture_events.html) class from the [core](https://motioninput.github.io/apidocs/scripts.core.html#) module. (many examples are available in the gesture_events folder)
-You can check the currently available gestures in the GestureLoader class (script.gesture_loader.py) and in case the gestures you need are not available feel free to add a new gesture.
+### Adding GestureEvents
+Create a new class extending the [GestureEvent](https://motioninput.github.io/apidocs/scripts.gesture_events.html) class from the [core](https://motioninput.github.io/apidocs/scripts.core.html#) module (many examples are available in the gesture_events folder).
+You can check the currently available gestures in the GestureLoader class (script.gesture_loader.py) and in case the gestures you need are not available feel free to add a new [Gesture](https://motioninput.github.io/getting-started.html#adding-gestures).
+Once you have added the event class into the gesture_events folder, you need to add it to the folders \_\_init\_\_.py file in the same way the previous events were added, in order for the EventMapper to have access to it. Now if you want to actually add the event into your Model and use it first you need to add it into the event_mapper.py as the other events have been added (this is where you map the events triggers to actual functions from the gesture event handlers and if the handlers you require are not available to you feel free to [add a new event handler](https://motioninput.github.io/getting-started.html#adding-event-handlers)).
+Now you are all set and should be able to use the gesture event after adding it to the Model in your test file.
 
 ### Adding Gestures
 Adding new [Gestures](https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture.Gesture) is as easy as adding one line to the script.gesture_loader.py file, with just the name of the gesture and a set of all the primitives it uses. (again plenty of examples already available)
-In case the primitives you need are not available feel free to add a new primitive.
+In case the primitives you need are not available feel free to add a new [primitive](https://motioninput.github.io/getting-started.html#adding-primitives).
 
-### Adding primitives
+### Adding Primitives
 Now adding primitives is a bit trickier and definitely should not be done too often, as unlike Gestures and GestureEvents the primitives affect the efficiency of processing each frame, as for every frame we calculate the states of all the primitives.
-Adding primitives is done in the specific modules [Position](https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.position.Position) classes (so currently in the HandPosition and the BodyPosition classes)
+Adding primitives is done in the specific modules [Position](https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.position.Position) classes (so currently in the HandPositio, BodyPosition and ExercisePosition classes)
+
+### Adding event handlers
+Event handlers (classes that contain all the functions that are called by GestureEvents and are responsible for actually controlling the users computer e.g. moving the mouse or pressing keys) are stored in the gesture_event_handlers folder. If you have added any new classes or new functions to already exicsting handler classes, please first add them to the \_\_init\_\_.py file in the gesture_event_handlers folder in the same manner as the previous examples, in order for the EventMapper class to be able to use the new functionality. After this you can now use your handler by mapping GestureEvents to it in the EventMapper class.
