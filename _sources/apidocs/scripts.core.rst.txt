@@ -1,27 +1,25 @@
 scripts.core
 ============
 
-
-
-.. automodule:: scripts.core.gesture
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-.. automodule:: scripts.core.gesture_event
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-.. automodule:: scripts.core.gesture_factory
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
 .. automodule:: scripts.core.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.core.module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.core.raw_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.core.xyz
    :members:
    :undoc-members:
    :show-inheritance:
@@ -39,16 +37,23 @@ scripts.core
    :show-inheritance:
 
 
-.. automodule:: scripts.core.raw_data
+.. automodule:: scripts.core.gesture_factory
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: scripts.core.xyz
+.. automodule:: scripts.core.gesture
    :members:
    :undoc-members:
    :show-inheritance:
+
+
+.. automodule:: scripts.core.gesture_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 
 Module contents
 ---------------

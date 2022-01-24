@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="scripts.gesture_event_handlers" href="scripts.gesture_event_handlers.html" />
-    <link rel="prev" title="scripts.body_module" href="scripts.body_module.html" /> 
+    <link rel="prev" title="scripts.exercise_module" href="scripts.exercise_module.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.core.html">scripts.core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.hand_module.html">scripts.hand_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.body_module.html">scripts.body_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.exercise_module.html">scripts.exercise_module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scripts.gesture_events</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-scripts.gesture_events">Module contents</a></li>
 </ul>
@@ -116,6 +117,29 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
 <dd class="field-odd"><p><strong>gesture</strong> (<a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><em>Gesture</em></a>) – the gesture that deactivated</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.exercise_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_to_activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_down_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.get_all_used_gestures">
+<span class="sig-name descname"><span class="pre">get_all_used_gestures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.get_all_used_gestures" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.get_exercise_name">
+<span class="sig-name descname"><span class="pre">get_exercise_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.get_exercise_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.update" title="Permalink to this definition"></a></dt>
+<dd><p>Checks the event firing conditionas and then may call according trigger functions.
+(the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
 </dd></dl>
 
 </dd></dl>
@@ -376,7 +400,7 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="scripts.body_module.html" class="btn btn-neutral float-left" title="scripts.body_module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scripts.exercise_module.html" class="btn btn-neutral float-left" title="scripts.exercise_module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="scripts.gesture_event_handlers.html" class="btn btn-neutral float-right" title="scripts.gesture_event_handlers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

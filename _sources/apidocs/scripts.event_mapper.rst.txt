@@ -1,5 +1,5 @@
-scripts.event_mapper
-====================
+scripts.event\_mapper
+=====================
 
 Module contents
 ---------------

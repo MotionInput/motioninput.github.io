@@ -9,6 +9,18 @@ scripts.gesture\_event\_handlers
    :show-inheritance:
 
 
+.. automodule:: scripts.gesture_event_handlers.desktop_touch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_event_handlers.extremity_actions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.gesture_event_handlers.extremity_actions
    :members:
    :undoc-members:
@@ -19,6 +31,13 @@ scripts.gesture\_event\_handlers
    :members:
    :undoc-members:
    :show-inheritance:
+
+
+.. automodule:: scripts.gesture_event_handlers.pydirect_directx_actions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 
 Module contents
 ---------------

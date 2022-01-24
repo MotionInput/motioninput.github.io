@@ -5,19 +5,24 @@
 
 # Architecture
 ![Diagram](./architecture_diagram.png)
+(Note that this diagram is slightly outdated and a new one will be posted soon)
 
 So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.
 
 ## setup
 - Firstly, information for gestures and events are loaded from the database (eventually)
 - The event mapper class is used to initialise the required event classes and add them to the model
+- Based on the added events the needed gestures and modules are automatically added to the model
 
 ## frame by frame
-- The opencv image is retrieved from the camera class, and using whichever imaging processing library required depending on the module, we detect all ‘landmarks’ from the image, retrieve their coordinates, and pass this information to the raw data class.
+- The opencv image is retrieved from the camera class.
 - Process the frame in the Model in following steps:
-    - Updates all position trackers with the RawData provided, which results in a set of primitives that had changed since the last frame.
-    - Update all the gesture factories that use the changed primitives, which may create new active Gestures, and consequently (de)activation of some gesture events
-    - Update all the active gestures, which may result in deactivation of some of them, and consequently (de)activation of some gesture events
+    - Update the modules:
+        - Use the modules landmark detector (ML library) to retrieve the RawData (aka the coordinates of all landmarks) from the frame.
+        - Update all position trackers with the RawData, which results in a set of primitives that had changed since the last frame.
+        - Update all the gesture factories that use the changed primitives, which may create new active Gestures.
+    - If the module created any Gesture instances, they are added to the model, which may lead to (de)activation of some gesture events.
+    - Update all the active gestures, which may result in deactivation of some of them, and consequently (de)activation of some gesture events.
     - Run all active gesture events, which may result in the trigger functions in the events being called.
 
 # Examples
@@ -42,11 +47,12 @@ Note: Currently, for the extremity triggers in the body module, hardcoded calibr
 ### Adding GestureEvents
 Create a new class extending the [GestureEvent](https://motioninput.github.io/apidocs/scripts.gesture_events.html) class from the [core](https://motioninput.github.io/apidocs/scripts.core.html#) module (many examples are available in the gesture_events folder).
 You can check the currently available gestures in the GestureLoader class (script.gesture_loader.py) and in case the gestures you need are not available feel free to add a new [Gesture](https://motioninput.github.io/getting-started.html#adding-gestures).
+(Just a note that you are allowed to use gestures from different modules in the seme event)
 Once you have added the event class into the gesture_events folder, you need to add it to the folders \_\_init\_\_.py file in the same way the previous events were added, in order for the EventMapper to have access to it. Now if you want to actually add the event into your Model and use it first you need to add it into the event_mapper.py as the other events have been added (this is where you map the events triggers to actual functions from the gesture event handlers and if the handlers you require are not available to you feel free to [add a new event handler](https://motioninput.github.io/getting-started.html#adding-event-handlers)).
 Now you are all set and should be able to use the gesture event after adding it to the Model in your test file.
 
 ### Adding Gestures
-Adding new [Gestures](https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture.Gesture) is as easy as adding one line to the script.gesture_loader.py file, with just the name of the gesture and a set of all the primitives it uses. (again plenty of examples already available)
+Adding new [Gestures](https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture.Gesture) is as easy as adding one line to the script.gesture_loader.py file, with just the name of the gesture and a set of all the primitives it uses. (again plenty of examples already available). Note that the name of the gesture should not overlap with the name of any other gesture, even in other modules.
 In case the primitives you need are not available feel free to add a new [primitive](https://motioninput.github.io/getting-started.html#adding-primitives).
 
 ### Adding Primitives

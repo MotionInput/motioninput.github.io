@@ -4,14 +4,13 @@ scripts.tools
 Subpackages
 -----------
 
-.. toctree::
-   :maxdepth: 4
+.. automodule:: scripts.tools.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   scripts.tools.config
 
-
-
-.. automodule:: scripts.tools.area_of_interest
+.. automodule:: scripts.tools.view
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,21 +22,29 @@ Subpackages
    :show-inheritance:
 
 
+.. automodule:: scripts.tools.area_of_interest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.tools.extremity_circles
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: scripts.tools.settings
+
+.. automodule:: scripts.tools.exercise_display
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: scripts.tools.view
+.. automodule:: scripts.tools.repetition_counter
    :members:
    :undoc-members:
    :show-inheritance:
+
 
 Module contents
 ---------------

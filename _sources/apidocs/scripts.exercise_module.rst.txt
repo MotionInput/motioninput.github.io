@@ -1,19 +1,19 @@
-scripts.body\_module
-====================
+scripts.exercise\_module
+========================
 
-.. automodule:: scripts.body_module.body_gesture
+.. automodule:: scripts.exercise_module.exercise_gesture
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: scripts.body_module.body_landmark_detector
+.. automodule:: scripts.exercise_module.exercise_landmark_detector
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: scripts.body_module.body_position
+.. automodule:: scripts.exercise_module.exercise_position
    :members:
    :undoc-members:
    :show-inheritance:
@@ -22,7 +22,7 @@ scripts.body\_module
 Module contents
 ---------------
 
-.. automodule:: scripts.body_module
+.. automodule:: scripts.exercise_module
    :members:
    :undoc-members:
    :show-inheritance:
