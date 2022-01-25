@@ -4,8 +4,7 @@
 - As we don’t yet have the App layer and the app-specific main.py, we are using the [test files](https://motioninput.github.io/getting-started.html#examples) to run the system, so either use one of them or create your own as needed.
 
 # Architecture
-![Diagram](./architecture_diagram.png)
-(Note that this diagram is slightly outdated and a new one will be posted soon)
+![Diagram](./MIv3.PNG)
 
 So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.
 
