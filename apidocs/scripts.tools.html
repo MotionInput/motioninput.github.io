@@ -194,12 +194,27 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.area_of_interest.AreaOfInterest.update_spacing_level">
 <span class="sig-name descname"><span class="pre">update_spacing_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.area_of_interest.AreaOfInterest.update_spacing_level" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Updates the size of the AOI displayed on the view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>level</strong> (<em>int</em>) – The spacing level that should be used.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If an invalid spacing level is given (outside the range of spacing levels)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.area_of_interest.AreaOfInterest.convert_xy">
 <span class="sig-name descname"><span class="pre">convert_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_cam_percent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_cam_percent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.tools.area_of_interest.AreaOfInterest.convert_xy" title="Permalink to this definition"></a></dt>
 <dd><p>Does an affine transformation for camera x,y coordinates to map to the screen pixels</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.area_of_interest.AreaOfInterest.change_monitor">
+<span class="sig-name descname"><span class="pre">change_monitor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.area_of_interest.AreaOfInterest.change_monitor" title="Permalink to this definition"></a></dt>
+<dd><p>Changes which monitor the area of interest represents.</p>
 </dd></dl>
 
 </dd></dl>
