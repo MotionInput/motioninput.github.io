@@ -1,7 +1,7 @@
 # Setting Up
 - Expected to be run on Python 3.9 + Windows
 - Make sure you have installed all the libraries in the requirements.txt
-- As we don’t yet have the App layer and the app-specific main.py, we are using the [test files](https://motioninput.github.io/getting-started.html#examples) to run the system, so either use one of them or create your own as needed.
+- As we don’t yet have the GUI, App layer and the app-specific main.py, we are using the [test file](https://motioninput.github.io/getting-started.html#running-the-code) to run the system.
 
 # Architecture
 ![Diagram](./MIv3.PNG)
@@ -24,15 +24,12 @@ So a quick overview of how the the system works. It can be oberved in 2 parts: t
     - Update all the active gestures, which may result in deactivation of some of them, and consequently (de)activation of some gesture events.
     - Run all active gesture events, which may result in the trigger functions in the events being called.
 
-# Examples
+# Running the code
 We are aiming to soon have just a main.py file and some config files for testing/using the system with easily configurable functionality.
 
-However, as we are not quite there yet currently, the repo contains 4 files that are being used to test the system:
-1. hand_test.py for testing the hand module (configured for a lefthanded user)
-2. touchpoint_test.py to test the touchpoin feature (currently only recognizes a single tap)
-3. exercise_test.py
-4. extremity_trigger_test.py
-Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the LoadConfig file. In particular, the coordinates of the extremity triggers are set manually.
+However, as we are not quite there yet currently, we are using the test.py file to run the system and moifying the mode_config dict in the mode_controller.py to config what functionality (aka set of events) we want to test.
+
+Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the Config class. In particular, the coordinates of the extremity triggers are set manually.
 
 
 # Notes

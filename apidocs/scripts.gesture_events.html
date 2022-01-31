@@ -41,7 +41,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -63,6 +63,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.tools.html">scripts.tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.event_mapper.html">scripts.event_mapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.mode_controller.html">scripts.mode_controller</a></li>
 </ul>
 
         </div>
@@ -136,6 +137,14 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.force_deactivate">
+<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.force_deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>As some events need to finish some proccessing before being deactivated, they can implement this method.
+It is called when the events are removed from the model.
+(e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.update" title="Permalink to this definition"></a></dt>
 <dd><p>Checks the event firing conditionas and then may call according trigger functions.
@@ -180,6 +189,14 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
 been activated, then we call the the event’s associated trigger function. If the required gestures are still activated from the last check,
 then this means the extremity is being held. If the command associated with the extremity is a key down action, we check that &gt; 0.2 seconds
 have passed. If so, we run the associated held function. If a required gesture has just been released, we run the associated released function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.force_deactivate">
+<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.force_deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>As some events need to finish some proccessing before being deactivated, they can implement this method.
+It is called when the events are removed from the model.
+(e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
 </dd></dl>
 
 </dd></dl>
@@ -243,6 +260,14 @@ have passed. If so, we run the associated held function. If a required gesture h
 (the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.finger_pinch_event.FingerPinchEvent.force_deactivate">
+<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.finger_pinch_event.FingerPinchEvent.force_deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>As some events need to finish some proccessing before being deactivated, they can implement this method.
+It is called when the events are removed from the model.
+(e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -304,6 +329,14 @@ have passed. If so, we run the associated held function. If a required gesture h
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.update" title="Permalink to this definition"></a></dt>
 <dd><p>Checks the event firing conditionas and then may call according trigger functions.
 (the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.force_deactivate">
+<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.force_deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>As some events need to finish some proccessing before being deactivated, they can implement this method.
+It is called when the events are removed from the model.
+(e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
 </dd></dl>
 
 </dd></dl>
@@ -375,7 +408,7 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
 
 <span class="target" id="module-scripts.gesture_events.zoom_event"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_events.zoom_event.ZoomEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZoomEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_frames_for_switch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.zoom_event.ZoomEvent" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZoomEvent</span></span><a class="headerlink" href="#scripts.gesture_events.zoom_event.ZoomEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.zoom_event.ZoomEvent.update">
@@ -394,7 +427,7 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.GestureEvents.get_event">
-<span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.GestureEvents.get_event" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.GestureEvents.get_event" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>

@@ -41,7 +41,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -63,6 +63,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.tools.html">scripts.tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.event_mapper.html">scripts.event_mapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.mode_controller.html">scripts.mode_controller</a></li>
 </ul>
 
         </div>
@@ -180,11 +181,6 @@ Does not check if any events were using it so removing a gesture in use may lead
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.model.Model.add_idle_model">
-<span class="sig-name descname"><span class="pre">add_idle_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idle_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.model.Model" title="scripts.core.model.Model"><span class="pre">scripts.core.model.Model</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.add_idle_model" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.model.Model.process_frame">
 <span class="sig-name descname"><span class="pre">process_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></span><a class="headerlink" href="#scripts.core.model.Model.process_frame" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
@@ -206,29 +202,6 @@ Run all active gesture events, which may result in the trigger functions in the 
 <dd class="field-odd"><p><a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData">RawData</a></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.model.Model.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.model.Model.reset" title="Permalink to this definition"></a></dt>
-<dd><p>Resets all the position trackers and deactivates all gestures</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.model.Model.set_idle">
-<span class="sig-name descname"><span class="pre">set_idle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.set_idle" title="Permalink to this definition"></a></dt>
-<dd><p>Sets the state of the model to idle, meaning that all the frames will be processed by the idle model that was provided.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>RuntimeError</strong> – raises the error if no idle model has been provided</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.model.Model.set_active">
-<span class="sig-name descname"><span class="pre">set_active</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.set_active" title="Permalink to this definition"></a></dt>
-<dd><p>Sets the state of the model to active, meaning that all the frames will be processed ny the model itself again.</p>
 </dd></dl>
 
 </dd></dl>
@@ -657,6 +630,14 @@ Thus the current position is again None and by default all primitives are consid
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.get_state">
 <span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.get_state" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.force_deactivate">
+<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.force_deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>As some events need to finish some proccessing before being deactivated, they can implement this method.
+It is called when the events are removed from the model.
+(e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.notify_gesture_activated">

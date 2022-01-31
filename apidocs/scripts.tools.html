@@ -41,7 +41,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -64,6 +64,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.event_mapper.html">scripts.event_mapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.mode_controller.html">scripts.mode_controller</a></li>
 </ul>
 
         </div>
@@ -160,11 +161,11 @@ class is not already initialised, then it also initialises the class.</p>
 <p>Blue rectangle that maps to the corners of the screen. Autocalibrated with distance to the camera.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.area_of_interest.AreaOfInterest.update_spacing_level">
-<span class="sig-name descname"><span class="pre">update_spacing_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.area_of_interest.AreaOfInterest.update_spacing_level" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_spacing_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.area_of_interest.AreaOfInterest.update_spacing_level" title="Permalink to this definition"></a></dt>
 <dd><p>Updates the size of the AOI displayed on the view.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>level</strong> (<em>int</em>) – The spacing level that should be used.</p>
+<dd class="field-odd"><p><strong>level</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The spacing level that should be used. if no level is given the AOI should be removed</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>RuntimeError</strong> – If an invalid spacing level is given (outside the range of spacing levels)</p>
@@ -188,8 +189,20 @@ class is not already initialised, then it also initialises the class.</p>
 
 <span class="target" id="module-scripts.tools.extremity_circles"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.extremity_circles.ExtremityCircles">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityCircles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extremity_coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.extremity_circles.ExtremityCircles" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityCircles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.extremity_circles.ExtremityCircles" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.extremity_circles.ExtremityCircles.set_extremity_circles_dict">
+<span class="sig-name descname"><span class="pre">set_extremity_circles_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.extremity_circles.ExtremityCircles.set_extremity_circles_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Adds each activated extremity’s coordinate, activated and repeats to a dictionary, so that the information can be passed to
+a display element to be displayed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.extremity_circles.ExtremityCircles.clear_extremity_circles">
+<span class="sig-name descname"><span class="pre">clear_extremity_circles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.extremity_circles.ExtremityCircles.clear_extremity_circles" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.extremity_circles.ExtremityCircles.update_extremity_circle">
 <span class="sig-name descname"><span class="pre">update_extremity_circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.extremity_circles.ExtremityCircles.update_extremity_circle" title="Permalink to this definition"></a></dt>
@@ -214,8 +227,18 @@ Also adds the number of times the extremity has been triggered.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">exercises</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.exercise_display.ExerciseDisplay" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.exercise_display.ExerciseDisplay.set_exercise_display">
+<span class="sig-name descname"><span class="pre">set_exercise_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.exercise_display.ExerciseDisplay.set_exercise_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.exercise_display.ExerciseDisplay.update_exercise_repeats">
 <span class="sig-name descname"><span class="pre">update_exercise_repeats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.exercise_display.ExerciseDisplay.update_exercise_repeats" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.exercise_display.ExerciseDisplay.clear_exericse_display">
+<span class="sig-name descname"><span class="pre">clear_exericse_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.exercise_display.ExerciseDisplay.clear_exericse_display" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>

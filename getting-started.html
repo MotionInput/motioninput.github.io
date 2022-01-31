@@ -45,7 +45,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#frame-by-frame">frame by frame</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#notes">Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#adding-features">Adding Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#adding-gestureevents">Adding GestureEvents</a></li>
@@ -73,6 +73,7 @@
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.tools.html">scripts.tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.event_mapper.html">scripts.event_mapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.mode_controller.html">scripts.mode_controller</a></li>
 </ul>
 
         </div>
@@ -104,7 +105,7 @@
 <ul class="simple">
 <li><p>Expected to be run on Python 3.9 + Windows</p></li>
 <li><p>Make sure you have installed all the libraries in the requirements.txt</p></li>
-<li><p>As we don’t yet have the App layer and the app-specific main.py, we are using the <a class="reference external" href="https://motioninput.github.io/getting-started.html#examples">test files</a> to run the system, so either use one of them or create your own as needed.</p></li>
+<li><p>As we don’t yet have the GUI, App layer and the app-specific main.py, we are using the <a class="reference external" href="https://motioninput.github.io/getting-started.html#running-the-code">test file</a> to run the system.</p></li>
 </ul>
 </section>
 <section id="architecture">
@@ -140,17 +141,11 @@
 </ul>
 </section>
 </section>
-<section id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h1>
+<section id="running-the-code">
+<h1>Running the code<a class="headerlink" href="#running-the-code" title="Permalink to this headline"></a></h1>
 <p>We are aiming to soon have just a main.py file and some config files for testing/using the system with easily configurable functionality.</p>
-<p>However, as we are not quite there yet currently, the repo contains 4 files that are being used to test the system:</p>
-<ol class="simple">
-<li><p>hand_test.py for testing the hand module (configured for a lefthanded user)</p></li>
-<li><p>touchpoint_test.py to test the touchpoin feature (currently only recognizes a single tap)</p></li>
-<li><p>exercise_test.py</p></li>
-<li><p>extremity_trigger_test.py
-Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the LoadConfig file. In particular, the coordinates of the extremity triggers are set manually.</p></li>
-</ol>
+<p>However, as we are not quite there yet currently, we are using the test.py file to run the system and moifying the mode_config dict in the mode_controller.py to config what functionality (aka set of events) we want to test.</p>
+<p>Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the Config class. In particular, the coordinates of the extremity triggers are set manually.</p>
 </section>
 <section id="notes">
 <h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h1>

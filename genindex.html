@@ -38,7 +38,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#architecture">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -57,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.tools.html">scripts.tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.event_mapper.html">scripts.event_mapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.mode_controller.html">scripts.mode_controller</a></li>
 </ul>
 
         </div>
@@ -121,12 +122,10 @@
         <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.add_gesture">(Module method)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_idle_model">add_idle_model() (Model method)</a>
+      <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.add_landmark">add_landmark() (RawData method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.add_landmark">add_landmark() (RawData method)</a>
-</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_module">add_module() (Model method)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.area_of_interest.AreaOfInterest">AreaOfInterest (class in scripts.tools.area_of_interest)</a>
@@ -163,16 +162,24 @@
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.area_of_interest.AreaOfInterest.change_monitor">change_monitor() (AreaOfInterest method)</a>
 </li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.exercise_display.ExerciseDisplay.clear_exericse_display">clear_exericse_display() (ExerciseDisplay method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#id4">clear_extremity_circles() (ExtremityActions method)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.clear_extremity_circles">[1]</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.tools.html#scripts.tools.extremity_circles.ExtremityCircles.clear_extremity_circles">(ExtremityCircles method)</a>
+</li>
+      </ul></li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker">Clicker (class in scripts.gesture_event_handlers.pydirect_directx_actions)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera.close">close() (Camera method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.close">(View method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.combine">combine() (RawData method)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.config.Config">Config() (in module scripts.tools.config)</a>
@@ -241,6 +248,18 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.finger_pinch_event.FingerPinchEvent">FingerPinchEvent (class in scripts.gesture_events.finger_pinch_event)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.exercise_event.ExerciseEvent.force_deactivate">force_deactivate() (ExerciseEvent method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.force_deactivate">(ExtremityTriggerEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.finger_pinch_event.FingerPinchEvent.force_deactivate">(FingerPinchEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.force_deactivate">(GestureEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.force_deactivate">(PalmHeightChangeEvent method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.frameId">frameId (POINTER_INFO attribute)</a>
@@ -287,7 +306,7 @@
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.get_data">get_data() (RawData method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.GestureEvents.get_event">get_event() (GestureEvents method)</a>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.GestureEvents.get_event">get_event() (GestureEvents static method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.get_event_trigger_types">get_event_trigger_types() (GestureEvent class method)</a>
 </li>
@@ -690,11 +709,9 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.reset">reset() (Model method)</a>
+      <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.reset">reset() (Module method)</a>
 
       <ul>
-        <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.reset">(Module method)</a>
-</li>
         <li><a href="apidocs/scripts.core.html#scripts.core.position_tracker.PositionTracker.reset">(PositionTracker method)</a>
 </li>
       </ul></li>
@@ -898,8 +915,6 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.extremity_trigger_event">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.finger_pinch_event
 
@@ -907,6 +922,8 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.finger_pinch_event">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.hand_active_event
 
@@ -1037,17 +1054,19 @@
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.scroll_event.ScrollEvent">ScrollEvent (class in scripts.gesture_events.scroll_event)</a>
 </li>
-      <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.set_active">set_active() (Model method)</a>
-</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.set_bodypart_names">set_bodypart_names() (GestureEvent method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_bodypart_names">(SimpleGestureEvent method)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.set_gesture_type">set_gesture_type() (ExtremityTriggerEvent method)</a>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.exercise_display.ExerciseDisplay.set_exercise_display">set_exercise_display() (ExerciseDisplay method)</a>
 </li>
-      <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.set_idle">set_idle() (Model method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#id5">set_extremity_circles() (ExtremityActions method)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.set_extremity_circles">[1]</a>
+</li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.extremity_circles.ExtremityCircles.set_extremity_circles_dict">set_extremity_circles_dict() (ExtremityCircles method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.set_gesture_type">set_gesture_type() (ExtremityTriggerEvent method)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.set_new_frame">set_new_frame() (View method)</a>
 </li>
