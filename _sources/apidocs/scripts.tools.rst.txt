@@ -16,31 +16,13 @@ Subpackages
    :show-inheritance:
 
 
+.. automodule:: scripts.tools.display_element
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.tools.camera
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-.. automodule:: scripts.tools.area_of_interest
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-.. automodule:: scripts.tools.extremity_circles
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-.. automodule:: scripts.tools.exercise_display
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-.. automodule:: scripts.tools.repetition_counter
    :members:
    :undoc-members:
    :show-inheritance:

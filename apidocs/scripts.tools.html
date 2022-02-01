@@ -137,6 +137,78 @@ class is not already initialised, then it also initialises the class.</p>
 
 </dd></dl>
 
+<span class="target" id="module-scripts.tools.display_element"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.DisplayElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DisplayElement</span></span><a class="headerlink" href="#scripts.tools.display_element.DisplayElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.DisplayElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.DisplayElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Takes in parameters and updates the DisplayElement’s attributes accordingly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.DisplayElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.DisplayElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image, adding in extra display features, such as the area of interest or extremity circles.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ExerciseDisplayElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseDisplayElement</span></span><a class="headerlink" href="#scripts.tools.display_element.ExerciseDisplayElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ExerciseDisplayElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ExerciseDisplayElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image, adding in the information for the activated exercises and the number of repeats.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ExerciseDisplayElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exericses_repeats_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ExerciseDisplayElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Takes in parameters and updates the ExerciseDisplayElement’s attributes accordingly.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ExtremityCirclesElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityCirclesElement</span></span><a class="headerlink" href="#scripts.tools.display_element.ExtremityCirclesElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ExtremityCirclesElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ExtremityCirclesElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image, adding in the extremity circles representing the extremity triggers, including its state and repeats.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ExtremityCirclesElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_circles_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.ExtremityCirclesElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Takes in parameters and updates the ExtremityCirclesElement’s attributes accordingly.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.AreaOfInterestElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AreaOfInterestElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.AreaOfInterestElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.AreaOfInterestElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.AreaOfInterestElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image, adding in the area of interest.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.AreaOfInterestElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width_spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height_spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.AreaOfInterestElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Takes in parameters and updates the AreaOfInterestElement’s attributes accordingly. If no parameters are given AOI is no longer displayed</p>
+</dd></dl>
+
+</dd></dl>
+
 <span class="target" id="module-scripts.tools.camera"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.camera.Camera">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Camera</span></span><a class="headerlink" href="#scripts.tools.camera.Camera" title="Permalink to this definition"></a></dt>
