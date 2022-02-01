@@ -163,6 +163,19 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
 <dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_primitives_names">
+<span class="sig-name descname"><span class="pre">get_primitives_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_primitives_names" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Names of all primitives that are calcualted by the specific modules Position class on initialization</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_primitive">
 <span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_primitive" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the state of the given primitive in the Position if it has been calcualated.
