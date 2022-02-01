@@ -155,29 +155,18 @@ It is called when the events are removed from the model.
 
 <span class="target" id="module-scripts.gesture_events.extremity_trigger_event"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityTriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityTriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.set_gesture_type">
-<span class="sig-name descname"><span class="pre">set_gesture_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.set_gesture_type" title="Permalink to this definition"></a></dt>
-<dd><p>Sets the name of the associated gesture with the extremity, which is normally the extremity name.</p>
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.get_all_used_gestures">
+<span class="sig-name descname"><span class="pre">get_all_used_gestures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.get_all_used_gestures" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the names of the associated gestures with the extremity, which is normally the extremity names.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>gesture_type</strong> (<em>str</em>) – name of the associated gesture (e.g. “arm_left” or “up”)</p>
+<dt class="field-odd">Return gesture_types</dt>
+<dd class="field-odd"><p>names of the associated gesture (e.g. “{arm_left}” or “{up}”)</p>
 </dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.get_gesture_type">
-<span class="sig-name descname"><span class="pre">get_gesture_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.get_gesture_type" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the name of the associated gesture with the extremity, which is normally the extremity name.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return gesture_type</dt>
-<dd class="field-odd"><p>name of the associated gesture (e.g. “arm_left” or “up”)</p>
-</dd>
-<dt class="field-even">Rtype gesture_type</dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Rtype gesture_types</dt>
+<dd class="field-even"><p>set</p>
 </dd>
 </dl>
 </dd></dl>
@@ -199,54 +188,6 @@ It is called when the events are removed from the model.
 (e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.UpExtremityEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UpExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.UpExtremityEvent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ArmLeftExtremityEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmLeftExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ArmLeftExtremityEvent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.PunchLeftExtremityEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PunchLeftExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.PunchLeftExtremityEvent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.KickLeftExtremityEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KickLeftExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.KickLeftExtremityEvent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ArmRightExtremityEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmRightExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ArmRightExtremityEvent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.PunchRightExtremityEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PunchRightExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.PunchRightExtremityEvent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.KickRightExtremityEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KickRightExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.KickRightExtremityEvent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.CustomExtremityEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomExtremityEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.CustomExtremityEvent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent</span></code></a></p>
 </dd></dl>
 
 <span class="target" id="module-scripts.gesture_events.finger_pinch_event"></span><dl class="py class">
