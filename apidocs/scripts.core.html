@@ -57,7 +57,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.hand_module.html">scripts.hand_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.body_module.html">scripts.body_module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts.exercise_module.html">scripts.exercise_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_events.html">scripts.gesture_events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.tools.html">scripts.tools</a></li>
@@ -214,7 +213,7 @@ Run all active gesture events, which may result in the trigger functions in the 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.module.LandmarkDetector.get_raw_data">
 <span class="sig-name descname"><span class="pre">get_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.module.LandmarkDetector.get_raw_data" title="Permalink to this definition"></a></dt>
-<dd><p>Adds the xyz coordinates of all the landmarks detected on the image into the RawData instance.</p>
+<dd><p>Adds the xy(z) coordinates of all the landmarks detected on the image into the RawData instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -309,7 +308,7 @@ May lead to removal of some primitives (if the primitive is not used by any gest
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.raw_data.RawData.add_landmark">
-<span class="sig-name descname"><span class="pre">add_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmark_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.raw_data.RawData.add_landmark" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmark_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.raw_data.RawData.add_landmark" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -342,24 +341,24 @@ Note the instances MUST contain different bodyparts.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.raw_data.RawData.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.raw_data.RawData.get_data" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.raw_data.RawData.get_data" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the data of the bodypart, if it has been added (aka if it has been detected in the frame)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>bodypart_name</strong> (<em>str</em>) – bodypart, the data of which should be returned. e.g. “body” or “Left”</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Dictionary of all the landmarks added to the specific body part with the name of the landmark as key and the coordinates as value</p>
+<dd class="field-even"><p>Dictionary of all the landmarks added to the specific body part with the name of the landmark as key and the coordinates [x,y(,z)] as value</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Optional[Dict[str, <a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]]</p>
+<dd class="field-odd"><p>Optional[Dict[str, np.ndarray]]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.raw_data.RawData.get_landmark">
-<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmark_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.raw_data.RawData.get_landmark" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bodypart_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmark_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.raw_data.RawData.get_landmark" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the coordinates of the landmark, if it has been added to the specified bodypart (aka if it has been detected in the frame)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -369,40 +368,10 @@ Note the instances MUST contain different bodyparts.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>coordinate of the landmark</p>
+<dd class="field-even"><p>coordinate of the landmark [x,y(,z)]</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Optional[<a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<span class="target" id="module-scripts.core.xyz"></span><dl class="py class">
-<dt class="sig sig-object py" id="scripts.core.xyz.xyz">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.xyz.xyz" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.xyz.xyz.distance">
-<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#scripts.core.xyz.xyz.distance" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.xyz.xyz.middle_point">
-<span class="sig-name descname"><span class="pre">middle_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></span><a class="headerlink" href="#scripts.core.xyz.xyz.middle_point" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.xyz.xyz.normal">
-<span class="sig-name descname"><span class="pre">normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a></span></span><a class="headerlink" href="#scripts.core.xyz.xyz.normal" title="Permalink to this definition"></a></dt>
-<dd><p>find the normal of the plane defined by the 3 points (self, other1, other2).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>the resulting normal originating from self</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a></p>
+<dd class="field-odd"><p>Optional[np.ndarray]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -411,7 +380,7 @@ Note the instances MUST contain different bodyparts.</p>
 
 <span class="target" id="module-scripts.core.position"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.core.position.Position">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.position.Position" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.core.position.Position" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position.Position.get_primitive">
@@ -433,7 +402,7 @@ Returns None If the primitive has not been calculated, hendce if it either is no
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.position.Position.get_landmark">
-<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position.Position.get_landmark" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.core.position.Position.get_landmark" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the coordinates of the landmark.
 Returns None if the landmarks was not provided to the Position on initialization</p>
 <dl class="field-list simple">
@@ -441,10 +410,10 @@ Returns None if the landmarks was not provided to the Position on initialization
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the landmark</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>coordinates of the landmark</p>
+<dd class="field-even"><p>coordinates of the landmark [x,y(,z)]</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Optional[<a class="reference internal" href="#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]</p>
+<dd class="field-odd"><p>Optional[np.ndarray]</p>
 </dd>
 </dl>
 </dd></dl>

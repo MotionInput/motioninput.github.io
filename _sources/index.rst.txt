@@ -12,7 +12,7 @@ Welcome to Motion Input's documentation!
    is pushed to ``MI_Windows`` development branch. Make sure to check it out frequently.
 
 
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
@@ -33,7 +33,6 @@ Welcome to Motion Input's documentation!
    apidocs/scripts.core
    apidocs/scripts.hand_module
    apidocs/scripts.body_module
-   apidocs/scripts.exercise_module
    apidocs/scripts.gesture_events
    apidocs/scripts.gesture_event_handlers
    apidocs/scripts.tools
@@ -49,5 +48,3 @@ Welcome to Motion Input's documentation!
 .. image:: cat-bop.gif
    :width: 200
    :alt: No cat sadd ;(
-
-   

@@ -51,7 +51,6 @@
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.core.html">scripts.core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.hand_module.html">scripts.hand_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.body_module.html">scripts.body_module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.exercise_module.html">scripts.exercise_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_events.html">scripts.gesture_events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.tools.html">scripts.tools</a></li>
@@ -107,7 +106,6 @@
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
- | <a href="#X"><strong>X</strong></a>
  | <a href="#Z"><strong>Z</strong></a>
  
 </div>
@@ -176,7 +174,7 @@
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.directX_actions.DirectXAction">DirectXAction (class in scripts.gesture_events.directX_actions)</a>
 </li>
-      <li><a href="apidocs/scripts.core.html#scripts.core.xyz.xyz.distance">distance() (xyz method)</a>
+      <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.dist">dist() (in module scripts.hand_module.hand_position)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -280,10 +278,10 @@
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.get_frame_size">get_frame_size() (View method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_frames_held">get_frames_held() (HandGesture method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.GestureEventHandlers.get_handler_func">get_handler_func() (GestureEventHandlers method)</a>
 </li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_landmark">get_landmark() (HandPosition method)</a>
@@ -294,6 +292,8 @@
         <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.get_landmark">(RawData method)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_landmarks_distance">get_landmarks_distance() (HandPosition method)</a>
+</li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_last_n_positions">get_last_n_positions() (HandGesture method)</a>
 </li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_last_position">get_last_position() (HandGesture method)</a>
@@ -426,8 +426,6 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.core.html#scripts.core.xyz.xyz.middle_point">middle_point() (xyz method)</a>
-</li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.finger_pinch_event.MiddlePinchEvent">MiddlePinchEvent (class in scripts.gesture_events.finger_pinch_event)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model">Model (class in scripts.core.model)</a>
@@ -455,8 +453,6 @@
         <li><a href="apidocs/scripts.core.html#module-scripts.core.position_tracker">scripts.core.position_tracker</a>
 </li>
         <li><a href="apidocs/scripts.core.html#module-scripts.core.raw_data">scripts.core.raw_data</a>
-</li>
-        <li><a href="apidocs/scripts.core.html#module-scripts.core.xyz">scripts.core.xyz</a>
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers">scripts.gesture_event_handlers</a>
 </li>
@@ -526,8 +522,6 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.Primitive.name">name (Primitive attribute)</a>
-</li>
-      <li><a href="apidocs/scripts.core.html#scripts.core.xyz.xyz.normal">normal() (xyz method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.directX_actions.DirectXAction.notify_gesture_activated">notify_gesture_activated() (DirectXAction method)</a>
 
@@ -724,13 +718,6 @@
 </li>
       </ul></li>
       <li>
-    scripts.core.xyz
-
-      <ul>
-        <li><a href="apidocs/scripts.core.html#module-scripts.core.xyz">module</a>
-</li>
-      </ul></li>
-      <li>
     scripts.gesture_event_handlers
 
       <ul>
@@ -800,8 +787,6 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.extremity_trigger_event">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.finger_pinch_event
 
@@ -809,6 +794,8 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.finger_pinch_event">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.hand_active_event
 
@@ -1012,14 +999,6 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View">View (class in scripts.tools.view)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="X">X</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.core.html#scripts.core.xyz.xyz">xyz (class in scripts.core.xyz)</a>
 </li>
   </ul></td>
 </tr></table>

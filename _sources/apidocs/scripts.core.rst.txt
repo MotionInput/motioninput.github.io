@@ -19,12 +19,6 @@ scripts.core
    :show-inheritance:
 
 
-.. automodule:: scripts.core.xyz
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
 .. automodule:: scripts.core.position
    :members:
    :undoc-members:

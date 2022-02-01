@@ -57,7 +57,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.body_module.html">scripts.body_module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts.exercise_module.html">scripts.exercise_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_events.html">scripts.gesture_events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.tools.html">scripts.tools</a></li>
@@ -158,9 +157,14 @@
 
 </dd></dl>
 
-<span class="target" id="module-scripts.hand_module.hand_position"></span><dl class="py class">
+<span class="target" id="module-scripts.hand_module.hand_position"></span><dl class="py function">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.dist">
+<span class="sig-name descname"><span class="pre">dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.hand_module.hand_position.dist" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hand_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_primitives_names">
@@ -195,7 +199,7 @@ Returns None If the primitive has not been calculated, hendce if it either is no
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_landmark">
-<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz"><span class="pre">scripts.core.xyz.xyz</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_landmark" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_landmark" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the coordinates of the landmark.
 Returns None if the landmarks was not provided to the Position on initialization</p>
 <dl class="field-list simple">
@@ -206,10 +210,15 @@ Returns None if the landmarks was not provided to the Position on initialization
 <dd class="field-even"><p>coordinates of the landmark</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Optional[<a class="reference internal" href="scripts.core.html#scripts.core.xyz.xyz" title="scripts.core.xyz.xyz">xyz</a>]</p>
+<dd class="field-odd"><p>Optional[np.ndarray]</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_landmarks_distance">
+<span class="sig-name descname"><span class="pre">get_landmarks_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#scripts.hand_module.hand_position.HandPosition.get_landmarks_distance" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.hand_module.hand_position.HandPosition.get_palm_height">
