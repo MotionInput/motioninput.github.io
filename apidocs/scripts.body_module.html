@@ -54,7 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.core.html">scripts.core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.hand_module.html">scripts.hand_module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scripts.body_module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-scripts.body_module">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_events.html">scripts.gesture_events</a></li>
@@ -89,9 +89,72 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-scripts.body_module.body_landmark_detector">
-<span id="scripts-body-module"></span><h1>scripts.body_module<a class="headerlink" href="#module-scripts.body_module.body_landmark_detector" title="Permalink to this headline"></a></h1>
+  <section id="module-scripts.body_module.body_gesture">
+<span id="scripts-body-module"></span><h1>scripts.body_module<a class="headerlink" href="#module-scripts.body_module.body_gesture" title="Permalink to this headline"></a></h1>
 <dl class="py class">
+<dt class="sig sig-object py" id="scripts.body_module.body_gesture.BodyGesture">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BodyGesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_checker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><span class="pre">scripts.core.position_tracker.PositionTracker</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.body_module.body_gesture.BodyGesture" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.gesture.Gesture</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.body_module.body_gesture.BodyGesture.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.body_module.body_gesture.BodyGesture.update" title="Permalink to this definition"></a></dt>
+<dd><p>Records the current Position of the bodypart this BodyGesture was created from (“body”). With that Position checks if the Gesture still remains active (if all the states of the primitives of interest are in the required states)
+(This function is intended to be called each frame until the Gesture deactivates)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current state of the Gesture</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.body_module.body_gesture.BodyGesture.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.body_module.body_gesture.BodyGesture.get_name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns name of represented gesture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>name of represented gesture</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.body_module.body_gesture.BodyGesture.get_bodypart_name">
+<span class="sig-name descname"><span class="pre">get_bodypart_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.body_module.body_gesture.BodyGesture.get_bodypart_name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns name of the body part of the represented gesture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>name of body part</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.body_module.body_gesture.BodyGesture.get_frames_held">
+<span class="sig-name descname"><span class="pre">get_frames_held</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#scripts.body_module.body_gesture.BodyGesture.get_frames_held" title="Permalink to this definition"></a></dt>
+<dd><p>Checks the number of frames that the BodyGesture has been activated for, which is the number of positions that the gesture has still been active for.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of frames held for</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.body_module.body_landmark_detector"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.body_module.body_landmark_detector.BodyLandmarkDetector">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BodyLandmarkDetector</span></span><a class="headerlink" href="#scripts.body_module.body_landmark_detector.BodyLandmarkDetector" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.module.LandmarkDetector" title="scripts.core.module.LandmarkDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.module.LandmarkDetector</span></code></a></p>
@@ -111,8 +174,71 @@
 
 </dd></dl>
 
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<span class="target" id="module-scripts.body_module.body_position"></span><dl class="py function">
+<dt class="sig sig-object py" id="scripts.body_module.body_position.extractChannel">
+<span class="sig-name descname"><span class="pre">extractChannel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coi</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dst</span></span></span><a class="headerlink" href="#scripts.body_module.body_position.extractChannel" title="Permalink to this definition"></a></dt>
+<dd><p>.   &#64;brief Extracts a single channel from src (coi is 0-based index)
+.   &#64;param src input array
+.   &#64;param dst output array
+.   &#64;param coi index of channel to extract
+.   &#64;sa mixChannels, split</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.body_module.body_position.BodyPosition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BodyPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_body_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.body_module.body_position.BodyPosition" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.body_module.body_position.BodyPosition.config">
+<span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;scripts.tools.config.Config</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#scripts.body_module.body_position.BodyPosition.config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.body_module.body_position.BodyPosition.dirname">
+<span class="sig-name descname"><span class="pre">dirname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'D:\\a\\MI_Windows\\MI_Windows\\scripts\\body_module'</span></em><a class="headerlink" href="#scripts.body_module.body_position.BodyPosition.dirname" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.body_module.body_position.BodyPosition.get_primitives_names">
+<span class="sig-name descname"><span class="pre">get_primitives_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.body_module.body_position.BodyPosition.get_primitives_names" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Names of all primitives that are calcualted by the specific modules Position class on initialization</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.body_module.body_position.BodyPosition.get_primitive">
+<span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.body_module.body_position.BodyPosition.get_primitive" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the state of the given primitive in the Position if it has been calculated.
+Returns None If the primitive has not been calculated, hence either is not defined for current module or the landmarks needed to calculate it were not provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the primitive (e.g. “up_on” or “arm_left_on”)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>state of the primitive</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[bool]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="module-scripts.body_module">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.body_module" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.body_module.BodyModule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BodyModule</span></span><a class="headerlink" href="#scripts.body_module.BodyModule" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.module.Module" title="scripts.core.module.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.module.Module</span></code></a></p>
+</dd></dl>
+
 </section>
 </section>
 

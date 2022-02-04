@@ -21,12 +21,6 @@ scripts.gesture\_event\_handlers
    :show-inheritance:
 
 
-.. automodule:: scripts.gesture_event_handlers.extremity_actions
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
 .. automodule:: scripts.gesture_event_handlers.keyboard
    :members:
    :undoc-members:
@@ -39,22 +33,22 @@ scripts.gesture\_event\_handlers
    :show-inheritance:
 
 
- .. automodule::  scripts.gesture_event_handlers.area_of_interest
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule::  scripts.gesture_event_handlers.area_of_interest
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
- .. automodule::  scripts.gesture_event_handlers.extremity_circles
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule::  scripts.gesture_event_handlers.extremity_circles
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
- .. automodule::  scripts.gesture_event_handlers.exercise_display
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule::  scripts.gesture_event_handlers.exercise_display
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
 Module contents
