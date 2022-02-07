@@ -27,6 +27,11 @@ Subpackages
    :undoc-members:
    :show-inheritance:
 
+.. automodule:: scripts.tools.json_editors.json_editor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 
 Module contents
 ---------------
