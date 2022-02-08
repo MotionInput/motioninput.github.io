@@ -55,6 +55,35 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-motioninput-s-config-file">Understanding MotionInput’s Config File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pinch-events">Pinch Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#idle-event">Idle Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#palm-height-change-event">Palm Height Change Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scroll-event">Scroll Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zoom-event">Zoom Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mode-change-event">Mode Change Event</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modules">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hand">Hand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#body-gestures">Body Gestures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#extremity-triggers">Extremity Triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#handlers">Handlers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#area-of-interest">Area of Interest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mouse">Mouse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finger">Finger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zoom">Zoom</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -111,7 +140,7 @@
 <section id="architecture">
 <h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h1>
 <p><img alt="Diagram" src="_images/MIv3.PNG" /></p>
-<p>So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.</p>
+<p>So a quick overview of how the the system works. It can be observed in 2 parts: the setup and the frame by frame processing.</p>
 <section id="setup">
 <h2>setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
 <ul class="simple">
@@ -143,9 +172,10 @@
 </section>
 <section id="running-the-code">
 <h1>Running the code<a class="headerlink" href="#running-the-code" title="Permalink to this headline"></a></h1>
-<p>We are aiming to soon have just a main.py file and some config files for testing/using the system with easily configurable functionality.</p>
-<p>However, as we are not quite there yet currently, we are using the test.py file to run the system and moifying the mode_config dict in the mode_controller.py to config what functionality (aka set of events) we want to test.</p>
-<p>Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the Config class. In particular, the coordinates of the extremity triggers are set manually.</p>
+<p>We are aiming to soon have just a main.py file for testing/using the system with easily configurable functionality.</p>
+<p>However, as we are not quite there yet currently, we are using the test.py file to run the system and modifying the mode_config JSON to config what functionality (aka set of events) we want to test.</p>
+<p>Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the various JSON files. In particular, the coordinates of the extremity triggers are set manually. Documentation of how developers can interact
+with the config JSONs can be found <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.tools.html">here</a></p>
 </section>
 <section id="notes">
 <h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h1>
@@ -190,6 +220,236 @@ Adding primitives is done in the specific modules <a class="reference external" 
 <li><p>General Settings</p></li>
 </ul>
 <p>Developers can read values from these JSON files using the JSONEditor classes.</p>
+</section>
+<section id="understanding-motioninput-s-config-file">
+<h2>Understanding MotionInput’s Config File<a class="headerlink" href="#understanding-motioninput-s-config-file" title="Permalink to this headline"></a></h2>
+<p>The purpose of this text is to explain what information the config file for MotionInput works.</p>
+<section id="events">
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline"></a></h3>
+<p>Event configs hold settings for a given event:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;event: {</span>
+	<span class="s2">&quot;event_val_1&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+	<span class="s2">&quot;event_val_2&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+	<span class="o">...</span>
+<span class="p">}</span> 	
+</pre></div>
+</div>
+<section id="pinch-events">
+<h4>Pinch Events<a class="headerlink" href="#pinch-events" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;index_pinch&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_press&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">},</span>
+<span class="s2">&quot;middle_pinch&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_press&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">},</span>
+<span class="s2">&quot;double_pinch&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_press&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">},</span>
+<span class="s2">&quot;index_pulldown&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_press&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frames_for_press</span></code>: The amount of frames the gesture needs to be active to trigger a press.</p></li>
+</ul>
+</section>
+<section id="idle-event">
+<h4>Idle Event<a class="headerlink" href="#idle-event" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;idle_state_change&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frames_for_switch</span></code>: The amount of frames the idle event needs to be active to switch to idle mode (turn off area of interest and stop looking for gestures other than the active gesture).</p></li>
+</ul>
+</section>
+<section id="palm-height-change-event">
+<h4>Palm Height Change Event<a class="headerlink" href="#palm-height-change-event" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;palm_height_change&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+	<span class="s2">&quot;levels&quot;</span><span class="p">:</span> <span class="p">[</span>
+		<span class="mi">0</span><span class="p">,</span>
+		<span class="mf">0.105</span><span class="p">,</span>
+		<span class="mf">0.155</span>
+	<span class="p">]</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frames_for_switch</span></code>: The amount of frames the palm change gesture needs to be active for the palm height to be registered as changed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">levels</span></code>: The different palm height levels, being outside of your current level for 10 frames will cause your current level to update.</p></li>
+</ul>
+</section>
+<section id="scroll-event">
+<h4>Scroll Event<a class="headerlink" href="#scroll-event" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;scroll&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+	<span class="s2">&quot;index_middle_distance_threshold&quot;</span><span class="p">:</span> <span class="mf">0.3</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frames_for_switch</span></code>: The number of frames the scroll gesture needs to be active to cause the scroll action.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index_middle_distance</span></code>: The threshold used for determining whether the middle and index fingers are together.</p></li>
+</ul>
+</section>
+<section id="zoom-event">
+<h4>Zoom Event<a class="headerlink" href="#zoom-event" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;zoom&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frames_for_switch</span></code>: The number of frames the zoom gesture needs to be active to cause the zoom action.</p></li>
+</ul>
+</section>
+<section id="mode-change-event">
+<h4>Mode Change Event<a class="headerlink" href="#mode-change-event" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;mode_change&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frames_for_switch</span></code>: The number of frames the mode switch gesture needs to be active to switch to the next mode.</p></li>
+</ul>
+</section>
+</section>
+<section id="modules">
+<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h3>
+<p>Holds information for each of the different modules.</p>
+<section id="hand">
+<h4>Hand<a class="headerlink" href="#hand" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">position_pinch_sensitivity</span></code>: The sensitivity of pinch events.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">position_threshold_distance</span></code>:  Threshold used for determining whether or not a finger is folded.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_detection_confidence</span></code>: Minimum confidence value from the hand detection model for the detection to be considered successful.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_tracking_confidence</span></code>: Minimum confidence value from the landmark-tracking model for the hand landmarks to be considered tracked successfully.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_num_hands</span></code>: The maximum number of hands used by MI</p></li>
+</ul>
+</section>
+<section id="exercise">
+<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline"></a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: Whether or not equipment is being used or not, can be <code class="docutils literal notranslate"><span class="pre">noequipment</span></code> or <code class="docutils literal notranslate"><span class="pre">equipment</span></code>.</p>
+</section>
+</section>
+<section id="body-gestures">
+<h3>Body Gestures<a class="headerlink" href="#body-gestures" title="Permalink to this headline"></a></h3>
+<p>Holds information about extremity triggers and exercise gestures.</p>
+<section id="extremity-triggers">
+<h4>Extremity Triggers<a class="headerlink" href="#extremity-triggers" title="Permalink to this headline"></a></h4>
+<p>Rerpresnts information of an extremity trigger, of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;trigger_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;trigger_status&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;landmark&quot;</span><span class="p">:</span> <span class="s2">&quot;trigger_landmark&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">],</span>
+	<span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;trigger_action&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;trigger_key&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;activated&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">/</span><span class="n">false</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code>:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">landmark</span></code>: Which body part can activate the extremity trigger.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coordinates</span></code>: The position of the extremity trigger on the view.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>:  What activating the extremity trigger does.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: What key the extremity trigger presses/holds down.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activated</span></code>: Whether or not the extremity trigger is used</p></li>
+</ul>
+</section>
+<section id="id1">
+<h4>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h4>
+<p>Holds information about exercise gestures, seperated by exercises using equipment and exercises without equipment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;cycling&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;states&quot;</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;state_1&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="s2">&quot;activated&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">/</span><span class="n">false</span><span class="p">,</span>
+			<span class="s2">&quot;val&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;state_2&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="s2">&quot;activated&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">/</span><span class="n">false</span><span class="p">,</span>
+			<span class="s2">&quot;val&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+		<span class="p">}</span>
+	<span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;False&quot;</span><span class="o">/</span><span class="s2">&quot;True&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;exercise_action&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;exercise_key&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">states</span></code>: The different gestures that make up an exercises.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">activated</span></code>: Whether or not the state is active.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: Each state has a counter, this value holds the starting count (soon to be removed)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: What performing the exercise does.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: Whether activating the exercise presses/holds down a key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: Each exercise has a counter representing how many times the exercise has been carried out, this value holds the starting count.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activated</span></code>: Whether or not the exercise is used</p></li>
+</ul>
+</section>
+</section>
+<section id="handlers">
+<h3>Handlers<a class="headerlink" href="#handlers" title="Permalink to this headline"></a></h3>
+<p>Holds information on all of the event handlers.</p>
+<section id="area-of-interest">
+<h4>Area of Interest<a class="headerlink" href="#area-of-interest" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;aoi&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;spacing_levels&quot;</span><span class="p">:</span> <span class="p">[</span>
+		<span class="mf">0.3</span><span class="p">,</span>
+		<span class="mf">0.4</span><span class="p">,</span>
+		<span class="mf">0.5</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">spacing_levels_</span></code>: The size scalers of the area of interest.</p></li>
+</ul>
+</section>
+<section id="mouse">
+<h4>Mouse<a class="headerlink" href="#mouse" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;mouse&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;smoothing&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+	<span class="s2">&quot;sensitivity&quot;</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">smoothing</span></code>: How smooth mouse movements are.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sensitivity</span></code>: Mouse sensitivity.</p></li>
+</ul>
+</section>
+<section id="finger">
+<h4>Finger<a class="headerlink" href="#finger" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;finger&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code>: The radius of the circle that can be made by the finger.</p></li>
+</ul>
+</section>
+<section id="zoom">
+<h4>Zoom<a class="headerlink" href="#zoom" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;zoom&quot;</span><span class="p">:</span> <span class="p">{</span>
+	<span class="s2">&quot;smoothing&quot;</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">smoothing</span></code>: The smoothnes of the zoom action</p></li>
+</ul>
+</section>
+</section>
 </section>
 </section>
 

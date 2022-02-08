@@ -6,7 +6,7 @@
 # Architecture
 ![Diagram](./MIv3.PNG)
 
-So a quick overview of how the the system works. It can be oberved in 2 parts: the setup and the frame by frame processing.
+So a quick overview of how the the system works. It can be observed in 2 parts: the setup and the frame by frame processing.
 
 ## setup
 - Firstly, information for gestures and events are loaded from the database (eventually)
@@ -25,11 +25,12 @@ So a quick overview of how the the system works. It can be oberved in 2 parts: t
     - Run all active gesture events, which may result in the trigger functions in the events being called.
 
 # Running the code
-We are aiming to soon have just a main.py file and some config files for testing/using the system with easily configurable functionality.
+We are aiming to soon have just a main.py file for testing/using the system with easily configurable functionality.
 
-However, as we are not quite there yet currently, we are using the test.py file to run the system and moifying the mode_config dict in the mode_controller.py to config what functionality (aka set of events) we want to test.
+However, as we are not quite there yet currently, we are using the test.py file to run the system and modifying the mode_config JSON to config what functionality (aka set of events) we want to test.
 
-Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the Config class. In particular, the coordinates of the extremity triggers are set manually.
+Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the various JSON files. In particular, the coordinates of the extremity triggers are set manually. Documentation of how developers can interact
+with the config JSONs can be found [here](https://motioninput.github.io/apidocs/scripts.tools.html)
 
 
 # Notes
@@ -66,3 +67,189 @@ Settings that are unique to each users can be configured by editing the four JSO
 * General Settings
 
 Developers can read values from these JSON files using the JSONEditor classes.
+
+## Understanding MotionInput's Config File
+The purpose of this text is to explain what information the config file for MotionInput works.
+
+### Events
+Event configs hold settings for a given event:
+```
+"event: {
+	"event_val_1" : 1,
+	"event_val_2" : 1,
+	...
+} 	
+```
+
+#### Pinch Events
+```
+"index_pinch": {
+	"frames_for_press": 2
+},
+"middle_pinch": {
+	"frames_for_press": 2
+},
+"double_pinch": {
+	"frames_for_press": 2
+},
+"index_pulldown": {
+	"frames_for_press": 2
+}
+```
+* `frames_for_press`: The amount of frames the gesture needs to be active to trigger a press.
+
+#### Idle Event
+```
+"idle_state_change": {
+	"frames_for_switch": 10
+}
+```
+* `frames_for_switch`: The amount of frames the idle event needs to be active to switch to idle mode (turn off area of interest and stop looking for gestures other than the active gesture).
+
+#### Palm Height Change Event
+```
+"palm_height_change": {
+	"frames_for_switch": 10,
+	"levels": [
+		0,
+		0.105,
+		0.155
+	]
+},
+```
+* `frames_for_switch`: The amount of frames the palm change gesture needs to be active for the palm height to be registered as changed.
+* `levels`: The different palm height levels, being outside of your current level for 10 frames will cause your current level to update.
+
+#### Scroll Event
+```
+"scroll": {
+	"frames_for_switch": 2,
+	"index_middle_distance_threshold": 0.3
+},
+```
+* `frames_for_switch`: The number of frames the scroll gesture needs to be active to cause the scroll action.
+* `index_middle_distance`: The threshold used for determining whether the middle and index fingers are together.
+
+#### Zoom Event
+```
+"zoom": {
+	"frames_for_switch": 4
+},
+```
+* `frames_for_switch`: The number of frames the zoom gesture needs to be active to cause the zoom action.
+
+#### Mode Change Event
+```
+"mode_change": {
+	"frames_for_switch": 4
+}
+```
+* `frames_for_switch`: The number of frames the mode switch gesture needs to be active to switch to the next mode.
+
+### Modules
+Holds information for each of the different modules.
+
+#### Hand
+* `position_pinch_sensitivity`: The sensitivity of pinch events.
+
+* `position_threshold_distance`:  Threshold used for determining whether or not a finger is folded.
+
+* `min_detection_confidence`: Minimum confidence value from the hand detection model for the detection to be considered successful.
+
+* `min_tracking_confidence`: Minimum confidence value from the landmark-tracking model for the hand landmarks to be considered tracked successfully.
+
+* `max_num_hands`: The maximum number of hands used by MI
+
+#### Exercise
+`mode`: Whether or not equipment is being used or not, can be `noequipment` or `equipment`.
+
+### Body Gestures
+Holds information about extremity triggers and exercise gestures.
+
+#### Extremity Triggers
+Rerpresnts information of an extremity trigger, of the form:
+```
+"trigger_name": {
+	"status": "trigger_status",
+	"landmark": "trigger_landmark",
+	"coordinates": [x,y],
+	"action": "trigger_action",
+	"key": "trigger_key",
+	"activated": true/false
+},
+```
+* `status`:
+* `landmark`: Which body part can activate the extremity trigger.
+* `coordinates`: The position of the extremity trigger on the view.
+* `action`:  What activating the extremity trigger does.
+* `key`: What key the extremity trigger presses/holds down.
+* `activated`: Whether or not the extremity trigger is used
+
+#### Exercise
+Holds information about exercise gestures, seperated by exercises using equipment and exercises without equipment.
+```
+"cycling": {
+	"states": {
+		"state_1": {
+			"activated": true/false,
+			"val" : 1
+		},
+		"state_2": {
+			"activated": true/false,
+			"val" : 1
+		}
+	"status": "False"/"True",
+	"action": "exercise_action",
+	"key": "exercise_key",
+	"count": 1
+}
+```
+* `states`: The different gestures that make up an exercises.
+	* `activated`: Whether or not the state is active.
+	* `val`: Each state has a counter, this value holds the starting count (soon to be removed)
+* `status`
+* `action`: What performing the exercise does.
+* `key`: Whether activating the exercise presses/holds down a key.
+* `count`: Each exercise has a counter representing how many times the exercise has been carried out, this value holds the starting count.
+* `activated`: Whether or not the exercise is used
+
+### Handlers
+Holds information on all of the event handlers.
+
+#### Area of Interest
+```
+"aoi": {
+	"spacing_levels": [
+		0.3,
+		0.4,
+		0.5
+	]
+}
+```
+* `spacing_levels_`: The size scalers of the area of interest.
+
+#### Mouse
+```
+"mouse": {
+	"smoothing": 3,
+	"sensitivity": 3
+}
+```
+* `smoothing`: How smooth mouse movements are.
+* `sensitivity`: Mouse sensitivity.
+
+#### Finger
+ ```
+ "finger": {
+	"radius": 5
+}
+```
+* `radius`: The radius of the circle that can be made by the finger.
+
+#### Zoom
+```
+"zoom": {
+	"smoothing": 3
+}
+```
+* `smoothing`: The smoothnes of the zoom action
