@@ -58,6 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scripts.tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-scripts.tools.config">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-scripts.tools.json_editors.json_editor">JSON Editors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-scripts.tools">Module contents</a></li>
 </ul>
 </li>
@@ -225,7 +226,10 @@ class is not already initialised, then it also initialises the class.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.tools.json_editors.json_editor"></span><dl class="py class">
+</section>
+<section id="module-scripts.tools.json_editors.json_editor">
+<span id="json-editors"></span><h2>JSON Editors<a class="headerlink" href="#module-scripts.tools.json_editors.json_editor" title="Permalink to this headline"></a></h2>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.json_editor.JSONEditor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JSONEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -312,6 +316,89 @@ class is not already initialised, then it also initialises the class.</p>
 :type gesture_type: str
 :return: A dictionary containing all the activated gestures and their attributes.
 :rtype: Dict</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.tools.json_editors.event_editor"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.event_editor.EventEditor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EventEditor</span></span><a class="headerlink" href="#scripts.tools.json_editors.event_editor.EventEditor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="scripts.tools.json_editors.json_editor.JSONEditor"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.json_editors.json_editor.JSONEditor</span></code></a></p>
+<p>Class that handles the reading/writing of the event JSON</p>
+<p>Events should be of the form
+event_name : {</p>
+<blockquote>
+<div><p>type : EventClassName
+args : {}
+bodypart_names_to_type : {bodypart_name : type}
+triggers: {</p>
+<blockquote>
+<div><p>trigger_name : (trigger_class, trigger_function)</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</dd></dl>
+
+<span class="target" id="module-scripts.tools.json_editors.gesture_editor"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.gesture_editor.GestureEditor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GestureEditor</span></span><a class="headerlink" href="#scripts.tools.json_editors.gesture_editor.GestureEditor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="scripts.tools.json_editors.json_editor.JSONEditor"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.json_editors.json_editor.JSONEditor</span></code></a></p>
+<p>Class that handles the reading/writing of the gesture JSON</p>
+<p>Gestures should be of the form
+{</p>
+<blockquote>
+<div><dl class="simple">
+<dt>gesture_name<span class="classifier">{</span></dt><dd><p>primitive_name : bool,
+primitive_name : bool,
+…,</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.gesture_editor.GestureEditor.get_all_data">
+<span class="sig-name descname"><span class="pre">get_all_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.tools.json_editors.gesture_editor.GestureEditor.get_all_data" title="Permalink to this definition"></a></dt>
+<dd><p>Use this to get all gestures</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The contents of the JSON file, with all primitives being their corresponding python objects.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict[str, Dict[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.gesture_editor.GestureEditor.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.gesture_factory.Primitive" title="scripts.core.gesture_factory.Primitive"><span class="pre">scripts.core.gesture_factory.Primitive</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.tools.json_editors.gesture_editor.GestureEditor.get_data" title="Permalink to this definition"></a></dt>
+<dd><p>Gets all the primitives of a specified gesture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to the event to retrieve.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A set of primitives representing the gesture.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Set[<a class="reference internal" href="scripts.core.html#scripts.core.gesture_factory.Primitive" title="scripts.core.gesture_factory.Primitive">Primitive</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.tools.json_editors.mode_controller_editor"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ModeControllerEditor</span></span><a class="headerlink" href="#scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="scripts.tools.json_editors.json_editor.JSONEditor"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.json_editors.json_editor.JSONEditor</span></code></a></p>
+<p>Class that handles the reading of the mode_controller JSON</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor.remove_object">
+<span class="sig-name descname"><span class="pre">remove_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor.remove_object" title="Permalink to this definition"></a></dt>
+<dd><p>Stops people from (accidentally?) removing mode controllers.</p>
 </dd></dl>
 
 </dd></dl>

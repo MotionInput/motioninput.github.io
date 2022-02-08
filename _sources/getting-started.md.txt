@@ -30,7 +30,7 @@ We are aiming to soon have just a main.py file for testing/using the system with
 However, as we are not quite there yet currently, we are using the test.py file to run the system and modifying the mode_config JSON to config what functionality (aka set of events) we want to test.
 
 Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the various JSON files. In particular, the coordinates of the extremity triggers are set manually. Documentation of how developers can interact
-with the config JSONs can be found [here](https://motioninput.github.io/apidocs/scripts.tools.html)
+with the config JSONs can be found [here](https://motioninput.github.io/apidocs/scripts.tools.html#json_editors)
 
 
 # Notes
@@ -170,7 +170,6 @@ Holds information about extremity triggers and exercise gestures.
 Rerpresnts information of an extremity trigger, of the form:
 ```
 "trigger_name": {
-	"status": "trigger_status",
 	"landmark": "trigger_landmark",
 	"coordinates": [x,y],
 	"action": "trigger_action",
@@ -178,7 +177,6 @@ Rerpresnts information of an extremity trigger, of the form:
 	"activated": true/false
 },
 ```
-* `status`:
 * `landmark`: Which body part can activate the extremity trigger.
 * `coordinates`: The position of the extremity trigger on the view.
 * `action`:  What activating the extremity trigger does.
@@ -198,7 +196,6 @@ Holds information about exercise gestures, seperated by exercises using equipmen
 			"activated": true/false,
 			"val" : 1
 		}
-	"status": "False"/"True",
 	"action": "exercise_action",
 	"key": "exercise_key",
 	"count": 1
@@ -207,7 +204,6 @@ Holds information about exercise gestures, seperated by exercises using equipmen
 * `states`: The different gestures that make up an exercises.
 	* `activated`: Whether or not the state is active.
 	* `val`: Each state has a counter, this value holds the starting count (soon to be removed)
-* `status`
 * `action`: What performing the exercise does.
 * `key`: Whether activating the exercise presses/holds down a key.
 * `count`: Each exercise has a counter representing how many times the exercise has been carried out, this value holds the starting count.

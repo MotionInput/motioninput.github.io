@@ -27,6 +27,9 @@ Subpackages
    :undoc-members:
    :show-inheritance:
 
+JSON Editors
+------------
+
 .. automodule:: scripts.tools.json_editors.json_editor
   :members:
   :undoc-members:
@@ -36,6 +39,22 @@ Subpackages
   :members:
   :undoc-members:
   :show-inheritance:
+
+.. automodule:: scripts.tools.json_editors.event_editor
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
+.. automodule:: scripts.tools.json_editors.gesture_editor
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
+.. automodule:: scripts.tools.json_editors.mode_controller_editor
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
 
 Module contents
 ---------------
