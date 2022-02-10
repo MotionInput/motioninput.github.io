@@ -43,6 +43,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#understanding-motioninput-s-config-file">Understanding MotionInput’s Config File</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -118,17 +120,12 @@ class is not already initialised, then it also initialises the class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.view.View.update_display">
-<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.view.View.update_display" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.view.View.update_display" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.tools.view.View.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.view.View.close" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.tools.view.View.set_new_frame">
-<span class="sig-name descname"><span class="pre">set_new_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.view.View.set_new_frame" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="scripts.tools.view.View.is_closed">
+<span class="sig-name descname"><span class="pre">is_closed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.tools.view.View.is_closed" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -215,8 +212,8 @@ class is not already initialised, then it also initialises the class.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Camera</span></span><a class="headerlink" href="#scripts.tools.camera.Camera" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.tools.camera.Camera.readFrame">
-<span class="sig-name descname"><span class="pre">readFrame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.camera.Camera.readFrame" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="scripts.tools.camera.Camera.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#scripts.tools.camera.Camera.read" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

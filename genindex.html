@@ -40,6 +40,8 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#understanding-motioninput-s-config-file">Understanding MotionInput’s Config File</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -113,10 +115,6 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_event">add_event() (Model method)</a>
-</li>
-      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.add_events_to_model">add_events_to_model() (EventMapper method)</a>
-</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_gesture">add_gesture() (Model method)</a>
 
       <ul>
@@ -125,10 +123,10 @@
       </ul></li>
       <li><a href="apidocs/scripts.gesture_loader.html#scripts.gesture_loader.GestureLoader.add_gestures_to_model">add_gestures_to_model() (GestureLoader method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.add_landmark">add_landmark() (RawData method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_module">add_module() (Model method)</a>
 </li>
       <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.add_new_event">add_new_event() (EventMapper method)</a>
@@ -177,22 +175,18 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.clear_exericse_display">clear_exericse_display() (ExerciseDisplay method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.clear_extremity_circles">clear_extremity_circles() (ExtremityActions method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.clear_extremity_circles">(ExtremityCircles method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker">Clicker (class in scripts.gesture_event_handlers.pydirect_directx_actions)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera.close">close() (Camera method)</a>
-
-      <ul>
-        <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.close">(View method)</a>
 </li>
-      </ul></li>
       <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.combine">combine() (RawData method)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.config.Config">Config() (in module scripts.tools.config)</a>
@@ -467,6 +461,8 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.inputData">inputData (POINTER_INFO attribute)</a>
 </li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.is_closed">is_closed() (View method)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -738,19 +734,13 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.rcContactRaw">rcContactRaw (POINTER_TOUCH_INFO attribute)</a>
 </li>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera.readFrame">readFrame() (Camera method)</a>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera.read">read() (Camera method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.release">release() (DesktopTouch method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action">release_action() (ExtremityActions method)</a>
 </li>
       <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.remove_event">remove_event() (EventMapper method)</a>
-
-      <ul>
-        <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.remove_event">(Model method)</a>
-</li>
-      </ul></li>
-      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.remove_events_from_model">remove_events_from_model() (EventMapper method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_loader.html#scripts.gesture_loader.GestureLoader.remove_gesture">remove_gesture() (GestureLoader method)</a>
 
@@ -1158,8 +1148,6 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.set_extremity_circles_dict">set_extremity_circles_dict() (ExtremityCircles method)</a>
 </li>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.set_new_frame">set_new_frame() (View method)</a>
-</li>
       <li><a href="apidocs/scripts.mode_controller.html#scripts.mode_controller.ModeController.set_next_mode">set_next_mode() (ModeController method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.set_trigger_functions">set_trigger_functions() (GestureEvent method)</a>
@@ -1177,6 +1165,10 @@
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.sourceDevice">sourceDevice (POINTER_INFO attribute)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.Primitive.state">state (Primitive attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.switch_events">switch_events() (Model method)</a>
+</li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.switch_events_in_model">switch_events_in_model() (EventMapper method)</a>
 </li>
   </ul></td>
 </tr></table>

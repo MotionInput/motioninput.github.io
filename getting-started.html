@@ -54,34 +54,35 @@
 <li class="toctree-l3"><a class="reference internal" href="#adding-event-handlers">Adding event handlers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#understanding-motioninput-s-config-file">Understanding MotionInput’s Config File</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#events">Events</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pinch-events">Pinch Events</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#idle-event">Idle Event</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#palm-height-change-event">Palm Height Change Event</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#scroll-event">Scroll Event</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#zoom-event">Zoom Event</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mode-change-event">Mode Change Event</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#modules">Modules</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#hand">Hand</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exercise">Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#understanding-motioninput-s-config-file">Understanding MotionInput’s Config File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#events">Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pinch-events">Pinch Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#idle-event">Idle Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#palm-height-change-event">Palm Height Change Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scroll-event">Scroll Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zoom-event">Zoom Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mode-change-event">Mode Change Event</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#body-gestures">Body Gestures</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#extremity-triggers">Extremity Triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hand">Hand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercise">Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#handlers">Handlers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#area-of-interest">Area of Interest</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mouse">Mouse</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#finger">Finger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#zoom">Zoom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#body-gestures">Body Gestures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#extremity-triggers">Extremity Triggers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Exercise</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#handlers">Handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#area-of-interest">Area of Interest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mouse">Mouse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finger">Finger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zoom">Zoom</a></li>
 </ul>
 </li>
 </ul>
@@ -210,8 +211,9 @@ Adding primitives is done in the specific modules <a class="reference external" 
 <p>Event handlers (classes that contain all the functions that are called by GestureEvents and are responsible for actually controlling the users computer e.g. moving the mouse or pressing keys) are stored in the gesture_event_handlers folder. If you have added any new classes or new functions to already exicsting handler classes, please first add them to the __init__.py file in the gesture_event_handlers folder in the same manner as the previous examples, in order for the EventMapper class to be able to use the new functionality. After this you can now use your handler by mapping GestureEvents to it in the EventMapper class.</p>
 </section>
 </section>
+</section>
 <section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h1>
 <p>Settings that are unique to each users can be configured by editing the four JSON files located in the data directory. For the time being these settings can only be changed manually, however the aim is to be able to update them during runtime. The four JSON files are responsible for holding information about:</p>
 <ul class="simple">
 <li><p>Gestures</p></li>
@@ -222,12 +224,24 @@ Adding primitives is done in the specific modules <a class="reference external" 
 <p>Developers can read values from these JSON files using the JSONEditor classes.</p>
 </section>
 <section id="understanding-motioninput-s-config-file">
-<h2>Understanding MotionInput’s Config File<a class="headerlink" href="#understanding-motioninput-s-config-file" title="Permalink to this headline"></a></h2>
+<h1>Understanding MotionInput’s Config File<a class="headerlink" href="#understanding-motioninput-s-config-file" title="Permalink to this headline"></a></h1>
 <p>The purpose of this text is to explain what information the config file for MotionInput works.</p>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline"></a></h2>
+<p>Non-specific higher level settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;general&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;window_name&quot;</span><span class="p">:</span> <span class="s2">&quot;UCL MotionInput v3.0&quot;</span>
+        <span class="p">}</span>
+		<span class="o">...</span>
+    <span class="p">}</span>	
+</pre></div>
+</div>
+</section>
 <section id="events">
-<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline"></a></h3>
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline"></a></h2>
 <p>Event configs hold settings for a given event:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;event: {</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;event_val_1&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
 	<span class="s2">&quot;event_val_2&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
 	<span class="o">...</span>
@@ -235,7 +249,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </pre></div>
 </div>
 <section id="pinch-events">
-<h4>Pinch Events<a class="headerlink" href="#pinch-events" title="Permalink to this headline"></a></h4>
+<h3>Pinch Events<a class="headerlink" href="#pinch-events" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;index_pinch&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;frames_for_press&quot;</span><span class="p">:</span> <span class="mi">2</span>
 <span class="p">},</span>
@@ -255,7 +269,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="idle-event">
-<h4>Idle Event<a class="headerlink" href="#idle-event" title="Permalink to this headline"></a></h4>
+<h3>Idle Event<a class="headerlink" href="#idle-event" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;idle_state_change&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">10</span>
 <span class="p">}</span>
@@ -266,7 +280,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="palm-height-change-event">
-<h4>Palm Height Change Event<a class="headerlink" href="#palm-height-change-event" title="Permalink to this headline"></a></h4>
+<h3>Palm Height Change Event<a class="headerlink" href="#palm-height-change-event" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;palm_height_change&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
 	<span class="s2">&quot;levels&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -283,7 +297,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="scroll-event">
-<h4>Scroll Event<a class="headerlink" href="#scroll-event" title="Permalink to this headline"></a></h4>
+<h3>Scroll Event<a class="headerlink" href="#scroll-event" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;scroll&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
 	<span class="s2">&quot;index_middle_distance_threshold&quot;</span><span class="p">:</span> <span class="mf">0.3</span>
@@ -296,7 +310,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="zoom-event">
-<h4>Zoom Event<a class="headerlink" href="#zoom-event" title="Permalink to this headline"></a></h4>
+<h3>Zoom Event<a class="headerlink" href="#zoom-event" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;zoom&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">4</span>
 <span class="p">},</span>
@@ -307,7 +321,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="mode-change-event">
-<h4>Mode Change Event<a class="headerlink" href="#mode-change-event" title="Permalink to this headline"></a></h4>
+<h3>Mode Change Event<a class="headerlink" href="#mode-change-event" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;mode_change&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;frames_for_switch&quot;</span><span class="p">:</span> <span class="mi">4</span>
 <span class="p">}</span>
@@ -319,10 +333,10 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </section>
 </section>
 <section id="modules">
-<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h3>
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h2>
 <p>Holds information for each of the different modules.</p>
 <section id="hand">
-<h4>Hand<a class="headerlink" href="#hand" title="Permalink to this headline"></a></h4>
+<h3>Hand<a class="headerlink" href="#hand" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">position_pinch_sensitivity</span></code>: The sensitivity of pinch events.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">position_threshold_distance</span></code>:  Threshold used for determining whether or not a finger is folded.</p></li>
@@ -332,15 +346,15 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="exercise">
-<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline"></a></h4>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: Whether or not equipment is being used or not, can be <code class="docutils literal notranslate"><span class="pre">noequipment</span></code> or <code class="docutils literal notranslate"><span class="pre">equipment</span></code>.</p>
 </section>
 </section>
 <section id="body-gestures">
-<h3>Body Gestures<a class="headerlink" href="#body-gestures" title="Permalink to this headline"></a></h3>
+<h2>Body Gestures<a class="headerlink" href="#body-gestures" title="Permalink to this headline"></a></h2>
 <p>Holds information about extremity triggers and exercise gestures.</p>
 <section id="extremity-triggers">
-<h4>Extremity Triggers<a class="headerlink" href="#extremity-triggers" title="Permalink to this headline"></a></h4>
+<h3>Extremity Triggers<a class="headerlink" href="#extremity-triggers" title="Permalink to this headline"></a></h3>
 <p>Rerpresnts information of an extremity trigger, of the form:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;trigger_name&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;landmark&quot;</span><span class="p">:</span> <span class="s2">&quot;trigger_landmark&quot;</span><span class="p">,</span>
@@ -360,7 +374,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="id1">
-<h4>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h4>
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p>Holds information about exercise gestures, seperated by exercises using equipment and exercises without equipment.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;cycling&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;states&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -393,10 +407,10 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </section>
 </section>
 <section id="handlers">
-<h3>Handlers<a class="headerlink" href="#handlers" title="Permalink to this headline"></a></h3>
+<h2>Handlers<a class="headerlink" href="#handlers" title="Permalink to this headline"></a></h2>
 <p>Holds information on all of the event handlers.</p>
 <section id="area-of-interest">
-<h4>Area of Interest<a class="headerlink" href="#area-of-interest" title="Permalink to this headline"></a></h4>
+<h3>Area of Interest<a class="headerlink" href="#area-of-interest" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;aoi&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;spacing_levels&quot;</span><span class="p">:</span> <span class="p">[</span>
 		<span class="mf">0.3</span><span class="p">,</span>
@@ -411,7 +425,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="mouse">
-<h4>Mouse<a class="headerlink" href="#mouse" title="Permalink to this headline"></a></h4>
+<h3>Mouse<a class="headerlink" href="#mouse" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;mouse&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;smoothing&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
 	<span class="s2">&quot;sensitivity&quot;</span><span class="p">:</span> <span class="mi">3</span>
@@ -424,7 +438,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="finger">
-<h4>Finger<a class="headerlink" href="#finger" title="Permalink to this headline"></a></h4>
+<h3>Finger<a class="headerlink" href="#finger" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;finger&quot;</span><span class="p">:</span> <span class="p">{</span>
    <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">5</span>
 <span class="p">}</span>
@@ -435,7 +449,7 @@ Adding primitives is done in the specific modules <a class="reference external" 
 </ul>
 </section>
 <section id="zoom">
-<h4>Zoom<a class="headerlink" href="#zoom" title="Permalink to this headline"></a></h4>
+<h3>Zoom<a class="headerlink" href="#zoom" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;zoom&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;smoothing&quot;</span><span class="p">:</span> <span class="mi">3</span>
 <span class="p">}</span>
@@ -444,7 +458,6 @@ Adding primitives is done in the specific modules <a class="reference external" 
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">smoothing</span></code>: The smoothnes of the zoom action</p></li>
 </ul>
-</section>
 </section>
 </section>
 </section>

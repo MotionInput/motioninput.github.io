@@ -43,6 +43,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#understanding-motioninput-s-config-file">Understanding MotionInput’s Config File</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -114,33 +116,17 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.model.Model.add_event">
-<span class="sig-name descname"><span class="pre">add_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.core.gesture_event.GestureEvent" title="scripts.core.gesture_event.GestureEvent"><span class="pre">scripts.core.gesture_event.GestureEvent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.add_event" title="Permalink to this definition"></a></dt>
-<dd><p>Adds a new event to the model. Events can be added during the runtime of the model (aka between frames).</p>
+<dt class="sig sig-object py" id="scripts.core.model.Model.switch_events">
+<span class="sig-name descname"><span class="pre">switch_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events_to_remove</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">events_to_add</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#scripts.core.gesture_event.GestureEvent" title="scripts.core.gesture_event.GestureEvent"><span class="pre">scripts.core.gesture_event.GestureEvent</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.switch_events" title="Permalink to this definition"></a></dt>
+<dd><p>First temoves the specified events from the model and adds new ones in afterwards.
+Removing an event may also lead to removing of some gestures that are no longer used by any events in the model.
+If all gestures from one module get removed so does the module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_name</strong> (<em>str</em>) – name of the event to add</p></li>
-<li><p><strong>event</strong> (<a class="reference internal" href="#scripts.core.gesture_event.GestureEvent" title="scripts.core.gesture_event.GestureEvent"><em>GestureEvent</em></a>) – event to add</p></li>
+<li><p><strong>events_to_remove</strong> (<em>Set</em><em>[</em><em>str</em><em>]</em>) – names of the events to remove</p></li>
+<li><p><strong>events_to_add</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#scripts.core.gesture_event.GestureEvent" title="scripts.core.gesture_event.GestureEvent"><em>GestureEvent</em></a><em>]</em>) – nemaes of the events to add mapped to the event instances</p></li>
 </ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>RuntimeError</strong> – if the event (same name) is already in the model</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.core.model.Model.remove_event">
-<span class="sig-name descname"><span class="pre">remove_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.model.Model.remove_event" title="Permalink to this definition"></a></dt>
-<dd><p>Remove an event from the model. Events can be removed during the runtime of the model (aka between frames).
-Removing an event may also lead to removing of some gestures that are no longer used by any events in the model and consequently to removal of modules that are no longer used by any gestures</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event_name</strong> (<em>str</em>) – name of the event to remove from the model</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>RuntimeError</strong> – if the model does not have this event</p>
 </dd>
 </dl>
 </dd></dl>
