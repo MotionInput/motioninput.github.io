@@ -197,7 +197,7 @@ Rerpresnts information of an extremity trigger, of the form:
 #### Exercise
 Holds information about exercise gestures, seperated by exercises using equipment and exercises without equipment.
 ```
-"cycling": {
+"exercise_name": {
 	"states": {
 		"state_1": {
 			"activated": true/false,
