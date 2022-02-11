@@ -60,7 +60,24 @@
 <li class="toctree-l1"><a class="reference internal" href="#documentation">Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#understanding-docs">Understanding docs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-documentation">Build documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#compilation">Compilation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#from-github-actions">From Github actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-locally">Build Locally</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-requirements">Install requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-compilation-command">Run compilation command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copying-some-files">Copying some files.</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1">Step 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2">Step 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3">Step 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4">Step 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#things-to-keep-in-mind">Things to keep in mind.</a></li>
 </ul>
 </li>
 </ul>
@@ -147,17 +164,17 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># What</span>
  <span class="o">-</span> <span class="mi">5</span> <span class="n">new</span> <span class="n">hand</span> <span class="n">gestures</span>
  <span class="o">-</span> <span class="n">Fixed</span> <span class="n">an</span> <span class="n">issue</span> <span class="k">with</span> <span class="n">the</span> <span class="n">mouse</span> <span class="n">moving</span> <span class="n">around</span> <span class="n">when</span> <span class="n">the</span> <span class="n">hand</span> <span class="ow">is</span> <span class="n">stationary</span>
- 
+
 <span class="c1"># How</span>
- <span class="o">-</span> <span class="n">Hand</span> <span class="n">gestures</span><span class="p">:</span> 
+ <span class="o">-</span> <span class="n">Hand</span> <span class="n">gestures</span><span class="p">:</span>
 <span class="n">Trained</span> <span class="n">a</span> <span class="n">few</span> <span class="n">models</span> <span class="n">using</span> <span class="n">video</span> <span class="n">samples</span> <span class="kn">from</span> <span class="nn">here</span><span class="p">:</span> <span class="p">(</span><span class="n">pretend</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">link</span> <span class="n">here</span><span class="p">)</span><span class="o">.</span>
 <span class="n">Updated</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">view</span> <span class="n">to</span> <span class="n">include</span> <span class="n">new</span> <span class="n">gestures</span><span class="o">.</span>
  <span class="o">-</span> <span class="n">Mouse</span> <span class="n">jiggling</span> <span class="n">fix</span><span class="p">:</span>
-<span class="n">Added</span> <span class="n">a</span> <span class="n">small</span> <span class="n">motion</span> <span class="n">radius</span> <span class="n">around</span> <span class="n">each</span> <span class="n">hand</span> <span class="n">joint</span> 
+<span class="n">Added</span> <span class="n">a</span> <span class="n">small</span> <span class="n">motion</span> <span class="n">radius</span> <span class="n">around</span> <span class="n">each</span> <span class="n">hand</span> <span class="n">joint</span>
 <span class="n">which</span> <span class="n">diables</span> <span class="n">mouse</span> <span class="n">movement</span> <span class="n">unless</span> <span class="n">the</span> <span class="n">joint</span> <span class="n">goes</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">radius</span><span class="o">.</span>
 <span class="c1"># Why</span>
  <span class="o">-</span> <span class="n">Hand</span> <span class="n">gestures</span><span class="p">:</span> <span class="n">Dean</span> <span class="n">asked</span> <span class="n">me</span>
- <span class="o">-</span> <span class="n">Mouse</span> <span class="n">jiggling</span> <span class="n">fix</span><span class="p">:</span> 
+ <span class="o">-</span> <span class="n">Mouse</span> <span class="n">jiggling</span> <span class="n">fix</span><span class="p">:</span>
 <span class="n">It</span> <span class="n">prevented</span> <span class="n">featureX</span> <span class="n">to</span> <span class="n">work</span> <span class="ow">and</span> <span class="n">it</span> <span class="n">generally</span> <span class="n">just</span> <span class="n">annoyed</span> <span class="n">the</span> <span class="n">hell</span> <span class="n">out</span> <span class="n">of</span> <span class="n">me</span><span class="o">.</span>
 <span class="c1"># Testing</span>
 <span class="n">Used</span> <span class="n">X</span> <span class="n">framework</span> <span class="k">for</span> <span class="n">unit</span> <span class="n">tests</span>
@@ -206,7 +223,6 @@ Navigate to <code class="docutils literal notranslate"><span class="pre">docs</s
 	├── index.rst
 	├── _static
 	└── _templates
-	
 </pre></div>
 </div>
 <ul class="simple">
@@ -228,14 +244,105 @@ of <code class="docutils literal notranslate"><span class="pre">.md</span></code
 with a caption <strong>Development</strong> and references the file <code class="docutils literal notranslate"><span class="pre">development.md</span></code>
 (no need to add file extension in rst files as it doesn’t care)</p>
 </section>
-<section id="compilation">
-<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline"></a></h2>
+<section id="build-documentation">
+<h2>Build documentation<a class="headerlink" href="#build-documentation" title="Permalink to this headline"></a></h2>
 <p>So now that you have made changes to the actual documentation,
 in order to compile it, navigate to the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span><span class="p">;</span> <span class="n">make</span> <span class="n">html</span>
 </pre></div>
 </div>
 <p>This will create a build folder where you can find all html files.</p>
+</section>
+</section>
+<section id="compilation">
+<h1>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline"></a></h1>
+<p>This section will describe how to compile motion input codebase.</p>
+<p>We use <a class="reference external" href="https://nuitka.net/">nuitka</a> transpiler in order to produce the resultant
+<code class="docutils literal notranslate"><span class="pre">.exe</span></code> file.</p>
+<p>A few things to note about the compilation process</p>
+<ul class="simple">
+<li><p>Nuitka will translate our python code into C and then compile it.</p></li>
+<li><p>Compilation process is estimated to take around 30 minutes.</p></li>
+<li><p>It takes 3 to 4 Gb of RAM.</p></li>
+<li><p>By default it will use 100% of your CPU.</p></li>
+</ul>
+<p>Now that you know all of this, read further to learn 2 ways of getting the
+desired executable.</p>
+<section id="from-github-actions">
+<h2>From Github actions<a class="headerlink" href="#from-github-actions" title="Permalink to this headline"></a></h2>
+<p>The easiest way to compile motion input is to run a github action in the
+<strong>MI_WINDOWS</strong> repository. That way you don’t have to install any dependencies
+and run the resource expensive compilation process on your machine.</p>
+<p>Okay so how do you do this.</p>
+</section>
+<section id="build-locally">
+<h2>Build Locally<a class="headerlink" href="#build-locally" title="Permalink to this headline"></a></h2>
+<p>This section will explain how to compile motioninput on a local machine.</p>
+<p>Here is an overview of all steps that need to be done:</p>
+<ol class="simple">
+<li><p>Install requirements</p></li>
+<li><p>Run compilation command</p></li>
+<li><p>Copy some files into the final release directory (this is needed to make dependencies happy)</p></li>
+</ol>
+<section id="install-requirements">
+<h3>Install requirements<a class="headerlink" href="#install-requirements" title="Permalink to this headline"></a></h3>
+<p>Just run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="run-compilation-command">
+<h3>Run compilation command<a class="headerlink" href="#run-compilation-command" title="Permalink to this headline"></a></h3>
+<p>The command is the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">nuitka</span> <span class="o">--</span><span class="n">lto</span><span class="o">=</span><span class="n">no</span> <span class="o">--</span><span class="n">windows</span><span class="o">-</span><span class="n">disable</span><span class="o">-</span><span class="n">console</span> <span class="o">--</span><span class="n">assume</span><span class="o">-</span><span class="n">yes</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">downloads</span> <span class="o">--</span><span class="n">standalone</span> <span class="o">--</span><span class="n">plugin</span><span class="o">-</span><span class="n">enable</span><span class="o">=</span><span class="n">numpy</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span><span class="o">=</span><span class="n">Release</span> <span class="n">motioninput</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>This is indeed very long, so let’s look at each compilation flag and see what it does.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--lto</span></code>: link time optimisation, if you keep it on the compilation time will increase from 30 minutes to several hours. (not worth it for debugging, only use it for the final release)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--windwos-disable-console</span></code>: Prevents console from appearing when running the code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--assume-yes-for-downloads</span></code>: Just a flag that will prevent some prompts from appearing. Nuitka will only prompt to download a C compiler and some dependency tracking tools so just keep it on to save some time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--standalone</span></code>: This makes nuitka package libraries along side the executable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--plugin-enable=numpy</span></code>: Numpy is a bit weird cuz it’s already primarily written in C so it needs some special treatment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--outuput-dir=Release</span></code>: Output directory.</p></li>
+</ul>
+<p>That’s it. After running this command you should now see a <code class="docutils literal notranslate"><span class="pre">Release</span></code> folder appear the project root.</p>
+<p>If everything went well, it should contain 2 folders: <code class="docutils literal notranslate"><span class="pre">motioninput.build</span></code> and <code class="docutils literal notranslate"><span class="pre">motioninput.dist</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">motioninput.build</span></code>: source C code, you can get rid of it if you want, it’s now useless.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">motioninput.dist</span></code>: This is where our compiled project is.</p></li>
+</ul>
+<p>Add and remove flags as appropriate for debugging purposes.</p>
+</section>
+<section id="copying-some-files">
+<h3>Copying some files.<a class="headerlink" href="#copying-some-files" title="Permalink to this headline"></a></h3>
+<p>Okay now, you will find a bunch of files in <code class="docutils literal notranslate"><span class="pre">motioninput.dist</span></code> folder. One of which is
+<code class="docutils literal notranslate"><span class="pre">motioninput.exe</span></code>. If you try to run it now it will just do literally nothing. Which is okay
+we will fix it in this section.</p>
+<section id="step-1">
+<h4>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline"></a></h4>
+<p>Copy <code class="docutils literal notranslate"><span class="pre">data</span></code> folder from the project root into <code class="docutils literal notranslate"><span class="pre">motioninput.dist</span></code></p>
+</section>
+<section id="step-2">
+<h4>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline"></a></h4>
+<p>In <code class="docutils literal notranslate"><span class="pre">motioninput.dist</span></code> delete <code class="docutils literal notranslate"><span class="pre">mediapipe</span></code> folder.</p>
+</section>
+<section id="step-3">
+<h4>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline"></a></h4>
+<p>Copy <code class="docutils literal notranslate"><span class="pre">{your_site_packages_path}/mediapipe</span></code> into <code class="docutils literal notranslate"><span class="pre">motioninput.dist</span></code></p>
+</section>
+<section id="step-4">
+<h4>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline"></a></h4>
+<p>Copy <code class="docutils literal notranslate"><span class="pre">_framework_bindings.pyd</span></code> from project root into <code class="docutils literal notranslate"><span class="pre">motioninput.dist/mediapipe/python</span></code></p>
+<p>Okay That’s it. You should now be able to run it.</p>
+</section>
+</section>
+</section>
+<section id="things-to-keep-in-mind">
+<h2>Things to keep in mind.<a class="headerlink" href="#things-to-keep-in-mind" title="Permalink to this headline"></a></h2>
+<p>When you are extending the code base, make sure that <strong>ALL</strong> non python files are
+in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder.</p>
+<p>If you added a new dependency you <strong>MUST</strong> add it to <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p>
 </section>
 </section>
 

@@ -42,17 +42,17 @@ Things that you **SHOULD** include in your pull request message:
 # What
  - 5 new hand gestures
  - Fixed an issue with the mouse moving around when the hand is stationary
- 
+
 # How
- - Hand gestures: 
+ - Hand gestures:
 Trained a few models using video samples from here: (pretend there is a link here).
 Updated the configuration view to include new gestures.
  - Mouse jiggling fix:
-Added a small motion radius around each hand joint 
+Added a small motion radius around each hand joint
 which diables mouse movement unless the joint goes outside the radius.
 # Why
  - Hand gestures: Dean asked me
- - Mouse jiggling fix: 
+ - Mouse jiggling fix:
 It prevented featureX to work and it generally just annoyed the hell out of me.
 # Testing
 Used X framework for unit tests
@@ -85,11 +85,11 @@ So first of all you will need to install needed packages to compile the docs.
 Navigate to `docs` directory and run:
 
 	pip install -r requirements.txt
-	
+
 if you have some path issues with your python it is also worth to try:
-	
+
 	python3 -m pip install -r requirements.txt
-	
+
 ## Understanding docs
 
 Now let's understand how our documentation works. Here is what you will find in the `docs` directory.
@@ -105,7 +105,7 @@ Now let's understand how our documentation works. Here is what you will find in 
 		├── index.rst
 		├── _static
 		└── _templates
-		
+
 - `make.bat` and `Makefile` are there to compile our documentation to html
 
 - `requirements.txt` is what you just used to install our requirements.
@@ -113,7 +113,7 @@ Now let's understand how our documentation works. Here is what you will find in 
 - `source/` directory where the source files for our documentation are located. You will find a bunch
   of `.md` and `.rst` files there. These are pages with the actual text and tutorials that you see just now
   (this webpage is made from `development.md`, and the landing page is `index.rst`)
-  
+
 all `.md` files must be referenced in `index.rst` files. You can do it like so:
 
 	.. toctree::
@@ -126,12 +126,114 @@ This creates a table of content entry at the side bar on the landing page
 with a caption **Development** and references the file `development.md`
 (no need to add file extension in rst files as it doesn't care)
 
-## Compilation
+## Build documentation
 
 So now that you have made changes to the actual documentation,
 in order to compile it, navigate to the `docs` directory and run:
 
 	make clean; make html
-	
+
 This will create a build folder where you can find all html files.
 
+# Compilation
+
+This section will describe how to compile motion input codebase.
+
+We use [nuitka](https://nuitka.net/) transpiler in order to produce the resultant
+``.exe`` file.
+
+A few things to note about the compilation process
+
+- Nuitka will translate our python code into C and then compile it.
+- Compilation process is estimated to take around 30 minutes.
+- It takes 3 to 4 Gb of RAM.
+- By default it will use 100% of your CPU.
+
+Now that you know all of this, read further to learn 2 ways of getting the
+desired executable.
+
+## From Github actions
+
+The easiest way to compile motion input is to run a github action in the
+**MI_WINDOWS** repository. That way you don't have to install any dependencies
+and run the resource expensive compilation process on your machine.
+
+Okay so how do you do this.
+
+
+## Build Locally
+
+This section will explain how to compile motioninput on a local machine.
+
+Here is an overview of all steps that need to be done:
+
+1. Install requirements
+2. Run compilation command
+3. Copy some files into the final release directory (this is needed to make dependencies happy)
+
+### Install requirements
+
+Just run
+
+	python -m pip install -r requirements.txt
+
+### Run compilation command
+
+The command is the following:
+
+	python -m nuitka --lto=no --windows-disable-console --assume-yes-for-downloads --standalone --plugin-enable=numpy --output-dir=Release motioninput.py
+
+This is indeed very long, so let's look at each compilation flag and see what it does.
+
+- `--lto`: link time optimisation, if you keep it on the compilation time will increase from 30 minutes to several hours. (not worth it for debugging, only use it for the final release)
+
+- `--windwos-disable-console`: Prevents console from appearing when running the code.
+
+- `--assume-yes-for-downloads`: Just a flag that will prevent some prompts from appearing. Nuitka will only prompt to download a C compiler and some dependency tracking tools so just keep it on to save some time.
+
+- `--standalone`: This makes nuitka package libraries along side the executable.
+
+- `--plugin-enable=numpy`: Numpy is a bit weird cuz it's already primarily written in C so it needs some special treatment.
+
+- `--outuput-dir=Release`: Output directory.
+
+That's it. After running this command you should now see a `Release` folder appear the project root.
+
+If everything went well, it should contain 2 folders: `motioninput.build` and `motioninput.dist`.
+
+- `motioninput.build`: source C code, you can get rid of it if you want, it's now useless.
+- `motioninput.dist`: This is where our compiled project is.
+
+Add and remove flags as appropriate for debugging purposes.
+
+### Copying some files.
+
+Okay now, you will find a bunch of files in `motioninput.dist` folder. One of which is
+`motioninput.exe`. If you try to run it now it will just do literally nothing. Which is okay
+we will fix it in this section.
+
+#### Step 1
+
+Copy `data` folder from the project root into `motioninput.dist`
+
+#### Step 2
+
+In `motioninput.dist` delete `mediapipe` folder.
+
+#### Step 3
+
+Copy `{your_site_packages_path}/mediapipe` into `motioninput.dist`
+
+#### Step 4
+
+Copy `_framework_bindings.pyd` from project root into `motioninput.dist/mediapipe/python`
+
+Okay That's it. You should now be able to run it.
+
+
+## Things to keep in mind.
+
+When you are extending the code base, make sure that **ALL** non python files are
+in the `data` folder.
+
+If you added a new dependency you **MUST** add it to `requirements.txt`
