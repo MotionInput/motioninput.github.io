@@ -3,7 +3,7 @@ scripts.gesture\_events
 
 
 
-.. automodule:: scripts.gesture_events.directX_actions
+.. automodule:: scripts.gesture_events.click_press_event
    :members:
    :undoc-members:
    :show-inheritance:
@@ -21,11 +21,10 @@ scripts.gesture\_events
    :show-inheritance:
 
 
-.. automodule:: scripts.gesture_events.finger_pinch_event
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
+.. automodule:: scripts.gesture_events.gesture_active_event
+  :members:
+  :undoc-members:
+  :show-inheritance:
 
 .. automodule:: scripts.gesture_events.hand_active_event
    :members:
@@ -34,6 +33,24 @@ scripts.gesture\_events
 
 
 .. automodule:: scripts.gesture_events.idle_state_change_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.mouth_trigger_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.nose_direction_tracking_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.nose_tracking_event
    :members:
    :undoc-members:
    :show-inheritance:

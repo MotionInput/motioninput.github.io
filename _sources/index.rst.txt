@@ -33,6 +33,7 @@ Welcome to Motion Input's documentation!
    apidocs/scripts.core
    apidocs/scripts.hand_module
    apidocs/scripts.body_module
+   apidocs/scripts.head_module
    apidocs/scripts.gesture_events
    apidocs/scripts.gesture_event_handlers
    apidocs/scripts.tools
