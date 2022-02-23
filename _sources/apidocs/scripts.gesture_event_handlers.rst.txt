@@ -33,6 +33,12 @@ scripts.gesture\_event\_handlers
    :show-inheritance:
 
 
+.. automodule::  scripts.gesture_event_handlers.monitor_tracker
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule::  scripts.gesture_event_handlers.area_of_interest
    :members:
    :undoc-members:
