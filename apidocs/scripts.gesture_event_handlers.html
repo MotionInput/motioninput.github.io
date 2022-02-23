@@ -97,12 +97,12 @@
 <span id="scripts-gesture-event-handlers"></span><h1>scripts.gesture_event_handlers<a class="headerlink" href="#module-scripts.gesture_event_handlers.desktop_mouse" title="Permalink to this headline"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.DesktopMouse">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DesktopMouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aoi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.area_of_interest.AreaOfInterest" title="scripts.gesture_event_handlers.area_of_interest.AreaOfInterest"><span class="pre">scripts.gesture_event_handlers.area_of_interest.AreaOfInterest</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DesktopMouse</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor">
-<span class="sig-name descname"><span class="pre">move_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor" title="Permalink to this definition"></a></dt>
-<dd><p>Translate the camera coordinates into the AOI coordinates. Smooth the movement of the mouse by averaging out the coordinates of the last few frames (as configured). Move the mouse accordingly.</p>
+<span class="sig-name descname"><span class="pre">move_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixel_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor" title="Permalink to this definition"></a></dt>
+<dd><p>Smooth the movement of the mouse by averaging out the coordinates of the last few frames (as configured). Move the mouse accordingly.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -174,6 +174,18 @@ Smooth the zooming by averaging out the coordinates of the last few frames (as c
 <dd class="field-odd"><p><strong>speed</strong> (<em>float</em>) – speed of the zooming, where positive speed means zooming in and negative speed zooming out</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.AOIMouse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AOIMouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aoi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.area_of_interest.AreaOfInterest" title="scripts.gesture_event_handlers.area_of_interest.AreaOfInterest"><span class="pre">scripts.gesture_event_handlers.area_of_interest.AreaOfInterest</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.AOIMouse" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse" title="scripts.gesture_event_handlers.desktop_mouse.DesktopMouse"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_event_handlers.desktop_mouse.DesktopMouse</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.AOIMouse.move_cursor">
+<span class="sig-name descname"><span class="pre">move_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.AOIMouse.move_cursor" title="Permalink to this definition"></a></dt>
+<dd><p>Translate the camera coordinates into the AOI coordinates. Smooth the movement of the mouse by averaging out the coordinates of the last few frames (as configured). Move the mouse accordingly.</p>
 </dd></dl>
 
 </dd></dl>
