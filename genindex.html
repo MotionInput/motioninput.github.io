@@ -147,6 +147,8 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse">BaseMouse (class in scripts.gesture_event_handlers.desktop_mouse)</a>
+</li>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_gesture.BodyGesture">BodyGesture (class in scripts.body_module.body_gesture)</a>
 </li>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_landmark_detector.BodyLandmarkDetector">BodyLandmarkDetector (class in scripts.body_module.body_landmark_detector)</a>
@@ -177,18 +179,16 @@
 </li>
       <li><a href="apidocs/scripts.mode_controller.html#scripts.mode_controller.ModeController.change_mode_if_needed">change_mode_if_needed() (ModeController method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.area_of_interest.AreaOfInterest.change_monitor">change_monitor() (AreaOfInterest method)</a>
-</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.clear_exericse_display">clear_exericse_display() (ExerciseDisplay method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.clear_extremity_circles">clear_extremity_circles() (ExtremityActions method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.clear_extremity_circles">(ExtremityCircles method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker">Clicker (class in scripts.gesture_event_handlers.pydirect_directx_actions)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.click_press_event.ClickPressEvent">ClickPressEvent (class in scripts.gesture_events.click_press_event)</a>
@@ -221,7 +221,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.dist">dist() (in module scripts.hand_module.hand_position)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.double_click">double_click() (DesktopMouse method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.double_click">double_click() (BaseMouse method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.down_arrow_press">down_arrow_press() (Keyboard method)</a>
 </li>
@@ -533,17 +533,17 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.left_arrow_press">left_arrow_press() (Keyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker.left_click">left_click() (Clicker method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.left_click">left_click() (BaseMouse method)</a>
 
       <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.left_click">(DesktopMouse method)</a>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker.left_click">(Clicker method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.left_press">left_press() (DesktopMouse method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.left_press">left_press() (BaseMouse method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.left_release">left_release() (DesktopMouse method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.left_release">left_release() (BaseMouse method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -688,7 +688,9 @@
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor">(DesktopMouse method)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor_relative">move_cursor_relative() (DesktopMouse method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.move_cursor_pixel">move_cursor_pixel() (BaseMouse method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.move_cursor_relative">move_cursor_relative() (BaseMouse method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -816,15 +818,15 @@
       </ul></li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.right_arrow_press">right_arrow_press() (Keyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker.right_click">right_click() (Clicker method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.right_click">right_click() (BaseMouse method)</a>
 
       <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.right_click">(DesktopMouse method)</a>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker.right_click">(Clicker method)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.right_press">right_press() (DesktopMouse method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.right_press">right_press() (BaseMouse method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.right_release">right_release() (DesktopMouse method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.right_release">right_release() (BaseMouse method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1228,7 +1230,7 @@
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools.view">module</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.scroll">scroll() (DesktopMouse method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.scroll">scroll() (BaseMouse method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.scroll_event.ScrollEvent">ScrollEvent (class in scripts.gesture_events.scroll_event)</a>
 </li>
@@ -1261,6 +1263,10 @@
       <li><a href="apidocs/scripts.tools.html#scripts.tools.config.singleton">singleton() (in module scripts.tools.config)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.mouth_trigger_event.SmilingEvent">SmilingEvent (class in scripts.gesture_events.mouth_trigger_event)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.Smoother.smooth">smooth() (Smoother method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.Smoother">Smoother (class in scripts.gesture_event_handlers.desktop_mouse)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.sourceDevice">sourceDevice (POINTER_INFO attribute)</a>
 </li>
@@ -1388,7 +1394,7 @@
 <h2 id="Z">Z</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.zoom">zoom() (DesktopMouse method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.zoom">zoom() (BaseMouse method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
