@@ -209,6 +209,105 @@ class is not already initialised, then it also initialises the class.</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.FaceBoxElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FaceBoxElement</span></span><a class="headerlink" href="#scripts.tools.display_element.FaceBoxElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.FaceBoxElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.FaceBoxElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image, adding a facebox boundary (rectangle) in the frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.FaceBoxElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">br</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.FaceBoxElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update topLeft &amp; Bottom right coordinate for boundary box</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.FaceBoxElement.drawBox">
+<span class="sig-name descname"><span class="pre">drawBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.FaceBoxElement.drawBox" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.HeadPosElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeadPosElement</span></span><a class="headerlink" href="#scripts.tools.display_element.HeadPosElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.HeadPosElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.HeadPosElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image, adding headVector in the frame with (ROLL, PITCH,
+YAW) info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.HeadPosElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headInfo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headTl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headBr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.HeadPosElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update information about head Roll, Pitch, Yaw</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.HeadPosElement.drawHeadPos">
+<span class="sig-name descname"><span class="pre">drawHeadPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.HeadPosElement.drawHeadPos" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.HeadPosElement.draw_text">
+<span class="sig-name descname"><span class="pre">draw_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uv_top_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thickness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontFace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outline_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.HeadPosElement.draw_text" title="Permalink to this definition"></a></dt>
+<dd><p>Draws multiline with an outline.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.FaceLandMarkElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FaceLandMarkElement</span></span><a class="headerlink" href="#scripts.tools.display_element.FaceLandMarkElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.FaceLandMarkElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.FaceLandMarkElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image, adding landmark points in the frame</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.FaceLandMarkElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">landmarks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headTl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headBr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.FaceLandMarkElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update information about head Roll, Pitch, Yaw</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.FaceLandMarkElement.drawLandMarks">
+<span class="sig-name descname"><span class="pre">drawLandMarks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.FaceLandMarkElement.drawLandMarks" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.EyeGazeElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EyeGazeElement</span></span><a class="headerlink" href="#scripts.tools.display_element.EyeGazeElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.EyeGazeElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.EyeGazeElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image, draw gazeVector in the frame</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.EyeGazeElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headTl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headBr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmarks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gaze</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.EyeGazeElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Takes in parameters and updates the DisplayElement’s attributes accordingly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.EyeGazeElement.drawGaze">
+<span class="sig-name descname"><span class="pre">drawGaze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.EyeGazeElement.drawGaze" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <span class="target" id="module-scripts.tools.camera"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.camera.Camera">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Camera</span></span><a class="headerlink" href="#scripts.tools.camera.Camera" title="Permalink to this definition"></a></dt>
