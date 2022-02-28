@@ -40,12 +40,3 @@ Welcome to Motion Input's documentation!
    apidocs/scripts.gesture_loader
    apidocs/scripts.event_mapper
    apidocs/scripts.mode_controller
-
-
-.. image:: cat-bop.gif
-   :width: 200
-   :alt: No cat sadd ;(
-
-.. image:: cat-bop.gif
-   :width: 200
-   :alt: No cat sadd ;(
