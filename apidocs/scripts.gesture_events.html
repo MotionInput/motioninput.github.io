@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="scripts.gesture_event_handlers" href="scripts.gesture_event_handlers.html" />
-    <link rel="prev" title="scripts.head_module" href="scripts.head_module.html" /> 
+    <link rel="prev" title="scripts.speech_module" href="scripts.speech_module.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,7 +44,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#configuration">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#understanding-motioninput-s-config-file">Understanding MotionInput’s Config File</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -58,6 +57,8 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.hand_module.html">scripts.hand_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.body_module.html">scripts.body_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.head_module.html">scripts.head_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.eye_module.html">scripts.eye_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.speech_module.html">scripts.speech_module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scripts.gesture_events</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-scripts.gesture_events">Module contents</a></li>
 </ul>
@@ -190,6 +191,19 @@ have passed. If so, we run the associated held function. If a required gesture h
 <dd><p>As some events need to finish some proccessing before being deactivated, they can implement this method.
 It is called when the events are removed from the model.
 (e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.eye_tracking_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.eye_tracking_event.EyeTrackingEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EyeTrackingEvent</span></span><a class="headerlink" href="#scripts.gesture_events.eye_tracking_event.EyeTrackingEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.eye_tracking_event.EyeTrackingEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.eye_tracking_event.EyeTrackingEvent.update" title="Permalink to this definition"></a></dt>
+<dd><p>Checks the event firing conditionas and then may call according trigger functions.
+(the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
 </dd></dl>
 
 </dd></dl>
@@ -365,6 +379,19 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
 
 </dd></dl>
 
+<span class="target" id="module-scripts.gesture_events.speech_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.speech_event.SpeechEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SpeechEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phrase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.speech_event.SpeechEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.speech_event.SpeechEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.speech_event.SpeechEvent.update" title="Permalink to this definition"></a></dt>
+<dd><p>Checks the event firing conditionas and then may call according trigger functions.
+(the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
+</dd></dl>
+
+</dd></dl>
+
 <span class="target" id="module-scripts.gesture_events.zoom_event"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_events.zoom_event.ZoomEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZoomEvent</span></span><a class="headerlink" href="#scripts.gesture_events.zoom_event.ZoomEvent" title="Permalink to this definition"></a></dt>
@@ -398,7 +425,7 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="scripts.head_module.html" class="btn btn-neutral float-left" title="scripts.head_module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scripts.speech_module.html" class="btn btn-neutral float-left" title="scripts.speech_module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="scripts.gesture_event_handlers.html" class="btn btn-neutral float-right" title="scripts.gesture_event_handlers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -21,6 +21,12 @@ scripts.gesture\_events
    :show-inheritance:
 
 
+.. automodule:: scripts.gesture_events.eye_tracking_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.gesture_events.gesture_active_event
   :members:
   :undoc-members:
@@ -69,6 +75,12 @@ scripts.gesture\_events
 
 
 .. automodule:: scripts.gesture_events.simple_gesture_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.speech_event
    :members:
    :undoc-members:
    :show-inheritance:

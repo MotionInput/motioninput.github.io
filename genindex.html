@@ -41,7 +41,6 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#running-the-code">Running the code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#configuration">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html#understanding-motioninput-s-config-file">Understanding MotionInput’s Config File</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -55,6 +54,8 @@
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.hand_module.html">scripts.hand_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.body_module.html">scripts.body_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.head_module.html">scripts.head_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.eye_module.html">scripts.eye_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.speech_module.html">scripts.speech_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_events.html">scripts.gesture_events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_event_handlers.html">scripts.gesture_event_handlers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.tools.html">scripts.tools</a></li>
@@ -165,6 +166,8 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker.change_monitor">change_monitor() (MonitorTracker method)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.clear_exercise_display">clear_exercise_display() (ExerciseActions method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.clear_exericse_display">clear_exericse_display() (ExerciseDisplay method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.clear_extremity_circles">clear_extremity_circles() (ExtremityActions method)</a>
@@ -237,6 +240,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.event_editor.EventEditor">EventEditor (class in scripts.tools.json_editors.event_editor)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions">ExerciseActions (class in scripts.gesture_event_handlers.exercise_actions)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay">ExerciseDisplay (class in scripts.gesture_event_handlers.exercise_display)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.ExerciseDisplayElement">ExerciseDisplayElement (class in scripts.tools.display_element)</a>
@@ -245,17 +250,27 @@
 </li>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_position.extractChannel">extractChannel() (in module scripts.body_module.body_position)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions">ExtremityActions (class in scripts.gesture_event_handlers.extremity_actions)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles">ExtremityCircles (class in scripts.gesture_event_handlers.extremity_circles)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.ExtremityCirclesElement">ExtremityCirclesElement (class in scripts.tools.display_element)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent">ExtremityTriggerEvent (class in scripts.gesture_events.extremity_trigger_event)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.EyeGazeElement">EyeGazeElement (class in scripts.tools.display_element)</a>
+</li>
+      <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_gesture.EyeGesture">EyeGesture (class in scripts.eye_module.eye_gesture)</a>
+</li>
+      <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_landmark_detector.EyeLandmarkDetector">EyeLandmarkDetector (class in scripts.eye_module.eye_landmark_detector)</a>
+</li>
+      <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.EyeModule">EyeModule (class in scripts.eye_module)</a>
+</li>
+      <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_position.EyePosition">EyePosition (class in scripts.eye_module.eye_position)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.eye_tracking_event.EyeTrackingEvent">EyeTrackingEvent (class in scripts.gesture_events.eye_tracking_event)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -322,9 +337,13 @@
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_gesture.BodyGesture.get_bodypart_name">get_bodypart_name() (BodyGesture method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_gesture.EyeGesture.get_bodypart_name">(EyeGesture method)</a>
+</li>
         <li><a href="apidocs/scripts.core.html#scripts.core.gesture.Gesture.get_bodypart_name">(Gesture method)</a>
 </li>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_bodypart_name">(HandGesture method)</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_gesture.SpeechGesture.get_bodypart_name">(SpeechGesture method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.get_bodypart_types">get_bodypart_types() (GestureEvent method)</a>
@@ -355,19 +374,23 @@
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.get_frame_size">get_frame_size() (View method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_gesture.BodyGesture.get_frames_held">get_frames_held() (BodyGesture method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_gesture.EyeGesture.get_frames_held">(EyeGesture method)</a>
+</li>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_frames_held">(HandGesture method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.GestureEventHandlers.get_handler_func">get_handler_func() (GestureEventHandlers method)</a>
 </li>
-      <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_landmark">get_landmark() (HandPosition method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_position.EyePosition.get_landmark">get_landmark() (EyePosition method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_landmark">(HandPosition method)</a>
+</li>
         <li><a href="apidocs/scripts.core.html#scripts.core.position.Position.get_landmark">(Position method)</a>
 </li>
         <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.get_landmark">(RawData method)</a>
@@ -375,10 +398,18 @@
       </ul></li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_landmarks_distance">get_landmarks_distance() (HandPosition method)</a>
 </li>
-      <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_last_n_positions">get_last_n_positions() (HandGesture method)</a>
+      <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_gesture.EyeGesture.get_last_n_positions">get_last_n_positions() (EyeGesture method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_last_n_positions">(HandGesture method)</a>
 </li>
-      <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_last_position">get_last_position() (HandGesture method)</a>
+      </ul></li>
+      <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_gesture.EyeGesture.get_last_position">get_last_position() (EyeGesture method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_last_position">(HandGesture method)</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.get_module_names">get_module_names() (Model method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker.get_monitor_size">get_monitor_size() (MonitorTracker method)</a>
@@ -386,6 +417,8 @@
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_gesture.BodyGesture.get_name">get_name() (BodyGesture method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_gesture.EyeGesture.get_name">(EyeGesture method)</a>
+</li>
         <li><a href="apidocs/scripts.core.html#scripts.core.gesture.Gesture.get_name">(Gesture method)</a>
 </li>
         <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.GestureFactory.get_name">(GestureFactory method)</a>
@@ -393,6 +426,8 @@
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_gesture.HandGesture.get_name">(HandGesture method)</a>
 </li>
         <li><a href="apidocs/scripts.core.html#scripts.core.position_tracker.PositionTracker.get_name">(PositionTracker method)</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_gesture.SpeechGesture.get_name">(SpeechGesture method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_palm_height">get_palm_height() (HandPosition method)</a>
@@ -402,6 +437,8 @@
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_position.BodyPosition.get_primitive">get_primitive() (BodyPosition method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_position.EyePosition.get_primitive">(EyePosition method)</a>
+</li>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_primitive">(HandPosition method)</a>
 </li>
         <li><a href="apidocs/scripts.core.html#scripts.core.position.Position.get_primitive">(Position method)</a>
@@ -410,6 +447,8 @@
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_position.BodyPosition.get_primitives_names">get_primitives_names() (BodyPosition method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_position.EyePosition.get_primitives_names">(EyePosition method)</a>
+</li>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_primitives_names">(HandPosition method)</a>
 </li>
         <li><a href="apidocs/scripts.core.html#scripts.core.position.Position.get_primitives_names">(Position method)</a>
@@ -418,6 +457,8 @@
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_landmark_detector.BodyLandmarkDetector.get_raw_data">get_raw_data() (BodyLandmarkDetector method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_landmark_detector.EyeLandmarkDetector.get_raw_data">(EyeLandmarkDetector method)</a>
+</li>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_landmark_detector.HandLandmarkDetector.get_raw_data">(HandLandmarkDetector method)</a>
 </li>
         <li><a href="apidocs/scripts.core.html#scripts.core.module.LandmarkDetector.get_raw_data">(LandmarkDetector method)</a>
@@ -445,14 +486,18 @@
 </li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.HandModule">HandModule (class in scripts.hand_module)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition">HandPosition (class in scripts.hand_module.hand_position)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.HeadPosElement">HeadPosElement (class in scripts.tools.display_element)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.held_action">held_action() (ExtremityActions method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.held_action">held_action() (ExerciseActions method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.held_action">(ExtremityActions method)</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.historyCount">historyCount (POINTER_INFO attribute)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.hwndTarget">hwndTarget (POINTER_INFO attribute)</a>
@@ -563,6 +608,14 @@
 </li>
         <li><a href="apidocs/scripts.core.html#module-scripts.core.raw_data">scripts.core.raw_data</a>
 </li>
+        <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module">scripts.eye_module</a>
+</li>
+        <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module.eye_gesture">scripts.eye_module.eye_gesture</a>
+</li>
+        <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module.eye_landmark_detector">scripts.eye_module.eye_landmark_detector</a>
+</li>
+        <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module.eye_position">scripts.eye_module.eye_position</a>
+</li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers">scripts.gesture_event_handlers</a>
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.area_of_interest">scripts.gesture_event_handlers.area_of_interest</a>
@@ -570,6 +623,8 @@
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_mouse">scripts.gesture_event_handlers.desktop_mouse</a>
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_touch">scripts.gesture_event_handlers.desktop_touch</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.exercise_actions">scripts.gesture_event_handlers.exercise_actions</a>
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.exercise_display">scripts.gesture_event_handlers.exercise_display</a>
 </li>
@@ -591,6 +646,8 @@
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.extremity_trigger_event">scripts.gesture_events.extremity_trigger_event</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.eye_tracking_event">scripts.gesture_events.eye_tracking_event</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.hand_active_event">scripts.gesture_events.hand_active_event</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.idle_state_change_event">scripts.gesture_events.idle_state_change_event</a>
@@ -607,6 +664,8 @@
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.simple_gesture_event">scripts.gesture_events.simple_gesture_event</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.speech_event">scripts.gesture_events.speech_event</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.zoom_event">scripts.gesture_events.zoom_event</a>
 </li>
         <li><a href="apidocs/scripts.hand_module.html#module-scripts.hand_module">scripts.hand_module</a>
@@ -616,6 +675,8 @@
         <li><a href="apidocs/scripts.hand_module.html#module-scripts.hand_module.hand_landmark_detector">scripts.hand_module.hand_landmark_detector</a>
 </li>
         <li><a href="apidocs/scripts.hand_module.html#module-scripts.hand_module.hand_position">scripts.hand_module.hand_position</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.speech_gesture">scripts.speech_module.speech_gesture</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools">scripts.tools</a>
 </li>
@@ -760,8 +821,12 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.release">release() (DesktopTouch method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action">release_action() (ExtremityActions method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.release_action">release_action() (ExerciseActions method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action">(ExtremityActions method)</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.remove_gesture">remove_gesture() (Model method)</a>
 
       <ul>
@@ -890,6 +955,34 @@
 </li>
       </ul></li>
       <li>
+    scripts.eye_module
+
+      <ul>
+        <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.eye_module.eye_gesture
+
+      <ul>
+        <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module.eye_gesture">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.eye_module.eye_landmark_detector
+
+      <ul>
+        <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module.eye_landmark_detector">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.eye_module.eye_position
+
+      <ul>
+        <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module.eye_position">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_event_handlers
 
       <ul>
@@ -915,6 +1008,13 @@
 
       <ul>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_touch">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_event_handlers.exercise_actions
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.exercise_actions">module</a>
 </li>
       </ul></li>
       <li>
@@ -988,12 +1088,21 @@
 </li>
       </ul></li>
       <li>
+    scripts.gesture_events.eye_tracking_event
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.eye_tracking_event">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_events.hand_active_event
 
       <ul>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.hand_active_event">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.idle_state_change_event
 
@@ -1008,8 +1117,6 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.mouth_trigger_event">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.nose_direction_tracking_event
 
@@ -1046,6 +1153,13 @@
 </li>
       </ul></li>
       <li>
+    scripts.gesture_events.speech_event
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.speech_event">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_events.zoom_event
 
       <ul>
@@ -1078,6 +1192,13 @@
 
       <ul>
         <li><a href="apidocs/scripts.hand_module.html#module-scripts.hand_module.hand_position">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.speech_module.speech_gesture
+
+      <ul>
+        <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.speech_gesture">module</a>
 </li>
       </ul></li>
       <li>
@@ -1160,8 +1281,12 @@
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_bodypart_names">(SimpleGestureEvent method)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.set_exercise_display">set_exercise_display() (ExerciseDisplay method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.set_exercise_display">set_exercise_display() (ExerciseActions method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.set_exercise_display">(ExerciseDisplay method)</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.set_extremity_circles">set_extremity_circles() (ExtremityActions method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.set_extremity_circles_dict">set_extremity_circles_dict() (ExtremityCircles method)</a>
@@ -1188,6 +1313,10 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.sourceDevice">sourceDevice (POINTER_INFO attribute)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.speech_event.SpeechEvent">SpeechEvent (class in scripts.gesture_events.speech_event)</a>
+</li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_gesture.SpeechGesture">SpeechGesture (class in scripts.speech_module.speech_gesture)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.Primitive.state">state (Primitive attribute)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.switch_events">switch_events() (Model method)</a>
@@ -1204,16 +1333,20 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.touchdown">touchdown() (Touch method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.touchFlags">touchFlags (POINTER_TOUCH_INFO attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.touchMask">touchMask (POINTER_TOUCH_INFO attribute)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.touchup">touchup() (Touch method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.trigger_action">trigger_action() (ExtremityActions method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.trigger_action">trigger_action() (ExerciseActions method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.trigger_action">(ExtremityActions method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -1240,6 +1373,10 @@
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.update">(ExtremityTriggerEvent method)</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.EyeGazeElement.update">(EyeGazeElement method)</a>
+</li>
+        <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_gesture.EyeGesture.update">(EyeGesture method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.eye_tracking_event.EyeTrackingEvent.update">(EyeTrackingEvent method)</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.FaceBoxElement.update">(FaceBoxElement method)</a>
 </li>
@@ -1274,6 +1411,10 @@
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.scroll_event.ScrollEvent.update">(ScrollEvent method)</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.update">(SimpleGestureEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.speech_event.SpeechEvent.update">(SpeechEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_gesture.SpeechGesture.update">(SpeechGesture method)</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.zoom_event.ZoomEvent.update">(ZoomEvent method)</a>
 </li>

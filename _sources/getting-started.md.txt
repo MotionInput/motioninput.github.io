@@ -4,14 +4,15 @@
 - As we don’t yet have the GUI, App layer and the app-specific main.py, we are using the [test file](https://motioninput.github.io/getting-started.html#running-the-code) to run the system.
 
 # Architecture
-![Diagram](./MIv3.PNG)
+![Diagram](./MIv3_AD.jpg)
 
 So a quick overview of how the the system works. It can be observed in 2 parts: the setup and the frame by frame processing.
 
 ## setup
-- Firstly, information for gestures and events are loaded from the database (eventually)
-- The event mapper class is used to initialise the required event classes and add them to the model
-- Based on the added events the needed gestures and modules are automatically added to the model
+- Firstly, information for gestures and events are loaded from the JSON files
+- The ModeController class is used to decide which events should be added to the model. (set of events based on the defaoul mode in the mode_controller.json)
+- The EventMapper then initialises the according event classes (mapping them to desired handlers) and add them to the model. (events as defined in events.json)
+- Based on the added events the needed gestures and modules are automatically added to the model by the GestureLoader. (gestures as defined in gestures.json)
 
 ## frame by frame
 - The opencv image is retrieved from the camera class.
@@ -25,12 +26,9 @@ So a quick overview of how the the system works. It can be observed in 2 parts: 
     - Run all active gesture events, which may result in the trigger functions in the events being called.
 
 # Running the code
-We are aiming to soon have just a main.py file for testing/using the system with easily configurable functionality.
+The system can be run without the GUI by running the motioninput.py and the behaviour of the system can be adjusted by changing the [JSON files](https://motioninput.github.io/getting-started.html#configuration)
 
-However, as we are not quite there yet currently, we are using the test.py file to run the system and modifying the mode_config JSON to config what functionality (aka set of events) we want to test.
-
-Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the various JSON files. In particular, the coordinates of the extremity triggers are set manually. Documentation of how developers can interact
-with the config JSONs can be found [here](https://motioninput.github.io/apidocs/scripts.tools.html#json_editors)
+Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the various JSON files. In particular, the coordinates of the extremity triggers are set manually. Documentation of how developers can interact with the config JSONs can be found [here](https://motioninput.github.io/apidocs/scripts.tools.html#json_editors)
 
 
 # Notes
@@ -61,15 +59,103 @@ Event handlers (classes that contain all the functions that are called by Gestur
 
 # Configuration
 Settings that are unique to each users can be configured by editing the four JSON files located in the data directory. For the time being these settings can only be changed manually, however the aim is to be able to update them during runtime. The four JSON files are responsible for holding information about:
-* Gestures
-* Events
-* Modes
-* General Settings
+* [Gestures](https://motioninput.github.io/getting-started.html#gestures)
+* [Events](https://motioninput.github.io/getting-started.html#events)
+* [Modes](https://motioninput.github.io/getting-started.html#modes)
+* [General Settings](https://motioninput.github.io/getting-started.html#config)
 
 Developers can read values from these JSON files using the JSONEditor classes.
 
-# Understanding MotionInput's Config File
-The purpose of this text is to explain what information the config file for MotionInput works.
+## Gestures
+
+Gestures are composed of primitives which are either activated or deactivated, represented by a boolean value. 
+
+The gestures are split between the seperate modules:
+
+* hand
+* body
+* head
+* eye
+* speech
+
+A gesture will be of the form:
+
+```
+"gesture_name": {
+	"primitive_1": bool,
+	"primitive_2": bool,
+	"primitive_3": bool,
+	...
+}
+```
+## Events
+
+The events are mappings of [GestureEvent](https://motioninput.github.io/apidocs/scripts.gesture_events.html) classes to [event handlers](https://motioninput.github.io/apidocs/scripts.gesture_event_handlers.html) method(s).
+
+The GestureEvent class ("type") determines under what conditions and when will the handler methods ("triggers") be called. These conditions can be modified by the "args" if the conditions are event instance-specific or by elements in the config file if those conditions are event class-specific.
+
+The "bodypart_names_to_type" determines what detected bodyparts (aka trackers in the modules like "Left"(hand), "Right"(hand) or "head") will be used by the event instances. This is mostly used to determine the hand used in hand gestures.
+
+The "triggers" are pairs of handler classes and its methods that we want to be called when the event calls its trigger functions. 
+All available methods are well visible in the \_\_init\_\_.py in gesture_event_handlers
+
+An event will be of the form:
+
+```
+"event_name": {
+	"type": "GestureEvent_class_name",
+	"args": {
+		"arg_1": val,
+		"arg_2": val,
+		...
+	},
+	"bodypart_names_to_type": {
+		"modules_tracker_name_1": "events_bodypart_name",
+		...
+	},
+	"triggers": {
+		"trigger_1_name": ["GestureEventHandler_class_name","method_name"],
+		"trigger_2_name": ["GestureEventHandler_class_name","method_name"],
+		...
+	}
+}
+```
+
+## Modes
+
+The modes determine the sets of [events](https://motioninput.github.io/getting-started.html#events) that are available to the user at any one time. When the MI starts the events from the "default" mode are loaded into the model and then afterwards the user can switch between modes in one of the following ways:
+
+1. By having an event with the "trigger" ["ModeChange","mode_name"]. This handler sets the mode to whatever mode name is specified.
+2.  By having an event with the "trigger" ["IterativeModeChange",""]. This handler sets the mode to whichever one follows the current order specified in the "iteration_order".
+3. If using the GUI then it will be possible to request the mode change through the protocol.
+
+The "iteration_order" should contain every mode name that is listed in the "modes" with another mode name from there. Ideally, the iteration orders should make one or multiple closed loops (possibly of size 1 if changing from that mode does not make sense) meaning it should be possible to get back to the mode where the user started.
+
+The JSON file has the following format:
+
+```
+"default": "mode_name",
+"iteration_order": {
+	"mode_name_1": "mode_name_2",
+	"mode_name_2": "mode_name_1",
+	"mode_name_3": "mode_name_3",
+	...
+	},
+"modes": {
+	"mode_name_1":[
+		"event_name_1",
+		"event_name_2"
+		...
+	],
+	"mode_name_2": [
+		"event_name_1",
+		...
+	],
+	...
+}
+```
+
+## Config
 
 ### General
 Non-specific higher level settings:
