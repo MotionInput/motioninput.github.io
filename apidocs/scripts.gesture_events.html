@@ -102,6 +102,16 @@
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
 <p>Clicking/Pressing with the gesture_type specified.
 Currently as there is no logic of how to decide if a press or a click should be started press is trigerred only if the click trigger was not given</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“click”: called once when the gesture of interest becomes active
+“press”: called when the gesture of interest becomes active IF the “click” trigger type was not defined
+“release”: called when the gesture of interest becomes unactive IF the “click” trigger type was not defined</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“hand”: the hand on which we track the gesure of interest</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>defined by the gesture_type arg.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.click_press_event.ClickPressEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.click_press_event.ClickPressEvent.update" title="Permalink to this definition"></a></dt>
@@ -131,6 +141,10 @@ RN used so that mouse would not be clicked during zooming as both use index_pinc
 <dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_to_activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_down_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>_summary_</p>
+<p>[trigger types]:
+[bodypart types]:
+[gestures types]:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.get_all_used_gestures">
 <span class="sig-name descname"><span class="pre">get_all_used_gestures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.get_all_used_gestures" title="Permalink to this definition"></a></dt>
@@ -162,6 +176,10 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityTriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>_summary_</p>
+<p>[trigger types]:
+[bodypart types]:
+[gestures types]:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.get_all_used_gestures">
 <span class="sig-name descname"><span class="pre">get_all_used_gestures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.get_all_used_gestures" title="Permalink to this definition"></a></dt>
@@ -199,6 +217,10 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.eye_tracking_event.EyeTrackingEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EyeTrackingEvent</span></span><a class="headerlink" href="#scripts.gesture_events.eye_tracking_event.EyeTrackingEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>_summary_</p>
+<p>[trigger types]:
+[bodypart types]:
+[gestures types]:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.eye_tracking_event.EyeTrackingEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.eye_tracking_event.EyeTrackingEvent.update" title="Permalink to this definition"></a></dt>
@@ -213,6 +235,14 @@ It is called when the events are removed from the model.
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GesturesActiveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired_gesture_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames_nr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.gestures_active_event.GesturesActiveEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
 <p>Calls the ‘active’ trigger once all the specified gestues have been in the specified states for the given nr of frames</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“active”: called when all the specified gestues have been in the specified states for the given nr of frames</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>retrieved from the desired_gesture_states</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>retrieved from the desired_gesture_states</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.gestures_active_event.GesturesActiveEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.gestures_active_event.GesturesActiveEvent.update" title="Permalink to this definition"></a></dt>
@@ -227,6 +257,14 @@ It is called when the events are removed from the model.
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandActiveEvent</span></span><a class="headerlink" href="#scripts.gesture_events.hand_active_event.HandActiveEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
 <p>Each frame the facing_camera gesture is active, the ‘move’ trigger is called with the coordinates of the palm center</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“move”: called every frame when the event is active (so when the hand is facing the camera) with input of (palm_center_x_coordinate, palm_center_y_coordinate). coordinates in percentage of the camera view relative to the left top corner</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“hand”: which hands movement is tracked</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“facing_camera”:</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.hand_active_event.HandActiveEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.hand_active_event.HandActiveEvent.update" title="Permalink to this definition"></a></dt>
@@ -241,6 +279,15 @@ It is called when the events are removed from the model.
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IdleStateChangeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currently_idle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.idle_state_change_event.IdleStateChangeEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
 <p>Switching between the idle(hand resting or not facing the camera) and active hand states.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“idle”: called when currently_idle is False and the state of the hand has been idle for frames_for_switch frames
+“active”: called when currently_idle is True and the state of the hand has been active for frames_for_switch frames</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“hand”: the hand on which we track the gesure of interest</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“facing_camera”: the hand is considered idle when the gesture is inactive</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.idle_state_change_event.IdleStateChangeEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.idle_state_change_event.IdleStateChangeEvent.update" title="Permalink to this definition"></a></dt>
@@ -254,6 +301,10 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MouthTriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>_summary_</p>
+<p>[trigger types]:
+[bodypart types]:
+[gestures types]:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent.update" title="Permalink to this definition"></a></dt>
@@ -285,6 +336,10 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NoseDirectionTrackingEvent</span></span><a class="headerlink" href="#scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>_summary_</p>
+<p>[trigger types]:
+[bodypart types]:
+[gestures types]:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent.update" title="Permalink to this definition"></a></dt>
@@ -298,6 +353,10 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.nose_tracking_event.NoseTrackingEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NoseTrackingEvent</span></span><a class="headerlink" href="#scripts.gesture_events.nose_tracking_event.NoseTrackingEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>_summary_</p>
+<p>[trigger types]:
+[bodypart types]:
+[gestures types]:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.nose_tracking_event.NoseTrackingEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.nose_tracking_event.NoseTrackingEvent.update" title="Permalink to this definition"></a></dt>
@@ -311,6 +370,16 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PalmHeightChangeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">active_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>Palm height level is an array where each element represents the lower bound of the range so if the possible ranges for the levels were [0, 12), [12, 23), [23, inf) the array would be [0,12,23]
+in the legacy code [0, 0.18-0.075, 0.18-0.25] lower the level the further the hand is from the camera</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“level_change”: called when the palm height has been in a size bracket from different from active_level for frames_for_switch frames</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“hand”: the hand on which we track the gesure of interest</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“facing_camera”: the palm height levels change only when the hand is facing the camera.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.set_up">
 <span class="sig-name descname"><span class="pre">set_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.set_up" title="Permalink to this definition"></a></dt>
@@ -338,6 +407,15 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.scroll_event.ScrollEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ScrollEvent</span></span><a class="headerlink" href="#scripts.gesture_events.scroll_event.ScrollEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>Scrolling by holding up middle and index finger. Scrolling speed and direction determined by the distance on y axis between the tip and the upper joint of the middle finger.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“scroll”: called every frame after frames_for_switch as long as the change in disctance since the last frame is above threshold and the distance between the middle and index hinger tips are below the treshold. With arguments (speed) refecting the change in distance since last frame.</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“hand”: the hand to scroll with</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“scroll”: the current gesure used</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.scroll_event.ScrollEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.scroll_event.ScrollEvent.update" title="Permalink to this definition"></a></dt>
@@ -351,6 +429,8 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SimpleGestureEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_trigger_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bodypart_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.gesture_event.GestureEvent" title="scripts.core.gesture_event.GestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.gesture_event.GestureEvent</span></code></a></p>
+<p>Parent class to be used by standard GestureEvents.
+Provides the methods that guarantee that all the gestures of interest are in the self._gestures after the notify methods are called by the model.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_trigger_functions">
 <span class="sig-name descname"><span class="pre">set_trigger_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funcs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_trigger_functions" title="Permalink to this definition"></a></dt>
@@ -403,6 +483,10 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
 <dt class="sig sig-object py" id="scripts.gesture_events.speech_event.SpeechEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SpeechEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phrase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.speech_event.SpeechEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>_summary_</p>
+<p>[trigger types]:
+[bodypart types]:
+[gestures types]:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.speech_event.SpeechEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.speech_event.SpeechEvent.update" title="Permalink to this definition"></a></dt>
@@ -416,6 +500,15 @@ If the deactivated gesture was previously stored in the GestureEvent instance it
 <dt class="sig sig-object py" id="scripts.gesture_events.zoom_event.ZoomEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZoomEvent</span></span><a class="headerlink" href="#scripts.gesture_events.zoom_event.ZoomEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>Zooming by holding the index pinch gesture on both hands. Zooming direction and speed according tho the change in the index finger tips distance.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“zoom”: called every frame after frames_for_switch as long as the change in disctance since the last frame is above threshold. With arguments (speed) refecting the change in distance since last frame.</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“dom_hand” &amp; “off_hand”: the  distance (aka speed) is calculated from the distance between the “index_tip”s of these hands</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“index_pinch”: the current gesure used</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.zoom_event.ZoomEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.zoom_event.ZoomEvent.update" title="Permalink to this definition"></a></dt>
