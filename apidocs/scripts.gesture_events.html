@@ -208,6 +208,20 @@ It is called when the events are removed from the model.
 
 </dd></dl>
 
+<span class="target" id="module-scripts.gesture_events.gestures_active_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.gestures_active_event.GesturesActiveEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GesturesActiveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired_gesture_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames_nr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.gestures_active_event.GesturesActiveEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>Calls the ‘active’ trigger once all the specified gestues have been in the specified states for the given nr of frames</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.gestures_active_event.GesturesActiveEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.gestures_active_event.GesturesActiveEvent.update" title="Permalink to this definition"></a></dt>
+<dd><p>Checks the event firing conditionas and then may call according trigger functions.
+(the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
+</dd></dl>
+
+</dd></dl>
+
 <span class="target" id="module-scripts.gesture_events.hand_active_event"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_events.hand_active_event.HandActiveEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandActiveEvent</span></span><a class="headerlink" href="#scripts.gesture_events.hand_active_event.HandActiveEvent" title="Permalink to this definition"></a></dt>
@@ -297,6 +311,12 @@ It is called when the events are removed from the model.
 <dt class="sig sig-object py" id="scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PalmHeightChangeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">active_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.set_up">
+<span class="sig-name descname"><span class="pre">set_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.set_up" title="Permalink to this definition"></a></dt>
+<dd><p>sets the aoi level to either active_level that was hiven as an arg on intialization or to the level 0 in order for it to be displayed</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.update" title="Permalink to this definition"></a></dt>

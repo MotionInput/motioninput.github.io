@@ -641,6 +641,13 @@ Thus the current position is again None and by default all primitives are consid
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.set_up">
+<span class="sig-name descname"><span class="pre">set_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.set_up" title="Permalink to this definition"></a></dt>
+<dd><p>Called right after the event is added to the model - so after the trigger functions and bodypart names have been set.
+The method could be used to for example set up the display elements.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.gesture_event.GestureEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.gesture_event.GestureEvent.update" title="Permalink to this definition"></a></dt>
 <dd><p>Checks the event firing conditionas and then may call according trigger functions.

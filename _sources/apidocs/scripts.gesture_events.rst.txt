@@ -27,7 +27,7 @@ scripts.gesture\_events
    :show-inheritance:
 
 
-.. automodule:: scripts.gesture_events.gesture_active_event
+.. automodule:: scripts.gesture_events.gestures_active_event
   :members:
   :undoc-members:
   :show-inheritance:
