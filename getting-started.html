@@ -58,7 +58,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#configuration">Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gestures">Gestures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#events">Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#currently-available-events">Currently available Events</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#modes">Modes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#config">Config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#general">General</a></li>
@@ -203,6 +206,7 @@ You can check the currently available gestures in the <a class="reference extern
 (Just a note that you are allowed to use gestures from different modules in the seme event)
 Once you have added the event class into the gesture_events folder, you need to add it to the folders __init__.py file in the same way the previous events were added, in order for the EventMapper to have access to it. Now if you want to actually add the event into your Model and use it first you need to add it into the <a class="reference external" href="https://motioninput.github.io/getting-started.html#events">data/events.json</a> as the other events have been added (this is where you map the events triggers to actual functions from the gesture event handlers and if the handlers you require are not available to you feel free to <a class="reference external" href="https://motioninput.github.io/getting-started.html#adding-event-handlers">add a new event handler</a>).
 Now you are all set and should be able to use the gesture event after adding it to a mode in the <a class="reference external" href="https://motioninput.github.io/getting-started.html#modes">data/mode_controller.json</a></p>
+<p>NB! Please also add any new events to the “Currently available Events” section of this doc along with a short description of it.</p>
 </section>
 <section id="adding-gestures">
 <h3>Adding Gestures<a class="headerlink" href="#adding-gestures" title="Permalink to this headline"></a></h3>
@@ -278,6 +282,46 @@ All available methods are well visible in the __init__.py in gesture_event_handl
 <span class="p">}</span>
 </pre></div>
 </div>
+<section id="currently-available-events">
+<h3>Currently available Events<a class="headerlink" href="#currently-available-events" title="Permalink to this headline"></a></h3>
+<p>Note: in case the gesture names are unclear pleas refer to the data/gestures.json to see the exact primitives they are comprised of.</p>
+<ul class="simple">
+<li><p>“hand_to_idle_mode_left_hand”: Changes the mode to “idle_hand” whenever the left palm is not facing the camera</p></li>
+<li><p>“hand_to_active_mode_left_hand”: Changes the mode to “basic_hand” whenever the left palm is facing the camera</p></li>
+<li><p>“rocknroll_next_mode”: By doing the rocknroll gesture on both hands the mode is changed to the next one according to the set iteration order</p></li>
+<li><p>“palm_height_change_aoi_resize_left_hand”: Updates the size of the AOI based on the size of the palm (so by how far it is from the camera)</p></li>
+<li><p>“palm_center_move_mouse_left_hand”: Movinge the cursor according to the center of the palm</p></li>
+<li><p>“index_pinch_left_press_left_hand”: Left click by pinching the index finger</p></li>
+<li><p>“index_pinch_touch_press_left_hand”:  Touchpoint press by pinching the index finger</p></li>
+<li><p>“middle_pinch_right_press_left_hand”: Right click by pinching the middle finger</p></li>
+<li><p>“pinky_pinch_monitor_change_left_hand”: Changing the display the mouse is moved on by pinching the pinky finger</p></li>
+<li><p>“double_pinch_double_click_left_hand”: Doubleclick by pinching both the index and the middle finger</p></li>
+<li><p>“index_pulldown_left_press_left_hand”: Left click by lowering the tip of the index finger below the tip of the pinky finger</p></li>
+<li><p>“index_scissor_left_press_left_hand”: Left click by touching the index finger to the middle finger</p></li>
+<li><p>“thumb_scissor_right_press_left_hand”:</p></li>
+<li><p>“double_scissor_doubleclick_left_hand”:</p></li>
+<li><p>“fist_doubleclick_left_hand”: Doubleclick by clenching the fist</p></li>
+<li><p>“index_middle_scroll_left_hand”: Scrolling by holding up only the index and middle fingers and moving them up or down together</p></li>
+<li><p>“double_index_pinch_zoom”: Zooming by holding index pinched on both hands and moving the hands closer together or apart</p></li>
+<li><p>“up_extremity”:</p></li>
+<li><p>“arm_left_extremity”:</p></li>
+<li><p>“punch_left_extremity”:</p></li>
+<li><p>“kick_left_extremity”:</p></li>
+<li><p>“arm_right_extremity”:</p></li>
+<li><p>“punch_right_extremity”:</p></li>
+<li><p>“kick_right_extremity”:</p></li>
+<li><p>“squating_exercise”:</p></li>
+<li><p>“walking_exercise”:</p></li>
+<li><p>“speech_clicking”:</p></li>
+<li><p>“speech_double_clicking”:</p></li>
+<li><p>“smiling_event”:</p></li>
+<li><p>“open_mouth_event”:</p></li>
+<li><p>“raise_eye_brow_event”:</p></li>
+<li><p>“nose_tracking_event”:</p></li>
+<li><p>“nose_direction_tracking_event”:</p></li>
+<li><p>“eye_tracking_event”:</p></li>
+</ul>
+</section>
 </section>
 <section id="modes">
 <h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline"></a></h2>
