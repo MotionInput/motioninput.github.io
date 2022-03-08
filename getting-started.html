@@ -296,10 +296,10 @@ All available methods are well visible in the __init__.py in gesture_event_handl
 <li><p><code class="docutils literal notranslate"><span class="pre">middle_pinch_right_press_left_hand</span></code>: Right click by pinching the middle finger</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pinky_pinch_monitor_change_left_hand</span></code>: Changing the display the mouse is moved on by pinching the pinky finger</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">double_pinch_double_click_left_hand</span></code>: Doubleclick by pinching both the index and the middle finger</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">index_pulldown_left_press_left_hand</span></code>: Left click by lowering the tip of the index finger below the tip of the pinky finger</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index_pulldown_left_press_left_hand</span></code>: Left click by lowering the tip of the index finger below its upper joint (DIP joint)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">index_scissor_left_press_left_hand</span></code>: Left click by touching the index finger to the middle finger</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">thumb_scissor_right_press_left_hand</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">double_scissor_doubleclick_left_hand</span></code>:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thumb_scissor_right_press_left_hand</span></code>: Right click by touching the thumb to the index finger</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">double_scissor_doubleclick_left_hand</span></code>: Double click by pressing the thumb, index and middle finger against each other</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">fist_doubleclick_left_hand</span></code>: Doubleclick by clenching the fist</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">index_middle_scroll_left_hand</span></code>: Scrolling by holding up only the index and middle fingers and moving them up or down together</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">double_index_pinch_zoom</span></code>: Zooming by holding index pinched on both hands and moving the hands closer together or apart</p></li>
@@ -320,6 +320,8 @@ All available methods are well visible in the __init__.py in gesture_event_handl
 <li><p><code class="docutils literal notranslate"><span class="pre">nose_tracking_event</span></code>:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nose_direction_tracking_event</span></code>:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">eye_tracking_event</span></code>:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keyboard_active_event</span></code>: Activates the in air keyboard. Move fingers over keys, when palms are facing the camera, to hover over them</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keyboard_click_event</span></code>: Press a key on the in air keyboard by hovering over a key and performing selected click gesture (pulldown, pinch or scissor). Hold down the key by holding the click gesture for at least the selected duration (3s by default)</p></li>
 </ul>
 </section>
 </section>
