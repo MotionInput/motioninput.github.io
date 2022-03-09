@@ -139,47 +139,90 @@ RN used so that mouse would not be clicked during zooming as both use index_pinc
 
 <span class="target" id="module-scripts.gesture_events.exercise_event"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_to_activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_down_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
-<p>_summary_</p>
-<p>[trigger types]:
-[bodypart types]:
-[gestures types]:</p>
+<p>Class representing an exercise event. Each event is an exercise e.g. walking, and the gestures it handles correspond to the exercise states
+that it has activated e.g. walking_left_state. Allows for actions including key press, holding a key down, and mouse clicks.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“set_exercise_display”: called in the event set_up function to display the chosen exercises on the view
+“triggered”: called when an exercise state that wasn’t activated before has been activated
+“held”: called when an exercise state that was already activated remains activated
+“released”: called when an exercise state that was already activated is now deactivated
+“clear”: called in the event force_deactivate function to remove the exercise state from the view</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“body”: using gestures that are activated by body landmarks</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>defined by the activate exercise states of the activated exercise</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.get_all_used_gestures">
 <span class="sig-name descname"><span class="pre">get_all_used_gestures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.get_all_used_gestures" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns the set of the gestures that the exercise event depends on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>set of gestures that the exercise depends on</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>set</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.get_exercise_name">
-<span class="sig-name descname"><span class="pre">get_exercise_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.get_exercise_name" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.force_deactivate">
-<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.force_deactivate" title="Permalink to this definition"></a></dt>
-<dd><p>As some events need to finish some proccessing before being deactivated, they can implement this method.
-It is called when the events are removed from the model.
-(e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
+<span class="sig-name descname"><span class="pre">get_exercise_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.get_exercise_name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns name of the exercise that the event represents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>name of exercise</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.update" title="Permalink to this definition"></a></dt>
-<dd><p>Checks the event firing conditionas and then may call according trigger functions.
-(the function is expected to be called each frame until the state of the GestureEvent becomes False)</p>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.update" title="Permalink to this definition"></a></dt>
+<dd><p>If the state of the exercise is True, checks the state of the gestures that the exercise depends on and triggers gesture event handler (exercise actions)
+methods (triggered, held, released) if conditions are met. These actions are either a key press, a key down (holding the key), and left or right mouse clicks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.set_up">
+<span class="sig-name descname"><span class="pre">set_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.set_up" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the displaying of the activated exercises in the View</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.exercise_event.ExerciseEvent.force_deactivate">
+<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.exercise_event.ExerciseEvent.force_deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>Force deactivates the exercise by ‘releasing’ all gesture types/exercise states of the exercise, and calling the gesture event handler (exercise actions)’s
+clear method, which is used to remove the exercise text from the view.</p>
 </dd></dl>
 
 </dd></dl>
 
 <span class="target" id="module-scripts.gesture_events.extremity_trigger_event"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityTriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames_for_press</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityTriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
-<p>_summary_</p>
-<p>[trigger types]:
-[bodypart types]:
-[gestures types]:</p>
+<p>Class representing an extremity trigger event. Each event corresponds to an extremity trigger (represented as a circle in the view).
+Allows for actions including key press, holding a key down, and mouse clicks, and changing the colour of the extremity circle.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“set_exercise_display”: called in the event set_up function to display the default extremity circles on the view
+“triggered”: called when an extremity trigger that wasn’t activated before has been activated
+“held”: called when an extremity trigger that was already activated remains activated
+“released”: called when an extremity trigger that was already activated is now deactivated
+“clear”: called in the event force_deactivate function to remove the extremity circles from the view</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“body”: using gestures that are activated by body landmarks</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>defined by the gesture corresponding to the represented extremity trigger</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.get_all_used_gestures">
 <span class="sig-name descname"><span class="pre">get_all_used_gestures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.get_all_used_gestures" title="Permalink to this definition"></a></dt>
@@ -197,18 +240,110 @@ It is called when the events are removed from the model.
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.update" title="Permalink to this definition"></a></dt>
-<dd><p>Checks whether the condition for the event has been met after a gesture for the extremity has changed. If all required gestures have just
-been activated, then we call the the event’s associated trigger function. If the required gestures are still activated from the last check,
-then this means the extremity is being held. If the command associated with the extremity is a key down action, we check that &gt; 0.2 seconds
-have passed. If so, we run the associated held function. If a required gesture has just been released, we run the associated released function</p>
+<dd><p>If the state of the extremity trigger is True, checks the state of the gestures that the extremity trigger depends on and triggers gesture event handler (extremity actions)
+methods (triggered, held, released) if conditions are met. These actions are either a key press, a key down (holding the key), and left or right mouse clicks, as well
+as colouring the corresponding extremity circle to represent whether it is activated or deactivated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.set_up">
+<span class="sig-name descname"><span class="pre">set_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.set_up" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the displaying of the extremity circles in the View</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.force_deactivate">
-<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.force_deactivate" title="Permalink to this definition"></a></dt>
-<dd><p>As some events need to finish some proccessing before being deactivated, they can implement this method.
-It is called when the events are removed from the model.
-(e.g. for example if an event has called the mouse press function it needs to release the mouse before deactivation)</p>
+<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent.force_deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>Force deactivates the exercise by deactivating all gesture types/extremity triggers of the exericise, and calling the gesture event handler (extremity actions)’s
+clear method, which is used to remove the extremity circles from the view.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_events.extremity_walking_event"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityWalkingEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">set</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{'arm_left_extremity',</span> <span class="pre">'arm_right_extremity',</span> <span class="pre">'up_extremity',</span> <span class="pre">'walking_left_state',</span> <span class="pre">'walking_right_state'}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_trigger_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">set</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{'clear',</span> <span class="pre">'extremity_released',</span> <span class="pre">'extremity_triggered',</span> <span class="pre">'held',</span> <span class="pre">'set_displays',</span> <span class="pre">'walking_released',</span> <span class="pre">'walking_triggered'}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
+<p>Class representing the walking + extremity triggers mode. Allows for walking on the spot to trigger a key holding down action, with 3 extremity
+triggers to change the key that is being held down.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“set_displays”: called in the event set_up function to display the extremity circles and walking exercise in the view
+“walking_triggered”: called when a walking state that wasn’t activated before has been activated
+“extremity_triggered”: called when an extremity trigger that wasn’t activated before has been activated
+“held”: called when a walking state that was already activated remains activated (not extremity trigger)
+“walking_released”: called when a walking state that was already activated is now deactivated
+“extremity_released”: called when an extremity trigger that was already activated is now deactivated
+“clear”: called in the event force_deactivate function to remove the extremity circles and walking exercise display from the view</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“body”: using gestures that are activated by body landmarks</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“walking_left_state”: state for walking (lifting left leg) with the left leg
+“walking_right_state”: state for walking (lifting right leg) with the right leg
+“arm_left_extremity”: left extremity trigger to change the current key bind
+“arm_right_extremity”: right extremity trigger to change the current key bind
+“up_extremity”: head extremity trigger to change the current key bind</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent.update" title="Permalink to this definition"></a></dt>
+<dd><p>If the state of the exercise is True, checks the state of the gestures that the exercise depends on and triggers gesture event handler (exercise actions)
+methods (triggered, held, released) if conditions are met. These actions are either a key down if the gesture is a walking state, or colouring an
+extremity circle.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent.set_up">
+<span class="sig-name descname"><span class="pre">set_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent.set_up" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the displaying of the extremity circles and activated exercises in the View</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent.force_deactivate">
+<span class="sig-name descname"><span class="pre">force_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent.force_deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>Force deactivates the exercise by ‘releasing’ all gesture types/exercise states , and calling the gesture event handler (exercise actions)’s
+clear method, which is used to remove the exercise text and extremity circles from the view.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_walking_event.GamingExtremityWalkingEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GamingExtremityWalkingEvent</span></span><a class="headerlink" href="#scripts.gesture_events.extremity_walking_event.GamingExtremityWalkingEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent" title="scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent</span></code></a></p>
+<p>Class representing the walking + extremity triggers gamepad mode. Special mode to allow for walking to perform an action along with holding an
+extremity trigger, as well as standalone extremity triggers to act as buttons.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“set_displays”: called in the event set_up function to display the extremity circles and walking exercise in the view
+“walking_triggered”: called when a walking state that wasn’t activated before has been activated
+“extremity_triggered”: called when an extremity trigger that wasn’t activated before has been activated
+“held”: called when a walking state or a button extremity trigger that was already activated remains activated
+“walking_released”: called when a walking state that was already activated is now deactivated
+“extremity_released”: called when an extremity trigger that was already activated is now deactivated
+“clear”: called in the event force_deactivate function to remove the extremity circles and walking exercise display from the view</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“body”: using gestures that are activated by body landmarks</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“walking_left_state”: state for walking (lifting left leg) with the left leg
+“walking_right_state”: state for walking (lifting right leg) with the right leg
+“left_walking_extremity”: left walking extremity trigger to activate with walking to cause a key down action
+“right_walking_extremity”: right walking extremity trigger to activate with walking to cause a key down action
+“up_walking_extremity”: up walking extremity trigger to activate with walking to cause a key down action
+“down_walking_extremity”: down walking extremity trigger to activate with walking to cause a key down action
+“down_button_extremity”: down button extremity trigger to cause a key down action
+“right_button_extremity”: right button extremity trigger to cause a key down action
+“up_button_extremity”: up button extremity trigger to cause a key down action
+“left_button_extremity”: left button extremity trigger to cause a key down action
+“start_key_extremity”: start key extremity trigger to cause a key down action
+“quit_key_extremity”: quit key extremity trigger to cause a key down action</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_events.extremity_walking_event.GamingExtremityWalkingEvent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_events.extremity_walking_event.GamingExtremityWalkingEvent.update" title="Permalink to this definition"></a></dt>
+<dd><p>If the state of the exercise is True, checks the state of the gestures that the exercise depends on and triggers gesture event handler (exercise actions)
+methods (triggered, held, released) if conditions are met. These actions are either a key down if the gesture is a walking state, or colouring an
+extremity circle.</p>
 </dd></dl>
 
 </dd></dl>

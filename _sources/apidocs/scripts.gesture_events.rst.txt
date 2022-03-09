@@ -21,6 +21,12 @@ scripts.gesture\_events
    :show-inheritance:
 
 
+.. automodule:: scripts.gesture_events.extremity_walking_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.gesture_events.eye_tracking_event
    :members:
    :undoc-members:

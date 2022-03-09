@@ -61,7 +61,10 @@ scripts.gesture\_event\_handlers
    :undoc-members:
    :show-inheritance:
 
-
+.. automodule:: scripts.gesture_event_handlers.extremity_walking
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
 Module contents

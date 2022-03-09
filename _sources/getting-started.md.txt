@@ -144,15 +144,25 @@ Note: in case the gesture names are unclear pleas refer to the data/gestures.jso
 * `fist_doubleclick_left_hand`: Doubleclick by clenching the fist
 * `index_middle_scroll_left_hand`: Scrolling by holding up only the index and middle fingers and moving them up or down together
 * `double_index_pinch_zoom`: Zooming by holding index pinched on both hands and moving the hands closer together or apart
-* `up_extremity`: 
-* `arm_left_extremity`: 
-* `punch_left_extremity`: 
-* `kick_left_extremity`: 
-* `arm_right_extremity`: 
-* `punch_right_extremity`: 
-* `kick_right_extremity`:
-* `squating_exercise`: 
-* `walking_exercise`: 
+* `up_extremity`: Extremity circle activated by the nose landmark 
+* `arm_left_extremity`: Extremity circle activated by the left wrist landmark
+* `punch_left_extremity`: Extremity circle activated by the left wrist landmark (intended to be outstretched arm compared to arm_left)
+* `kick_left_extremity`: Extremity circle activated by the left ankle landmark
+* `arm_right_extremity`: Extremity circle activated by the right wrist landmark
+* `punch_right_extremity`:  Extremity circle activated by the right wrist landmark (intended to be outstretched arm compared to arm_right)
+* `kick_right_extremity`: Extremity circle activated by the right ankle landmark
+* `left_walking_extremity`: Extremity circle activated by the left wrist landmark (Gamepad mode, left D-Pad, used with walking on spot)
+* `right_walking_extremity`: Extremity circle activated by the left wrist landmark (Gamepad mode, right D-Pad, used with walking on spot)
+* `up_walking_extremity`: Extremity circle activated by the left wrist landmark (Gamepad mode, up D-Pad, used with walking on spot)
+* `down_walking_extremity`: Extremity circle activated by the left wrist landmark (Gamepad mode, down D-Pad, used with walking on spot)
+* `left_button_extremity`: Extremity circle activated by the right wrist landmark (Gamepad mode, left D-Pad)
+* `right_button_extremity`: Extremity circle activated by the right wrist landmark (Gamepad mode, right D-Pad)
+* `up_button_extremity`: Extremity circle activated by the right wrist landmark (Gamepad mode, up D-Pad)
+* `down_button_extremity`: Extremity circle activated by the right wrist landmark (Gamepad mode, down D-Pad)
+* `quit_key_extremity`: Extremity circle activated by the right ankle landmark (Gamepad mode, button intended for end program/game keybind)
+* `start_key_extremity`: Extremity circle activated by the left wrist landmark (Gamepad mode, button intended for start program/game keybind)
+* `walking_exercise`: Exercise activated by walking on the spot
+* `squating_exercise`: Exercise activated by squatting
 * `speech_clicking`: 
 * `speech_double_clicking`:    
 * `smiling_event`: 

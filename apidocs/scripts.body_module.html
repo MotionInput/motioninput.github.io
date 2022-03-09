@@ -108,13 +108,13 @@
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.module.LandmarkDetector" title="scripts.core.module.LandmarkDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.module.LandmarkDetector</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.body_module.body_landmark_detector.BodyLandmarkDetector.get_raw_data">
-<span class="sig-name descname"><span class="pre">get_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.body_module.body_landmark_detector.BodyLandmarkDetector.get_raw_data" title="Permalink to this definition"></a></dt>
-<dd><p>Adds the xyz coordinates of all landmarks detected on the image into the RawData instance.</p>
+<span class="sig-name descname"><span class="pre">get_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.body_module.body_landmark_detector.BodyLandmarkDetector.get_raw_data" title="Permalink to this definition"></a></dt>
+<dd><p>Adds the coordinates of all landmarks detected on the image into the RawData instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>raw_data</strong> (<a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><em>RawData</em></a>) – RawData instance to add the landmarks to</p></li>
-<li><p><strong>image</strong> (<em>ndarray</em>) – Image to proccess with mediapipe and read the landmarks locations from</p></li>
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – Image to proccess with mediapipe and read the landmarks locations from</p></li>
 </ul>
 </dd>
 </dl>
@@ -136,20 +136,16 @@
 <dt class="sig sig-object py" id="scripts.body_module.body_position.BodyPosition">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BodyPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_body_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.body_module.body_position.BodyPosition" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="scripts.body_module.body_position.BodyPosition.dirname">
-<span class="sig-name descname"><span class="pre">dirname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'D:\\a\\MI_Windows\\MI_Windows\\scripts\\body_module\\..\\..\\data\\ml_models\\body\\noequipment'</span></em><a class="headerlink" href="#scripts.body_module.body_position.BodyPosition.dirname" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.body_module.body_position.BodyPosition.get_primitives_names">
 <span class="sig-name descname"><span class="pre">get_primitives_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.body_module.body_position.BodyPosition.get_primitives_names" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Returns set of used primitives.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Names of all primitives that are calcualted by the specific modules Position class on initialization</p>
+<dd class="field-odd"><p>Set of used primitives</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>List[str]</p>
+<dd class="field-even"><p>Set[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -161,13 +157,62 @@
 Returns None If the primitive has not been calculated, hence either is not defined for current module or the landmarks needed to calculate it were not provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the primitive (e.g. “up_on” or “arm_left_on”)</p>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the primitive (e.g. “up” or “arm_left”)</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>state of the primitive</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Optional[bool]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.body_module.classification.classification_smoothing"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.body_module.classification.classification_smoothing.EMASmoothing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EMASmoothing</span></span><a class="headerlink" href="#scripts.body_module.classification.classification_smoothing.EMASmoothing" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Smoothes pose classification.</p>
+</dd></dl>
+
+<span class="target" id="module-scripts.body_module.classification.pose_classification"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.body_module.classification.pose_classification.FullBodyPoseEmbedder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FullBodyPoseEmbedder</span></span><a class="headerlink" href="#scripts.body_module.classification.pose_classification.FullBodyPoseEmbedder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Converts 3D pose landmarks into 3D embeddings.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.body_module.classification.pose_classification.PoseSample">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PoseSample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmarks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.body_module.classification.pose_classification.PoseSample" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object to represent a pose sample.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.body_module.classification.pose_classification.PoseClassification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PoseClassification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">used_exercises</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">set</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.body_module.classification.pose_classification.PoseClassification" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classifies pose landmarks.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.body_module.classification.pose_classification.PoseClassification.load_samples">
+<span class="sig-name descname"><span class="pre">load_samples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pose_embedder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.body_module.classification.pose_classification.FullBodyPoseEmbedder" title="scripts.body_module.classification.pose_classification.FullBodyPoseEmbedder"><span class="pre">scripts.body_module.classification.pose_classification.FullBodyPoseEmbedder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_exercises</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.body_module.classification.pose_classification.PoseSample" title="scripts.body_module.classification.pose_classification.PoseSample"><span class="pre">scripts.body_module.classification.pose_classification.PoseSample</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.body_module.classification.pose_classification.PoseClassification.load_samples" title="Permalink to this definition"></a></dt>
+<dd><p>Loads pose samples in the form of .csv files from the given folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exercise_mode</strong> (<em>str</em>) – mode of the training model .csv files</p></li>
+<li><p><strong>pose_embedder</strong> (<a class="reference internal" href="#scripts.body_module.classification.pose_classification.FullBodyPoseEmbedder" title="scripts.body_module.classification.pose_classification.FullBodyPoseEmbedder"><em>FullBodyPoseEmbedder</em></a>) – Pose embedder object</p></li>
+<li><p><strong>used_exercises</strong> (<em>str</em>) – list of exercises to only load their .csv files for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of PoseSample objects for each exercise state</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#scripts.body_module.classification.pose_classification.PoseSample" title="scripts.body_module.classification.pose_classification.PoseSample">PoseSample</a>]</p>
 </dd>
 </dl>
 </dd></dl>

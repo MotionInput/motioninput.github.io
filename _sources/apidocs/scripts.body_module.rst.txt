@@ -18,6 +18,15 @@ scripts.body\_module
    :undoc-members:
    :show-inheritance:
 
+.. automodule:: scripts.body_module.classification.classification_smoothing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: scripts.body_module.classification.pose_classification
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Module contents
 ---------------

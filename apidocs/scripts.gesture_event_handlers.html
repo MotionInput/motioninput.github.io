@@ -449,17 +449,18 @@ Smooth the zooming by averaging out the coordinates of the last few frames (as c
 
 <span class="target" id="module-scripts.gesture_event_handlers.exercise_actions"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_actions.ExerciseActions">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">exercises</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay"><span class="pre">scripts.gesture_event_handlers.exercise_display.ExerciseDisplay</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Actions for the ExerciseEvent class. This class mainly performs keyboard actions like pressing a key, holding a key, releasing a key, as well as
+pressing and releasing the left and right mouse keys.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_actions.ExerciseActions.trigger_action">
 <span class="sig-name descname"><span class="pre">trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matching_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.trigger_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs the action (pressing a specific key down) associated with an exercise when it is triggered, if its action type is keydown.
-If the action type is key press, this does not perform a key press because it is done when the extremity is released</p>
+<dd><p>Performs the action associated with an exercise when it is triggered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>exercise</strong> (<em>str</em>) – name of extremity triggered</p></li>
+<li><p><strong>exercise</strong> (<em>str</em>) – name of exercise</p></li>
 <li><p><strong>action_type</strong> (<em>str</em>) – name of action type (key_press, key_down, left_click or right_click)</p></li>
 <li><p><strong>repeats</strong> (<em>int</em>) – number of times the exercise has been repeated</p></li>
 <li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – name of the key associated with the action, if any</p></li>
@@ -470,7 +471,7 @@ If the action type is key press, this does not perform a key press because it is
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_actions.ExerciseActions.held_action">
-<span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matching_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.held_action" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.held_action" title="Permalink to this definition"></a></dt>
 <dd><p>Performs the action (pressing a specific key down) associated with an exercise when it is held. This is only when the action type is keydown</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -484,14 +485,14 @@ If the action type is key press, this does not perform a key press because it is
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_actions.ExerciseActions.release_action">
-<span class="sig-name descname"><span class="pre">release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matching_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.release_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is released.</p>
+<span class="sig-name descname"><span class="pre">release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.release_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the action (pressing a specific key up/releasing a key) associated with an exercise when it is released.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>exercise</strong> (<em>str</em>) – name of extremity triggered</p></li>
+<li><p><strong>exercise</strong> (<em>str</em>) – name of exercise</p></li>
 <li><p><strong>action_type</strong> (<em>str</em>) – name of action type (key_press, key_down, left_click or right_click)</p></li>
-<li><p><strong>repeats</strong> (<em>int</em>) – number of times the extremity has been repeated</p></li>
+<li><p><strong>repeats</strong> (<em>int</em>) – number of times the exercise has been repeated</p></li>
 <li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – name of the key associated with the action, if any</p></li>
 </ul>
 </dd>
@@ -500,46 +501,74 @@ If the action type is key press, this does not perform a key press because it is
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_actions.ExerciseActions.clear_exercise_display">
-<span class="sig-name descname"><span class="pre">clear_exercise_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.clear_exercise_display" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">clear_exercise_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.clear_exercise_display" title="Permalink to this definition"></a></dt>
+<dd><p>Calls an exercise display method to clear the exercise text from the view</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_actions.ExerciseActions.set_exercise_display">
-<span class="sig-name descname"><span class="pre">set_exercise_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.set_exercise_display" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">set_exercise_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercises</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.set_exercise_display" title="Permalink to this definition"></a></dt>
+<dd><p>Uses the config to get the exercises it needs to display in view, and calls an exercise display method to display it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>exercises</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of exercises for the count to be displayed</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
 <span class="target" id="module-scripts.gesture_event_handlers.exercise_display"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">exercises</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Displays the name of the used exercises and the number of times they have been triggered in the view.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.set_exercise_display">
-<span class="sig-name descname"><span class="pre">set_exercise_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.set_exercise_display" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">set_exercise_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercises</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.set_exercise_display" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the dictionary containing the names of the exercises and starting with 0 repeats each, passing it to the DisplayElement to be displayed
+in the view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>exercises</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of exercises to be displayed</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.update_exercise_repeats">
 <span class="sig-name descname"><span class="pre">update_exercise_repeats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.update_exercise_repeats" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Updates the dictionary with the new number of repeats for a particular exercises, passing it to the DisplayElement to be displayed in the view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exercise</strong> (<em>str</em>) – The exercise to be updated</p></li>
+<li><p><strong>repeats</strong> (<em>int</em>) – Then number of times the exercise has been repeated</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.clear_exericse_display">
-<span class="sig-name descname"><span class="pre">clear_exericse_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.clear_exericse_display" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">clear_exericse_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.clear_exericse_display" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the displaying of the exercise text in the view by passing an empty dictionary to the DisplayElement.</p>
+</dd></dl>
 
 </dd></dl>
 
 <span class="target" id="module-scripts.gesture_event_handlers.extremity_actions"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_circles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles" title="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles"><span class="pre">scripts.gesture_event_handlers.extremity_circles.ExtremityCircles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Actions for the ExtremityTriggerEvent class. This class mainly performs keyboard actions like pressing a key, holding a key, releasing a key,
+as well as pressing and releasing the left and right mouse keys.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.trigger_action">
 <span class="sig-name descname"><span class="pre">trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.trigger_action" title="Permalink to this definition"></a></dt>
 <dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is triggered, if its action type is keydown.
-If the action type is key press, this does not perform a key press because it is done when the extremity is released</p>
+If the action type is key press or click, this does not perform it because they are done when the extremity is released. Also changes the
+colour of the extremity circle activated to the activated colour.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -555,7 +584,7 @@ If the action type is key press, this does not perform a key press because it is
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.held_action">
 <span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.held_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is held. This is only when the action type is keydown</p>
+<dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is held. This is only when the action type is keydown.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -569,7 +598,8 @@ If the action type is key press, this does not perform a key press because it is
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action">
 <span class="sig-name descname"><span class="pre">release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is released.</p>
+<dd><p>Performs the action (pressing a specific key down) associated with an extremity when it is released. Also changes the colour of the
+extremity circle to the deactivated colour.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -583,14 +613,22 @@ If the action type is key press, this does not perform a key press because it is
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.clear_extremity_circles">
-<span class="sig-name descname"><span class="pre">clear_extremity_circles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.clear_extremity_circles" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.set_extremity_circles">
+<span class="sig-name descname"><span class="pre">set_extremity_circles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.set_extremity_circles" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the default displaying of the extremity circles in the view, if not already displaying. This displays specified extremity triggers,
+or the ones that are activated if none are given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>extremities</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of extremities to display</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.set_extremity_circles">
-<span class="sig-name descname"><span class="pre">set_extremity_circles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.set_extremity_circles" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions.clear_extremity_circles">
+<span class="sig-name descname"><span class="pre">clear_extremity_circles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.clear_extremity_circles" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the displaying of the extremity circles in the view.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -598,33 +636,41 @@ If the action type is key press, this does not perform a key press because it is
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityCircles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for the circles representing the Extremity triggers (hit targets). These are circles displayed on the view, which when activated, change
+colour. They also display a number inside the circle, which represents the number of times the extremity trigger has been activated.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.set_extremity_circles_dict">
-<span class="sig-name descname"><span class="pre">set_extremity_circles_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.set_extremity_circles_dict" title="Permalink to this definition"></a></dt>
-<dd><p>Adds each activated extremity’s coordinate, activated and repeats to a dictionary, so that the information can be passed to
-a display element to be displayed.</p>
+<span class="sig-name descname"><span class="pre">set_extremity_circles_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">activated_extremities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.set_extremity_circles_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the dictionary containing the names of the activated extremities and a tuple of their coordinates, activation status and repeats for
+the DisplayElement to be displayed in the view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>activated_extremities</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of extremities to be displayed</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.clear_extremity_circles">
-<span class="sig-name descname"><span class="pre">clear_extremity_circles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.clear_extremity_circles" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.update_extremity_circle">
-<span class="sig-name descname"><span class="pre">update_extremity_circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.update_extremity_circle" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_extremity_circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.update_extremity_circle" title="Permalink to this definition"></a></dt>
 <dd><p>Updates the colour of an extremity circle when the extremity is activated or deactivated by updating the list of extremity circles.
-If an extremity is activated, the circle turns green. If an extremity is deactivated, the circle turns red.
-Also adds the number of times the extremity has been triggered.</p>
+If an extremity is activated, the circle turns to the activated colour and vice versa. Also adds the number of times the extremity has
+been triggered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>extremity</strong> (<em>str</em>) – Name of extremity</p></li>
-<li><p><strong>repeats</strong> (<em>str</em>) – Number of times the extremity has been triggered</p></li>
-<li><p><strong>repeats</strong> – Colour for the extremity circle</p></li>
+<li><p><strong>repeats</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Number of times the extremity has been triggered</p></li>
+<li><p><strong>activated</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – If the extremity is activated</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.clear_extremity_circles">
+<span class="sig-name descname"><span class="pre">clear_extremity_circles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.clear_extremity_circles" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the displaying of the extremity circles in the view by passing an empty dictionary to the DisplayElement.</p>
 </dd></dl>
 
 </dd></dl>
@@ -767,6 +813,177 @@ Also adds the number of times the extremity has been triggered.</p>
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.pydirect_directx_actions.Clicker.right_click">
 <span class="sig-name descname"><span class="pre">right_click</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker.right_click" title="Permalink to this definition"></a></dt>
 <dd><p>Performs a left click as a DirectX action.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_event_handlers.extremity_walking"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityWalkingActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay"><span class="pre">scripts.gesture_event_handlers.exercise_display.ExerciseDisplay</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extremity_circles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles" title="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles"><span class="pre">scripts.gesture_event_handlers.extremity_circles.ExtremityCircles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Actions for the ExtremityWalkingEvent class. These allow for walking on the spot to trigger a key hold, and for extremity triggers to
+be activated and deactivated.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_trigger_action">
+<span class="sig-name descname"><span class="pre">walking_trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_trigger_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs a keydown action of the current key being used, and increments the number of walking repeats displayed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
+<li><p><strong>current_key</strong> (<em>str</em>) – Key to perform key down</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_trigger_action">
+<span class="sig-name descname"><span class="pre">extremity_trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_trigger_action" title="Permalink to this definition"></a></dt>
+<dd><p>Changes the colour of the activated extremity circle to the activated colour, and the number of repeats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extremity_name</strong> (<em>str</em>) – Name of activated extremity</p></li>
+<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.held_action">
+<span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.held_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs a keydown action of the current key being used, to simulate the key being held.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>current_key</strong> (<em>str</em>) – Key to perform key down</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_release_action">
+<span class="sig-name descname"><span class="pre">extremity_release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_release_action" title="Permalink to this definition"></a></dt>
+<dd><p>Changes the colour of the deactivated extremity circle to the deactivated colour, and the number of repeats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extremity_name</strong> (<em>str</em>) – Name of deactivated extremity</p></li>
+<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_release_action">
+<span class="sig-name descname"><span class="pre">walking_release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_release_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs a key up action of the current key being used when the walking action is complete.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>current_key</strong> (<em>str</em>) – Key to press up</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.set_displays">
+<span class="sig-name descname"><span class="pre">set_displays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.set_displays" title="Permalink to this definition"></a></dt>
+<dd><p>Displays the required extremity circles and the exercises along with their repeats in view, starting at 0, if not displaying already.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.clear_display">
+<span class="sig-name descname"><span class="pre">clear_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.clear_display" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the extremity circles and the exercises being displayed in the view, if not cleared already.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GamingExtremityWalkingActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay"><span class="pre">scripts.gesture_event_handlers.exercise_display.ExerciseDisplay</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extremity_circles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles" title="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles"><span class="pre">scripts.gesture_event_handlers.extremity_circles.ExtremityCircles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Actions for the GamingExtremityWalkingEvent class. These provide methods for the special walking on the spot + gamepad mode.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_trigger_action">
+<span class="sig-name descname"><span class="pre">walking_trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">walking_repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_trigger_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs a keydown action of the keys being used, and increments the number of walking repeats displayed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
+<li><p><strong>key_list</strong> – Key to perform key down</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_trigger_action">
+<span class="sig-name descname"><span class="pre">extremity_trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_trigger_action" title="Permalink to this definition"></a></dt>
+<dd><p>Changes the colour of the activated extremity circle to the activated colour, and the number of repeats. Also performs any key down
+action if required (e.g. if the extremity trigger activated was a button extremity).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extremity_name</strong> (<em>str</em>) – Name of activated extremity</p></li>
+<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
+<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Key to perform key down</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.held_action">
+<span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.held_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs a keydown action for the current keys being used, to simulate the key being held.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key_list</strong> – List of keys to perform key down</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_release_action">
+<span class="sig-name descname"><span class="pre">extremity_release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_release_action" title="Permalink to this definition"></a></dt>
+<dd><p>Changes the colour of the deactivated extremity circle to the deactivated colour, and the number of repeats. Also performs a key up
+action for any keys required.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extremity_name</strong> (<em>str</em>) – Name of deactivated extremity</p></li>
+<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
+<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Key for key up</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_release_action">
+<span class="sig-name descname"><span class="pre">walking_release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_release_action" title="Permalink to this definition"></a></dt>
+<dd><p>Performs a key up action of the any keys being used when the walking action is complete.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Keys for key up</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.set_displays">
+<span class="sig-name descname"><span class="pre">set_displays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.set_displays" title="Permalink to this definition"></a></dt>
+<dd><p>Displays the required extremity circles and the exercises along with their repeats in view, starting at 0, if not already displayed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.clear_display">
+<span class="sig-name descname"><span class="pre">clear_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.clear_display" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the extremity circles and the exercises being displayed in the view, if not displayed already.</p>
 </dd></dl>
 
 </dd></dl>
