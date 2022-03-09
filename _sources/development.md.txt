@@ -333,6 +333,6 @@ Used to update an attribute, cannot update objects, only values.
 
 Usage:
 
-`GET: JSON/path/to/object/to/get`
+`GET: "JSON"/path/to/object/to/get`
 
 Used to recieve an object from the specified JSON file.
