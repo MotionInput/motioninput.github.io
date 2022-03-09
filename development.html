@@ -79,6 +79,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#things-to-keep-in-mind">Things to keep in mind.</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#backend-frontend-communication-protocol">Backend-Frontend Communication Protocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#start">START</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#end">END</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reboot">REBOOT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add">ADD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove">REMOVE:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set">SET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update">UPDATE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get">GET</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API refernece</span></p>
 <ul>
@@ -345,6 +356,96 @@ we will fix it in this section.</p>
 <p>When you are extending the code base, make sure that <strong>ALL</strong> non python files are
 in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder.</p>
 <p>If you added a new dependency you <strong>MUST</strong> add it to <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p>
+</section>
+</section>
+<section id="backend-frontend-communication-protocol">
+<h1>Backend-Frontend Communication Protocol<a class="headerlink" href="#backend-frontend-communication-protocol" title="Permalink to this headline"></a></h1>
+<p>During development you maw want to change/extend some functionality that involves both the backend and frontend. The following section covers how the protcol for communication is defined between the two.</p>
+<p>Communication works as follows:</p>
+<ul class="simple">
+<li><p>Frontend sends a request to backend.</p></li>
+<li><p>Backend recieves the request and attempts to process it.</p></li>
+<li><p>If the backend succeeds, a SUCCEES message is returned with any relevant data.</p></li>
+<li><p>If not, an ERROR message is sent with a (hopefully) relevant error message.</p></li>
+<li><p>Repeat until a END message is recieved.</p></li>
+</ul>
+<p>Messages sent from the back end will be in string format but will contain a dictionary containing any relevant data.</p>
+<p>Every protocol message has a command, and each command (with <code class="docutils literal notranslate"><span class="pre">START</span></code>, <code class="docutils literal notranslate"><span class="pre">END</span></code> and <code class="docutils literal notranslate"><span class="pre">REBOOT</span></code> being the only exceptions) can take in exactly one request.</p>
+<p>All the currently available commands include:</p>
+<ul class="simple">
+<li><p>START</p></li>
+<li><p>END - Not currently functioning correctly</p></li>
+<li><p>REBOOT - Not currently functioning correctly</p></li>
+<li><p>ADD</p></li>
+<li><p>REMOVE</p></li>
+<li><p>SET</p></li>
+<li><p>UPDATE</p></li>
+<li><p>GET</p></li>
+</ul>
+<p>When “JSON” is mentioned in the following command descriptions, it represents one of the following json files:</p>
+<ul class="simple">
+<li><p>mode</p></li>
+<li><p>config</p></li>
+<li><p>gestures</p></li>
+<li><p>events</p></li>
+</ul>
+<section id="start">
+<h2>START<a class="headerlink" href="#start" title="Permalink to this headline"></a></h2>
+<p>Usage:</p>
+<p><code class="docutils literal notranslate"><span class="pre">START</span></code></p>
+<p>Runs MotionInput. Will return an error if Motioninput is currently running</p>
+</section>
+<section id="end">
+<h2>END<a class="headerlink" href="#end" title="Permalink to this headline"></a></h2>
+<p>Usage:</p>
+<p><code class="docutils literal notranslate"><span class="pre">END</span></code></p>
+<p>Terminates MotionInput. Will error if MotionInput is not running.</p>
+</section>
+<section id="reboot">
+<h2>REBOOT<a class="headerlink" href="#reboot" title="Permalink to this headline"></a></h2>
+<p>Usage:</p>
+<p><code class="docutils literal notranslate"><span class="pre">REBOOT</span></code></p>
+<p>Terminates MotionInput, then runs it again. Will error if MotionInput is not running.</p>
+</section>
+<section id="add">
+<h2>ADD<a class="headerlink" href="#add" title="Permalink to this headline"></a></h2>
+<p>Usage:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ADD:</span> <span class="pre">&quot;JSON&quot;/path/to/place/to/add/object={'attr1':'val1',</span> <span class="pre">'attr2':'val2'...}</span></code></p>
+<p>Adds the specified object to the “/” seperated path in the specified JSON file. Errors if:</p>
+<ul class="simple">
+<li><p>Used on the config file</p></li>
+<li><p>Used to add an invalid gesture or event.</p></li>
+<li><p>Used to add anything except a mode in the mode JSON.</p></li>
+</ul>
+</section>
+<section id="remove">
+<h2>REMOVE:<a class="headerlink" href="#remove" title="Permalink to this headline"></a></h2>
+<p>Usage:</p>
+<p><code class="docutils literal notranslate"><span class="pre">REMOVE:</span> <span class="pre">&quot;JSON&quot;/path/to/object/to/remove</span></code></p>
+<p>Removes the object at the specified path from the JSON file. Errors if:</p>
+<ul class="simple">
+<li><p>Used on the config file</p></li>
+<li><p>Used incorrectly in the mode JSON file (only modes can be removed).
+Please be careful with what you remove, validation isn’t a thing yet.</p></li>
+</ul>
+</section>
+<section id="set">
+<h2>SET<a class="headerlink" href="#set" title="Permalink to this headline"></a></h2>
+<p>Usage:</p>
+<p><code class="docutils literal notranslate"><span class="pre">SET:</span> <span class="pre">&quot;JSON&quot;/path/to/attribute/to/set=val</span></code></p>
+<p>Used soley to set the default mode and the iteration order (iteration order is just a comma seperated list of values: <code class="docutils literal notranslate"><span class="pre">mode1,mode2,mode3...</span></code>)</p>
+</section>
+<section id="update">
+<h2>UPDATE<a class="headerlink" href="#update" title="Permalink to this headline"></a></h2>
+<p>Usage:</p>
+<p><code class="docutils literal notranslate"><span class="pre">UPDATE:</span> <span class="pre">&quot;JSON&quot;/path/to/attribute/to/update=val</span></code></p>
+<p>Used to update an attribute, cannot update objects, only values.</p>
+</section>
+<section id="get">
+<h2>GET<a class="headerlink" href="#get" title="Permalink to this headline"></a></h2>
+<p>Usage:</p>
+<p><code class="docutils literal notranslate"><span class="pre">GET:</span> <span class="pre">JSON/path/to/object/to/get</span></code></p>
+<p>Used to recieve an object from the specified JSON file.</p>
 </section>
 </section>
 

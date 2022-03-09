@@ -237,3 +237,102 @@ When you are extending the code base, make sure that **ALL** non python files ar
 in the `data` folder.
 
 If you added a new dependency you **MUST** add it to `requirements.txt`
+
+# Backend-Frontend Communication Protocol
+
+During development you maw want to change/extend some functionality that involves both the backend and frontend. The following section covers how the protcol for communication is defined between the two.
+
+Communication works as follows:
+* Frontend sends a request to backend.
+* Backend recieves the request and attempts to process it.
+* If the backend succeeds, a SUCCEES message is returned with any relevant data.
+* If not, an ERROR message is sent with a (hopefully) relevant error message.
+* Repeat until a END message is recieved.
+
+Messages sent from the back end will be in string format but will contain a dictionary containing any relevant data.
+
+Every protocol message has a command, and each command (with `START`, `END` and `REBOOT` being the only exceptions) can take in exactly one request.
+
+All the currently available commands include:
+* START
+* END - Not currently functioning correctly
+* REBOOT - Not currently functioning correctly
+* ADD
+* REMOVE
+* SET
+* UPDATE
+* GET
+
+When "JSON" is mentioned in the following command descriptions, it represents one of the following json files:
+* mode
+* config
+* gestures
+* events
+### START
+
+Usage:
+
+`START`
+
+Runs MotionInput. Will return an error if Motioninput is currently running
+
+### END
+
+Usage:
+
+`END`
+
+Terminates MotionInput. Will error if MotionInput is not running.
+
+### REBOOT
+
+Usage:
+
+`REBOOT`
+
+Terminates MotionInput, then runs it again. Will error if MotionInput is not running.
+
+### ADD
+
+Usage:
+
+`ADD: "JSON"/path/to/place/to/add/object={'attr1':'val1', 'attr2':'val2'...}` 
+
+Adds the specified object to the "/" seperated path in the specified JSON file. Errors if:
+* Used on the config file
+* Used to add an invalid gesture or event.
+* Used to add anything except a mode in the mode JSON.
+
+### REMOVE:
+
+Usage:
+
+`REMOVE: "JSON"/path/to/object/to/remove`
+
+Removes the object at the specified path from the JSON file. Errors if: 
+* Used on the config file
+* Used incorrectly in the mode JSON file (only modes can be removed).
+Please be careful with what you remove, validation isn't a thing yet.
+### SET
+
+Usage:
+
+`SET: "JSON"/path/to/attribute/to/set=val`
+
+Used soley to set the default mode and the iteration order (iteration order is just a comma seperated list of values: `mode1,mode2,mode3...`)
+
+### UPDATE
+
+Usage:
+
+`UPDATE: "JSON"/path/to/attribute/to/update=val`
+
+Used to update an attribute, cannot update objects, only values.  
+
+### GET
+
+Usage:
+
+`GET: JSON/path/to/object/to/get`
+
+Used to recieve an object from the specified JSON file.
