@@ -164,6 +164,7 @@ Note: in case the gesture names are unclear pleas refer to the data/gestures.jso
 * `keyboard_active_event`: Activates the in air keyboard. Move fingers over keys, when palms are facing the camera, to hover over them
 * `keyboard_click_event`: Press a key on the in air keyboard by hovering over a key and performing selected click gesture (pulldown, pinch or scissor). Hold down the key by holding the click gesture for at least the selected duration (3s by default)
 
+(In Air Keyboard events have not yet been added to the dev branch.)
 
 ## Modes
 
