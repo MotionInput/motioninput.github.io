@@ -88,8 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#end">END</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reboot">REBOOT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add">ADD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#remove">REMOVE:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#set">SET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove">REMOVE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#update">UPDATE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get">GET</a></li>
 </ul>
@@ -425,7 +424,7 @@ in the <code class="docutils literal notranslate"><span class="pre">data</span><
 </ul>
 </section>
 <section id="remove">
-<h2>REMOVE:<a class="headerlink" href="#remove" title="Permalink to this headline"></a></h2>
+<h2>REMOVE<a class="headerlink" href="#remove" title="Permalink to this headline"></a></h2>
 <p>Usage:</p>
 <p><code class="docutils literal notranslate"><span class="pre">REMOVE:</span> <span class="pre">&quot;JSON&quot;/path/to/object/to/remove</span></code></p>
 <p>Removes the object at the specified path from the JSON file. Errors if:</p>
@@ -435,17 +434,11 @@ in the <code class="docutils literal notranslate"><span class="pre">data</span><
 Please be careful with what you remove, validation isn’t a thing yet.</p></li>
 </ul>
 </section>
-<section id="set">
-<h2>SET<a class="headerlink" href="#set" title="Permalink to this headline"></a></h2>
-<p>Usage:</p>
-<p><code class="docutils literal notranslate"><span class="pre">SET:</span> <span class="pre">&quot;JSON&quot;/path/to/attribute/to/set=val</span></code></p>
-<p>Used soley to set the default mode and the iteration order (iteration order is just a comma seperated list of values: <code class="docutils literal notranslate"><span class="pre">mode1,mode2,mode3...</span></code>)</p>
-</section>
 <section id="update">
 <h2>UPDATE<a class="headerlink" href="#update" title="Permalink to this headline"></a></h2>
 <p>Usage:</p>
 <p><code class="docutils literal notranslate"><span class="pre">UPDATE:</span> <span class="pre">&quot;JSON&quot;/path/to/attribute/to/update=val</span></code></p>
-<p>Used to update an attribute, cannot update objects, only values.</p>
+<p>Used to update an attribute, cannot update objects, only values. Lists are recognised as values.</p>
 </section>
 <section id="get">
 <h2>GET<a class="headerlink" href="#get" title="Permalink to this headline"></a></h2>

@@ -303,7 +303,7 @@ Adds the specified object to the "/" seperated path in the specified JSON file. 
 * Used to add an invalid gesture or event.
 * Used to add anything except a mode in the mode JSON.
 
-### REMOVE:
+### REMOVE
 
 Usage:
 
@@ -313,13 +313,6 @@ Removes the object at the specified path from the JSON file. Errors if:
 * Used on the config file
 * Used incorrectly in the mode JSON file (only modes can be removed).
 Please be careful with what you remove, validation isn't a thing yet.
-### SET
-
-Usage:
-
-`SET: "JSON"/path/to/attribute/to/set=val`
-
-Used soley to set the default mode and the iteration order (iteration order is just a comma seperated list of values: `mode1,mode2,mode3...`)
 
 ### UPDATE
 
@@ -327,7 +320,7 @@ Usage:
 
 `UPDATE: "JSON"/path/to/attribute/to/update=val`
 
-Used to update an attribute, cannot update objects, only values.  
+Used to update an attribute, cannot update objects, only values. Lists are recognised as values.  
 
 ### GET
 
