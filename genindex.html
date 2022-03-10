@@ -42,6 +42,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#configuration">Configuration</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Guidelines</a></li>
@@ -63,6 +67,8 @@
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.event_mapper.html">scripts.event_mapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/scripts.mode_controller.html">scripts.mode_controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/communicator.html">communicator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/motioninput_api.html">motioninput_api</a></li>
 </ul>
 
         </div>
@@ -120,16 +126,24 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.event_editor.EventEditor.add">add() (EventEditor method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.gesture_editor.GestureEditor.add">(GestureEditor method)</a>
+</li>
+        <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.json_editor.JSONEditor.add">(JSONEditor method)</a>
+</li>
+      </ul></li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_gesture">add_gesture() (Model method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.add_gesture">(Module method)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.add_landmark">add_landmark() (RawData method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.add_landmark">add_landmark() (RawData method)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_module">add_module() (Model method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.AOIMouse">AOIMouse (class in scripts.gesture_event_handlers.desktop_mouse)</a>
@@ -164,6 +178,8 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.calibrate">calibrate() (Module class method)</a>
+</li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera">Camera (class in scripts.tools.camera)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker.change_monitor">change_monitor() (MonitorTracker method)</a>
@@ -222,10 +238,10 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.down_arrow_press">down_arrow_press() (Keyboard method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.HeadPosElement.draw_text">draw_text() (HeadPosElement method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.FaceBoxElement.drawBox">drawBox() (FaceBoxElement method)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.EyeGazeElement.drawGaze">drawGaze() (EyeGazeElement method)</a>
@@ -237,6 +253,8 @@
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.dwKeyStates">dwKeyStates (POINTER_INFO attribute)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.dwTime">dwTime (POINTER_INFO attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.json_editor.JSONEditor.dynamic_update">dynamic_update() (JSONEditor method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -506,6 +524,8 @@
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.held_action">(GamingExtremityWalkingActions method)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.hide">hide() (View method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.historyCount">historyCount (POINTER_INFO attribute)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.hwndTarget">hwndTarget (POINTER_INFO attribute)</a>
@@ -518,13 +538,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.idle_state_change_event.IdleStateChangeEvent">IdleStateChangeEvent (class in scripts.gesture_events.idle_state_change_event)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.initialise_contacts">initialise_contacts() (Touch method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.inputData">inputData (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.initialise_contacts">initialise_contacts() (Touch method)</a>
 </li>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.is_closed">is_closed() (View method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.inputData">inputData (POINTER_INFO attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -584,8 +602,6 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor">ModeControllerEditor (class in scripts.tools.json_editors.mode_controller_editor)</a>
-</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model">Model (class in scripts.core.model)</a>
 </li>
       <li>
@@ -713,8 +729,6 @@
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools.json_editors.gesture_editor">scripts.tools.json_editors.gesture_editor</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools.json_editors.json_editor">scripts.tools.json_editors.json_editor</a>
-</li>
-        <li><a href="apidocs/scripts.tools.html#module-scripts.tools.json_editors.mode_controller_editor">scripts.tools.json_editors.mode_controller_editor</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools.view">scripts.tools.view</a>
 </li>
@@ -851,16 +865,20 @@
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.release_action">(ExtremityActions method)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.event_editor.EventEditor.remove">remove() (EventEditor method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.gesture_editor.GestureEditor.remove">(GestureEditor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.remove_gesture">remove_gesture() (Model method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.remove_gesture">(Module method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor.remove_object">remove_object() (ModeControllerEditor method)</a>
-</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.reset">reset() (Module method)</a>
 
       <ul>
@@ -1153,6 +1171,8 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.gestures_active_event">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.hand_active_event
 
@@ -1160,8 +1180,6 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.hand_active_event">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.idle_state_change_event
 
@@ -1317,13 +1335,6 @@
 </li>
       </ul></li>
       <li>
-    scripts.tools.json_editors.mode_controller_editor
-
-      <ul>
-        <li><a href="apidocs/scripts.tools.html#module-scripts.tools.json_editors.mode_controller_editor">module</a>
-</li>
-      </ul></li>
-      <li>
     scripts.tools.view
 
       <ul>
@@ -1374,6 +1385,8 @@
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.set_up">(PalmHeightChangeEvent method)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.show">show() (View method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent">SimpleGestureEvent (class in scripts.gesture_events.simple_gesture_event)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.click_press_event.SingleHandExclusiveClickPressEvent">SingleHandExclusiveClickPressEvent (class in scripts.gesture_events.click_press_event)</a>
@@ -1534,6 +1547,12 @@
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.event_editor.EventEditor.validate_event">validate_event() (EventEditor method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.gesture_editor.GestureEditor.validate_gesture">validate_gesture() (GestureEditor method)</a>
+</li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View">View (class in scripts.tools.view)</a>
 </li>
   </ul></td>
@@ -1556,6 +1575,8 @@
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_trigger_action">(GamingExtremityWalkingActions method)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.was_closed_by_user">was_closed_by_user() (View method)</a>
+</li>
   </ul></td>
 </tr></table>
 

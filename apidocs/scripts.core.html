@@ -45,6 +45,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#configuration">Configuration</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development.html">Guidelines</a></li>
@@ -69,6 +73,8 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.event_mapper.html">scripts.event_mapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.mode_controller.html">scripts.mode_controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communicator.html">communicator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motioninput_api.html">motioninput_api</a></li>
 </ul>
 
         </div>
@@ -291,10 +297,15 @@ May lead to removal of some primitives (if the primitive is not used by any gest
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="scripts.core.module.Module.calibrate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calibrate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.module.Module.calibrate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="scripts.core.module.Module.pre_initialize">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pre_initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.core.module.Module.pre_initialize" title="Permalink to this definition"></a></dt>
 <dd><p>Can be called to perform all of the time consuming setup of the Module before initialization.
-If is not called then all the setup is done wen the Module is first initialized.</p>
+If is not called then all the setup is done when the Module is first initialized.</p>
 </dd></dl>
 
 </dd></dl>

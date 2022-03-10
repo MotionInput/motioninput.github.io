@@ -45,6 +45,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#configuration">Configuration</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development.html">Guidelines</a></li>
@@ -71,6 +75,8 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.event_mapper.html">scripts.event_mapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.mode_controller.html">scripts.mode_controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communicator.html">communicator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motioninput_api.html">motioninput_api</a></li>
 </ul>
 
         </div>
@@ -113,7 +119,7 @@
 
 <span class="target" id="module-scripts.tools.view"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.view.View">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">View</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_screen_top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.view.View" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">View</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head_screen_top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.view.View" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.view.View.update_display_element">
@@ -128,8 +134,18 @@ class is not already initialised, then it also initialises the class.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.tools.view.View.is_closed">
-<span class="sig-name descname"><span class="pre">is_closed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.tools.view.View.is_closed" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="scripts.tools.view.View.hide">
+<span class="sig-name descname"><span class="pre">hide</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.view.View.hide" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.view.View.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.view.View.show" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.view.View.was_closed_by_user">
+<span class="sig-name descname"><span class="pre">was_closed_by_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.tools.view.View.was_closed_by_user" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -331,7 +347,7 @@ YAW) info.</p>
 <span id="json-editors"></span><h2>JSON Editors<a class="headerlink" href="#module-scripts.tools.json_editors.json_editor" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.json_editor.JSONEditor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JSONEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JSONEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.json_editor.JSONEditor.get_all_data">
@@ -366,14 +382,36 @@ YAW) info.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.json_editor.JSONEditor.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.json_editors.json_editor.JSONEditor.update" title="Permalink to this definition"></a></dt>
-<dd><p>Updates a config in the config JSON file.</p>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.json_editors.json_editor.JSONEditor.update" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the data JSON file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>gesture</strong> (<em>dict</em>) – The gesture to be added to the JSON</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The gesture to be added to the JSON</p></li>
+<li><p><strong>val</strong> (<em>Any</em>) – The value that is being added to the JSON</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.json_editor.JSONEditor.dynamic_update">
+<span class="sig-name descname"><span class="pre">dynamic_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.json_editors.json_editor.JSONEditor.dynamic_update" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the data JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The gesture to be added to the JSON</p></li>
+<li><p><strong>val</strong> (<em>Any</em>) – The value that is being added to the JSON</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.json_editor.JSONEditor.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.json_editor.JSONEditor.add" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.json_editor.JSONEditor.save">
@@ -438,6 +476,22 @@ triggers: {</p>
 <p>}</p>
 </div></blockquote>
 <p>}</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.event_editor.EventEditor.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.event_editor.EventEditor.remove" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.event_editor.EventEditor.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.event_editor.EventEditor.add" title="Permalink to this definition"></a></dt>
+<dd><p>Adds A Gesture to the event JSON</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.event_editor.EventEditor.validate_event">
+<span class="sig-name descname"><span class="pre">validate_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.event_editor.EventEditor.validate_event" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <span class="target" id="module-scripts.tools.json_editors.gesture_editor"></span><dl class="py class">
@@ -488,18 +542,21 @@ primitive_name : bool,
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.gesture_editor.GestureEditor.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.gesture_editor.GestureEditor.remove" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.gesture_editor.GestureEditor.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.gesture_editor.GestureEditor.add" title="Permalink to this definition"></a></dt>
+<dd><p>Adds A Gesture to the gesture JSON</p>
 </dd></dl>
 
-<span class="target" id="module-scripts.tools.json_editors.mode_controller_editor"></span><dl class="py class">
-<dt class="sig sig-object py" id="scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ModeControllerEditor</span></span><a class="headerlink" href="#scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="scripts.tools.json_editors.json_editor.JSONEditor"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.json_editors.json_editor.JSONEditor</span></code></a></p>
-<p>Class that handles the reading of the mode_controller JSON</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor.remove_object">
-<span class="sig-name descname"><span class="pre">remove_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.mode_controller_editor.ModeControllerEditor.remove_object" title="Permalink to this definition"></a></dt>
-<dd><p>Stops people from (accidentally?) removing mode controllers.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="scripts.tools.json_editors.gesture_editor.GestureEditor.validate_gesture">
+<span class="sig-name descname"><span class="pre">validate_gesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.gesture_editor.GestureEditor.validate_gesture" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
