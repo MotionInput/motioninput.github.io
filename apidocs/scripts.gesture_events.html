@@ -443,10 +443,15 @@ extremity circle.</p>
 <dt class="sig sig-object py" id="scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MouthTriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
-<p>_summary_</p>
-<p>[trigger types]:
-[bodypart types]:
-[gestures types]:</p>
+<p>Left Clicking/Pressing when mouth is opened. Currently as there is no logic of how to decide if a press or a click should be started. Right Clicking is triggers by smiling and Double Clicking by raising eye brows.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“click”: called once when the gesture of interest becomes active; “press”: called when the gesture of interest becomes active IF the “click” trigger type was not defined; “release”: called when the gesture of interest becomes unactive</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“head”</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“smiling_gesture” &amp; “open_mouth_gesture” &amp; “raise_eye_brow_gesture”</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent.update" title="Permalink to this definition"></a></dt>
@@ -474,14 +479,32 @@ extremity circle.</p>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent" title="scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent</span></code></a></p>
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_events.mouth_trigger_event.FishFaceEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FishFaceEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.mouth_trigger_event.FishFaceEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent" title="scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent</span></code></a></p>
+</dd></dl>
+
 <span class="target" id="module-scripts.gesture_events.nose_direction_tracking_event"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NoseDirectionTrackingEvent</span></span><a class="headerlink" href="#scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
-<p>_summary_</p>
-<p>[trigger types]:
-[bodypart types]:
-[gestures types]:</p>
+<p>CURRENTLY NOT IN USE, more optimial version of the NoseDirectionTrackingEventNoseBox without visuals!
+Nose Direction tracking event. Active if face can be detected and
+at least 1 gesture is active i.e. nose leaves the nosebox (defined by the noseboxpercentagesize).
+Defines the mouse direction vector from the center of the nosebox and the nosepoint.
+Using the vector and the scaling_factor relatively moves mouse in that direction.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“move”: relatively moves mouse in the direction of the vector from the center of the nosebox to the nosepoint.</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“head”</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“nose_right_gesture”: active when the nosepoint is to the right of the nosebox.
+“nose_left_gesture”: active when the nosepoint is to the left of the nosebox.
+“nose_up_gesture”: active when the nosepoint is above the nosebox.
+“nose_down_gesture”: active when the nosepoint is below the nosebox.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent.update" title="Permalink to this definition"></a></dt>
@@ -495,10 +518,16 @@ extremity circle.</p>
 <dt class="sig sig-object py" id="scripts.gesture_events.nose_tracking_event.NoseTrackingEvent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NoseTrackingEvent</span></span><a class="headerlink" href="#scripts.gesture_events.nose_tracking_event.NoseTrackingEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent" title="scripts.gesture_events.simple_gesture_event.SimpleGestureEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.gesture_events.simple_gesture_event.SimpleGestureEvent</span></code></a></p>
-<p>_summary_</p>
-<p>[trigger types]:
-[bodypart types]:
-[gestures types]:</p>
+<p>Nose tracking event. Active if face can be detected. Maps nosepoint position to the screen coordinate and moves
+mouse cursor in that direction.</p>
+<dl class="simple">
+<dt>[trigger types]:</dt><dd><p>“move”: maps normalized position to screen coordinates and moves mouse cursor there.</p>
+</dd>
+<dt>[bodypart types]:</dt><dd><p>“head”</p>
+</dd>
+<dt>[gestures types]:</dt><dd><p>“nose_position_gesture”: gesture always active when face is detected and nosepoint position is available</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_events.nose_tracking_event.NoseTrackingEvent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_events.nose_tracking_event.NoseTrackingEvent.update" title="Permalink to this definition"></a></dt>
