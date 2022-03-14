@@ -682,6 +682,237 @@ been triggered.</p>
 
 </dd></dl>
 
+<span class="target" id="module-scripts.gesture_event_handlers.in_air_keyboard"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.Button">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_colour</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.Button" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class used to represent a sqaure button.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – text to display on the button</p></li>
+<li><p><strong>x</strong> (<em>int</em>) – x position of the top left corner</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y position of the top left corner</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – width of the button</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – height of the button</p></li>
+<li><p><strong>font_size</strong> (<em>float</em>) – size of the text in the button</p></li>
+<li><p><strong>bg_colour</strong> (<em>list</em><em>[</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>]</em>) – background colour of the button in RBG format</p></li>
+<li><p><strong>action</strong> (<em>list</em>) – action to perform when the button is clicked, None if no special action is required</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.Button.get_position">
+<span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.Button.get_position" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the coordinates of the top left corner.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(x,y)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.Button.get_size">
+<span class="sig-name descname"><span class="pre">get_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.Button.get_size" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the width and height of the button.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(width, height)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.KeyboardLoader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KeyboardLoader</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.KeyboardLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for storing and initialising all the data needed for the in air keyboard.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.KeyboardLoader.load_from_config">
+<span class="sig-name descname"><span class="pre">load_from_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.KeyboardLoader.load_from_config" title="Permalink to this definition"></a></dt>
+<dd><p>Initialises the in air keyboard by getting all the data from
+data/config.json.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.KeyboardLoader.load_fron_in_air_keyboard">
+<span class="sig-name descname"><span class="pre">load_fron_in_air_keyboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.KeyboardLoader.load_fron_in_air_keyboard" title="Permalink to this definition"></a></dt>
+<dd><p>Initialises the in air keyboard by getting all the data from
+data/in_air_keyboard.json.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InAirKeyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.keyboard.Keyboard" title="scripts.gesture_event_handlers.keyboard.Keyboard"><span class="pre">scripts.gesture_event_handlers.keyboard.Keyboard</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class used to represent an in air keyboard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>view</strong> (<a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><em>View</em></a>) – the window that the in air keyboard is to be displayed on</p></li>
+<li><p><strong>keyboard</strong> (<a class="reference internal" href="#scripts.gesture_event_handlers.keyboard.Keyboard" title="scripts.gesture_event_handlers.keyboard.Keyboard"><em>Keyboard</em></a>) – instance of keyboard object used for pressing keys and performing key combinations</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.initialise_hands">
+<span class="sig-name descname"><span class="pre">initialise_hands</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.initialise_hands" title="Permalink to this definition"></a></dt>
+<dd><p>Initliases the data strucuture required for validating key presses from click gestures.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.update_buttons">
+<span class="sig-name descname"><span class="pre">update_buttons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.update_buttons" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a button for each key in layout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>layout</strong> – keys you want to create buttons for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.create_button">
+<span class="sig-name descname"><span class="pre">create_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.create_button" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.update_button_coordinates">
+<span class="sig-name descname"><span class="pre">update_button_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.in_air_keyboard.Button" title="scripts.gesture_event_handlers.in_air_keyboard.Button"><span class="pre">scripts.gesture_event_handlers.in_air_keyboard.Button</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.update_button_coordinates" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.get_attributes">
+<span class="sig-name descname"><span class="pre">get_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.get_attributes" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the attributes required for creating a button.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key_details</strong> (<em>dict</em>) – details of the key stored in data/in_air_keyboard.json</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[width, height, font_size, bg_colour]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.toggle_caps_lock">
+<span class="sig-name descname"><span class="pre">toggle_caps_lock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.toggle_caps_lock" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.press_special_key">
+<span class="sig-name descname"><span class="pre">press_special_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.press_special_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.open_link">
+<span class="sig-name descname"><span class="pre">open_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">link</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.open_link" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.switch_keyboard_layout">
+<span class="sig-name descname"><span class="pre">switch_keyboard_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.switch_keyboard_layout" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.speech_to_text">
+<span class="sig-name descname"><span class="pre">speech_to_text</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.speech_to_text" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.click">
+<span class="sig-name descname"><span class="pre">click</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_held</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.click" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.release">
+<span class="sig-name descname"><span class="pre">release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.release" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.key_selection">
+<span class="sig-name descname"><span class="pre">key_selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">landmarks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.key_selection" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if the specified landmarks are currently hovering over a key, or if a key is being clicked,
+every frame, and passes the set of hovered and clicked keys to the view to update the display
+accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>landmarks</strong> (<em>dict</em>) – a dictionary storing the required landmark coordinates for multitouch</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.check_clicks">
+<span class="sig-name descname"><span class="pre">check_clicks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gesture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.in_air_keyboard.Button" title="scripts.gesture_event_handlers.in_air_keyboard.Button"><span class="pre">scripts.gesture_event_handlers.in_air_keyboard.Button</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressed_keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys_to_click</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.check_clicks" title="Permalink to this definition"></a></dt>
+<dd><p>Uses time held value for a given gesture to determine whether to click keys, and to differentiate between
+doing a single press and key hold.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.get_closest_key">
+<span class="sig-name descname"><span class="pre">get_closest_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">landmark</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#scripts.gesture_event_handlers.in_air_keyboard.Button" title="scripts.gesture_event_handlers.in_air_keyboard.Button"><span class="pre">scripts.gesture_event_handlers.in_air_keyboard.Button</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.get_closest_key" title="Permalink to this definition"></a></dt>
+<dd><p>For a given landmark, finds the closest button in the current layout. It first finds
+the closest x-coordinate to the landmark from all buttons in the current layout and then finds
+the closest y-coordinate from the buttons with just that x-coordinate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>landmark</strong> (<em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em>) – a tuple of floats storing x,y coordinates for the given landmark</p>
+</dd>
+<dt class="field-even">Return landmark_position, button</dt>
+<dd class="field-even"><p>returns landmark position relative to camera window and the closest button</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple[float, float], <a class="reference internal" href="#scripts.gesture_event_handlers.in_air_keyboard.Button" title="scripts.gesture_event_handlers.in_air_keyboard.Button">Button</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.find_closest_value">
+<span class="sig-name descname"><span class="pre">find_closest_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.find_closest_value" title="Permalink to this definition"></a></dt>
+<dd><p>Searches through the pre-sorted input list of floats to find the point of insertion
+for the input number, using bisect_left, and then returns whichever value is closest to the input by comparing
+against adjacent values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.check_if_inside_button_boundary">
+<span class="sig-name descname"><span class="pre">check_if_inside_button_boundary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.in_air_keyboard.Button" title="scripts.gesture_event_handlers.in_air_keyboard.Button"><span class="pre">scripts.gesture_event_handlers.in_air_keyboard.Button</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.check_if_inside_button_boundary" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.click_buttons">
+<span class="sig-name descname"><span class="pre">click_buttons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buttons</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scripts.gesture_event_handlers.in_air_keyboard.Button" title="scripts.gesture_event_handlers.in_air_keyboard.Button"><span class="pre">scripts.gesture_event_handlers.in_air_keyboard.Button</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.click_buttons" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.get_key_details">
+<span class="sig-name descname"><span class="pre">get_key_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.in_air_keyboard.Button" title="scripts.gesture_event_handlers.in_air_keyboard.Button"><span class="pre">scripts.gesture_event_handlers.in_air_keyboard.Button</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.get_key_details" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.clear_keyboard_keys">
+<span class="sig-name descname"><span class="pre">clear_keyboard_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.clear_keyboard_keys" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <span class="target" id="module-scripts.gesture_event_handlers.keyboard"></span><dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Keyboard</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard" title="Permalink to this definition"></a></dt>
@@ -719,6 +950,23 @@ been triggered.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.key_up">
 <span class="sig-name descname"><span class="pre">key_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.key_up" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.press">
+<span class="sig-name descname"><span class="pre">press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.press" title="Permalink to this definition"></a></dt>
+<dd><p>added in this function as self.key_press doesn’t support pressing the full range of the keys required in the InAirKeyboard event handler
+e.g. print screen, page down etc.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.key_combination">
+<span class="sig-name descname"><span class="pre">key_combination</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.key_combination" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.press_release_keys">
+<span class="sig-name descname"><span class="pre">press_release_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">press</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.press_release_keys" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>

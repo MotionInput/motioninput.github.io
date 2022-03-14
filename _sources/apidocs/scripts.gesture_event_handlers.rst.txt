@@ -44,11 +44,17 @@ scripts.gesture\_event\_handlers
    :show-inheritance:
 
 
-.. automodule:: scripts.gesture_event_handlers.keyboard
+.. automodule:: scripts.gesture_event_handlers.in_air_keyboard
    :members:
    :undoc-members:
    :show-inheritance:
 
+
+.. automodule:: scripts.gesture_event_handlers.keyboard
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
 
 .. automodule::  scripts.gesture_event_handlers.monitor_tracker
    :members:

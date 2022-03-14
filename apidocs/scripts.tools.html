@@ -233,6 +233,40 @@ class is not already initialised, then it also initialises the class.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.InAirKeyboardElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InAirKeyboardElement</span></span><a class="headerlink" href="#scripts.tools.display_element.InAirKeyboardElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.InAirKeyboardElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buttons</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovered_keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clicked_keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ask_kita</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.InAirKeyboardElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Takes in parameters and updates the DisplayElement’s attributes accordingly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.InAirKeyboardElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.InAirKeyboardElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image and draws all the keyboard buttons, with different colours being used
+for keys which have been hovered over or clicked.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.InAirKeyboardElement.draw_buttons">
+<span class="sig-name descname"><span class="pre">draw_buttons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overlay</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.InAirKeyboardElement.draw_buttons" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.InAirKeyboardElement.draw_ask_kita_indicator">
+<span class="sig-name descname"><span class="pre">draw_ask_kita_indicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overlay</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.InAirKeyboardElement.draw_ask_kita_indicator" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.InAirKeyboardElement.draw_button">
+<span class="sig-name descname"><span class="pre">draw_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overlay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_colour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_colour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.InAirKeyboardElement.draw_button" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.display_element.NoseBoxElement">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NoseBoxElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.NoseBoxElement" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
