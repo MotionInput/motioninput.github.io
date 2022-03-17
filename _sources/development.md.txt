@@ -251,23 +251,27 @@ Communication works as follows:
 
 Messages sent from the back end will be in string format but will contain a dictionary containing any relevant data.
 
-Every protocol message has a command, and each command (with `START`, `END` and `REBOOT` being the only exceptions) can take in exactly one request.
+Every protocol message has a command, and each command (with `START`, `STOP`, `END`, `HIDE`, `SHOW` and `REBOOT` being the only exceptions) can take in exactly one request.
 
 All the currently available commands include:
 * START
-* END - Not currently functioning correctly
-* REBOOT - Not currently functioning correctly
+* STOP
+* END 
+* REBOOT  
 * ADD
 * REMOVE
 * SET
 * UPDATE
 * GET
+* SHOW
+* HIDE
 
 When "JSON" is mentioned in the following command descriptions, it represents one of the following json files:
 * mode
 * config
 * gestures
 * events
+
 ### START
 
 Usage:
@@ -276,13 +280,21 @@ Usage:
 
 Runs MotionInput. Will return an error if Motioninput is currently running
 
+### STOP
+
+Usage:
+
+`STOP`
+
+Terminates MotionInput. Will error if MotionInput is not running.
+
 ### END
 
 Usage:
 
 `END`
 
-Terminates MotionInput. Will error if MotionInput is not running.
+Terminates MotionInput and ends the connection. Will error if MotionInput is not running.
 
 ### REBOOT
 
@@ -296,7 +308,7 @@ Terminates MotionInput, then runs it again. Will error if MotionInput is not run
 
 Usage:
 
-`ADD: "JSON"/path/to/place/to/add/object={'attr1':'val1', 'attr2':'val2'...}` 
+`ADD: "JSON"/path/to/place/to/add/object=object_to_add` 
 
 Adds the specified object to the "/" seperated path in the specified JSON file. Errors if:
 * Used on the config file
@@ -329,3 +341,26 @@ Usage:
 `GET: "JSON"/path/to/object/to/get`
 
 Used to recieve an object from the specified JSON file.
+
+### SHOW
+
+Usage:
+
+`SHOW`
+
+Displays the camera view if it is not already visible.
+
+### HIDE
+
+Usage:
+
+`HIDE`
+
+Displays the camera view if it is currently visible.
+## Guidance
+* When adding a mode to the event JSON you should use the ADD command with the name of the mode. This will initialise the mode with an empty list of events. To change this list of events use the UPDATE command with the list of all the events you want in the mode.
+* Objects should be ADDed in their appropriate form:
+	* {"attr_1": "val1", "attr_2": "val2"} for objects
+	* [item1, item2, ...] for lists
+* REBOOT should be called after a change is made to the JSON in order for that change to take effect.
+* Only certain non attribute JSON objects can be UPDATED, this is to preserve the structure of the JSON files.
