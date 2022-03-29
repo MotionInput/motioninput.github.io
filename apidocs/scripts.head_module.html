@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -61,7 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.hand_module.html">scripts.hand_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.body_module.html">scripts.body_module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scripts.head_module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-scripts.head_module">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.eye_module.html">scripts.eye_module</a></li>
@@ -100,10 +100,119 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="scripts-head-module">
-<h1>scripts.head_module<a class="headerlink" href="#scripts-head-module" title="Permalink to this headline"></a></h1>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+  <section id="module-scripts.head_module.head_gesture">
+<span id="scripts-head-module"></span><h1>scripts.head_module<a class="headerlink" href="#module-scripts.head_module.head_gesture" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.head_module.head_gesture.HeadGesture">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeadGesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_checker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><span class="pre">scripts.core.position_tracker.PositionTracker</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.head_module.head_gesture.HeadGesture" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.gesture.Gesture</span></code></a></p>
+</dd></dl>
+
+<span class="target" id="module-scripts.head_module.head_landmark_detector"></span><p>Author: Andrzej Szablewski
+Author: Rakshita Kumar
+Partially based on the Head module in the MotionInput v2 code</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.head_module.head_landmark_detector.HeadLandmarkDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeadLandmarkDetector</span></span><a class="headerlink" href="#scripts.head_module.head_landmark_detector.HeadLandmarkDetector" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.module.LandmarkDetector" title="scripts.core.module.LandmarkDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.module.LandmarkDetector</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.head_module.head_landmark_detector.HeadLandmarkDetector.HEAD_MODEL_PATH">
+<span class="sig-name descname"><span class="pre">HEAD_MODEL_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'C:\\Users\\Carme\\Desktop\\SysEng\\MI_Windows_App\\MI_Windows\\scripts\\head_module\\..\\..\\data\\ml_models\\head\\shape_predictor_68_face_landmarks.dat'</span></em><a class="headerlink" href="#scripts.head_module.head_landmark_detector.HeadLandmarkDetector.HEAD_MODEL_PATH" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.head_module.head_landmark_detector.HeadLandmarkDetector.get_raw_data">
+<span class="sig-name descname"><span class="pre">get_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.head_module.head_landmark_detector.HeadLandmarkDetector.get_raw_data" title="Permalink to this definition"></a></dt>
+<dd><p>Adds the xy(z) coordinates of all the landmarks detected on the image into the RawData instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_data</strong> (<a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><em>RawData</em></a>) – RawData instance to add the landmarks to</p></li>
+<li><p><strong>image</strong> (<em>ndarray</em>) – Image to process with mediapipe and read the landmarks locations from</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.head_module.head_position"></span><p>Author: Andrzej Szablewski
+Author: Rakshita Kumar
+Partially based on the Head module in the MotionInput v2 code</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.head_module.head_position.HeadPosition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeadPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.head_module.head_position.HeadPosition" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.head_module.head_position.HeadPosition.CALIBRATION">
+<span class="sig-name descname"><span class="pre">CALIBRATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#scripts.head_module.head_position.HeadPosition.CALIBRATION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.head_module.head_position.HeadPosition.get_primitives_names">
+<span class="sig-name descname"><span class="pre">get_primitives_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.head_module.head_position.HeadPosition.get_primitives_names" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Names of all primitives that are calculated by the specific modules Position class on initialization</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.head_module.head_position.HeadPosition.get_primitive">
+<span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.head_module.head_position.HeadPosition.get_primitive" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Returns the state of the given primitive in the Position if it has</dt><dd><p>been calculated. Returns None If the primitive has not been
+calculated, hence if it either is not defined for current module
+or landmarks needed to calculate it were not provided.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the primitive (e.g. “palm_facing_camera”
+or “index_pinched”)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>state of the primitive</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[bool]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.head_module.head_position.HeadPosition.get_landmark">
+<span class="sig-name descname"><span class="pre">get_landmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.head_module.head_position.HeadPosition.get_landmark" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the coordinates of the landmark.
+Returns None if the landmarks was not provided to
+the Position on initialization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the landmark (e.g. “index_tip” or “wrist”)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinates of the landmark</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[np.ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="module-scripts.head_module">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.head_module" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.head_module.HeadModule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeadModule</span></span><a class="headerlink" href="#scripts.head_module.HeadModule" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.module.Module" title="scripts.core.module.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.module.Module</span></code></a></p>
+</dd></dl>
+
 </section>
 </section>
 

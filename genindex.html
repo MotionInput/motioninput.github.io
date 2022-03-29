@@ -39,7 +39,7 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -125,12 +125,16 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.ActiveModeNameElement">ActiveModeNameElement (class in scripts.tools.display_element)</a>
+</li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.event_editor.EventEditor.add">add() (EventEditor method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.gesture_editor.GestureEditor.add">(GestureEditor method)</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.json_editor.JSONEditor.add">(JSONEditor method)</a>
+</li>
+        <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.mode_editor.ModeEditor.add">(ModeEditor method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_gesture">add_gesture() (Model method)</a>
@@ -141,6 +145,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_loader.html#scripts.gesture_loader.GestureLoader.add_gestures_to_model">add_gestures_to_model() (GestureLoader method)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.add_landmark">add_landmark() (RawData method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.add_module">add_module() (Model method)</a>
@@ -152,6 +158,8 @@
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.AreaOfInterestElement">AreaOfInterestElement (class in scripts.tools.display_element)</a>
 </li>
       <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA">Ask_KITA (class in scripts.speech_module.ask_kita)</a>
+</li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector.ask_kita">ask_kita (SpeechLandmarkDetector attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -173,7 +181,7 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.Button">Button (class in scripts.gesture_event_handlers.in_air_keyboard)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ButtonChangeType">ButtonChangeType (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ButtonChangeType">ButtonChangeType (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ButtonChangeType">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -183,9 +191,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.calibrate">calibrate() (Module class method)</a>
 </li>
-      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.callback">callback() (Ask_KITA method)</a>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.calibrate_module">calibrate_module() (MotionInputAPI class method)</a>
+</li>
+      <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_position.HeadPosition.CALIBRATION">CALIBRATION (HeadPosition attribute)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera">Camera (class in scripts.tools.camera)</a>
+</li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.change_mode">change_mode() (MotionInputAPI class method)</a>
+</li>
+      <li><a href="apidocs/scripts.mode_controller.html#scripts.mode_controller.ModeController.change_mode_if_needed">change_mode_if_needed() (ModeController method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker.change_monitor">change_monitor() (MonitorTracker method)</a>
 </li>
@@ -193,12 +207,10 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.check_if_inside_button_boundary">check_if_inside_button_boundary() (InAirKeyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.clear_display">clear_display() (ExtremityWalkingActions method)</a>
-
-      <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.clear_display">(GamingExtremityWalkingActions method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.check_number_of_touchpoints">check_number_of_touchpoints() (Touch method)</a>
 </li>
-      </ul></li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.check_path">check_path() (in module scripts.speech_module.ask_kita)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.clear_exercise_display">clear_exercise_display() (ExerciseActions method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay.clear_exericse_display">clear_exericse_display() (ExerciseDisplay method)</a>
@@ -209,14 +221,14 @@
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.clear_extremity_circles">(ExtremityCircles method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.clear_keyboard_keys">clear_keyboard_keys() (InAirKeyboard method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.click">click() (InAirKeyboard method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.click_buttons">click_buttons() (InAirKeyboard method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Clicker">Clicker (class in scripts.gesture_event_handlers.pydirect_directx_actions)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.click_press_event.ClickPressEvent">ClickPressEvent (class in scripts.gesture_events.click_press_event)</a>
@@ -224,14 +236,29 @@
       <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera.close">close() (Camera method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.close">(Keyboard method)</a>
+</li>
+        <li><a href="apidocs/scripts.mode_controller.html#scripts.mode_controller.ModeController.close">(ModeController method)</a>
+</li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.close">(View method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.combine">combine() (RawData method)</a>
 </li>
+      <li>
+    communicator
+
+      <ul>
+        <li><a href="apidocs/communicator.html#module-communicator">module</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/communicator.html#communicator.Communicator">Communicator (class in communicator)</a>
+</li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.config.Config">Config() (in module scripts.tools.config)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.config_editor.ConfigEditor">ConfigEditor (class in scripts.tools.json_editors.config_editor)</a>
+</li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.connect_to_writer">connect_to_writer() (Ask_KITA method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.area_of_interest.AreaOfInterest.convert_xy">convert_xy() (AreaOfInterest method)</a>
 
@@ -239,7 +266,11 @@
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker.convert_xy">(MonitorTracker method)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.copy">copy() (Keyboard method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.create_button">create_button() (InAirKeyboard method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.cut">cut() (Keyboard method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -249,7 +280,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse">DesktopMouse (class in scripts.gesture_event_handlers.desktop_mouse)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput">DesktopPenInput (class in scripts.gesture_event_handlers.desktop_pen)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch">DesktopTouch (class in scripts.gesture_event_handlers.desktop_touch)</a>
+</li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.disconnect_from_writer">disconnect_from_writer() (Ask_KITA method)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.DisplayElement">DisplayElement (class in scripts.tools.display_element)</a>
 </li>
@@ -277,9 +312,13 @@
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.FaceLandMarkElement.drawLandMarks">drawLandMarks() (FaceLandMarkElement method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.dwKeyStates">dwKeyStates (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO.DUMMYUNIONNAME">DUMMYUNIONNAME (POINTER_TYPE_INFO attribute)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.dwTime">dwTime (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.eye_mode_2.EyeMode2Event.duration">duration (EyeMode2Event attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.dwKeyStates">dwKeyStates (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.dwKeyStates">[1]</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.dwTime">dwTime (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.dwTime">[1]</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.json_editor.JSONEditor.dynamic_update">dynamic_update() (JSONEditor method)</a>
 </li>
@@ -289,9 +328,21 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.edit_config.EditConfigFile">EditConfigFile (class in scripts.gesture_event_handlers.edit_config)</a>
+</li>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.classification.classification_smoothing.EMASmoothing">EMASmoothing (class in scripts.body_module.classification.classification_smoothing)</a>
 </li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.end">end() (Ask_KITA method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.eraser_activate">eraser_activate() (DesktopPenInput method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.eraser_deactivate">eraser_deactivate() (DesktopPenInput method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.escape">escape() (Keyboard method)</a>
+</li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.event_editor.EventEditor">EventEditor (class in scripts.tools.json_editors.event_editor)</a>
+</li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper">EventMapper (class in scripts.event_mapper)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions">ExerciseActions (class in scripts.gesture_event_handlers.exercise_actions)</a>
 </li>
@@ -301,20 +352,6 @@
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.exercise_event.ExerciseEvent">ExerciseEvent (class in scripts.gesture_events.exercise_event)</a>
 </li>
-      <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_position.extractChannel">extractChannel() (in module scripts.body_module.body_position)</a>
-</li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_release_action">extremity_release_action() (ExtremityWalkingActions method)</a>
-
-      <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_release_action">(GamingExtremityWalkingActions method)</a>
-</li>
-      </ul></li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_trigger_action">extremity_trigger_action() (ExtremityWalkingActions method)</a>
-
-      <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_trigger_action">(GamingExtremityWalkingActions method)</a>
-</li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions">ExtremityActions (class in scripts.gesture_event_handlers.extremity_actions)</a>
@@ -325,8 +362,6 @@
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_trigger_event.ExtremityTriggerEvent">ExtremityTriggerEvent (class in scripts.gesture_events.extremity_trigger_event)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions">ExtremityWalkingActions (class in scripts.gesture_event_handlers.extremity_walking)</a>
-</li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent">ExtremityWalkingEvent (class in scripts.gesture_events.extremity_walking_event)</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.EyeGazeElement">EyeGazeElement (class in scripts.tools.display_element)</a>
@@ -334,6 +369,8 @@
       <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_gesture.EyeGesture">EyeGesture (class in scripts.eye_module.eye_gesture)</a>
 </li>
       <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.eye_landmark_detector.EyeLandmarkDetector">EyeLandmarkDetector (class in scripts.eye_module.eye_landmark_detector)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.eye_mode_2.EyeMode2Event">EyeMode2Event (class in scripts.gesture_events.eye_mode_2)</a>
 </li>
       <li><a href="apidocs/scripts.eye_module.html#scripts.eye_module.EyeModule">EyeModule (class in scripts.eye_module)</a>
 </li>
@@ -357,6 +394,8 @@
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.mouth_trigger_event.FishFaceEvent">FishFaceEvent (class in scripts.gesture_events.mouth_trigger_event)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.eye_mode_2.EyeMode2Event.font">font (EyeMode2Event attribute)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.click_press_event.ClickPressEvent.force_deactivate">force_deactivate() (ClickPressEvent method)</a>
 
       <ul>
@@ -368,12 +407,22 @@
 </li>
         <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.force_deactivate">(GestureEvent method)</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.keyboard_active_event.KeyboardActiveEvent.force_deactivate">(KeyboardActiveEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_direction_tracking_event_nose_box.NoseDirectionTrackingEventNoseBox.force_deactivate">(NoseDirectionTrackingEventNoseBox method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_tracking_event.NoseTrackingEvent.force_deactivate">(NoseTrackingEvent method)</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.force_deactivate">(PalmHeightChangeEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.touch_press_event.TouchPressEvent.force_deactivate">(TouchPressEvent method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.frameId">frameId (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.frameId">frameId (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.frameId">[1]</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.full_screen">full_screen() (Keyboard method)</a>
 </li>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.classification.pose_classification.FullBodyPoseEmbedder">FullBodyPoseEmbedder (class in scripts.body_module.classification.pose_classification)</a>
 </li>
@@ -383,8 +432,6 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions">GamingExtremityWalkingActions (class in scripts.gesture_event_handlers.extremity_walking)</a>
-</li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_walking_event.GamingExtremityWalkingEvent">GamingExtremityWalkingEvent (class in scripts.gesture_events.extremity_walking_event)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture.Gesture">Gesture (class in scripts.core.gesture)</a>
@@ -398,6 +445,8 @@
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.GestureEvents">GestureEvents (class in scripts.gesture_events)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.GestureFactory">GestureFactory (class in scripts.core.gesture_factory)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_loader.html#scripts.gesture_loader.GestureLoader">GestureLoader (class in scripts.gesture_loader)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.gestures_active_event.GesturesActiveEvent">GesturesActiveEvent (class in scripts.gesture_events.gestures_active_event)</a>
 </li>
@@ -429,7 +478,7 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.get_closest_key">get_closest_key() (InAirKeyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.get_current_phrase">get_current_phrase() (Ask_KITA method)</a>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.get_config_editor">get_config_editor() (MotionInputAPI class method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.position_tracker.PositionTracker.get_current_position">get_current_position() (PositionTracker method)</a>
 </li>
@@ -447,6 +496,8 @@
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.get_event_trigger_types">get_event_trigger_types() (GestureEvent method)</a>
 </li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.get_events_editor">get_events_editor() (MotionInputAPI class method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.exercise_event.ExerciseEvent.get_exercise_name">get_exercise_name() (ExerciseEvent method)</a>
 </li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_finger_tilted_left">get_finger_tilted_left() (HandPosition method)</a>
@@ -457,11 +508,13 @@
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture.Gesture.get_frames_held">get_frames_held() (Gesture method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture.Gesture.get_frames_stored">get_frames_stored() (Gesture method)</a>
 </li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.get_gestures_editor">get_gestures_editor() (MotionInputAPI class method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.GestureEventHandlers.get_handler_func">get_handler_func() (GestureEventHandlers method)</a>
+</li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.get_is_running">get_is_running() (Ask_KITA method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.get_key_details">get_key_details() (InAirKeyboard method)</a>
 </li>
@@ -470,16 +523,24 @@
       <ul>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_landmark">(HandPosition method)</a>
 </li>
+        <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_position.HeadPosition.get_landmark">(HeadPosition method)</a>
+</li>
         <li><a href="apidocs/scripts.core.html#scripts.core.position.Position.get_landmark">(Position method)</a>
 </li>
         <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData.get_landmark">(RawData method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.keyboard_active_event.KeyboardActiveEvent.get_landmarks">get_landmarks() (KeyboardActiveEvent method)</a>
+</li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_landmarks_distance">get_landmarks_distance() (HandPosition method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture.Gesture.get_last_n_positions">get_last_n_positions() (Gesture method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture.Gesture.get_last_position">get_last_position() (Gesture method)</a>
+</li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.get_mode_editor">get_mode_editor() (MotionInputAPI class method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.get_module_names">get_module_names() (Model method)</a>
 </li>
@@ -506,7 +567,11 @@
 </li>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_primitive">(HandPosition method)</a>
 </li>
+        <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_position.HeadPosition.get_primitive">(HeadPosition method)</a>
+</li>
         <li><a href="apidocs/scripts.core.html#scripts.core.position.Position.get_primitive">(Position method)</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_position.SpeechPosition.get_primitive">(SpeechPosition method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_position.BodyPosition.get_primitives_names">get_primitives_names() (BodyPosition method)</a>
@@ -516,7 +581,11 @@
 </li>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition.get_primitives_names">(HandPosition method)</a>
 </li>
+        <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_position.HeadPosition.get_primitives_names">(HeadPosition method)</a>
+</li>
         <li><a href="apidocs/scripts.core.html#scripts.core.position.Position.get_primitives_names">(Position method)</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_position.SpeechPosition.get_primitives_names">(SpeechPosition method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_landmark_detector.BodyLandmarkDetector.get_raw_data">get_raw_data() (BodyLandmarkDetector method)</a>
@@ -526,7 +595,11 @@
 </li>
         <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_landmark_detector.HandLandmarkDetector.get_raw_data">(HandLandmarkDetector method)</a>
 </li>
+        <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_landmark_detector.HeadLandmarkDetector.get_raw_data">(HeadLandmarkDetector method)</a>
+</li>
         <li><a href="apidocs/scripts.core.html#scripts.core.module.LandmarkDetector.get_raw_data">(LandmarkDetector method)</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector.get_raw_data">(SpeechLandmarkDetector method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker.get_screen_ratio">get_screen_ratio() (MonitorTracker method)</a>
@@ -536,6 +609,8 @@
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.get_state">get_state() (GestureEvent method)</a>
 
       <ul>
+        <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.get_state">(MotionInputAPI class method)</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.get_state">(SimpleGestureEvent method)</a>
 </li>
       </ul></li>
@@ -557,25 +632,35 @@
 </li>
       <li><a href="apidocs/scripts.hand_module.html#scripts.hand_module.hand_position.HandPosition">HandPosition (class in scripts.hand_module.hand_position)</a>
 </li>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.HeadPosElement">HeadPosElement (class in scripts.tools.display_element)</a>
+      <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_landmark_detector.HeadLandmarkDetector.HEAD_MODEL_PATH">HEAD_MODEL_PATH (HeadLandmarkDetector attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_gesture.HeadGesture">HeadGesture (class in scripts.head_module.head_gesture)</a>
+</li>
+      <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_landmark_detector.HeadLandmarkDetector">HeadLandmarkDetector (class in scripts.head_module.head_landmark_detector)</a>
+</li>
+      <li><a href="apidocs/scripts.head_module.html#scripts.head_module.HeadModule">HeadModule (class in scripts.head_module)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.HeadPosElement">HeadPosElement (class in scripts.tools.display_element)</a>
+</li>
+      <li><a href="apidocs/scripts.head_module.html#scripts.head_module.head_position.HeadPosition">HeadPosition (class in scripts.head_module.head_position)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.held_action">held_action() (ExerciseActions method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.held_action">(ExtremityActions method)</a>
 </li>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.held_action">(ExtremityWalkingActions method)</a>
-</li>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.held_action">(GamingExtremityWalkingActions method)</a>
-</li>
       </ul></li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.help">help() (Keyboard method)</a>
+</li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.hide">hide() (View method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.historyCount">historyCount (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.hide_view">hide_view() (MotionInputAPI class method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.hwndTarget">hwndTarget (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.historyCount">historyCount (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.historyCount">[1]</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.hwndTarget">hwndTarget (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.hwndTarget">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -589,13 +674,17 @@
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.InAirKeyboardElement">InAirKeyboardElement (class in scripts.tools.display_element)</a>
 </li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.init_modules">init_modules() (MotionInputAPI class method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.initialise_contacts">initialise_contacts() (Touch method)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.keyboard_click_event.KeyboardClickEvent.initialise_gestures">initialise_gestures() (KeyboardClickEvent method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.initialise_hands">initialise_hands() (InAirKeyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.inputData">inputData (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.inputData">inputData (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.inputData">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -619,16 +708,20 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.key_selection">key_selection() (InAirKeyboard method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.key_up">key_up() (Keyboard method)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Keyboard.key_up">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard">Keyboard (class in scripts.gesture_event_handlers.keyboard)</a>
 
       <ul>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pydirect_directx_actions.Keyboard">(class in scripts.gesture_event_handlers.pydirect_directx_actions)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.keyboard_active_event.KeyboardActiveEvent">KeyboardActiveEvent (class in scripts.gesture_events.keyboard_active_event)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.keyboard_click_event.KeyboardClickEvent">KeyboardClickEvent (class in scripts.gesture_events.keyboard_click_event)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.KeyboardLoader">KeyboardLoader (class in scripts.gesture_event_handlers.in_air_keyboard)</a>
 </li>
   </ul></td>
@@ -638,6 +731,8 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.module.LandmarkDetector">LandmarkDetector (class in scripts.core.module)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.left_arrow">left_arrow() (Keyboard method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.left_arrow_press">left_arrow_press() (Keyboard method)</a>
 </li>
@@ -665,12 +760,22 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.macros">macros() (Keyboard method)</a>
+</li>
+      <li><a href="apidocs/scripts.mode_controller.html#scripts.mode_controller.ModeController">ModeController (class in scripts.mode_controller)</a>
+</li>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.mode_editor.ModeEditor">ModeEditor (class in scripts.tools.json_editors.mode_editor)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model">Model (class in scripts.core.model)</a>
 </li>
       <li>
     module
 
       <ul>
+        <li><a href="apidocs/communicator.html#module-communicator">communicator</a>
+</li>
+        <li><a href="apidocs/motioninput_api.html#module-motioninput_api">motioninput_api</a>
+</li>
         <li><a href="apidocs/scripts.body_module.html#module-scripts.body_module">scripts.body_module</a>
 </li>
         <li><a href="apidocs/scripts.body_module.html#module-scripts.body_module.body_gesture">scripts.body_module.body_gesture</a>
@@ -701,6 +806,8 @@
 </li>
         <li><a href="apidocs/scripts.core.html#module-scripts.core.raw_data">scripts.core.raw_data</a>
 </li>
+        <li><a href="apidocs/scripts.event_mapper.html#module-scripts.event_mapper">scripts.event_mapper</a>
+</li>
         <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module">scripts.eye_module</a>
 </li>
         <li><a href="apidocs/scripts.eye_module.html#module-scripts.eye_module.eye_gesture">scripts.eye_module.eye_gesture</a>
@@ -715,7 +822,11 @@
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_mouse">scripts.gesture_event_handlers.desktop_mouse</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_pen">scripts.gesture_event_handlers.desktop_pen</a>
+</li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_touch">scripts.gesture_event_handlers.desktop_touch</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.edit_config">scripts.gesture_event_handlers.edit_config</a>
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.exercise_actions">scripts.gesture_event_handlers.exercise_actions</a>
 </li>
@@ -725,15 +836,19 @@
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.extremity_circles">scripts.gesture_event_handlers.extremity_circles</a>
 </li>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.extremity_walking">scripts.gesture_event_handlers.extremity_walking</a>
-</li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.in_air_keyboard">scripts.gesture_event_handlers.in_air_keyboard</a>
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.keyboard">scripts.gesture_event_handlers.keyboard</a>
 </li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.monitor_tracker">scripts.gesture_event_handlers.monitor_tracker</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.nose_box">scripts.gesture_event_handlers.nose_box</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.pen_input">scripts.gesture_event_handlers.pen_input</a>
+</li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.pydirect_directx_actions">scripts.gesture_event_handlers.pydirect_directx_actions</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.transcription">scripts.gesture_event_handlers.transcription</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events">scripts.gesture_events</a>
 </li>
@@ -745,6 +860,8 @@
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.extremity_walking_event">scripts.gesture_events.extremity_walking_event</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.eye_mode_2">scripts.gesture_events.eye_mode_2</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.eye_tracking_event">scripts.gesture_events.eye_tracking_event</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.gestures_active_event">scripts.gesture_events.gestures_active_event</a>
@@ -753,11 +870,23 @@
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.idle_state_change_event">scripts.gesture_events.idle_state_change_event</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.keyboard_active_event">scripts.gesture_events.keyboard_active_event</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.keyboard_click_event">scripts.gesture_events.keyboard_click_event</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.mouth_trigger_event">scripts.gesture_events.mouth_trigger_event</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.move_nose_box_event">scripts.gesture_events.move_nose_box_event</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_direction_tracking_event">scripts.gesture_events.nose_direction_tracking_event</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_direction_tracking_event_nose_box">scripts.gesture_events.nose_direction_tracking_event_nose_box</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_scroll_event">scripts.gesture_events.nose_scroll_event</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_tracking_event">scripts.gesture_events.nose_tracking_event</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_zoom_event">scripts.gesture_events.nose_zoom_event</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.palm_height_change_event">scripts.gesture_events.palm_height_change_event</a>
 </li>
@@ -767,7 +896,11 @@
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.speech_event">scripts.gesture_events.speech_event</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.touch_press_event">scripts.gesture_events.touch_press_event</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.zoom_event">scripts.gesture_events.zoom_event</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_loader.html#module-scripts.gesture_loader">scripts.gesture_loader</a>
 </li>
         <li><a href="apidocs/scripts.hand_module.html#module-scripts.hand_module">scripts.hand_module</a>
 </li>
@@ -777,15 +910,31 @@
 </li>
         <li><a href="apidocs/scripts.hand_module.html#module-scripts.hand_module.hand_position">scripts.hand_module.hand_position</a>
 </li>
+        <li><a href="apidocs/scripts.head_module.html#module-scripts.head_module">scripts.head_module</a>
+</li>
+        <li><a href="apidocs/scripts.head_module.html#module-scripts.head_module.head_gesture">scripts.head_module.head_gesture</a>
+</li>
+        <li><a href="apidocs/scripts.head_module.html#module-scripts.head_module.head_landmark_detector">scripts.head_module.head_landmark_detector</a>
+</li>
+        <li><a href="apidocs/scripts.head_module.html#module-scripts.head_module.head_position">scripts.head_module.head_position</a>
+</li>
+        <li><a href="apidocs/scripts.mode_controller.html#module-scripts.mode_controller">scripts.mode_controller</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module">scripts.speech_module</a>
+</li>
         <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.ask_kita">scripts.speech_module.ask_kita</a>
 </li>
         <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.speech_gesture">scripts.speech_module.speech_gesture</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.speech_landmark_detector">scripts.speech_module.speech_landmark_detector</a>
+</li>
+        <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.speech_position">scripts.speech_module.speech_position</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools">scripts.tools</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools.camera">scripts.tools.camera</a>
 </li>
-        <li><a href="apidocs/scripts.tools.config.html#module-scripts.tools.config">scripts.tools.config</a>, <a href="apidocs/scripts.tools.html#module-scripts.tools.config">[1]</a>
+        <li><a href="apidocs/scripts.tools.html#module-scripts.tools.config">scripts.tools.config</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools.display_element">scripts.tools.display_element</a>
 </li>
@@ -797,6 +946,8 @@
 </li>
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools.json_editors.json_editor">scripts.tools.json_editors.json_editor</a>
 </li>
+        <li><a href="apidocs/scripts.tools.html#module-scripts.tools.json_editors.mode_editor">scripts.tools.json_editors.mode_editor</a>
+</li>
         <li><a href="apidocs/scripts.tools.html#module-scripts.tools.view">scripts.tools.view</a>
 </li>
       </ul></li>
@@ -806,8 +957,21 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker">MonitorTracker (class in scripts.gesture_event_handlers.monitor_tracker)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.mousejiggle">mousejiggle() (Touch method)</a>
+      <li>
+    motioninput_api
+
+      <ul>
+        <li><a href="apidocs/motioninput_api.html#module-motioninput_api">module</a>
 </li>
+      </ul></li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI">MotionInputAPI (class in motioninput_api)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.Pen.mousejiggle">mousejiggle() (Pen method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.mousejiggle">(Touch method)</a>
+</li>
+      </ul></li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent">MouthTriggerEvent (class in scripts.gesture_events.mouth_trigger_event)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.AOIMouse.move_cursor">move_cursor() (AOIMouse method)</a>
@@ -815,10 +979,18 @@
       <ul>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.DesktopMouse.move_cursor">(DesktopMouse method)</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.move_cursor">(DesktopPenInput method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.move_cursor">(DesktopTouch method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.eye_mode_2.EyeMode2Event.move_cursor">(EyeMode2Event method)</a>
+</li>
       </ul></li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.move_cursor_pixel">move_cursor_pixel() (BaseMouse method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.move_cursor_relative">move_cursor_relative() (BaseMouse method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.move_nose_box_event.MoveNoseBoxEvent">MoveNoseBoxEvent (class in scripts.gesture_events.move_nose_box_event)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -828,14 +1000,22 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.Primitive.name">name (Primitive attribute)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.nose_box.NoseBox">NoseBox (class in scripts.gesture_event_handlers.nose_box)</a>
+</li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.NoseBoxElement">NoseBoxElement (class in scripts.tools.display_element)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent">NoseDirectionTrackingEvent (class in scripts.gesture_events.nose_direction_tracking_event)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_tracking_event.NoseTrackingEvent">NoseTrackingEvent (class in scripts.gesture_events.nose_tracking_event)</a>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_direction_tracking_event_nose_box.NoseDirectionTrackingEventNoseBox">NoseDirectionTrackingEventNoseBox (class in scripts.gesture_events.nose_direction_tracking_event_nose_box)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_scroll_event.NoseScrollEvent">NoseScrollEvent (class in scripts.gesture_events.nose_scroll_event)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_tracking_event.NoseTrackingEvent">NoseTrackingEvent (class in scripts.gesture_events.nose_tracking_event)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_zoom_event.NoseZoomEvent">NoseZoomEvent (class in scripts.gesture_events.nose_zoom_event)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.notify_gesture_activated">notify_gesture_activated() (GestureEvent method)</a>
 
       <ul>
@@ -860,7 +1040,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.mouth_trigger_event.OpenMouthEvent">OpenMouthEvent (class in scripts.gesture_events.mouth_trigger_event)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.orientation">orientation (POINTER_TOUCH_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.orientation">orientation (POINTER_TOUCH_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.orientation">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -868,23 +1048,61 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.page_down">page_down() (Keyboard method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.page_up">page_up() (Keyboard method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent">PalmHeightChangeEvent (class in scripts.gesture_events.palm_height_change_event)</a>
 </li>
-      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.pause">pause() (Ask_KITA method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.paste">paste() (Keyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.PerformanceCount">PerformanceCount (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.Pen">Pen (class in scripts.gesture_event_handlers.pen_input)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION">PEN_TOUCH_UNION (class in scripts.gesture_event_handlers.pen_input)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.Pen.pendown">pendown() (Pen method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.penFlags">penFlags (POINTER_PEN_INFO attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION.penInfo">penInfo (PEN_TOUCH_UNION attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.penMask">penMask (POINTER_PEN_INFO attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.Pen.pentap">pentap() (Pen method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.Pen.penup">penup() (Pen method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.PerformanceCount">PerformanceCount (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.PerformanceCount">[1]</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO">POINTER_INFO (class in scripts.gesture_event_handlers.desktop_touch)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO">(class in scripts.gesture_event_handlers.pen_input)</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO">POINTER_PEN_INFO (class in scripts.gesture_event_handlers.pen_input)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO">POINTER_TOUCH_INFO (class in scripts.gesture_event_handlers.desktop_touch)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO">(class in scripts.gesture_event_handlers.pen_input)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.pointerFlags">pointerFlags (POINTER_INFO attribute)</a>
+      </ul></li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO">POINTER_TYPE_INFO (class in scripts.gesture_event_handlers.pen_input)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.pointerId">pointerId (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.pointerFlags">pointerFlags (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerFlags">[1]</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.pointerInfo">pointerInfo (POINTER_TOUCH_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.pointerId">pointerId (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerId">[1]</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.pointerType">pointerType (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.pointerInfo">pointerInfo (POINTER_PEN_INFO attribute)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.pointerInfo">(POINTER_TOUCH_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.pointerInfo">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.pointerType">pointerType (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerType">[1]</a>
 </li>
       <li><a href="apidocs/scripts.body_module.html#scripts.body_module.body_position.BodyPosition.pose_classification">pose_classification (BodyPosition attribute)</a>
 </li>
@@ -894,15 +1112,15 @@
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.position.Position">Position (class in scripts.core.position)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.position_tracker.PositionTracker">PositionTracker (class in scripts.core.position_tracker)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.pre_initialize">pre_initialize() (Module class method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.press">press() (DesktopTouch method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.press">press() (DesktopPenInput method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.press">(DesktopTouch method)</a>
+</li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.press">(Keyboard method)</a>
 </li>
       </ul></li>
@@ -910,19 +1128,27 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.press_special_key">press_special_key() (InAirKeyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.pressure">pressure (POINTER_TOUCH_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.pressure">pressure (POINTER_PEN_INFO attribute)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.pressure">(POINTER_TOUCH_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.pressure">[1]</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.Primitive">Primitive (class in scripts.core.gesture_factory)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.print">print() (Keyboard method)</a>
+</li>
+      <li><a href="apidocs/communicator.html#communicator.Communicator.process_command">process_command() (Communicator method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.process_frame">process_frame() (Model method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ptHimetricLocation">ptHimetricLocation (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ptHimetricLocation">ptHimetricLocation (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptHimetricLocation">[1]</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ptHimetricLocationRaw">ptHimetricLocationRaw (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ptHimetricLocationRaw">ptHimetricLocationRaw (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptHimetricLocationRaw">[1]</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ptPixelLocation">ptPixelLocation (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ptPixelLocation">ptPixelLocation (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptPixelLocation">[1]</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ptPixelLocationRaw">ptPixelLocationRaw (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.ptPixelLocationRaw">ptPixelLocationRaw (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptPixelLocationRaw">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -934,15 +1160,17 @@
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.raw_data.RawData">RawData (class in scripts.core.raw_data)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.rcContact">rcContact (POINTER_TOUCH_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.rcContact">rcContact (POINTER_TOUCH_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.rcContact">[1]</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.rcContactRaw">rcContactRaw (POINTER_TOUCH_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.rcContactRaw">rcContactRaw (POINTER_TOUCH_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.rcContactRaw">[1]</a>
 </li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.camera.Camera.read">read() (Camera method)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.release">release() (DesktopTouch method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.release">release() (DesktopPenInput method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.release">(DesktopTouch method)</a>
+</li>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.release">(InAirKeyboard method)</a>
 </li>
       </ul></li>
@@ -957,22 +1185,28 @@
       <ul>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.gesture_editor.GestureEditor.remove">(GestureEditor method)</a>
 </li>
+        <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.mode_editor.ModeEditor.remove">(ModeEditor method)</a>
+</li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.remove_gesture">remove_gesture() (Model method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.remove_gesture">(Module method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.nose_box.NoseBox.remove_nose_box">remove_nose_box() (NoseBox method)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.module.Module.reset">reset() (Module method)</a>
 
       <ul>
         <li><a href="apidocs/scripts.core.html#scripts.core.position_tracker.PositionTracker.reset">(PositionTracker method)</a>
 </li>
+        <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.SpeechModule.reset">(SpeechModule method)</a>
+</li>
       </ul></li>
-      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.resume">resume() (Ask_KITA method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.right_arrow">right_arrow() (Keyboard method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.right_arrow_press">right_arrow_press() (Keyboard method)</a>
 </li>
@@ -986,8 +1220,14 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.BaseMouse.right_release">right_release() (BaseMouse method)</a>
 </li>
-      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.run">run() (Ask_KITA method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.rotation">rotation (POINTER_PEN_INFO attribute)</a>
 </li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.ask_kita.Ask_KITA.run">run() (Ask_KITA method)</a>
+
+      <ul>
+        <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.run">(MotionInputAPI class method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -995,7 +1235,11 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.json_editor.JSONEditor.save">save() (JSONEditor method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.save">(Keyboard method)</a>
 </li>
+      </ul></li>
       <li>
     scripts.body_module
 
@@ -1102,6 +1346,13 @@
 </li>
       </ul></li>
       <li>
+    scripts.event_mapper
+
+      <ul>
+        <li><a href="apidocs/scripts.event_mapper.html#module-scripts.event_mapper">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.eye_module
 
       <ul>
@@ -1151,10 +1402,24 @@
 </li>
       </ul></li>
       <li>
+    scripts.gesture_event_handlers.desktop_pen
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_pen">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_event_handlers.desktop_touch
 
       <ul>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.desktop_touch">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_event_handlers.edit_config
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.edit_config">module</a>
 </li>
       </ul></li>
       <li>
@@ -1186,13 +1451,6 @@
 </li>
       </ul></li>
       <li>
-    scripts.gesture_event_handlers.extremity_walking
-
-      <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.extremity_walking">module</a>
-</li>
-      </ul></li>
-      <li>
     scripts.gesture_event_handlers.in_air_keyboard
 
       <ul>
@@ -1214,10 +1472,31 @@
 </li>
       </ul></li>
       <li>
+    scripts.gesture_event_handlers.nose_box
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.nose_box">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_event_handlers.pen_input
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.pen_input">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_event_handlers.pydirect_directx_actions
 
       <ul>
         <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.pydirect_directx_actions">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_event_handlers.transcription
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#module-scripts.gesture_event_handlers.transcription">module</a>
 </li>
       </ul></li>
       <li>
@@ -1256,6 +1535,13 @@
 </li>
       </ul></li>
       <li>
+    scripts.gesture_events.eye_mode_2
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.eye_mode_2">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_events.eye_tracking_event
 
       <ul>
@@ -1276,13 +1562,25 @@
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.hand_active_event">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     scripts.gesture_events.idle_state_change_event
 
       <ul>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.idle_state_change_event">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_events.keyboard_active_event
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.keyboard_active_event">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_events.keyboard_click_event
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.keyboard_click_event">module</a>
 </li>
       </ul></li>
       <li>
@@ -1293,6 +1591,13 @@
 </li>
       </ul></li>
       <li>
+    scripts.gesture_events.move_nose_box_event
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.move_nose_box_event">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_events.nose_direction_tracking_event
 
       <ul>
@@ -1300,10 +1605,33 @@
 </li>
       </ul></li>
       <li>
+    scripts.gesture_events.nose_direction_tracking_event_nose_box
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_direction_tracking_event_nose_box">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_events.nose_scroll_event
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_scroll_event">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     scripts.gesture_events.nose_tracking_event
 
       <ul>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_tracking_event">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_events.nose_zoom_event
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.nose_zoom_event">module</a>
 </li>
       </ul></li>
       <li>
@@ -1335,10 +1663,24 @@
 </li>
       </ul></li>
       <li>
+    scripts.gesture_events.touch_press_event
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.touch_press_event">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.gesture_events.zoom_event
 
       <ul>
         <li><a href="apidocs/scripts.gesture_events.html#module-scripts.gesture_events.zoom_event">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.gesture_loader
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_loader.html#module-scripts.gesture_loader">module</a>
 </li>
       </ul></li>
       <li>
@@ -1370,6 +1712,48 @@
 </li>
       </ul></li>
       <li>
+    scripts.head_module
+
+      <ul>
+        <li><a href="apidocs/scripts.head_module.html#module-scripts.head_module">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.head_module.head_gesture
+
+      <ul>
+        <li><a href="apidocs/scripts.head_module.html#module-scripts.head_module.head_gesture">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.head_module.head_landmark_detector
+
+      <ul>
+        <li><a href="apidocs/scripts.head_module.html#module-scripts.head_module.head_landmark_detector">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.head_module.head_position
+
+      <ul>
+        <li><a href="apidocs/scripts.head_module.html#module-scripts.head_module.head_position">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.mode_controller
+
+      <ul>
+        <li><a href="apidocs/scripts.mode_controller.html#module-scripts.mode_controller">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.speech_module
+
+      <ul>
+        <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.speech_module.ask_kita
 
       <ul>
@@ -1381,6 +1765,20 @@
 
       <ul>
         <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.speech_gesture">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.speech_module.speech_landmark_detector
+
+      <ul>
+        <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.speech_landmark_detector">module</a>
+</li>
+      </ul></li>
+      <li>
+    scripts.speech_module.speech_position
+
+      <ul>
+        <li><a href="apidocs/scripts.speech_module.html#module-scripts.speech_module.speech_position">module</a>
 </li>
       </ul></li>
       <li>
@@ -1401,7 +1799,7 @@
     scripts.tools.config
 
       <ul>
-        <li><a href="apidocs/scripts.tools.config.html#module-scripts.tools.config">module</a>, <a href="apidocs/scripts.tools.html#module-scripts.tools.config">[1]</a>
+        <li><a href="apidocs/scripts.tools.html#module-scripts.tools.config">module</a>
 </li>
       </ul></li>
       <li>
@@ -1440,6 +1838,13 @@
 </li>
       </ul></li>
       <li>
+    scripts.tools.json_editors.mode_editor
+
+      <ul>
+        <li><a href="apidocs/scripts.tools.html#module-scripts.tools.json_editors.mode_editor">module</a>
+</li>
+      </ul></li>
+      <li>
     scripts.tools.view
 
       <ul>
@@ -1456,12 +1861,8 @@
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent.set_bodypart_names">(SimpleGestureEvent method)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.set_displays">set_displays() (ExtremityWalkingActions method)</a>
-
-      <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.set_displays">(GamingExtremityWalkingActions method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.set_contacts">set_contacts() (Touch method)</a>
 </li>
-      </ul></li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.set_exercise_display">set_exercise_display() (ExerciseActions method)</a>
 
       <ul>
@@ -1471,6 +1872,8 @@
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.set_extremity_circles">set_extremity_circles() (ExtremityActions method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.set_extremity_circles_dict">set_extremity_circles_dict() (ExtremityCircles method)</a>
+</li>
+      <li><a href="apidocs/scripts.mode_controller.html#scripts.mode_controller.ModeController.set_next_mode">set_next_mode() (ModeController method)</a>
 </li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_event.GestureEvent.set_trigger_functions">set_trigger_functions() (GestureEvent method)</a>
 
@@ -1492,12 +1895,18 @@
       </ul></li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.show">show() (View method)</a>
 </li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.show_view">show_view() (MotionInputAPI class method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.simple_gesture_event.SimpleGestureEvent">SimpleGestureEvent (class in scripts.gesture_events.simple_gesture_event)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.click_press_event.SingleHandExclusiveClickPressEvent">SingleHandExclusiveClickPressEvent (class in scripts.gesture_events.click_press_event)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.singletap">singletap() (Touch method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.singletap">singletap() (DesktopTouch method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.singletap">(Touch method)</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.config.singleton">singleton() (in module scripts.tools.config)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.mouth_trigger_event.SmilingEvent">SmilingEvent (class in scripts.gesture_events.mouth_trigger_event)</a>
@@ -1506,7 +1915,9 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_mouse.Smoother">Smoother (class in scripts.gesture_event_handlers.desktop_mouse)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.sourceDevice">sourceDevice (POINTER_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_INFO.sourceDevice">sourceDevice (POINTER_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_INFO.sourceDevice">[1]</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.space">space() (Keyboard method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.speech_to_text">speech_to_text() (InAirKeyboard method)</a>
 </li>
@@ -1514,9 +1925,29 @@
 </li>
       <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_gesture.SpeechGesture">SpeechGesture (class in scripts.speech_module.speech_gesture)</a>
 </li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector">SpeechLandmarkDetector (class in scripts.speech_module.speech_landmark_detector)</a>
+</li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.SpeechModule">SpeechModule (class in scripts.speech_module)</a>
+</li>
+      <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_position.SpeechPosition">SpeechPosition (class in scripts.speech_module.speech_position)</a>
+</li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.start">start() (MotionInputAPI class method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.transcription.Transcriber.start_transcribe">start_transcribe() (Transcriber method)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.gesture_factory.Primitive.state">state (Primitive attribute)</a>
 </li>
+      <li><a href="apidocs/motioninput_api.html#motioninput_api.MotionInputAPI.stop">stop() (MotionInputAPI class method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.transcription.Transcriber.stop_transcribe">stop_transcribe() (Transcriber method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.switch">switch() (Keyboard method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.edit_config.EditConfigFile.switch_boolean">switch_boolean() (EditConfigFile method)</a>
+</li>
       <li><a href="apidocs/scripts.core.html#scripts.core.model.Model.switch_events">switch_events() (Model method)</a>
+</li>
+      <li><a href="apidocs/scripts.event_mapper.html#scripts.event_mapper.EventMapper.switch_events_in_model">switch_events_in_model() (EventMapper method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.switch_keyboard_layout">switch_keyboard_layout() (InAirKeyboard method)</a>
 </li>
@@ -1526,21 +1957,33 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.tap">tap() (DesktopTouch method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.tap">tap() (DesktopPenInput method)</a>
+
+      <ul>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.tap">(DesktopTouch method)</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.tiltX">tiltX (POINTER_PEN_INFO attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.tiltY">tiltY (POINTER_PEN_INFO attribute)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.toggle_caps_lock">toggle_caps_lock() (InAirKeyboard method)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch">Touch (class in scripts.gesture_event_handlers.desktop_touch)</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.touchdown">touchdown() (Touch method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.touchFlags">touchFlags (POINTER_TOUCH_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.touchFlags">[1]</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION.touchInfo">touchInfo (PEN_TOUCH_UNION attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.touchFlags">touchFlags (POINTER_TOUCH_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.touchMask">touchMask (POINTER_TOUCH_INFO attribute)</a>, <a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.touchMask">[1]</a>
 </li>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.POINTER_TOUCH_INFO.touchMask">touchMask (POINTER_TOUCH_INFO attribute)</a>
+      <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.touch_press_event.TouchPressEvent">TouchPressEvent (class in scripts.gesture_events.touch_press_event)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.touchup">touchup() (Touch method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.transcription.Transcriber">Transcriber (class in scripts.gesture_event_handlers.transcription)</a>
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.exercise_actions.ExerciseActions.trigger_action">trigger_action() (ExerciseActions method)</a>
 
@@ -1548,17 +1991,25 @@
         <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_actions.ExtremityActions.trigger_action">(ExtremityActions method)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO.type">type (POINTER_TYPE_INFO attribute)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.type_write">type_write() (Keyboard method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.undo">undo() (Keyboard method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.up_arrow_press">up_arrow_press() (Keyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.AreaOfInterestElement.update">update() (AreaOfInterestElement method)</a>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.ActiveModeNameElement.update">update() (ActiveModeNameElement method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.AreaOfInterestElement.update">(AreaOfInterestElement method)</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.click_press_event.ClickPressEvent.update">(ClickPressEvent method)</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.DisplayElement.update">(DisplayElement method)</a>
@@ -1574,6 +2025,8 @@
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.extremity_walking_event.ExtremityWalkingEvent.update">(ExtremityWalkingEvent method)</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.EyeGazeElement.update">(EyeGazeElement method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.eye_mode_2.EyeMode2Event.update">(EyeMode2Event method)</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.eye_tracking_event.EyeTrackingEvent.update">(EyeTrackingEvent method)</a>
 </li>
@@ -1601,13 +2054,25 @@
 </li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.json_editor.JSONEditor.update">(JSONEditor method)</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.keyboard_active_event.KeyboardActiveEvent.update">(KeyboardActiveEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.keyboard_click_event.KeyboardClickEvent.update">(KeyboardClickEvent method)</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.mouth_trigger_event.MouthTriggerEvent.update">(MouthTriggerEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.move_nose_box_event.MoveNoseBoxEvent.update">(MoveNoseBoxEvent method)</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.NoseBoxElement.update">(NoseBoxElement method)</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_direction_tracking_event.NoseDirectionTrackingEvent.update">(NoseDirectionTrackingEvent method)</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_direction_tracking_event_nose_box.NoseDirectionTrackingEventNoseBox.update">(NoseDirectionTrackingEventNoseBox method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_scroll_event.NoseScrollEvent.update">(NoseScrollEvent method)</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_tracking_event.NoseTrackingEvent.update">(NoseTrackingEvent method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.nose_zoom_event.NoseZoomEvent.update">(NoseZoomEvent method)</a>
 </li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.palm_height_change_event.PalmHeightChangeEvent.update">(PalmHeightChangeEvent method)</a>
 </li>
@@ -1621,6 +2086,10 @@
 </li>
         <li><a href="apidocs/scripts.speech_module.html#scripts.speech_module.speech_gesture.SpeechGesture.update">(SpeechGesture method)</a>
 </li>
+        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_touch.Touch.update">(Touch method)</a>
+</li>
+        <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.touch_press_event.TouchPressEvent.update">(TouchPressEvent method)</a>
+</li>
         <li><a href="apidocs/scripts.gesture_events.html#scripts.gesture_events.zoom_event.ZoomEvent.update">(ZoomEvent method)</a>
 </li>
       </ul></li>
@@ -1632,9 +2101,11 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard.update_buttons">update_buttons() (InAirKeyboard method)</a>
 </li>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.AreaOfInterestElement.update_display">update_display() (AreaOfInterestElement method)</a>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.ActiveModeNameElement.update_display">update_display() (ActiveModeNameElement method)</a>
 
       <ul>
+        <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.AreaOfInterestElement.update_display">(AreaOfInterestElement method)</a>
+</li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.DisplayElement.update_display">(DisplayElement method)</a>
 </li>
         <li><a href="apidocs/scripts.tools.html#scripts.tools.display_element.ExerciseDisplayElement.update_display">(ExerciseDisplayElement method)</a>
@@ -1662,6 +2133,16 @@
 </li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles.update_extremity_circle">update_extremity_circle() (ExtremityCircles method)</a>
 </li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.nose_box.NoseBox.update_nose_box">update_nose_box() (NoseBox method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.nose_box.NoseBox.update_nose_box_centre">update_nose_box_centre() (NoseBox method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.update_pen">update_pen() (DesktopPenInput method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.pen_input.Pen.update_pen_info">update_pen_info() (Pen method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.update_pressure">update_pressure() (DesktopPenInput method)</a>
+</li>
       <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.area_of_interest.AreaOfInterest.update_spacing_level">update_spacing_level() (AreaOfInterest method)</a>
 </li>
   </ul></td>
@@ -1672,11 +2153,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.event_editor.EventEditor.validate_event">validate_event() (EventEditor method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.json_editors.gesture_editor.GestureEditor.validate_gesture">validate_gesture() (GestureEditor method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View">View (class in scripts.tools.view)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.volume_down">volume_down() (Keyboard method)</a>
+</li>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.volume_up">volume_up() (Keyboard method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1684,21 +2169,13 @@
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_release_action">walking_release_action() (ExtremityWalkingActions method)</a>
-
-      <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_release_action">(GamingExtremityWalkingActions method)</a>
+      <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.was_closed_by_user">was_closed_by_user() (View method)</a>
 </li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_trigger_action">walking_trigger_action() (ExtremityWalkingActions method)</a>
-
-      <ul>
-        <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_trigger_action">(GamingExtremityWalkingActions method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.windows_key">windows_key() (Keyboard method)</a>
 </li>
-      </ul></li>
-      <li><a href="apidocs/scripts.tools.html#scripts.tools.view.View.was_closed_by_user">was_closed_by_user() (View method)</a>
+      <li><a href="apidocs/scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.keyboard.Keyboard.windows_run">windows_run() (Keyboard method)</a>
 </li>
   </ul></td>
 </tr></table>

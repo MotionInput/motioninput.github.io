@@ -46,14 +46,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#notes">Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#adding-features">Adding Features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#adding-gestureevents">Adding GestureEvents</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-gestures">Adding Gestures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-primitives">Adding Primitives</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-event-handlers">Adding event handlers</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="#adding-features">Adding Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adding-gestureevents">Adding GestureEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-gestures">Adding Gestures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-primitives">Adding Primitives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-event-handlers">Adding event handlers</a></li>
 </ul>
 </li>
 </ul>
@@ -115,18 +112,18 @@
 <ul class="simple">
 <li><p>Expected to be run on Python 3.9 + Windows</p></li>
 <li><p>Make sure you have installed all the libraries in the requirements.txt</p></li>
-<li><p>As we don’t yet have the GUI, App layer and the app-specific main.py, we are using the <a class="reference external" href="https://motioninput.github.io/getting-started.html#running-the-code">test file</a> to run the system.</p></li>
+<li><p>As we don’t yet have the GUI, App layer and the app-specific main.py, we are using the <a class="reference external" href="https://motioninput.github.io/getting-started.html#running-the-code">motioninput_api.py</a> to run the system.</p></li>
 </ul>
 </section>
 <section id="architecture">
 <h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h1>
-<p><img alt="Diagram" src="_images/MIv3_AD.jpg" /></p>
-<p>So a quick overview of how the the system works. It can be observed in 2 parts: the setup and the frame by frame processing.</p>
+<p><img alt="Diagram" src="_images/MI3.PNG" /></p>
+<p>So a quick overview of how the system works. It can be observed in 2 parts: the setup and the frame by frame processing.</p>
 <section id="setup">
 <h2>setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Firstly, information for gestures and events are loaded from the JSON files</p></li>
-<li><p>The ModeController class is used to decide which events should be added to the model. (set of events based on the defaoul mode in the mode_controller.json)</p></li>
+<li><p>The ModeController class is used to decide which events should be added to the model. (set of events based on the default mode in the mode_controller.json)</p></li>
 <li><p>The EventMapper then initialises the according event classes (mapping them to desired handlers) and add them to the model. (events as defined in events.json)</p></li>
 <li><p>Based on the added events the needed gestures and modules are automatically added to the model by the GestureLoader. (gestures as defined in gestures.json)</p></li>
 </ul>
@@ -139,7 +136,7 @@
 <ul>
 <li><p>Update the modules:</p>
 <ul>
-<li><p>Use the modules landmark detector (ML library) to retrieve the RawData (aka the coordinates of all landmarks) from the frame.</p></li>
+<li><p>Use the module’s landmark detector (ML library) to retrieve the RawData (aka the coordinates of all landmarks) from the frame.</p></li>
 <li><p>Update all position trackers with the RawData, which results in a set of primitives that had changed since the last frame.</p></li>
 <li><p>Update all the gesture factories that use the changed primitives, which may create new active Gestures.</p></li>
 </ul>
@@ -158,18 +155,10 @@
 <p>Alternatively to open the protocol connection you can run motioninput.py in which case you can interact with the code through the stdin using the <a class="reference external" href="https://motioninput.github.io/development.html#backend-frontend-communication-protocol">protocol</a>.</p>
 <p>Note: Currently, for the extremity triggers in the body module, hardcoded calibration information is located in the various JSON files. In particular, the coordinates of the extremity triggers are set manually. Documentation of how developers can interact with the config JSONs can be found <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.tools.html#json_editors">here</a></p>
 </section>
-<section id="notes">
-<h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h1>
-<ul class="simple">
-<li><p>Please do keep in mind that this architecture was done on a tight schedule by a smol 2nd year, so I am sure there are some parts of it that were not implemented in the most efficient manner. So if you have an idea of how to improve something let me know.</p></li>
-<li><p>If there is some functionality missing from the core that you need, feel free to let me know. If it makes sense I will add it or make the needed changes.</p></li>
-<li><p>If there are any primitives/gestures/events/event_handlers that you are missing feel free to add them in yourself (as in please do we really could use some help here:))</p></li>
-</ul>
-<p>-xoxo Carmen</p>
 <section id="adding-features">
-<h2>Adding Features<a class="headerlink" href="#adding-features" title="Permalink to this headline"></a></h2>
+<h1>Adding Features<a class="headerlink" href="#adding-features" title="Permalink to this headline"></a></h1>
 <section id="adding-gestureevents">
-<h3>Adding GestureEvents<a class="headerlink" href="#adding-gestureevents" title="Permalink to this headline"></a></h3>
+<h2>Adding GestureEvents<a class="headerlink" href="#adding-gestureevents" title="Permalink to this headline"></a></h2>
 <p>Create a new class extending the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.gesture_events.html">GestureEvent</a> class from the <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#">core</a> module (many examples are available in the gesture_events folder).
 You can check the currently available gestures in the <a class="reference external" href="https://motioninput.github.io/configuration.html#gestures">data/gestures.json</a> and in case the gestures you need are not available feel free to add a new <a class="reference external" href="https://motioninput.github.io/getting-started.html#adding-gestures">Gesture</a>.
 (Just a note that you are allowed to use gestures from different modules in the seme event)
@@ -178,19 +167,18 @@ Now you are all set and should be able to use the gesture event after adding it 
 <p>NB! Please also add any new events to the “Currently available Events” section of this doc along with a short description of it.</p>
 </section>
 <section id="adding-gestures">
-<h3>Adding Gestures<a class="headerlink" href="#adding-gestures" title="Permalink to this headline"></a></h3>
+<h2>Adding Gestures<a class="headerlink" href="#adding-gestures" title="Permalink to this headline"></a></h2>
 <p>Adding new <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.gesture.Gesture">Gestures</a> is as easy as adding one line to the <a class="reference external" href="https://motioninput.github.io/configuration.html#gestures">data/gestures.json</a> file, with just the name of the gesture and a set of all the primitives it uses. (again plenty of examples already available). Note that the name of the gesture should not overlap with the name of any other gesture, even in other modules.
 In case the primitives you need are not available feel free to add a new <a class="reference external" href="https://motioninput.github.io/getting-started.html#adding-primitives">primitive</a>.</p>
 </section>
 <section id="adding-primitives">
-<h3>Adding Primitives<a class="headerlink" href="#adding-primitives" title="Permalink to this headline"></a></h3>
+<h2>Adding Primitives<a class="headerlink" href="#adding-primitives" title="Permalink to this headline"></a></h2>
 <p>Now adding primitives is a bit trickier and definitely should not be done too often, as unlike Gestures and GestureEvents the primitives affect the efficiency of processing each frame, as for every frame we calculate the states of all the primitives.
-Adding primitives is done in the specific modules <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.position.Position">Position</a> classes (so currently in the HandPositio, BodyPosition and ExercisePosition classes)</p>
+Adding primitives is done in the specific modules <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.core.html#scripts.core.position.Position">Position</a> classes (so currently in the HandPosition, BodyPosition and ExercisePosition classes)</p>
 </section>
 <section id="adding-event-handlers">
-<h3>Adding event handlers<a class="headerlink" href="#adding-event-handlers" title="Permalink to this headline"></a></h3>
-<p>Event handlers (classes that contain all the functions that are called by GestureEvents and are responsible for actually controlling the users computer e.g. moving the mouse or pressing keys) are stored in the gesture_event_handlers folder. If you have added any new classes or new functions to already exicsting handler classes, please first add them to the __init__.py file in the gesture_event_handlers folder in the same manner as the previous examples, in order for the EventMapper class to be able to use the new functionality. After this you can now use your handler by mapping GestureEvents to it in the EventMapper class.</p>
-</section>
+<h2>Adding event handlers<a class="headerlink" href="#adding-event-handlers" title="Permalink to this headline"></a></h2>
+<p>Event handlers (classes that contain all the functions that are called by GestureEvents and are responsible for actually controlling the users computer e.g. moving the mouse or pressing keys) are stored in the gesture_event_handlers folder. If you have added any new classes or new functions to already existing handler classes, please first add them to the __init__.py file in the gesture_event_handlers folder in the same manner as the previous examples, in order for the EventMapper class to be able to use the new functionality. After this you can now use your handler by mapping GestureEvents to it in the EventMapper class.</p>
 </section>
 </section>
 

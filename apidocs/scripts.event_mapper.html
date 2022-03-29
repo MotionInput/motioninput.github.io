@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -68,7 +68,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.tools.html">scripts.tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_loader.html">scripts.gesture_loader</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scripts.event_mapper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-scripts.event_mapper">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.mode_controller.html">scripts.mode_controller</a></li>
@@ -102,8 +102,34 @@
              
   <section id="scripts-event-mapper">
 <h1>scripts.event_mapper<a class="headerlink" href="#scripts-event-mapper" title="Permalink to this headline"></a></h1>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="module-scripts.event_mapper">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.event_mapper" title="Permalink to this headline"></a></h2>
+<p>Author: Carmen Meinson</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.event_mapper.EventMapper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EventMapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_handlers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.gesture_event_handlers.html#scripts.gesture_event_handlers.GestureEventHandlers" title="scripts.gesture_event_handlers.GestureEventHandlers"><span class="pre">scripts.gesture_event_handlers.GestureEventHandlers</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.event_mapper.EventMapper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.event_mapper.EventMapper.switch_events_in_model">
+<span class="sig-name descname"><span class="pre">switch_events_in_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.model.Model" title="scripts.core.model.Model"><span class="pre">scripts.core.model.Model</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_names_to_remove</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_names_to_add</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.event_mapper.EventMapper.switch_events_in_model" title="Permalink to this definition"></a></dt>
+<dd><p>Based on the given event names creates the GestureEvent instances to be added to the model.
+All the gestures and modules used by the given events will also be added to the model by the GestureLoader, if they have not been before
+Then all the events are switched in the model.</p>
+<p>Removing an event may also lead to removing of some gestures that are no longer used by any events in the model.
+If all gestures from one module get removed so does the module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<a class="reference internal" href="scripts.core.html#scripts.core.model.Model" title="scripts.core.model.Model"><em>Model</em></a>) – model in which to swich the events</p></li>
+<li><p><strong>event_names_to_remove</strong> (<em>Set</em><em>[</em><em>str</em><em>]</em>) – names of the events to remove</p></li>
+<li><p><strong>event_names_to_add</strong> (<em>Set</em><em>[</em><em>str</em><em>]</em>) – names of the events to add</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 

@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -102,13 +102,15 @@
              
   <section id="module-scripts.eye_module.eye_gesture">
 <span id="scripts-eye-module"></span><h1>scripts.eye_module<a class="headerlink" href="#module-scripts.eye_module.eye_gesture" title="Permalink to this headline"></a></h1>
+<p>Author: Yadong (Adam) Liu</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="scripts.eye_module.eye_gesture.EyeGesture">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EyeGesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_checker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><span class="pre">scripts.core.position_tracker.PositionTracker</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.eye_module.eye_gesture.EyeGesture" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.gesture.Gesture</span></code></a></p>
 </dd></dl>
 
-<span class="target" id="module-scripts.eye_module.eye_landmark_detector"></span><dl class="py class">
+<span class="target" id="module-scripts.eye_module.eye_landmark_detector"></span><p>Author: Yadong (Adam) Liu</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.eye_module.eye_landmark_detector.EyeLandmarkDetector">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EyeLandmarkDetector</span></span><a class="headerlink" href="#scripts.eye_module.eye_landmark_detector.EyeLandmarkDetector" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -128,7 +130,8 @@
 
 </dd></dl>
 
-<span class="target" id="module-scripts.eye_module.eye_position"></span><dl class="py class">
+<span class="target" id="module-scripts.eye_module.eye_position"></span><p>Author: Yadong (Adam) Liu</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.eye_module.eye_position.EyePosition">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EyePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_eye_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.eye_module.eye_position.EyePosition" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
@@ -137,7 +140,7 @@
 <span class="sig-name descname"><span class="pre">get_primitives_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.eye_module.eye_position.EyePosition.get_primitives_names" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Names of all primitives that are calcualted by the specific modules Position class on initialization</p>
+<dd class="field-odd"><p>Names of all primitives that are calculated by the specific modules Position class on initialization</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>List[str]</p>

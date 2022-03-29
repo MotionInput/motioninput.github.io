@@ -41,7 +41,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -70,7 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.mode_controller.html">scripts.mode_controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="communicator.html">communicator</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">motioninput_api</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-motioninput_api">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -101,8 +101,115 @@
              
   <section id="motioninput-api">
 <h1>motioninput_api<a class="headerlink" href="#motioninput-api" title="Permalink to this headline"></a></h1>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="module-motioninput_api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-motioninput_api" title="Permalink to this headline"></a></h2>
+<p>Author: Carmen Meinson</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MotionInputAPI</span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.calibrate_module">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calibrate_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.calibrate_module" title="Permalink to this definition"></a></dt>
+<dd><p>Calls the calibration method on the specified module</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the module (“hand”/”speech”/”body”/”head”/”eye”)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.init_modules">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_modules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.init_modules" title="Permalink to this definition"></a></dt>
+<dd><p>Calls the pre initialization method on all given modules. This performs all of the time consuming setup of the Module before initialization.
+If is not called then all the setup is done when the Modules are first initialized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>names</strong> (<em>Set</em><em>[</em><em>str</em><em>]</em>) – set of module names (“hand”/”speech”/”body”/”head”/”eye”)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.start">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.start" title="Permalink to this definition"></a></dt>
+<dd><p>Starts an instance of the MI model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – error raised if an instance of MI is already running</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.stop">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.stop" title="Permalink to this definition"></a></dt>
+<dd><p>Stops the currently running MI model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – error raised if MI is not running</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.run">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.show_view">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.show_view" title="Permalink to this definition"></a></dt>
+<dd><p>If the view is hidden, shows the view (the openCV window with the camera image)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.hide_view">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hide_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.hide_view" title="Permalink to this definition"></a></dt>
+<dd><p>If the view is shown, hides the view (the openCV window with the camera image)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.change_mode">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">change_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.change_mode" title="Permalink to this definition"></a></dt>
+<dd><p>set the interaction mode that the model will be set to from the next frame.
+If no mode is indicated the next mode is set according to the iteration_order, provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – name of the mode, defaults to None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.get_state">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.get_state" title="Permalink to this definition"></a></dt>
+<dd><p>Returns if there is an instance of the MI model running</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.get_config_editor">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_config_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scripts.tools.html#scripts.tools.json_editors.config_editor.ConfigEditor" title="scripts.tools.json_editors.config_editor.ConfigEditor"><span class="pre">scripts.tools.json_editors.config_editor.ConfigEditor</span></a></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.get_config_editor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.get_mode_editor">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mode_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scripts.tools.html#scripts.tools.json_editors.mode_editor.ModeEditor" title="scripts.tools.json_editors.mode_editor.ModeEditor"><span class="pre">scripts.tools.json_editors.mode_editor.ModeEditor</span></a></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.get_mode_editor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.get_gestures_editor">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_gestures_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scripts.tools.html#scripts.tools.json_editors.gesture_editor.GestureEditor" title="scripts.tools.json_editors.gesture_editor.GestureEditor"><span class="pre">scripts.tools.json_editors.gesture_editor.GestureEditor</span></a></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.get_gestures_editor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="motioninput_api.MotionInputAPI.get_events_editor">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_events_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scripts.tools.html#scripts.tools.json_editors.event_editor.EventEditor" title="scripts.tools.json_editors.event_editor.EventEditor"><span class="pre">scripts.tools.json_editors.event_editor.EventEditor</span></a></span></span><a class="headerlink" href="#motioninput_api.MotionInputAPI.get_events_editor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 

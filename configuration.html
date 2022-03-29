@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul class="current">
@@ -62,6 +62,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#scroll-event">Scroll Event</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#zoom-event">Zoom Event</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mode-change-event">Mode Change Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nose-tracking">Nose Tracking</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#modules">Modules</a><ul>
@@ -148,7 +149,7 @@
 <section id="gestures">
 <h2>Gestures<a class="headerlink" href="#gestures" title="Permalink to this headline"></a></h2>
 <p>Gestures are composed of primitives which are either activated or deactivated, represented by a boolean value.</p>
-<p>The gestures are split between the seperate modules:</p>
+<p>The gestures are split between the separate modules:</p>
 <ul class="simple">
 <li><p>hand</p></li>
 <li><p>body</p></li>
@@ -170,7 +171,7 @@
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline"></a></h2>
 <p>The events are mappings of <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.gesture_events.html">GestureEvent</a> classes to <a class="reference external" href="https://motioninput.github.io/apidocs/scripts.gesture_event_handlers.html">event handlers</a> method(s).</p>
 <p>The GestureEvent class (”type”) determines under what conditions and when will the handler methods (”triggers”) be called. These conditions can be modified by the “args” if the conditions are event instance-specific or by elements in the config file if those conditions are event class-specific.</p>
-<p>The “bodypart_names_to_type” determines what detected bodyparts (aka trackers in the modules like “Left”(hand), “Right”(hand) or “head”) will be used by the event instances. This is mostly used to determine the hand used in hand gestures.</p>
+<p>The “bodypart_names_to_type” determines what detected body parts (aka trackers in the modules like “Left”(hand), “Right”(hand) or “head”) will be used by the event instances. This is mostly used to determine the hand used in hand gestures.</p>
 <p>The “triggers” are pairs of handler classes and its methods that we want to be called when the event calls its trigger functions.
 All available methods are well visible in the __init__.py in gesture_event_handlers</p>
 <p>An event will be of the form:</p>
@@ -235,17 +236,23 @@ All available methods are well visible in the __init__.py in gesture_event_handl
 <li><p><code class="docutils literal notranslate"><span class="pre">squating_exercise</span></code>: Exercise activated by squatting</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">speech_clicking</span></code>:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">speech_double_clicking</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">smiling_event</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">open_mouth_event</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">raise_eye_brow_event</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">nose_tracking_event</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">nose_direction_tracking_event</span></code>:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smiling_event</span></code>: Right click when smiling (widening lips)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fish_face_event</span></code>: Right click when making fish face (lips forming a circle)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open_mouth_event</span></code>: Left click press when opening mouth, left click release when closing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raise_eye_brow_event</span></code>: Double left click when raising eyebrows</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nose_tracking_event</span></code>: Continuously moving cursor to a position on screen corresponding to your nose position on the camera preview.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nose_direction_tracking_event</span></code>: Moving cursor in the direction of a vector starting in the centre of the nose box and ending in a nose tip (aka nose grid mode)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nose_direction_tracking_event_nose_box</span></code>: Moving cursor in the direction of a vector starting in the centre of the nose box and ending in a nose tip (aka nose grid mode)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nose_scroll_event</span></code>: Scrolling down when smiling and moving nose down, scrolling up when smiling and moving nose up</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nose_zoom_event</span></code>: Zooming in when smiling and moving nose left, zooming out when smiling and moving nose right</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">eye_tracking_event</span></code>:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">keyboard_active_event</span></code>: Activates the in air keyboard. Move fingers over keys, when palms are facing the camera, to hover over them</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">keyboard_click_event</span></code>: Press a key on the in air keyboard by hovering over a key and performing selected click gesture (pulldown, pinch or scissor). Hold down the key by holding the click gesture for at least the selected duration (3s by default)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pen_drag_event</span></code>: Allows dragging using pen input. Pinch index and thumb and move hand to do a drag event across the screen (mainly used for digital inking)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pen_active_right_hand</span></code>: Moves the pen cursor while the right palm is facing the camera</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index_pinch_pen_right_hand</span></code>: Simulates pen input when pinching index finger (hold pinch and move hand for dragging/ink strokes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index_pinch_eraser_left_hand</span></code>: Activates eraser when pinching index finger</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinch_pen_hold_right_hand</span></code>: Allows inking whilst holding a pen as long as index finger is close to thumb and pinky finger is folded</p></li>
 </ul>
-<p>(In Air Keyboard and Pen Input events have not yet been added to the dev branch.)</p>
 </section>
 </section>
 <section id="modes">
@@ -387,6 +394,19 @@ All available methods are well visible in the __init__.py in gesture_event_handl
 <li><p><code class="docutils literal notranslate"><span class="pre">frames_for_switch</span></code>: The number of frames the mode switch gesture needs to be active to switch to the next mode.</p></li>
 </ul>
 </section>
+<section id="nose-tracking">
+<h4>Nose Tracking<a class="headerlink" href="#nose-tracking" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;nose_tracking&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;scaling_factor&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+            <span class="s2">&quot;nose_box_percentage_size&quot;</span><span class="p">:</span> <span class="mf">0.04</span>
+        <span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scaling_factor</span></code>: defines speed of the cursor during nose direction tracking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nose_box_percentage_size</span></code>: defines the size of the half of the nose box (e.g. <code class="docutils literal notranslate"><span class="pre">0.04</span></code> means that the nose box will have the size of <code class="docutils literal notranslate"><span class="pre">(camera_width\*0.08,</span> <span class="pre">camera_height\*0.08)</span></code>)</p></li>
+</ul>
+</section>
 </section>
 <section id="modules">
 <h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h3>
@@ -403,7 +423,7 @@ All available methods are well visible in the __init__.py in gesture_event_handl
 </section>
 <section id="exercise">
 <h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline"></a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: Whether or not equipment is being used or not, can be <code class="docutils literal notranslate"><span class="pre">noequipment</span></code> or <code class="docutils literal notranslate"><span class="pre">equipment</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: Whether equipment is being used or not, can be <code class="docutils literal notranslate"><span class="pre">noequipment</span></code> or <code class="docutils literal notranslate"><span class="pre">equipment</span></code>.</p>
 </section>
 </section>
 <section id="body-gestures">
@@ -411,7 +431,7 @@ All available methods are well visible in the __init__.py in gesture_event_handl
 <p>Holds information about extremity triggers and exercise gestures.</p>
 <section id="extremity-triggers">
 <h4>Extremity Triggers<a class="headerlink" href="#extremity-triggers" title="Permalink to this headline"></a></h4>
-<p>Rerpresnts information of an extremity trigger, of the form:</p>
+<p>Represents information of an extremity trigger, of the form:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;trigger_name&quot;</span><span class="p">:</span> <span class="p">{</span>
 	<span class="s2">&quot;landmark&quot;</span><span class="p">:</span> <span class="s2">&quot;trigger_landmark&quot;</span><span class="p">,</span>
 	<span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">],</span>
@@ -512,7 +532,7 @@ All available methods are well visible in the __init__.py in gesture_event_handl
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">smoothing</span></code>: The smoothnes of the zoom action</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smoothing</span></code>: The smoothness of the zoom action</p></li>
 </ul>
 </section>
 </section>

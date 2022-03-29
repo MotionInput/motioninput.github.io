@@ -165,6 +165,19 @@ Okay so how do you do this.
 
 This section will explain how to compile motioninput on a local machine.
 
+### Automatic build using a PowerShell script
+
+Just run
+
+    ./compile.ps1
+
+*Note: Running the following script may require changing execution policy on your system. You can read about it [here](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2#example-7--unblock-a-script-to-run-it-without-changing-the-execution-policy).*
+
+The script is designed to create a python virtual environment (or use the existing one), install all dependencies and compile your code. The executable will be in `Release/motioninput.dist` directory.
+
+
+### Manual compilation process
+
 Here is an overview of all steps that need to be done:
 
 1. Install requirements
@@ -181,17 +194,19 @@ Just run
 
 The command is the following:
 
-	python -m nuitka --lto=no --windows-disable-console --assume-yes-for-downloads --standalone --plugin-enable=numpy --output-dir=Release motioninput.py
+	python -m nuitka --lto=no --windows-disable-console --assume-yes-for-downloads --standalone --nofollow-import-to="openvino" --plugin-enable=numpy --output-dir=Release motioninput.py
 
 This is indeed very long, so let's look at each compilation flag and see what it does.
 
 - `--lto`: link time optimisation, if you keep it on the compilation time will increase from 30 minutes to several hours. (not worth it for debugging, only use it for the final release)
 
-- `--windwos-disable-console`: Prevents console from appearing when running the code.
+- `--windows-disable-console`: Prevents console from appearing when running the code. **IMPORTANT: deleting this flag will let you inspect errors in the command line**
 
 - `--assume-yes-for-downloads`: Just a flag that will prevent some prompts from appearing. Nuitka will only prompt to download a C compiler and some dependency tracking tools so just keep it on to save some time.
 
 - `--standalone`: This makes nuitka package libraries along side the executable.
+
+- `--nofollow-import-to="openvino"`: Solves an issue related to non-working imports in openvino package. 
 
 - `--plugin-enable=numpy`: Numpy is a bit weird cuz it's already primarily written in C so it needs some special treatment.
 
@@ -227,6 +242,15 @@ Copy `{your_site_packages_path}/mediapipe` into `motioninput.dist`
 #### Step 4
 
 Copy `_framework_bindings.pyd` from project root into `motioninput.dist/mediapipe/python`
+
+#### Step 4
+
+Copy `{your_site_packages_path}/openvino` into `motioninput.dist`
+
+#### Step 4
+
+Copy `{your_site_packages_path}/_sounddevice_data` into `motioninput.dist`
+
 
 Okay That's it. You should now be able to run it.
 

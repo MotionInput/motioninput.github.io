@@ -27,6 +27,12 @@ scripts.gesture\_events
    :show-inheritance:
 
 
+.. automodule:: scripts.gesture_events.eye_mode_2
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.gesture_events.eye_tracking_event
    :members:
    :undoc-members:
@@ -51,7 +57,31 @@ scripts.gesture\_events
    :show-inheritance:
 
 
+.. automodule:: scripts.gesture_events.keyboard_active_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.keyboard_click_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.gesture_events.mouth_trigger_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.move_nose_box_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.nose_direction_tracking_event_nose_box
    :members:
    :undoc-members:
    :show-inheritance:
@@ -63,7 +93,19 @@ scripts.gesture\_events
    :show-inheritance:
 
 
+.. automodule:: scripts.gesture_events.nose_scroll_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.gesture_events.nose_tracking_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.nose_zoom_event
    :members:
    :undoc-members:
    :show-inheritance:
@@ -88,6 +130,12 @@ scripts.gesture\_events
 
 
 .. automodule:: scripts.gesture_events.speech_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_events.touch_press_event
    :members:
    :undoc-members:
    :show-inheritance:

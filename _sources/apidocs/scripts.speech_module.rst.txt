@@ -1,7 +1,5 @@
 scripts.speech\_module
-====================
-
-
+======================
 
 .. automodule:: scripts.speech_module.speech_gesture
    :members:

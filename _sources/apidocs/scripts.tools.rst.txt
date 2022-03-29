@@ -50,7 +50,7 @@ JSON Editors
   :undoc-members:
   :show-inheritance:
 
-.. automodule:: scripts.tools.json_editors.mode_controller_editor
+.. automodule:: scripts.tools.json_editors.mode_editor
   :members:
   :undoc-members:
   :show-inheritance:

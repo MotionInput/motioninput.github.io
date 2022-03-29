@@ -11,7 +11,7 @@ Developers can read values from these JSON files using the JSONEditor classes.
 
 Gestures are composed of primitives which are either activated or deactivated, represented by a boolean value.
 
-The gestures are split between the seperate modules:
+The gestures are split between the separate modules:
 
 * hand
 * body
@@ -35,7 +35,7 @@ The events are mappings of [GestureEvent](https://motioninput.github.io/apidocs/
 
 The GestureEvent class ("type") determines under what conditions and when will the handler methods ("triggers") be called. These conditions can be modified by the "args" if the conditions are event instance-specific or by elements in the config file if those conditions are event class-specific.
 
-The "bodypart_names_to_type" determines what detected bodyparts (aka trackers in the modules like "Left"(hand), "Right"(hand) or "head") will be used by the event instances. This is mostly used to determine the hand used in hand gestures.
+The "bodypart_names_to_type" determines what detected body parts (aka trackers in the modules like "Left"(hand), "Right"(hand) or "head") will be used by the event instances. This is mostly used to determine the hand used in hand gestures.
 
 The "triggers" are pairs of handler classes and its methods that we want to be called when the event calls its trigger functions.
 All available methods are well visible in the \_\_init\_\_.py in gesture_event_handlers
@@ -102,19 +102,25 @@ Note: in case the gesture names are unclear pleas refer to the data/gestures.jso
 * `start_key_extremity`: Extremity circle activated by the left wrist landmark (Gamepad mode, button intended for start program/game keybind)
 * `walking_exercise`: Exercise activated by walking on the spot
 * `squating_exercise`: Exercise activated by squatting
-* `speech_clicking`:
+* `speech_clicking`: 
 * `speech_double_clicking`:    
-* `smiling_event`:
-* `open_mouth_event`:
-* `raise_eye_brow_event`:
-* `nose_tracking_event`:
-* `nose_direction_tracking_event`:
+* `smiling_event`: Right click when smiling (widening lips)
+* `fish_face_event`: Right click when making fish face (lips forming a circle)
+* `open_mouth_event`: Left click press when opening mouth, left click release when closing
+* `raise_eye_brow_event`: Double left click when raising eyebrows
+* `nose_tracking_event`: Continuously moving cursor to a position on screen corresponding to your nose position on the camera preview.
+* `nose_direction_tracking_event`: Moving cursor in the direction of a vector starting in the centre of the nose box and ending in a nose tip (aka nose grid mode)
+* `nose_direction_tracking_event_nose_box`: Moving cursor in the direction of a vector starting in the centre of the nose box and ending in a nose tip (aka nose grid mode)
+* `nose_scroll_event`: Scrolling down when smiling and moving nose down, scrolling up when smiling and moving nose up
+* `nose_zoom_event`: Zooming in when smiling and moving nose left, zooming out when smiling and moving nose right
 * `eye_tracking_event`:
 * `keyboard_active_event`: Activates the in air keyboard. Move fingers over keys, when palms are facing the camera, to hover over them
 * `keyboard_click_event`: Press a key on the in air keyboard by hovering over a key and performing selected click gesture (pulldown, pinch or scissor). Hold down the key by holding the click gesture for at least the selected duration (3s by default)
-* `pen_drag_event`: Allows dragging using pen input. Pinch index and thumb and move hand to do a drag event across the screen (mainly used for digital inking)
+* `pen_active_right_hand`: Moves the pen cursor while the right palm is facing the camera
+* `index_pinch_pen_right_hand`: Simulates pen input when pinching index finger (hold pinch and move hand for dragging/ink strokes)
+* `index_pinch_eraser_left_hand`: Activates eraser when pinching index finger
+* `pinch_pen_hold_right_hand`: Allows inking whilst holding a pen as long as index finger is close to thumb and pinky finger is folded
 
-(In Air Keyboard and Pen Input events have not yet been added to the dev branch.)
 
 ## Modes
 
@@ -238,6 +244,16 @@ Event configs hold settings for a given event:
 ```
 * `frames_for_switch`: The number of frames the mode switch gesture needs to be active to switch to the next mode.
 
+#### Nose Tracking
+```
+"nose_tracking": {
+            "scaling_factor": 400,
+            "nose_box_percentage_size": 0.04
+        },
+```
+* `scaling_factor`: defines speed of the cursor during nose direction tracking 
+* `nose_box_percentage_size`: defines the size of the half of the nose box (e.g. `0.04` means that the nose box will have the size of `(camera_width\*0.08, camera_height\*0.08)`)
+
 ### Modules
 Holds information for each of the different modules.
 
@@ -253,13 +269,13 @@ Holds information for each of the different modules.
 * `max_num_hands`: The maximum number of hands used by MI
 
 #### Exercise
-`mode`: Whether or not equipment is being used or not, can be `noequipment` or `equipment`.
+`mode`: Whether equipment is being used or not, can be `noequipment` or `equipment`.
 
 ### Body Gestures
 Holds information about extremity triggers and exercise gestures.
 
 #### Extremity Triggers
-Rerpresnts information of an extremity trigger, of the form:
+Represents information of an extremity trigger, of the form:
 ```
 "trigger_name": {
 	"landmark": "trigger_landmark",
@@ -340,4 +356,4 @@ Holds information on all of the event handlers.
 	"smoothing": 3
 }
 ```
-* `smoothing`: The smoothnes of the zoom action
+* `smoothing`: The smoothness of the zoom action

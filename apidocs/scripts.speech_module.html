@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -63,7 +63,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.head_module.html">scripts.head_module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.eye_module.html">scripts.eye_module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scripts.speech_module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-scripts.speech_module">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.gesture_events.html">scripts.gesture_events</a></li>
@@ -100,9 +100,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="scripts-speech-module">
-<h1>scripts.speech_module<a class="headerlink" href="#scripts-speech-module" title="Permalink to this headline"></a></h1>
-<span class="target" id="module-scripts.speech_module.speech_gesture"></span><dl class="py class">
+  <section id="module-scripts.speech_module.speech_gesture">
+<span id="scripts-speech-module"></span><h1>scripts.speech_module<a class="headerlink" href="#module-scripts.speech_module.speech_gesture" title="Permalink to this headline"></a></h1>
+<p>Author: Carmen Meinson</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.speech_module.speech_gesture.SpeechGesture">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SpeechGesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_checker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><span class="pre">scripts.core.position.Position</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.position_tracker.PositionTracker" title="scripts.core.position_tracker.PositionTracker"><span class="pre">scripts.core.position_tracker.PositionTracker</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.speech_gesture.SpeechGesture" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.gesture.Gesture" title="scripts.core.gesture.Gesture"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.gesture.Gesture</span></code></a></p>
@@ -122,7 +123,65 @@
 
 </dd></dl>
 
-<span class="target" id="module-scripts.speech_module.ask_kita"></span><dl class="py class">
+<span class="target" id="module-scripts.speech_module.speech_landmark_detector"></span><p>Authors: Samuel Emilolorun</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SpeechLandmarkDetector</span></span><a class="headerlink" href="#scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.module.LandmarkDetector" title="scripts.core.module.LandmarkDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.module.LandmarkDetector</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector.ask_kita">
+<span class="sig-name descname"><span class="pre">ask_kita</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector.ask_kita" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector.get_raw_data">
+<span class="sig-name descname"><span class="pre">get_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.core.html#scripts.core.raw_data.RawData" title="scripts.core.raw_data.RawData"><span class="pre">scripts.core.raw_data.RawData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.speech_module.speech_landmark_detector.SpeechLandmarkDetector.get_raw_data" title="Permalink to this definition"></a></dt>
+<dd><p>Adds current phrase to RawData Instance so that it can be passed to the position class
+:param raw_data: RawData instance to add the landmarks to
+:type raw_data: RawData
+:param image: Image to proccess with mediapipe and read the landmarks locations from
+:type image: ndarray</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.speech_module.speech_position"></span><p>Authors: Carmen Meinson and Samuel Emilolorun</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.speech_module.speech_position.SpeechPosition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SpeechPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_primitives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.speech_position.SpeechPosition" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.position.Position" title="scripts.core.position.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.position.Position</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.speech_module.speech_position.SpeechPosition.get_primitive">
+<span class="sig-name descname"><span class="pre">get_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.speech_module.speech_position.SpeechPosition.get_primitive" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the state of a primitive and none if name isn’t a primitive
+:param name: name of the primitive (e.g. “click”)
+:type name: str
+:return: state of primitive
+:rtype: Optional[bool]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.speech_module.speech_position.SpeechPosition.get_primitives_names">
+<span class="sig-name descname"><span class="pre">get_primitives_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scripts.speech_module.speech_position.SpeechPosition.get_primitives_names" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Names of all primitives that are calcualted by the speech position class</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Set[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.speech_module.ask_kita"></span><p>Authors: Samuel Emilolorun</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.check_path">
+<span class="sig-name descname"><span class="pre">check_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.ask_kita.check_path" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Ask_KITA</span></span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
@@ -137,33 +196,42 @@ from the args and kwargs arguments, respectively.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA.pause">
-<span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA.pause" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA.end">
+<span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA.end" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA.resume">
-<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA.resume" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA.get_is_running">
+<span class="sig-name descname"><span class="pre">get_is_running</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA.get_is_running" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA.get_current_phrase">
-<span class="sig-name descname"><span class="pre">get_current_phrase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA.get_current_phrase" title="Permalink to this definition"></a></dt>
-<dd><p>Returns current phrase
-:return: current phrase
-:rtype: str</p>
-</dd></dl>
+<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA.connect_to_writer">
+<span class="sig-name descname"><span class="pre">connect_to_writer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">writer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA.connect_to_writer" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA.callback">
-<span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA.callback" title="Permalink to this definition"></a></dt>
-<dd><p>This is called (from a separate thread) for each audio block.</p>
+<dt class="sig sig-object py" id="scripts.speech_module.ask_kita.Ask_KITA.disconnect_from_writer">
+<span class="sig-name descname"><span class="pre">disconnect_from_writer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.speech_module.ask_kita.Ask_KITA.disconnect_from_writer" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<section id="module-scripts.speech_module">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.speech_module" title="Permalink to this headline"></a></h2>
+<p>Authors: Samuel Emilolorun</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.speech_module.SpeechModule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SpeechModule</span></span><a class="headerlink" href="#scripts.speech_module.SpeechModule" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="scripts.core.html#scripts.core.module.Module" title="scripts.core.module.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.core.module.Module</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.speech_module.SpeechModule.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.speech_module.SpeechModule.reset" title="Permalink to this definition"></a></dt>
+<dd><p>Resets all position trackers</p>
 </dd></dl>
 
 </dd></dl>
 
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 

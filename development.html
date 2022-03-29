@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -68,6 +68,8 @@
 <li class="toctree-l1"><a class="reference internal" href="#compilation">Compilation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#from-github-actions">From Github actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#build-locally">Build Locally</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-build-using-a-powershell-script">Automatic build using a PowerShell script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manual-compilation-process">Manual compilation process</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-requirements">Install requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#run-compilation-command">Run compilation command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copying-some-files">Copying some files.</a><ul>
@@ -75,6 +77,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#step-2">Step 2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-3">Step 3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-4">Step 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Step 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Step 4</a></li>
 </ul>
 </li>
 </ul>
@@ -299,12 +303,24 @@ and run the resource expensive compilation process on your machine.</p>
 <section id="build-locally">
 <h2>Build Locally<a class="headerlink" href="#build-locally" title="Permalink to this headline"></a></h2>
 <p>This section will explain how to compile motioninput on a local machine.</p>
+<section id="automatic-build-using-a-powershell-script">
+<h3>Automatic build using a PowerShell script<a class="headerlink" href="#automatic-build-using-a-powershell-script" title="Permalink to this headline"></a></h3>
+<p>Just run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="nb">compile</span><span class="o">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+<p><em>Note: Running the following script may require changing execution policy on your system. You can read about it <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2#example-7--unblock-a-script-to-run-it-without-changing-the-execution-policy">here</a>.</em></p>
+<p>The script is designed to create a python virtual environment (or use the existing one), install all dependencies and compile your code. The executable will be in <code class="docutils literal notranslate"><span class="pre">Release/motioninput.dist</span></code> directory.</p>
+</section>
+<section id="manual-compilation-process">
+<h3>Manual compilation process<a class="headerlink" href="#manual-compilation-process" title="Permalink to this headline"></a></h3>
 <p>Here is an overview of all steps that need to be done:</p>
 <ol class="simple">
 <li><p>Install requirements</p></li>
 <li><p>Run compilation command</p></li>
 <li><p>Copy some files into the final release directory (this is needed to make dependencies happy)</p></li>
 </ol>
+</section>
 <section id="install-requirements">
 <h3>Install requirements<a class="headerlink" href="#install-requirements" title="Permalink to this headline"></a></h3>
 <p>Just run</p>
@@ -315,15 +331,16 @@ and run the resource expensive compilation process on your machine.</p>
 <section id="run-compilation-command">
 <h3>Run compilation command<a class="headerlink" href="#run-compilation-command" title="Permalink to this headline"></a></h3>
 <p>The command is the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">nuitka</span> <span class="o">--</span><span class="n">lto</span><span class="o">=</span><span class="n">no</span> <span class="o">--</span><span class="n">windows</span><span class="o">-</span><span class="n">disable</span><span class="o">-</span><span class="n">console</span> <span class="o">--</span><span class="n">assume</span><span class="o">-</span><span class="n">yes</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">downloads</span> <span class="o">--</span><span class="n">standalone</span> <span class="o">--</span><span class="n">plugin</span><span class="o">-</span><span class="n">enable</span><span class="o">=</span><span class="n">numpy</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span><span class="o">=</span><span class="n">Release</span> <span class="n">motioninput</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">nuitka</span> <span class="o">--</span><span class="n">lto</span><span class="o">=</span><span class="n">no</span> <span class="o">--</span><span class="n">windows</span><span class="o">-</span><span class="n">disable</span><span class="o">-</span><span class="n">console</span> <span class="o">--</span><span class="n">assume</span><span class="o">-</span><span class="n">yes</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">downloads</span> <span class="o">--</span><span class="n">standalone</span> <span class="o">--</span><span class="n">nofollow</span><span class="o">-</span><span class="n">import</span><span class="o">-</span><span class="n">to</span><span class="o">=</span><span class="s2">&quot;openvino&quot;</span> <span class="o">--</span><span class="n">plugin</span><span class="o">-</span><span class="n">enable</span><span class="o">=</span><span class="n">numpy</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span><span class="o">=</span><span class="n">Release</span> <span class="n">motioninput</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>This is indeed very long, so let’s look at each compilation flag and see what it does.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--lto</span></code>: link time optimisation, if you keep it on the compilation time will increase from 30 minutes to several hours. (not worth it for debugging, only use it for the final release)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--windwos-disable-console</span></code>: Prevents console from appearing when running the code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--windows-disable-console</span></code>: Prevents console from appearing when running the code. <strong>IMPORTANT: deleting this flag will let you inspect errors in the command line</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--assume-yes-for-downloads</span></code>: Just a flag that will prevent some prompts from appearing. Nuitka will only prompt to download a C compiler and some dependency tracking tools so just keep it on to save some time.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--standalone</span></code>: This makes nuitka package libraries along side the executable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--nofollow-import-to=&quot;openvino&quot;</span></code>: Solves an issue related to non-working imports in openvino package.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--plugin-enable=numpy</span></code>: Numpy is a bit weird cuz it’s already primarily written in C so it needs some special treatment.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--outuput-dir=Release</span></code>: Output directory.</p></li>
 </ul>
@@ -355,6 +372,14 @@ we will fix it in this section.</p>
 <section id="step-4">
 <h4>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline"></a></h4>
 <p>Copy <code class="docutils literal notranslate"><span class="pre">_framework_bindings.pyd</span></code> from project root into <code class="docutils literal notranslate"><span class="pre">motioninput.dist/mediapipe/python</span></code></p>
+</section>
+<section id="id1">
+<h4>Step 4<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h4>
+<p>Copy <code class="docutils literal notranslate"><span class="pre">{your_site_packages_path}/openvino</span></code> into <code class="docutils literal notranslate"><span class="pre">motioninput.dist</span></code></p>
+</section>
+<section id="id2">
+<h4>Step 4<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h4>
+<p>Copy <code class="docutils literal notranslate"><span class="pre">{your_site_packages_path}/_sounddevice_data</span></code> into <code class="docutils literal notranslate"><span class="pre">motioninput.dist</span></code></p>
 <p>Okay That’s it. You should now be able to run it.</p>
 </section>
 </section>

@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -102,6 +102,8 @@
              
   <section id="module-scripts.gesture_event_handlers.area_of_interest">
 <span id="scripts-gesture-event-handlers"></span><h1>scripts.gesture_event_handlers<a class="headerlink" href="#module-scripts.gesture_event_handlers.area_of_interest" title="Permalink to this headline"></a></h1>
+<p>Authors: Carmen Meinson and Oluwaponmile Femi-Sunmaila
+Based on MotionInput v2 AreaOfInterest class by Ashild Kummen</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.area_of_interest.AreaOfInterest">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AreaOfInterest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor_tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker" title="scripts.gesture_event_handlers.monitor_tracker.MonitorTracker"><span class="pre">scripts.gesture_event_handlers.monitor_tracker.MonitorTracker</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.area_of_interest.AreaOfInterest" title="Permalink to this definition"></a></dt>
@@ -129,7 +131,8 @@
 
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.desktop_mouse"></span><dl class="py class">
+<span class="target" id="module-scripts.gesture_event_handlers.desktop_mouse"></span><p>Author: Carmen Meinson</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_mouse.Smoother">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Smoother</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smoothing_frames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_mouse.Smoother" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -248,19 +251,87 @@ Smooth the zooming by averaging out the coordinates of the last few frames (as c
 
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.desktop_touch"></span><dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DesktopTouch</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.DesktopTouch" title="Permalink to this definition"></a></dt>
+<span class="target" id="module-scripts.gesture_event_handlers.desktop_pen"></span><p>Authors: Fawziyah Hussain and Eva Miah</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DesktopPenInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aoi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.area_of_interest.AreaOfInterest" title="scripts.gesture_event_handlers.area_of_interest.AreaOfInterest"><span class="pre">scripts.gesture_event_handlers.area_of_interest.AreaOfInterest</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Erase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch.tap">
-<span class="sig-name descname"><span class="pre">tap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.tap" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.move_cursor">
+<span class="sig-name descname"><span class="pre">move_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.move_cursor" title="Permalink to this definition"></a></dt>
+<dd><p>Translate the camera coordinates into the AOI coordinates. Smooth the movement of the mouse by averaging out the coordinates of the last few frames (as configured). Move the mouse accordingly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.tap">
+<span class="sig-name descname"><span class="pre">tap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.tap" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch.press">
-<span class="sig-name descname"><span class="pre">press</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.press" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.press">
+<span class="sig-name descname"><span class="pre">press</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.press" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.release">
+<span class="sig-name descname"><span class="pre">release</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.release" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.update_pen">
+<span class="sig-name descname"><span class="pre">update_pen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.update_pen" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the cursor position and pressure value to continue an ink stroke/drag event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.update_pressure">
+<span class="sig-name descname"><span class="pre">update_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.update_pressure" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.eraser_activate">
+<span class="sig-name descname"><span class="pre">eraser_activate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.eraser_activate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.eraser_deactivate">
+<span class="sig-name descname"><span class="pre">eraser_deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_pen.DesktopPenInput.eraser_deactivate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_event_handlers.desktop_touch"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DesktopTouch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aoi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.area_of_interest.AreaOfInterest" title="scripts.gesture_event_handlers.area_of_interest.AreaOfInterest"><span class="pre">scripts.gesture_event_handlers.area_of_interest.AreaOfInterest</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.DesktopTouch" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch.move_cursor">
+<span class="sig-name descname"><span class="pre">move_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.move_cursor" title="Permalink to this definition"></a></dt>
+<dd><p>Translate the camera coordinates into the AOI coordinates. Smooth the movement of the mouse by averaging out the coordinates of the last few frames (as configured). Move the mouse accordingly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch.singletap">
+<span class="sig-name descname"><span class="pre">singletap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.singletap" title="Permalink to this definition"></a></dt>
+<dd><p>Single tap at specified coordinates and immediately release. Currently not being used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch.tap">
+<span class="sig-name descname"><span class="pre">tap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.tap" title="Permalink to this definition"></a></dt>
+<dd><p>Perform a touch down at specified coordinates</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch.press">
+<span class="sig-name descname"><span class="pre">press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">off_hand_coords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.DesktopTouch.press" title="Permalink to this definition"></a></dt>
+<dd><p>Allows dragging and zooming in/out with touchpoints</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>off_hand_coords</strong> (<em>float</em><em>[</em><em>]</em>) – coordinates of offhand index finger, needed for zooming</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.DesktopTouch.release">
@@ -430,30 +501,57 @@ Smooth the zooming by averaging out the coordinates of the last few frames (as c
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.Touch.singletap">
-<span class="sig-name descname"><span class="pre">singletap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.singletap" title="Permalink to this definition"></a></dt>
-<dd><p>Single touch taps depending on the coordinates you send in</p>
+<span class="sig-name descname"><span class="pre">singletap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.singletap" title="Permalink to this definition"></a></dt>
+<dd><p>Peforms a touch down and then immediately releases on the specified coordinates</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.Touch.touchdown">
-<span class="sig-name descname"><span class="pre">touchdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.touchdown" title="Permalink to this definition"></a></dt>
-<dd><p>Initialises a touch down event depending on the fingers in contact</p>
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.Touch.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">press</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.update" title="Permalink to this definition"></a></dt>
+<dd><p>Activates touchpoint at the given coordinates, or if touchpoint already active, updates coordinates to allow dragging</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.Touch.check_number_of_touchpoints">
+<span class="sig-name descname"><span class="pre">check_number_of_touchpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.check_number_of_touchpoints" title="Permalink to this definition"></a></dt>
+<dd><p>Updates state depending on the number of coordinates being passed in.
+A touchup is performed if it is the first time multiple coordinates are in the array since the last update.
+This is to reset the contacts before all contacts are updated simultaneously in the next touch injection.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.Touch.set_contacts">
+<span class="sig-name descname"><span class="pre">set_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.set_contacts" title="Permalink to this definition"></a></dt>
+<dd><p>Sets contact parameters for the specified index based on the coordinate passed in</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.Touch.touchup">
-<span class="sig-name descname"><span class="pre">touchup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.touchup" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">touchup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.touchup" title="Permalink to this definition"></a></dt>
+<dd><p>Releases all touchpoints on the screen</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.desktop_touch.Touch.mousejiggle">
-<span class="sig-name descname"><span class="pre">mousejiggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.mousejiggle" title="Permalink to this definition"></a></dt>
-<dd><p>The mouse cursor dissapears after touch is made, this is annoying so we shall move the mouse a little to reactivate it</p>
+<span class="sig-name descname"><span class="pre">mousejiggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.desktop_touch.Touch.mousejiggle" title="Permalink to this definition"></a></dt>
+<dd><p>Reactivate mouse cursor since it disappears after touch is made</p>
 </dd></dl>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.exercise_actions"></span><dl class="py class">
+<span class="target" id="module-scripts.gesture_event_handlers.edit_config"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.edit_config.EditConfigFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EditConfigFile</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.edit_config.EditConfigFile" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.edit_config.EditConfigFile.switch_boolean">
+<span class="sig-name descname"><span class="pre">switch_boolean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.edit_config.EditConfigFile.switch_boolean" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_event_handlers.exercise_actions"></span><p>Author: Jason Ho</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_actions.ExerciseActions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay"><span class="pre">scripts.gesture_event_handlers.exercise_display.ExerciseDisplay</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_actions.ExerciseActions" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -524,7 +622,8 @@ pressing and releasing the left and right mouse keys.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.exercise_display"></span><dl class="py class">
+<span class="target" id="module-scripts.gesture_event_handlers.exercise_display"></span><p>Author: Jason Ho</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExerciseDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -563,7 +662,8 @@ in the view.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.extremity_actions"></span><dl class="py class">
+<span class="target" id="module-scripts.gesture_event_handlers.extremity_actions"></span><p>Author: Jason Ho</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_actions.ExtremityActions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_circles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles" title="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles"><span class="pre">scripts.gesture_event_handlers.extremity_circles.ExtremityCircles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_actions.ExtremityActions" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -638,7 +738,8 @@ or the ones that are activated if none are given.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.extremity_circles"></span><dl class="py class">
+<span class="target" id="module-scripts.gesture_event_handlers.extremity_circles"></span><p>Author: Jason Ho</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityCircles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -753,7 +854,7 @@ data/in_air_keyboard.json.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InAirKeyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.keyboard.Keyboard" title="scripts.gesture_event_handlers.keyboard.Keyboard"><span class="pre">scripts.gesture_event_handlers.keyboard.Keyboard</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InAirKeyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.keyboard.Keyboard" title="scripts.gesture_event_handlers.keyboard.Keyboard"><span class="pre">scripts.gesture_event_handlers.keyboard.Keyboard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">kita_transcriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.transcription.Transcriber" title="scripts.gesture_event_handlers.transcription.Transcriber"><span class="pre">scripts.gesture_event_handlers.transcription.Transcriber</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.in_air_keyboard.InAirKeyboard" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class used to represent an in air keyboard.</p>
 <dl class="field-list simple">
@@ -761,6 +862,7 @@ data/in_air_keyboard.json.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>view</strong> (<a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><em>View</em></a>) – the window that the in air keyboard is to be displayed on</p></li>
 <li><p><strong>keyboard</strong> (<a class="reference internal" href="#scripts.gesture_event_handlers.keyboard.Keyboard" title="scripts.gesture_event_handlers.keyboard.Keyboard"><em>Keyboard</em></a>) – instance of keyboard object used for pressing keys and performing key combinations</p></li>
+<li><p><strong>kita_transcriber</strong> (<a class="reference internal" href="#scripts.gesture_event_handlers.transcription.Transcriber" title="scripts.gesture_event_handlers.transcription.Transcriber"><em>Transcriber</em></a>) – instance of Ask Kita Transcriber object used for transcription</p></li>
 </ul>
 </dd>
 </dl>
@@ -952,6 +1054,111 @@ against adjacent values.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.cut">
+<span class="sig-name descname"><span class="pre">cut</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.cut" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.copy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.paste">
+<span class="sig-name descname"><span class="pre">paste</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.paste" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.undo">
+<span class="sig-name descname"><span class="pre">undo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.undo" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.print">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.print" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.switch">
+<span class="sig-name descname"><span class="pre">switch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.switch" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.help">
+<span class="sig-name descname"><span class="pre">help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.help" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.windows_key">
+<span class="sig-name descname"><span class="pre">windows_key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.windows_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.windows_run">
+<span class="sig-name descname"><span class="pre">windows_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.windows_run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.macros">
+<span class="sig-name descname"><span class="pre">macros</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.macros" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.right_arrow">
+<span class="sig-name descname"><span class="pre">right_arrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.right_arrow" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.left_arrow">
+<span class="sig-name descname"><span class="pre">left_arrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.left_arrow" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.escape">
+<span class="sig-name descname"><span class="pre">escape</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.escape" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.full_screen">
+<span class="sig-name descname"><span class="pre">full_screen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.full_screen" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.space">
+<span class="sig-name descname"><span class="pre">space</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.space" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.page_up">
+<span class="sig-name descname"><span class="pre">page_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.page_up" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.page_down">
+<span class="sig-name descname"><span class="pre">page_down</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.page_down" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.volume_up">
+<span class="sig-name descname"><span class="pre">volume_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.volume_up" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.volume_down">
+<span class="sig-name descname"><span class="pre">volume_down</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.volume_down" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.save" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.press">
 <span class="sig-name descname"><span class="pre">press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.press" title="Permalink to this definition"></a></dt>
 <dd><p>added in this function as self.key_press doesn’t support pressing the full range of the keys required in the InAirKeyboard event handler
@@ -968,9 +1175,15 @@ e.g. print screen, page down etc.</p>
 <span class="sig-name descname"><span class="pre">press_release_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">press</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.press_release_keys" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.keyboard.Keyboard.type_write">
+<span class="sig-name descname"><span class="pre">type_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phrase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.keyboard.Keyboard.type_write" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.monitor_tracker"></span><dl class="py class">
+<span class="target" id="module-scripts.gesture_event_handlers.monitor_tracker"></span><p>Author: Oluwaponmile Femi-Sunmaila</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.monitor_tracker.MonitorTracker">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MonitorTracker</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -1014,7 +1227,302 @@ e.g. print screen, page down etc.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.pydirect_directx_actions"></span><dl class="py class">
+<span class="target" id="module-scripts.gesture_event_handlers.nose_box"></span><p>Author: Andrzej Szablewski</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.nose_box.NoseBox">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NoseBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scripts.tools.html#scripts.tools.view.View" title="scripts.tools.view.View"><span class="pre">scripts.tools.view.View</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor_tracker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.monitor_tracker.MonitorTracker" title="scripts.gesture_event_handlers.monitor_tracker.MonitorTracker"><span class="pre">scripts.gesture_event_handlers.monitor_tracker.MonitorTracker</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.nose_box.NoseBox" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.nose_box.NoseBox.update_nose_box">
+<span class="sig-name descname"><span class="pre">update_nose_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nose_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.nose_box.NoseBox.update_nose_box" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.nose_box.NoseBox.remove_nose_box">
+<span class="sig-name descname"><span class="pre">remove_nose_box</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.nose_box.NoseBox.remove_nose_box" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.nose_box.NoseBox.update_nose_box_centre">
+<span class="sig-name descname"><span class="pre">update_nose_box_centre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nose_box_centre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.nose_box.NoseBox.update_nose_box_centre" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_event_handlers.pen_input"></span><p>Authors: Fawziyah Hussain and Eva Miah
+Partially based on MotionInput v2 Touch code by Chenuka Ratwatte</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">POINTER_INFO</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.ButtonChangeType">
+<span class="sig-name descname"><span class="pre">ButtonChangeType</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ButtonChangeType" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.PerformanceCount">
+<span class="sig-name descname"><span class="pre">PerformanceCount</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.PerformanceCount" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.dwKeyStates">
+<span class="sig-name descname"><span class="pre">dwKeyStates</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.dwKeyStates" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.dwTime">
+<span class="sig-name descname"><span class="pre">dwTime</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.dwTime" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.frameId">
+<span class="sig-name descname"><span class="pre">frameId</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.frameId" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.historyCount">
+<span class="sig-name descname"><span class="pre">historyCount</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.historyCount" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.hwndTarget">
+<span class="sig-name descname"><span class="pre">hwndTarget</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.hwndTarget" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.inputData">
+<span class="sig-name descname"><span class="pre">inputData</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.inputData" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerFlags">
+<span class="sig-name descname"><span class="pre">pointerFlags</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerFlags" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerId">
+<span class="sig-name descname"><span class="pre">pointerId</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerId" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerType">
+<span class="sig-name descname"><span class="pre">pointerType</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.pointerType" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptHimetricLocation">
+<span class="sig-name descname"><span class="pre">ptHimetricLocation</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptHimetricLocation" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptHimetricLocationRaw">
+<span class="sig-name descname"><span class="pre">ptHimetricLocationRaw</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptHimetricLocationRaw" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptPixelLocation">
+<span class="sig-name descname"><span class="pre">ptPixelLocation</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptPixelLocation" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptPixelLocationRaw">
+<span class="sig-name descname"><span class="pre">ptPixelLocationRaw</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.ptPixelLocationRaw" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_INFO.sourceDevice">
+<span class="sig-name descname"><span class="pre">sourceDevice</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_INFO.sourceDevice" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">POINTER_TOUCH_INFO</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.orientation">
+<span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.pointerInfo">
+<span class="sig-name descname"><span class="pre">pointerInfo</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.pointerInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.pressure">
+<span class="sig-name descname"><span class="pre">pressure</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.pressure" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.rcContact">
+<span class="sig-name descname"><span class="pre">rcContact</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.rcContact" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.rcContactRaw">
+<span class="sig-name descname"><span class="pre">rcContactRaw</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.rcContactRaw" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.touchFlags">
+<span class="sig-name descname"><span class="pre">touchFlags</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.touchFlags" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.touchMask">
+<span class="sig-name descname"><span class="pre">touchMask</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TOUCH_INFO.touchMask" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">POINTER_PEN_INFO</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.penFlags">
+<span class="sig-name descname"><span class="pre">penFlags</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.penFlags" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.penMask">
+<span class="sig-name descname"><span class="pre">penMask</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.penMask" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.pointerInfo">
+<span class="sig-name descname"><span class="pre">pointerInfo</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.pointerInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.pressure">
+<span class="sig-name descname"><span class="pre">pressure</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.pressure" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.rotation">
+<span class="sig-name descname"><span class="pre">rotation</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.rotation" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.tiltX">
+<span class="sig-name descname"><span class="pre">tiltX</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.tiltX" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.tiltY">
+<span class="sig-name descname"><span class="pre">tiltY</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_PEN_INFO.tiltY" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PEN_TOUCH_UNION</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Union</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION.penInfo">
+<span class="sig-name descname"><span class="pre">penInfo</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION.penInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION.touchInfo">
+<span class="sig-name descname"><span class="pre">touchInfo</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.PEN_TOUCH_UNION.touchInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">POINTER_TYPE_INFO</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO.DUMMYUNIONNAME">
+<span class="sig-name descname"><span class="pre">DUMMYUNIONNAME</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO.DUMMYUNIONNAME" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.POINTER_TYPE_INFO.type" title="Permalink to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.Pen">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Pen</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.Pen" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.Pen.pentap">
+<span class="sig-name descname"><span class="pre">pentap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.Pen.pentap" title="Permalink to this definition"></a></dt>
+<dd><p>Single pen tap at given coordinates</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.Pen.pendown">
+<span class="sig-name descname"><span class="pre">pendown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.Pen.pendown" title="Permalink to this definition"></a></dt>
+<dd><p>Initialises a pen down event for ink strokes/drag events</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.Pen.penup">
+<span class="sig-name descname"><span class="pre">penup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.Pen.penup" title="Permalink to this definition"></a></dt>
+<dd><p>Lifts pen up after taps or drags</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.Pen.update_pen_info">
+<span class="sig-name descname"><span class="pre">update_pen_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.Pen.update_pen_info" title="Permalink to this definition"></a></dt>
+<dd><p>Sets updated coordinates and pressure for ink strokes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.pen_input.Pen.mousejiggle">
+<span class="sig-name descname"><span class="pre">mousejiggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ctypes.Array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.pen_input.Pen.mousejiggle" title="Permalink to this definition"></a></dt>
+<dd><p>The mouse cursor dissapears after pen down event, so we shall move the mouse a little to reactivate it</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.gesture_event_handlers.pydirect_directx_actions"></span><p>Author: Jason Ho</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.pydirect_directx_actions.Keyboard">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Keyboard</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.pydirect_directx_actions.Keyboard" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -1071,179 +1579,25 @@ e.g. print screen, page down etc.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.gesture_event_handlers.extremity_walking"></span><dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExtremityWalkingActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay"><span class="pre">scripts.gesture_event_handlers.exercise_display.ExerciseDisplay</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extremity_circles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles" title="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles"><span class="pre">scripts.gesture_event_handlers.extremity_circles.ExtremityCircles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions" title="Permalink to this definition"></a></dt>
+<span class="target" id="module-scripts.gesture_event_handlers.transcription"></span><dl class="py class">
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.transcription.Transcriber">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Transcriber</span></span><a class="headerlink" href="#scripts.gesture_event_handlers.transcription.Transcriber" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Actions for the ExtremityWalkingEvent class. These allow for walking on the spot to trigger a key hold, and for extremity triggers to
-be activated and deactivated.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_trigger_action">
-<span class="sig-name descname"><span class="pre">walking_trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_trigger_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a keydown action of the current key being used, and increments the number of walking repeats displayed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
-<li><p><strong>current_key</strong> (<em>str</em>) – Key to perform key down</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.transcription.Transcriber.start_transcribe">
+<span class="sig-name descname"><span class="pre">start_transcribe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.transcription.Transcriber.start_transcribe" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_trigger_action">
-<span class="sig-name descname"><span class="pre">extremity_trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_trigger_action" title="Permalink to this definition"></a></dt>
-<dd><p>Changes the colour of the activated extremity circle to the activated colour, and the number of repeats.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>extremity_name</strong> (<em>str</em>) – Name of activated extremity</p></li>
-<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.held_action">
-<span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.held_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a keydown action of the current key being used, to simulate the key being held.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>current_key</strong> (<em>str</em>) – Key to perform key down</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_release_action">
-<span class="sig-name descname"><span class="pre">extremity_release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.extremity_release_action" title="Permalink to this definition"></a></dt>
-<dd><p>Changes the colour of the deactivated extremity circle to the deactivated colour, and the number of repeats.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>extremity_name</strong> (<em>str</em>) – Name of deactivated extremity</p></li>
-<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_release_action">
-<span class="sig-name descname"><span class="pre">walking_release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.walking_release_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a key up action of the current key being used when the walking action is complete.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>current_key</strong> (<em>str</em>) – Key to press up</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.set_displays">
-<span class="sig-name descname"><span class="pre">set_displays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.set_displays" title="Permalink to this definition"></a></dt>
-<dd><p>Displays the required extremity circles and the exercises along with their repeats in view, starting at 0, if not displaying already.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.clear_display">
-<span class="sig-name descname"><span class="pre">clear_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.ExtremityWalkingActions.clear_display" title="Permalink to this definition"></a></dt>
-<dd><p>Clears the extremity circles and the exercises being displayed in the view, if not cleared already.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GamingExtremityWalkingActions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exercise_display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.exercise_display.ExerciseDisplay" title="scripts.gesture_event_handlers.exercise_display.ExerciseDisplay"><span class="pre">scripts.gesture_event_handlers.exercise_display.ExerciseDisplay</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extremity_circles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#scripts.gesture_event_handlers.extremity_circles.ExtremityCircles" title="scripts.gesture_event_handlers.extremity_circles.ExtremityCircles"><span class="pre">scripts.gesture_event_handlers.extremity_circles.ExtremityCircles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Actions for the GamingExtremityWalkingEvent class. These provide methods for the special walking on the spot + gamepad mode.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_trigger_action">
-<span class="sig-name descname"><span class="pre">walking_trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">walking_repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_trigger_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a keydown action of the keys being used, and increments the number of walking repeats displayed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
-<li><p><strong>key_list</strong> – Key to perform key down</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_trigger_action">
-<span class="sig-name descname"><span class="pre">extremity_trigger_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_trigger_action" title="Permalink to this definition"></a></dt>
-<dd><p>Changes the colour of the activated extremity circle to the activated colour, and the number of repeats. Also performs any key down
-action if required (e.g. if the extremity trigger activated was a button extremity).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>extremity_name</strong> (<em>str</em>) – Name of activated extremity</p></li>
-<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
-<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Key to perform key down</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.held_action">
-<span class="sig-name descname"><span class="pre">held_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.held_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a keydown action for the current keys being used, to simulate the key being held.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>key_list</strong> – List of keys to perform key down</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_release_action">
-<span class="sig-name descname"><span class="pre">extremity_release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.extremity_release_action" title="Permalink to this definition"></a></dt>
-<dd><p>Changes the colour of the deactivated extremity circle to the deactivated colour, and the number of repeats. Also performs a key up
-action for any keys required.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>extremity_name</strong> (<em>str</em>) – Name of deactivated extremity</p></li>
-<li><p><strong>repeats</strong> (<em>int</em>) – Number of repeats for walking</p></li>
-<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Key for key up</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_release_action">
-<span class="sig-name descname"><span class="pre">walking_release_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.walking_release_action" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a key up action of the any keys being used when the walking action is complete.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>key_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Keys for key up</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.set_displays">
-<span class="sig-name descname"><span class="pre">set_displays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.set_displays" title="Permalink to this definition"></a></dt>
-<dd><p>Displays the required extremity circles and the exercises along with their repeats in view, starting at 0, if not already displayed.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.clear_display">
-<span class="sig-name descname"><span class="pre">clear_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.extremity_walking.GamingExtremityWalkingActions.clear_display" title="Permalink to this definition"></a></dt>
-<dd><p>Clears the extremity circles and the exercises being displayed in the view, if not displayed already.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="scripts.gesture_event_handlers.transcription.Transcriber.stop_transcribe">
+<span class="sig-name descname"><span class="pre">stop_transcribe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.transcription.Transcriber.stop_transcribe" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
 <section id="module-scripts.gesture_event_handlers">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scripts.gesture_event_handlers" title="Permalink to this headline"></a></h2>
+<p>Authors: Carmen Meinson</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="scripts.gesture_event_handlers.GestureEventHandlers">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GestureEventHandlers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode_change_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.gesture_event_handlers.GestureEventHandlers" title="Permalink to this definition"></a></dt>

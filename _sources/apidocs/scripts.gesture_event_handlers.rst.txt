@@ -14,7 +14,19 @@ scripts.gesture\_event\_handlers
    :show-inheritance:
 
 
+.. automodule:: scripts.gesture_event_handlers.desktop_pen
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.gesture_event_handlers.desktop_touch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: scripts.gesture_event_handlers.edit_config
    :members:
    :undoc-members:
    :show-inheritance:
@@ -62,12 +74,24 @@ scripts.gesture\_event\_handlers
    :show-inheritance:
 
 
+.. automodule::  scripts.gesture_event_handlers.nose_box
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule::  scripts.gesture_event_handlers.pen_input
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. automodule:: scripts.gesture_event_handlers.pydirect_directx_actions
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: scripts.gesture_event_handlers.extremity_walking
+.. automodule:: scripts.gesture_event_handlers.transcription
    :members:
    :undoc-members:
    :show-inheritance:

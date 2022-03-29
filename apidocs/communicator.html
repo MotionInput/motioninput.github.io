@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -70,7 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts.event_mapper.html">scripts.event_mapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.mode_controller.html">scripts.mode_controller</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">communicator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-communicator">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="motioninput_api.html">motioninput_api</a></li>
@@ -102,8 +102,32 @@
              
   <section id="communicator">
 <h1>communicator<a class="headerlink" href="#communicator" title="Permalink to this headline"></a></h1>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="module-communicator">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-communicator" title="Permalink to this headline"></a></h2>
+<p>Author: Oluwaponmile Femi-Sunmaila</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="communicator.Communicator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Communicator</span></span><a class="headerlink" href="#communicator.Communicator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="communicator.Communicator.process_command">
+<span class="sig-name descname"><span class="pre">process_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#communicator.Communicator.process_command" title="Permalink to this definition"></a></dt>
+<dd><p>Processes a command sent from front end and sends back a response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em>) – The command to be processed</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The return message to be sent to front end.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 

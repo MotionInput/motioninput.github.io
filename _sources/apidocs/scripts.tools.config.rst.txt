@@ -1,4 +1,0 @@
-scripts.tools.config namespace
-==============================
-
-.. py:module:: scripts.tools.config

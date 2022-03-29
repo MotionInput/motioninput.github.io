@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#architecture">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html#running-the-code">Running the code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#adding-features">Adding Features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
 <ul>
@@ -106,6 +106,7 @@
 <h1>scripts.tools<a class="headerlink" href="#scripts-tools" title="Permalink to this headline"></a></h1>
 <section id="module-scripts.tools.config">
 <span id="subpackages"></span><h2>Subpackages<a class="headerlink" href="#module-scripts.tools.config" title="Permalink to this headline"></a></h2>
+<p>Author: Carmen Meinson</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="scripts.tools.config.singleton">
 <span class="sig-name descname"><span class="pre">singleton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.config.singleton" title="Permalink to this definition"></a></dt>
@@ -116,21 +117,37 @@
 <span class="sig-name descname"><span class="pre">Config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.config.Config" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<span class="target" id="module-scripts.tools.view"></span><dl class="py class">
+<span class="target" id="module-scripts.tools.view"></span><p>Authors: Carmen Meinson, Jason Ho and Oluwaponmile Femi-Sunmaila</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.view.View">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">View</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head_screen_top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.view.View" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.view.View.update_display_element">
-<span class="sig-name descname"><span class="pre">update_display_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.view.View.update_display_element" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_display_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.view.View.update_display_element" title="Permalink to this definition"></a></dt>
 <dd><p>Updates a display element, e.g. area of interest element, by passing in updated arguments to update its attributes. If the display element
 class is not already initialised, then it also initialises the class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Reference name of the DisplayElement class handled by the View</p></li>
+<li><p><strong>update_args</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Keyword arguments to be passed into the DisplayElement class’ update method</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.view.View.update_display">
 <span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.view.View.update_display" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Takes an image object and loops through all activated DisplayElements, running their update_display method allowing them to draw to the
+image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame</strong> (<em>np.ndarray</em>) – image object for the DisplayElement instances to draw to</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.view.View.hide">
@@ -159,7 +176,8 @@ class is not already initialised, then it also initialises the class.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.tools.display_element"></span><dl class="py class">
+<span class="target" id="module-scripts.tools.display_element"></span><p>Author: Jason Ho</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.display_element.DisplayElement">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DisplayElement</span></span><a class="headerlink" href="#scripts.tools.display_element.DisplayElement" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -191,6 +209,11 @@ class is not already initialised, then it also initialises the class.</p>
 <dt class="sig sig-object py" id="scripts.tools.display_element.ExerciseDisplayElement.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exericses_repeats_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ExerciseDisplayElement.update" title="Permalink to this definition"></a></dt>
 <dd><p>Takes in parameters and updates the ExerciseDisplayElement’s attributes accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>exericses_repeats_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em>) – Dictionary of exercises to display with info about number of repeats</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -201,14 +224,24 @@ class is not already initialised, then it also initialises the class.</p>
 <dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.display_element.ExtremityCirclesElement.update_display">
-<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ExtremityCirclesElement.update_display" title="Permalink to this definition"></a></dt>
-<dd><p>Takes a cv2 image object and updates the image, adding in the extremity circles representing the extremity triggers, including its state and repeats.</p>
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ExtremityCirclesElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes an image object and updates the image, adding in the extremity circles representing the extremity triggers, including its state and repeats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image</strong> (<em>np.ndarray</em>) – Current frame being processed</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.display_element.ExtremityCirclesElement.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_circles_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.display_element.ExtremityCirclesElement.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extremity_circles_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ExtremityCirclesElement.update" title="Permalink to this definition"></a></dt>
 <dd><p>Takes in parameters and updates the ExtremityCirclesElement’s attributes accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>extremity_circles_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Tuple</em><em>]</em>) – Dictionary of extremity triggers to display with info about coordinates, activation and repeats</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -277,9 +310,32 @@ for keys which have been hovered over or clicked.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.display_element.NoseBoxElement.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nose_box_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nose_point</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.NoseBoxElement.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nose_box_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nose_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nose_box_centre</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.NoseBoxElement.update" title="Permalink to this definition"></a></dt>
 <dd><p>Takes in parameters and updates the nosebox’s attributes accordingly.
 If no parameters are given the nosebox is no longer displayed</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ActiveModeNameElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActiveModeNameElement</span></span><a class="headerlink" href="#scripts.tools.display_element.ActiveModeNameElement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.display_element.DisplayElement" title="scripts.tools.display_element.DisplayElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.display_element.DisplayElement</span></code></a></p>
+<p>Display Element for an active mode name.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ActiveModeNameElement.update_display">
+<span class="sig-name descname"><span class="pre">update_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ActiveModeNameElement.update_display" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a cv2 image object and updates the image with the name of the active mode.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.display_element.ActiveModeNameElement.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scripts.tools.display_element.ActiveModeNameElement.update" title="Permalink to this definition"></a></dt>
+<dd><p>Takes in new mode name.
+:param name: New mode name
+:type name: str
+:return: None
+:rtype: None</p>
 </dd></dl>
 
 </dd></dl>
@@ -383,7 +439,8 @@ YAW) info.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.tools.camera"></span><dl class="py class">
+<span class="target" id="module-scripts.tools.camera"></span><p>Author: Carmen Meinson</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.camera.Camera">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Camera</span></span><a class="headerlink" href="#scripts.tools.camera.Camera" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -402,6 +459,7 @@ YAW) info.</p>
 </section>
 <section id="module-scripts.tools.json_editors.json_editor">
 <span id="json-editors"></span><h2>JSON Editors<a class="headerlink" href="#module-scripts.tools.json_editors.json_editor" title="Permalink to this headline"></a></h2>
+<p>Author: Oluwaponmile Femi-Sunmaila</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.json_editor.JSONEditor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JSONEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="Permalink to this definition"></a></dt>
@@ -478,7 +536,8 @@ YAW) info.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.tools.json_editors.config_editor"></span><dl class="py class">
+<span class="target" id="module-scripts.tools.json_editors.config_editor"></span><p>Author: Oluwaponmile Femi-Sunmaila</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.config_editor.ConfigEditor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConfigEditor</span></span><a class="headerlink" href="#scripts.tools.json_editors.config_editor.ConfigEditor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="scripts.tools.json_editors.json_editor.JSONEditor"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.json_editors.json_editor.JSONEditor</span></code></a></p>
@@ -507,7 +566,7 @@ YAW) info.</p>
 <dd class="field-odd"><p><strong>gesture_type</strong> – Specifies whether the gestures are “extremity_triggers”</p>
 </dd>
 </dl>
-<p>or “exercises.
+<p>or “exercises”.
 :type gesture_type: str
 :return: A dictionary containing all the activated gestures and their attributes.
 :rtype: Dict</p>
@@ -515,7 +574,8 @@ YAW) info.</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.tools.json_editors.event_editor"></span><dl class="py class">
+<span class="target" id="module-scripts.tools.json_editors.event_editor"></span><p>Author: Oluwaponmile Femi-Sunmaila</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.event_editor.EventEditor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EventEditor</span></span><a class="headerlink" href="#scripts.tools.json_editors.event_editor.EventEditor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="scripts.tools.json_editors.json_editor.JSONEditor"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.json_editors.json_editor.JSONEditor</span></code></a></p>
@@ -551,7 +611,8 @@ triggers: {</p>
 
 </dd></dl>
 
-<span class="target" id="module-scripts.tools.json_editors.gesture_editor"></span><dl class="py class">
+<span class="target" id="module-scripts.tools.json_editors.gesture_editor"></span><p>Author: Oluwaponmile Femi-Sunmaila</p>
+<dl class="py class">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.gesture_editor.GestureEditor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GestureEditor</span></span><a class="headerlink" href="#scripts.tools.json_editors.gesture_editor.GestureEditor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="scripts.tools.json_editors.json_editor.JSONEditor"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.json_editors.json_editor.JSONEditor</span></code></a></p>
@@ -613,6 +674,24 @@ primitive_name : bool,
 <dl class="py method">
 <dt class="sig sig-object py" id="scripts.tools.json_editors.gesture_editor.GestureEditor.validate_gesture">
 <span class="sig-name descname"><span class="pre">validate_gesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.gesture_editor.GestureEditor.validate_gesture" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-scripts.tools.json_editors.mode_editor"></span><p>Author: Oluwaponmile Femi-Sunmaila</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.mode_editor.ModeEditor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ModeEditor</span></span><a class="headerlink" href="#scripts.tools.json_editors.mode_editor.ModeEditor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scripts.tools.json_editors.json_editor.JSONEditor" title="scripts.tools.json_editors.json_editor.JSONEditor"><code class="xref py py-class docutils literal notranslate"><span class="pre">scripts.tools.json_editors.json_editor.JSONEditor</span></code></a></p>
+<p>Class that handles the reading of the mode_controller JSON</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.mode_editor.ModeEditor.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.mode_editor.ModeEditor.remove" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.tools.json_editors.mode_editor.ModeEditor.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.tools.json_editors.mode_editor.ModeEditor.add" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
